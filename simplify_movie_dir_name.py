@@ -1,0 +1,1 @@
+#simplificira naziv direktorija filma - sadrži ime, i u zagradi godinu izdavanja)
