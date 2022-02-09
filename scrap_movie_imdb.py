@@ -59,6 +59,7 @@ def get_movie_data(movie):
 
         mlinkpage = requests.get(movielink)
         soup2 = BeautifulSoup(mlinkpage.content, 'html.parser')
+        aba = soup2.select(".title_wrapper h1")
         titlenyear = soup2.select(".title_wrapper h1")[0].text
         movietitle = titlenyear[0:len(titlenyear) - 8]
         movieyear = titlenyear[len(titlenyear) - 6:len(titlenyear) - 2]
@@ -137,5 +138,5 @@ print(Fore.LIGHTBLACK_EX+"Loading...")
 time.sleep(0.5)
 print(Fore.LIGHTBLACK_EX+"Please wait...\n")
 
-get_movie_data("Scarface")
+get_movie_data("Dunes")
 
