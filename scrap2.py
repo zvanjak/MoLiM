@@ -1,8 +1,14 @@
-from imdb import Cinemagoer
+﻿from imdb import Cinemagoer
 
 
 # create an instance of the Cinemagoer class
 ia = Cinemagoer()
+
+# get all movies in given dir
+
+# u for petlji za sve filmove dovuci što se može iz IMDBa
+
+# i onda nek korisnik odluči
 
 # get a movie
 movie = ia.get_movie('0133093')
