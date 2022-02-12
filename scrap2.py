@@ -31,6 +31,8 @@ for movieName in subfolders:
             break
         
         print (realMovieName)
+        findMovie = ia.search_movie(realMovieName)
+        movie = ia.get_movie(findMovie[0].movieID)
 
 
 
