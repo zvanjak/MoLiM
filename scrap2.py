@@ -1,10 +1,20 @@
 ﻿from imdb import Cinemagoer
 
+import os
 
 # create an instance of the Cinemagoer class
 ia = Cinemagoer()
 
 # get all movies in given dir
+#   i godinu dohvatiti, za selekciju ako ima više filmova
+#  npr. testirati s Love, 
+folder = "D:\Downloads"
+
+subfolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
+
+for movieName in subfolders:
+  parts = movieName.split('.')
+  # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
 
 # u for petlji za sve filmove dovuci što se može iz IMDBa
 
