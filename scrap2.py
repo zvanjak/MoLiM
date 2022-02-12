@@ -22,6 +22,17 @@ for movieName in subfolders:
       if year > 1930 and year < 2023 :
         #nasli smo ga
         print (movieName)
+        realMovieName = ""
+        for piece in parts:
+          if piece != part:
+            realMovieName += piece + " "
+          else :
+            realMovieName += "(" + piece + ")"
+            break
+        
+        print (realMovieName)
+
+
 
 # u for petlji za sve filmove dovuci što se može iz IMDBa
 
