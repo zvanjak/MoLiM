@@ -13,8 +13,15 @@ folder = "D:\Downloads"
 subfolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
 
 for movieName in subfolders:
+  # provjeriti da li ima točku, ako nema ne diramo to
   parts = movieName.split('.')
   # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
+  for part in parts:
+    if( part.isnumeric() ):
+      year = int(part)
+      if year > 1930 and year < 2023 :
+        #nasli smo ga
+        print (movieName)
 
 # u for petlji za sve filmove dovuci što se može iz IMDBa
 
