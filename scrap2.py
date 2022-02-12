@@ -33,10 +33,19 @@ for movieName in subfolders:
         print (realMovieName)
         findMovie = ia.search_movie(realMovieName)
         movie = ia.get_movie(findMovie[0].movieID)
+
         print( movie.data['runtimes'])
         runtime = int(movie.data['runtimes'][0])
+
+        print('Directors:')
+        for director in movie['directors']:
+            print(director['name'])
+
+        print('Cast:')
         for i in range(1,10):
           print(movie.data['cast'][i])
+        
+        print('Genres:')
         for gen in movie.data['genres']:
           print(gen)
         a = 53
