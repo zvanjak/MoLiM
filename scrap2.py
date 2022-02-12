@@ -48,9 +48,15 @@ for movieName in subfolders:
         print('Genres:')
         for gen in movie.data['genres']:
           print(gen)
+
+        plot = movie.data['plot outline']
+        print(plot)
+
         a = 53
 
-
+# ECEPTION HANDLING ZA SVAKI PRISTUP PODACIMA
+# NAPRAVITI FILE, U KOJI ĆE SE PREPISATI REZULTATI ANALIZE ZA SVAKI FAJL
+# U STVARI, ZAPISATI SAMO ONE PROBLEMATIČNE, I ŠTO IM JE FALILO
 
 # u for petlji za sve filmove dovuci što se može iz IMDBa
 
