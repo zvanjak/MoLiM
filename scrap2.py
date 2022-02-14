@@ -13,7 +13,7 @@ folder = "F:\FILMOVI\___1930-60"
 subfolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
 
 for movieName in subfolders:
-  # provjeriti da li ima točku, ako nema ne diramo to
+  # provjeriti da li ima točku, ako nema ne diramo to -> provjerimo da li unutra ima nekih filmova!
 
   parts = movieName.split('.')
 
@@ -43,9 +43,10 @@ for movieName in subfolders:
         for director in movie['directors']:
             print(director['name'])
 
-        print('Cast:')
+        cast = ""
         for i in range(1,10):
-          print(movie.data['cast'][i])
+          cast += movie.data['cast'][i]
+        print('Cast: ' + cast)
         
         print('Genres:')
         for gen in movie.data['genres']:
@@ -58,6 +59,7 @@ for movieName in subfolders:
         print("Rating {0}".format(rat))
 
         a = 53
+      break
 
 # EXCEPTION HANDLING ZA SVAKI PRISTUP PODACIMA
 # NAPRAVITI FILE, U KOJI ĆE SE PREPISATI REZULTATI ANALIZE ZA SVAKI FAJL
