@@ -49,8 +49,8 @@ for movieName in subfolders:
           #  ind = 1
           movie = ia.get_movie(findMovie[ind].movieID)
 
-          rat = movie.data.get('rating', None)
-          print("IMDB rating {0}".format(rat))
+          rating = movie.data.get('rating', None)
+          print("IMDB rating {0}".format(rating))
 
           runtime = int(movie.data['runtimes'][0])
           print("Runtime: ", runtime, " min")
@@ -79,6 +79,13 @@ for movieName in subfolders:
           print ()
           #plot = movie.data.get('plot outline', None)
           #print("Plot outline: " + str(plot))
+
+          # ime novog direktorija
+          # Naziv (2022) IMDB-7.5 Adventure,Comedy,Thriller Cast-Mel Gibson, Jim Belushi, Joan Crawford
+          newDirName = realMovieName
+          newDirName += " IMDB-" + str(rating)
+          # formirati TXT datoteku s podacim
+          # snimiti je u direktorij
         except:
           print("ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
               
