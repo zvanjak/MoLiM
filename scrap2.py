@@ -43,9 +43,18 @@ for movieName in subfolders:
         print("Runtime: {0}", runtime)
 
         directors = ""
+        cntDir = 0
         for director in movie['directors']:
+            if cntDir > 0 :
+              directors += ", "
             directors += director['name']
+            cntDir += 1
         print("Directors: " + directors)
+
+        genres = ""
+        for gen in movie.data['genres']:
+          genres += gen + ", "
+        print('Genres: ' + genres)
 
         cast = ""
         for i in range(1,10):
@@ -54,10 +63,6 @@ for movieName in subfolders:
           cast += ", "
         print('Cast: ' + cast)
         
-        print('Genres:')
-        for gen in movie.data['genres']:
-          print(gen)
-
         plot = movie.data['plot outline']
         print(plot)
 
