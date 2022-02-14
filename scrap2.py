@@ -52,9 +52,11 @@ for movieName in subfolders:
         plot = movie.data['plot outline']
         print(plot)
 
+        rat = movie.data['rating']
+
         a = 53
 
-# ECEPTION HANDLING ZA SVAKI PRISTUP PODACIMA
+# EXCEPTION HANDLING ZA SVAKI PRISTUP PODACIMA
 # NAPRAVITI FILE, U KOJI ĆE SE PREPISATI REZULTATI ANALIZE ZA SVAKI FAJL
 # U STVARI, ZAPISATI SAMO ONE PROBLEMATIČNE, I ŠTO IM JE FALILO
 
