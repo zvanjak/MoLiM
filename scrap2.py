@@ -39,45 +39,46 @@ for movieName in subfolders:
         
         print (realMovieName)
 
+        try:
+          findMovie = ia.search_movie(searchMovieName)
+          ind = 0
+          #movieID1 = findMovie[0].movieID
+          #movieID2 = findMovie[1].movieID
+          #if int(movieID2) < int(movieID1) :
+          #  ind = 1
+          movie = ia.get_movie(findMovie[ind].movieID)
 
-        findMovie = ia.search_movie(searchMovieName)
-        ind = 0
-        movieID1 = findMovie[0].movieID
-        movieID2 = findMovie[1].movieID
-        if int(movieID2) < int(movieID1) :
-          ind = 1
-        movie = ia.get_movie(findMovie[ind].movieID)
+          rat = movie.data.get('rating', None)
+          print("IMDB rating {0}".format(rat))
 
-        rat = movie.data.get('rating', None)
-        #rat = movie.data['rating']
-        print("IMDB rating {0}".format(rat))
+          runtime = int(movie.data['runtimes'][0])
+          print("Runtime: ", runtime, " min")
 
-        runtime = int(movie.data['runtimes'][0])
-        print("Runtime: ", runtime, " min")
+          directors = ""
+          cntDir = 0
+          for director in movie['directors']:
+              if cntDir > 0 :
+                directors += ", "
+              directors += director['name']
+              cntDir += 1
+          print("Directors: " + directors)
 
-        directors = ""
-        cntDir = 0
-        for director in movie['directors']:
-            if cntDir > 0 :
-              directors += ", "
-            directors += director['name']
-            cntDir += 1
-        print("Directors: " + directors)
+          genres = ""
+          for gen in movie.data['genres']:
+            genres += gen + ", "
+          print('Genres: ' + genres)
 
-        genres = ""
-        for gen in movie.data['genres']:
-          genres += gen + ", "
-        print('Genres: ' + genres)
-
-        cast = ""
-        for i in range(1,10):
-          s = movie.data['cast'][i]
-          cast += s.data['name']
-          cast += ", "
-        print('Cast: ' + cast)
+          cast = ""
+          for i in range(1,10):
+            s = movie.data['cast'][i]
+            cast += s.data['name']
+            cast += ", "
+          print('Cast: ' + cast)
         
-        plot = movie.data.get('plot outline', None)
-        print("Plot outline: " + str(plot))
+          plot = movie.data.get('plot outline', None)
+          print("Plot outline: " + str(plot))
+        except:
+          print("ERROR!!!!")
               
         break
 
