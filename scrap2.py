@@ -36,16 +36,22 @@ for movieName in subfolders:
         findMovie = ia.search_movie(realMovieName)
         movie = ia.get_movie(findMovie[0].movieID)
 
-        print( movie.data['runtimes'])
-        runtime = int(movie.data['runtimes'][0])
+        rat = movie.data['rating']
+        print("IMDB rating {0}".format(rat))
 
-        print('Directors:')
+        runtime = int(movie.data['runtimes'][0])
+        print("Runtime: {0}", runtime)
+
+        directors = ""
         for director in movie['directors']:
-            print(director['name'])
+            directors += director['name']
+        print("Directors: " + directors)
 
         cast = ""
         for i in range(1,10):
-          cast += movie.data['cast'][i]
+          s = movie.data['cast'][i]
+          cast += s.data['name']
+          cast += ", "
         print('Cast: ' + cast)
         
         print('Genres:')
@@ -55,8 +61,7 @@ for movieName in subfolders:
         plot = movie.data['plot outline']
         print(plot)
 
-        rat = movie.data['rating']
-        print("Rating {0}".format(rat))
+
 
         a = 53
       break
