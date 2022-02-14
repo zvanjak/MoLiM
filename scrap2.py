@@ -10,7 +10,7 @@ ia = Cinemagoer()
 #  npr. testirati s Love, 
 #folder = "D:\Downloads"
 #folder = "F:\FILMOVI\___1930-60"
-folder = "F:\FILMOVI\Novi filmovi"
+folder = "F:\\FILMOVI\\Novi_filmovi"
 
 subfolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
 
@@ -76,10 +76,11 @@ for movieName in subfolders:
             cast += ", "
           print('Cast: ' + cast)
         
-          plot = movie.data.get('plot outline', None)
-          print("Plot outline: " + str(plot))
+          print ()
+          #plot = movie.data.get('plot outline', None)
+          #print("Plot outline: " + str(plot))
         except:
-          print("ERROR!!!!")
+          print("ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
               
         break
 
