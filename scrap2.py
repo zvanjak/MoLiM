@@ -69,8 +69,11 @@ for movieName in subfolders:
           cntGen = 0
           for gen in movie.data['genres']:
             genres += gen + ", "
+            if cntGen > 0 and cntGen <3 :
+              shortGenres += ","
             if cntGen < 3:
-              shortGenres += gen + ","
+              shortGenres += gen
+
             cntGen += 1
           print('Genres: ' + genres)
 
