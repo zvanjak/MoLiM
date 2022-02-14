@@ -70,10 +70,15 @@ for movieName in subfolders:
           print('Genres: ' + genres)
 
           cast = ""
+          shortCast = ""
           for i in range(1,10):
             s = movie.data['cast'][i]
             cast += s.data['name']
             cast += ", "
+            if i <3 :
+              shortCast += s.data['name']
+              shortCast += ","
+              
           print('Cast: ' + cast)
         
           print ()
@@ -83,7 +88,10 @@ for movieName in subfolders:
           # ime novog direktorija
           # Naziv (2022) IMDB-7.5 Adventure,Comedy,Thriller Cast-Mel Gibson, Jim Belushi, Joan Crawford
           newDirName = realMovieName
-          newDirName += " IMDB-" + str(rating)
+          newDirName += " IMDB-" + str(rating) + " "
+
+          print("NEWDIR = ",newDirName)
+
           # formirati TXT datoteku s podacim
           # snimiti je u direktorij
         except:
