@@ -8,13 +8,15 @@ ia = Cinemagoer()
 # get all movies in given dir
 #   i godinu dohvatiti, za selekciju ako ima više filmova
 #  npr. testirati s Love, 
-folder = "D:\Downloads"
+folder = "F:\FILMOVI\___1930-60"
 
 subfolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
 
 for movieName in subfolders:
   # provjeriti da li ima točku, ako nema ne diramo to
+
   parts = movieName.split('.')
+
   # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
   for part in parts:
     if( part.isnumeric() ):
@@ -53,6 +55,7 @@ for movieName in subfolders:
         print(plot)
 
         rat = movie.data['rating']
+        print("Rating {0}".format(rat))
 
         a = 53
 
@@ -68,16 +71,16 @@ for movieName in subfolders:
 movie = ia.get_movie('0133093')
 
 # print the names of the directors of the movie
-print('Directors:')
-for director in movie['directors']:
-    print(director['name'])
+#print('Directors:')
+#for director in movie['directors']:
+#    print(director['name'])
 
-# print the genres of the movie
-print('Genres:')
-for genre in movie['genres']:
-    print(genre)
+## print the genres of the movie
+#print('Genres:')
+#for genre in movie['genres']:
+#    print(genre)
 
-# search for a person name
-people = ia.search_person('Mel Gibson')
-for person in people:
-   print(person.personID, person['name'])
+## search for a person name
+#people = ia.search_person('Mel Gibson')
+#for person in people:
+#   print(person.personID, person['name'])
