@@ -28,15 +28,19 @@ for movieName in subfolders:
         #nasli smo ga
         print (movieName)
         realMovieName = ""
+        searchMovieName = ""
         for piece in parts:
           if piece != part:
             realMovieName += piece + " "
           else :
+            searchMovieName = realMovieName
             realMovieName += "(" + piece + ")"
             break
         
         print (realMovieName)
-        findMovie = ia.search_movie(realMovieName)
+
+
+        findMovie = ia.search_movie(searchMovieName)
         ind = 0
         movieID1 = findMovie[0].movieID
         movieID2 = findMovie[1].movieID
