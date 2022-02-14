@@ -8,12 +8,15 @@ ia = Cinemagoer()
 # get all movies in given dir
 #   i godinu dohvatiti, za selekciju ako ima više filmova
 #  npr. testirati s Love, 
-folder = "F:\FILMOVI\___1930-60"
+folder = "D:\Downloads"
+#folder = "F:\FILMOVI\___1930-60"
 
 subfolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
 
 for movieName in subfolders:
   # provjeriti da li ima točku, ako nema ne diramo to -> provjerimo da li unutra ima nekih filmova!
+
+  # riješiti ukoliko ima ___ na početku
 
   parts = movieName.split('.')
 
@@ -34,13 +37,19 @@ for movieName in subfolders:
         
         print (realMovieName)
         findMovie = ia.search_movie(realMovieName)
-        movie = ia.get_movie(findMovie[0].movieID)
+        ind = 0
+        movieID1 = findMovie[0].movieID
+        movieID2 = findMovie[1].movieID
+        if int(movieID2) < int(movieID1) :
+          ind = 1
+        movie = ia.get_movie(findMovie[ind].movieID)
 
-        rat = movie.data['rating']
+        rat = movie.data.get('rating', None)
+        #rat = movie.data['rating']
         print("IMDB rating {0}".format(rat))
 
         runtime = int(movie.data['runtimes'][0])
-        print("Runtime: {0}", runtime)
+        print("Runtime: ", runtime, " min")
 
         directors = ""
         cntDir = 0
@@ -63,13 +72,11 @@ for movieName in subfolders:
           cast += ", "
         print('Cast: ' + cast)
         
-        plot = movie.data['plot outline']
-        print(plot)
+        plot = movie.data.get('plot outline', None)
+        print("Plot outline: " + str(plot))
+              
+        break
 
-
-
-        a = 53
-      break
 
 # EXCEPTION HANDLING ZA SVAKI PRISTUP PODACIMA
 # NAPRAVITI FILE, U KOJI ĆE SE PREPISATI REZULTATI ANALIZE ZA SVAKI FAJL
