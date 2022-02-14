@@ -83,9 +83,10 @@ for movieName in subfolders:
             s = movie.data['cast'][i]
             cast += s.data['name']
             cast += ", "
+            if i > 1 and i <= 3 :
+              shortCast += ","
             if i <= 3 :
               shortCast += s.data['name']
-              shortCast += ","
               
           print('Cast: ' + cast)
         
