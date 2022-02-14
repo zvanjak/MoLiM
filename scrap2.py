@@ -8,15 +8,14 @@ ia = Cinemagoer()
 # get all movies in given dir
 #   i godinu dohvatiti, za selekciju ako ima više filmova
 #  npr. testirati s Love, 
-folder = "D:\Downloads"
+#folder = "D:\Downloads"
 #folder = "F:\FILMOVI\___1930-60"
+folder = "F:\FILMOVI\Novi filmovi"
 
 subfolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
 
 for movieName in subfolders:
   # provjeriti da li ima točku, ako nema ne diramo to -> provjerimo da li unutra ima nekih filmova!
-
-  # riješiti ukoliko ima ___ na početku
 
   parts = movieName.split('.')
 
@@ -33,7 +32,9 @@ for movieName in subfolders:
           if piece != part:
             realMovieName += piece + " "
           else :
-            searchMovieName = realMovieName
+            searchMovieName = realMovieName.strip('_')
+            # riješiti ukoliko ima ___ na početku
+
             realMovieName += "(" + piece + ")"
             break
         
