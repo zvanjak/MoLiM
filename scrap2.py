@@ -99,7 +99,7 @@ for movieName in subfolders:
 
           # ime novog direktorija
           # Naziv (2022) IMDB-7.5 Adventure,Comedy,Thriller Cast-Mel Gibson, Jim Belushi, Joan Crawford
-          newDirName = realMovieName
+          newDirName = realMovieName.strip('_')
           newDirName += " IMDB-" + str(rating) + " " + shortGenres + " " + shortCast
 
           print("NEWDIR = ",newDirName)
@@ -117,6 +117,13 @@ for movieName in subfolders:
           fileFilmData.write("Plot:      " + str(plot))
 
           fileFilmData.close()
+
+          # i sad idemo preimenovati direktorij
+          origDir = folder + "\\" + movieName
+          destDir = folder + "\\" + newDirName
+
+          os.rename(origDir, destDir)
+
         except:
           print("ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
 
