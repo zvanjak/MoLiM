@@ -19,7 +19,9 @@ fileErrors = open("D:\Downloads\FileErrors.txt",'w')
 
 for movieName in subfolders:
   # provjeriti da li ima točku, ako nema ne diramo to -> provjerimo da li unutra ima nekih filmova!
-  
+  if movieName.find('.') == -1:
+    continue
+
   parts = movieName.split('.')
 
   # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
