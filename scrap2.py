@@ -94,7 +94,7 @@ for movieName in subfolders:
           print('Cast: ' + cast)
         
           print ()
-          #plot = movie.data.get('plot outline', None)
+          plot = movie.data.get('plot outline', None)
           #print("Plot outline: " + str(plot))
 
           # ime novog direktorija
@@ -109,12 +109,12 @@ for movieName in subfolders:
           fileName = folder + "\\" + movieName + "\\" + "Film data - " + realMovieName + ".txt"
           fileFilmData = open(fileName, 'w')
           fileFilmData.write(str(realMovieName).strip('_') + "\n")
-          # Name (Year)
-          # Runtime
-          # Genres
-          # Directors
-          # Cast
-          # snimiti je u direktorij
+          fileFilmData.write("Runtime:   " + str(runtime) + " min\n")
+          fileFilmData.write("Genres:    " + genres + "\n")
+          fileFilmData.write("Directors: " + directors + "\n")
+          fileFilmData.write("Cast:      " + cast + "\n")
+          fileFilmData.write("Plot:      " + str(plot))
+
           fileFilmData.close()
         except:
           print("ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
