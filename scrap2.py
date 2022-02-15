@@ -10,18 +10,18 @@ ia = Cinemagoer()
 #  npr. testirati s Love, 
 #folder = "D:\Downloads"
 #folder = "D:\Downloads\_Problematic"
-folder = "F:\FILMOVI\___1980's"
-#folder = "F:\\FILMOVI\\Novi_filmovi"
+#folder = "F:\FILMOVI\___1980's"
+folder = "F:\\FILMOVI\\Novi_filmovi"
 
 subfolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
 
-fileErrors = open(folder + "\\FileErrors.txt",'w') 
+fileErrors = open(folder + "\\FileErrors.txt",'w', encoding="utf-8") 
 
 for movieName in subfolders:
   # provjeriti da li ima točku, ako nema ne diramo to -> provjerimo da li unutra ima nekih filmova!
   if movieName.find('.') == -1:
     print("\nSKIPPING: " + movieName)
-    fileErrors.write("\nSKIPPING" + realMovieName + " nema točke :)))  " + "\n")
+    fileErrors.write("\nSKIPPING - " + str(realMovieName) + " nema točke :)))  " + "\n\n")
 
     # ali, ako nema točku, možda sam ime već obradio
     # provjeriti ima li IMDB u naslovu
