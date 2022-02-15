@@ -107,6 +107,7 @@ for movieName in subfolders:
 
           # formirati TXT datoteku s podacima
           fileName = folder + "\\" + movieName + "\\" + "Film data - " + realMovieName + ".txt"
+
           fileFilmData = open(fileName, 'w')
           fileFilmData.write(str(realMovieName).strip('_') + "\n")
           fileFilmData.write("Runtime:   " + str(runtime) + " min\n")
