@@ -9,9 +9,9 @@ ia = Cinemagoer()
 #   i godinu dohvatiti, za selekciju ako ima više filmova
 #  npr. testirati s Love, 
 #folder = "D:\Downloads"
-#folder = "D:\Downloads\_Problematic"
+folder = "D:\Downloads\_Problematic"
 #folder = "F:\FILMOVI\___1930-60"
-folder = "F:\\FILMOVI\\Novi_filmovi"
+#folder = "F:\\FILMOVI\\Novi_filmovi"
 
 subfolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
 
@@ -106,12 +106,16 @@ for movieName in subfolders:
           print ()
 
           # formirati TXT datoteku s podacima
+          fileName = folder + "\\" + movieName + "\\" + "Film data - " + realMovieName + ".txt"
+          fileFilmData = open(fileName, 'w')
+          fileFilmData.write(str(realMovieName).strip('_') + "\n")
           # Name (Year)
           # Runtime
           # Genres
           # Directors
           # Cast
           # snimiti je u direktorij
+          fileFilmData.close()
         except:
           print("ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
 
