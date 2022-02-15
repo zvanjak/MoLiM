@@ -22,6 +22,9 @@ for movieName in subfolders:
   if movieName.find('.') == -1:
     print("\nSKIPPING: " + movieName)
     fileErrors.write("\nSKIPPING" + realMovieName + " nema točke :)))  " + "\n")
+
+    # ali, ako nema točku, možda sam ime već obradio
+    # provjeriti ima li IMDB u naslovu
     continue
 
   parts = movieName.split('.')
