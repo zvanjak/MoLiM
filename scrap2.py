@@ -9,13 +9,13 @@ ia = Cinemagoer()
 #   i godinu dohvatiti, za selekciju ako ima više filmova
 #  npr. testirati s Love, 
 #folder = "D:\Downloads"
-folder = "D:\Downloads\_Problematic"
-#folder = "F:\FILMOVI\___1930-60"
+#folder = "D:\Downloads\_Problematic"
+folder = "F:\FILMOVI\___1930-60"
 #folder = "F:\\FILMOVI\\Novi_filmovi"
 
 subfolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
 
-fileErrors = open("D:\Downloads\FileErrors.txt",'w') 
+fileErrors = open(folder + "\\FileErrors.txt",'w') 
 
 for movieName in subfolders:
   # provjeriti da li ima točku, ako nema ne diramo to -> provjerimo da li unutra ima nekih filmova!
@@ -127,7 +127,7 @@ for movieName in subfolders:
           os.rename(origDir, destDir)
 
         except:
-          print("ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
+          print("\nERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
 
           # zapisati u datoteku 
           fileErrors.write(realMovieName + '\n')
