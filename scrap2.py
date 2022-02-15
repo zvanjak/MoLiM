@@ -102,7 +102,12 @@ for movieName in subfolders:
           print("NEWDIR = ",newDirName)
           print ()
 
-          # formirati TXT datoteku s podacim
+          # formirati TXT datoteku s podacima
+          # Name (Year)
+          # Runtime
+          # Genres
+          # Directors
+          # Cast
           # snimiti je u direktorij
         except:
           print("ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
