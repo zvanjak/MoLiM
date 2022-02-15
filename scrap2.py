@@ -9,14 +9,24 @@ ia = Cinemagoer()
 #   i godinu dohvatiti, za selekciju ako ima više filmova
 #  npr. testirati s Love, 
 #folder = "D:\Downloads"
+folder = "D:\Downloads\_Problematic"
 #folder = "F:\FILMOVI\___1930-60"
-folder = "F:\\FILMOVI\\Novi_filmovi"
+#folder = "F:\\FILMOVI\\Novi_filmovi"
 
 subfolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
 
+fileErrors = open("D:\Downloads\FileErrors.txt",'w') 
+
+fileErrors.write("TEST\n")
+fileErrors.write("TEST2\n")
+fileErrors.write("\n")
+fileErrors.write("TEST3\n")
+
+fileErrors.flush()
+
 for movieName in subfolders:
   # provjeriti da li ima točku, ako nema ne diramo to -> provjerimo da li unutra ima nekih filmova!
-
+  z
   parts = movieName.split('.')
 
   # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
@@ -111,7 +121,11 @@ for movieName in subfolders:
           # snimiti je u direktorij
         except:
           print("ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
+
           # zapisati u datoteku 
+          fileErrors.write(realMovieName + '\n')
+          fileErrors.write(movieName + "\n")
+          fileErrors.write("\n")
         break
 
 
