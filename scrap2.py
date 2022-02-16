@@ -25,10 +25,10 @@ for movieName in subfolders:
       continue
 
     # ako nema točku, i NISMO ga već obradili, onda ćemo probati split po spaceu ' '
-    parts = movieName.split('.')
+    parts = movieName.split(' ')
 
     #print("\nSKIPPING: " + movieName)
-    fileErrors.write("\nTRYING SPACES - " + str(realMovieName) + "\n\n")
+    fileErrors.write("\nTRYING SPACES - " + str(movieName) + "\n\n")
 
   else:
     parts = movieName.split('.')
