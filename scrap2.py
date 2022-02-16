@@ -20,7 +20,7 @@ fileErrors = open(folder + "\\FileErrors.txt",'w', encoding="utf-8")
 for movieName in subfolders:
   # provjeriti da li ima točku, ako nema ne diramo to -> provjerimo da li unutra ima nekih filmova!
   if movieName.count('.') < 2:
-    if movieName.find("IMDB"):
+    if movieName.find("IMDB") == -1:
       print("\nDONE: " + movieName)
       continue
 
