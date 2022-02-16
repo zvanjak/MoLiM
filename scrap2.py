@@ -20,7 +20,7 @@ fileErrors = open(folder + "\\FileErrors.txt",'w', encoding="utf-8")
 for movieName in subfolders:
   # provjeriti da li ima točku, ako nema ne diramo to -> provjerimo da li unutra ima nekih filmova!
   if movieName.count('.') < 2:
-    if movieName.find("IMDB") == -1:
+    if movieName.find("IMDB") != -1:
       print("\nDONE: " + movieName)
       continue
 
@@ -28,7 +28,7 @@ for movieName in subfolders:
     parts = movieName.split('.')
 
     #print("\nSKIPPING: " + movieName)
-    #fileErrors.write("\nSKIPPING - " + str(realMovieName) + " nema točke :)))  " + "\n\n")
+    fileErrors.write("\nTRYING SPACES - " + str(realMovieName) + "\n\n")
 
   else:
     parts = movieName.split('.')
@@ -120,8 +120,7 @@ for movieName in subfolders:
 
           # ime novog direktorija
           # Naziv (2022) IMDB-7.5 Adventure,Comedy,Thriller Cast-Mel Gibson, Jim Belushi, Joan Crawford
-          newDirName = realMovieName.strip('_')
-          newDirName += " IMDB-" + str(rating) + " " + shortGenres + " " + shortCast
+          newDirName = realMovieName + " IMDB-" + str(rating) + " " + shortGenres + " " + shortCast
 
           print("NEWDIR = ",newDirName)
           print ()
