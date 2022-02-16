@@ -9,9 +9,9 @@ ia = Cinemagoer()
 #   i godinu dohvatiti, za selekciju ako ima više filmova
 #  npr. testirati s Love, 
 #folder = "D:\Downloads"
-#folder = "D:\Downloads\_Problematic"
+folder = "D:\Downloads\_Problematic"
 #folder = "F:\FILMOVI\___1980's"
-folder = "F:\\FILMOVI\\Novi_filmovi"
+#folder = "F:\\FILMOVI\\Novi_filmovi"
 
 subfolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
 
@@ -20,14 +20,18 @@ fileErrors = open(folder + "\\FileErrors.txt",'w', encoding="utf-8")
 for movieName in subfolders:
   # provjeriti da li ima točku, ako nema ne diramo to -> provjerimo da li unutra ima nekih filmova!
   if movieName.find('.') == -1:
-    print("\nSKIPPING: " + movieName)
-    fileErrors.write("\nSKIPPING - " + str(realMovieName) + " nema točke :)))  " + "\n\n")
+    if movieName.find("IMDB"):
+      print("\nDONE: " + movieName)
+      continue
 
-    # ali, ako nema točku, možda sam ime već obradio
-    # provjeriti ima li IMDB u naslovu
-    continue
+    # ako nema točku, i NISMO ga već obradili, onda ćemo probati split po spaceu ' '
+    parts = movieName.split('.')
 
-  parts = movieName.split('.')
+    #print("\nSKIPPING: " + movieName)
+    #fileErrors.write("\nSKIPPING - " + str(realMovieName) + " nema točke :)))  " + "\n\n")
+
+  else
+    parts = movieName.split('.')
 
   # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
   for part in parts:
