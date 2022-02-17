@@ -108,67 +108,69 @@ def fetchMovieDataPerformRenameSaveText(movieName, realMovieName, searchMovieNam
 folder = "F:\FILMOVI\___1930-60"
 #folder = "F:\\FILMOVI\\Novi_filmovi"
 #folder = "D:\To Watch\Filmovi"
+rootFolder = "F:\FILMOVI"
 
-subfolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
+rootSubFolders = [ f.path for f in os.scandir(rootFolder) if f.is_dir() ]
 
-fileErrors = open(folder + "\\FileErrors.txt",'w', encoding="utf-8") 
+for folder in rootSubFolders:
+  subfolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
 
-for movieFileName in subfolders:
-  # provjeriti da li ima točku, ako nema ne diramo to -> provjerimo da li unutra ima nekih filmova!
-  if movieFileName.count('.') < 2:
-    if movieFileName.find("IMDB") != -1:
-      # TODO treba popraviti cast :(
-      ## naći '('
-      parPos = movieFileName.find('(')
-      searchMovieName = movieFileName[0:parPos-1].strip('_')
+  fileErrors = open(folder + "\\FileErrors.txt",'w', encoding="utf-8") 
+
+  for movieFileName in subfolders:
+    # provjeriti da li ima točku, ako nema ne diramo to -> provjerimo da li unutra ima nekih filmova!
+    if movieFileName.count('.') < 2:
+      if movieFileName.find("IMDB") != -1:
+        # TODO treba popraviti cast :(
+        #parPos = movieFileName.find('(')
+        #searchMovieName = movieFileName[0:parPos-1].strip('_')
       
-      parPos = movieFileName.find(')')
-      realMovieName = movieFileName[0:parPos+1]
+        #parPos = movieFileName.find(')')
+        #realMovieName = movieFileName[0:parPos+1]
 
-      fetchMovieDataPerformRenameSaveText(movieFileName, realMovieName, searchMovieName)
+        #fetchMovieDataPerformRenameSaveText(movieFileName, realMovieName, searchMovieName)
 
-      # realMovieName
-      #print("\nDONE: " + movieFileName)
-      continue
+        print("\nDONE: " + movieFileName)
+        continue
 
-    # ako nema točku, i NISMO ga već obradili, onda ćemo probati split po spaceu ' '
-    parts = movieFileName.split(' ')
+      # ako nema točku, i NISMO ga već obradili, onda ćemo probati split po spaceu ' '
+      parts = movieFileName.split(' ')
 
-    #print("\nSKIPPING: " + movieName)
-    fileErrors.write("\nTRYING SPACES - " + str(movieFileName) + "\n\n")
+      #print("\nSKIPPING: " + movieName)
+      fileErrors.write("\nTRYING SPACES - " + str(movieFileName) + "\n\n")
 
-  else:
-    parts = movieFileName.split('.')
+    else:
+      parts = movieFileName.split('.')
 
-  # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
-  cntParts=0
-  for part in parts:
-    cntParts += 1
-    # prvoga bi trebalo preskočiti
-    if cntParts == 1:
-      continue
+    # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
+    cntParts=0
+    for part in parts:
+      cntParts += 1
+      # prvoga bi trebalo preskočiti
+      if cntParts == 1:
+        continue
     
-    if( part.isnumeric() ):
-      year = int(part)
-      if year > 1930 and year < 2023 :
-        #nasli smo ga
-        realMovieName = ""
-        searchMovieName = ""
-        for piece in parts:
-          if piece != part:
-            realMovieName += piece + " "
-          else :
-            searchMovieName = realMovieName.strip('_')
-            # riješiti ukoliko ima ___ na početku
+      if( part.isnumeric() ):
+        year = int(part)
+        if year > 1930 and year < 2023 :
+          #nasli smo ga
+          realMovieName = ""
+          searchMovieName = ""
+          for piece in parts:
+            if piece != part:
+              realMovieName += piece + " "
+            else :
+              searchMovieName = realMovieName.strip('_')
+              # riješiti ukoliko ima ___ na početku
 
-            realMovieName += "(" + piece + ")"
-            break
+              realMovieName += "(" + piece + ")"
+              break
         
-        print (realMovieName, " - ", movieFileName)
+          print (realMovieName, " - ", movieFileName)
 
-        fetchMovieDataPerformRenameSaveText(movieFileName, realMovieName, searchMovieName)
+          fetchMovieDataPerformRenameSaveText(movieFileName, realMovieName, searchMovieName)
 
-        break
+          break
 
 
 # u for petlji za sve filmove dovuci što se može iz IMDBa
