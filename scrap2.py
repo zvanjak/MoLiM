@@ -105,9 +105,9 @@ def fetchMovieDataPerformRenameSaveText(movieName, realMovieName, searchMovieNam
 #  npr. testirati s Love, 
 #folder = "D:\Downloads"
 #folder = "D:\Downloads\_Problematic"
-#folder = "F:\FILMOVI\___1980's"
+folder = "F:\FILMOVI\___1930-60"
 #folder = "F:\\FILMOVI\\Novi_filmovi"
-folder = "D:\To Watch\Filmovi"
+#folder = "D:\To Watch\Filmovi"
 
 subfolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
 
