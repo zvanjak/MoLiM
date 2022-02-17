@@ -127,13 +127,13 @@ for movieFileName in movieSubFolders:
   if movieFileName.count('.') < 2:
     if movieFileName.find("IMDB") != -1:
       # TODO treba popraviti cast :(
-      parPos = movieFileName.find('(')
-      searchMovieName = movieFileName[0:parPos-1].strip('_')
+      #parPos = movieFileName.find('(')
+      #searchMovieName = movieFileName[0:parPos-1].strip('_')
       
-      parPos = movieFileName.find(')')
-      realMovieName = movieFileName[0:parPos+1]
+      #parPos = movieFileName.find(')')
+      #realMovieName = movieFileName[0:parPos+1]
 
-      fetchMovieDataPerformRenameSaveText(movieFileName, realMovieName, searchMovieName)
+      #fetchMovieDataPerformRenameSaveText(movieFileName, realMovieName, searchMovieName)
 
       print("\nDONE: " + movieFileName)
       continue
