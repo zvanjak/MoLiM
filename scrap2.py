@@ -11,7 +11,8 @@ ia = Cinemagoer()
 #folder = "D:\Downloads"
 #folder = "D:\Downloads\_Problematic"
 #folder = "F:\FILMOVI\___1980's"
-folder = "F:\\FILMOVI\\Novi_filmovi"
+#folder = "F:\\FILMOVI\\Novi_filmovi"
+folder = "D:\To Watch\Filmovi\___Problematic"
 
 subfolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
 
@@ -103,13 +104,13 @@ for movieName in subfolders:
 
           cast = ""
           shortCast = "CAST - "
-          for i in range(1,10):
+          for i in range(0,9):
             s = movie.data['cast'][i]
             cast += s.data['name']
             cast += ", "
-            if i > 1 and i <= 3 :
+            if i > 0 and i < 3 :
               shortCast += ","
-            if i <= 3 :
+            if i < 3 :
               shortCast += s.data['name']
               
           print('Cast: ' + cast)
