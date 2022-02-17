@@ -105,30 +105,35 @@ def fetchMovieDataPerformRenameSaveText(movieName, realMovieName, searchMovieNam
 #  npr. testirati s Love, 
 #folder = "D:\Downloads"
 #folder = "D:\Downloads\_Problematic"
-folder = "F:\FILMOVI\___1930-60"
-#folder = "F:\\FILMOVI\\Novi_filmovi"
+#folder = "F:\FILMOVI\___1930-60"
+folder = "F:\\FILMOVI\\Novi_filmovi"
 #folder = "D:\To Watch\Filmovi"
 rootFolder = "F:\FILMOVI"
 
-rootSubFolders = [ f.path for f in os.scandir(rootFolder) if f.is_dir() ]
+#rootSubFolders = [ f.path for f in os.scandir(rootFolder) if f.is_dir() ]
 
-for folder in rootSubFolders:
-  subfolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
+#for folder in rootSubFolders:
+
+  print("------------------------------------------")
+  print("------", folder, "------")
+  print("------------------------------------------")
+
+  movieSubFolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
 
   fileErrors = open(folder + "\\FileErrors.txt",'w', encoding="utf-8") 
 
-  for movieFileName in subfolders:
+  for movieFileName in movieSubFolders:
     # provjeriti da li ima točku, ako nema ne diramo to -> provjerimo da li unutra ima nekih filmova!
     if movieFileName.count('.') < 2:
       if movieFileName.find("IMDB") != -1:
         # TODO treba popraviti cast :(
-        #parPos = movieFileName.find('(')
-        #searchMovieName = movieFileName[0:parPos-1].strip('_')
+        parPos = movieFileName.find('(')
+        searchMovieName = movieFileName[0:parPos-1].strip('_')
       
-        #parPos = movieFileName.find(')')
-        #realMovieName = movieFileName[0:parPos+1]
+        parPos = movieFileName.find(')')
+        realMovieName = movieFileName[0:parPos+1]
 
-        #fetchMovieDataPerformRenameSaveText(movieFileName, realMovieName, searchMovieName)
+        fetchMovieDataPerformRenameSaveText(movieFileName, realMovieName, searchMovieName)
 
         print("\nDONE: " + movieFileName)
         continue
