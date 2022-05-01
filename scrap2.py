@@ -164,16 +164,16 @@ def processFolder(folder):
 
           break
 
-
+         
 # get all movies in given dir
 #   i godinu dohvatiti, za selekciju ako ima više filmova
 #  npr. testirati s Love, 
 #folder = "D:\Downloads"
 #folder = "D:\Downloads\_Problematic"
 #folder = "F:\FILMOVI\___1930-60"
-folder = "F:\\FILMOVI\\Novi_filmovi"
-#folder = "D:\To Watch\Filmovi"
-rootFolder = "F:\FILMOVI"
+#folder = "F:\\FILMOVI\\Novi_filmovi"
+folder = "D:\To Watch\Filmovi"
+#rootFolder = "F:\FILMOVI"
 
 #rootSubFolders = [ f.path for f in os.scandir(rootFolder) if f.is_dir() ]
 
