@@ -206,9 +206,11 @@ def analyzeFolder(folder):
 
   for movieFileName in movieSubFolders:
     if movieFileName.find("IMDB") != -1:
-      print("\nALREADY DONE: " + movieFileName)
+      #print("\nALREADY DONE: " + movieFileName)
+      continue
     else:
       print("\nNOT DONE: " + movieFileName)
+      getMovieData(movieFileName)
 
 
          
