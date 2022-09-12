@@ -269,6 +269,22 @@ def reapplyUnderscoreRating(folderName):
       imdb_rat = movieFileName[ind+5:ind+8]
 
       # strip sve underscore na poečtku
+      if float(imdb_rat) >= 8.0:
+        origDir = folder + "\\" + movieFileName
+        destDir = folder + "\\" + "__" + movieFileName.strip('_')
+        print("RENAMING {0} to {1}", origDir, destDir)
+        #os.rename(origDir, destDir)
+      elif float(imdb_rat) >= 7.0:
+        origDir = folder + "\\" + movieFileName
+        destDir = folder + "\\" + "_" + movieFileName.strip('_')
+        print("RENAMING {0} to {1}", origDir, destDir)
+        #os.rename(origDir, destDir)
+      elif float(imdb_rat) < 6.0:
+        origDir = folder + "\\" + movieFileName
+        destDir = folder + "\\" + "zzz_" + movieFileName.strip("zzz_")
+        print("RENAMING {0} to {1}", origDir, destDir)
+        #os.rename(origDir, destDir)
+
 
 
 # get all movies in given dir
@@ -341,8 +357,8 @@ rootFolder = "F:\FILMOVI"
 #"F:\\FILMOVI\\___1970's",       \
 #"F:\\FILMOVI\\___1980's",       \
 #"F:\\FILMOVI\\___1990's",       \
-#"F:\\FILMOVI\\___2000's",       \
-foldersToAnalyze = [ "F:\\FILMOVI\\___2010's",       \
+foldersToAnalyze = [ "F:\\FILMOVI\\___2000's",       \
+  "F:\\FILMOVI\\___2010's",       \
 "F:\\FILMOVI\\___2020's",       \
 #"F:\\FILMOVI\\___CLASSICS",       \
 #"F:\\FILMOVI\\___DOMACI",       \
@@ -360,9 +376,10 @@ foldersToAnalyze = [ "F:\\FILMOVI\\___2010's",       \
 # i onda nek korisnik odluči
 fileErrors = open(folder + "\\FileErrors.txt",'w+', encoding="utf-8") 
 
-#for folderName in foldersToAnalyze:
-#  print(folderName)
-#  folder = folderName
-#  analyzeFolder(folderName)
+for folderName in foldersToAnalyze:
+  print(folderName)
+  folder = folderName
+  reapplyUnderscoreRating(folderName)
+  #analyzeFolder(folderName)
 
 #analyzeFolder(folder)
