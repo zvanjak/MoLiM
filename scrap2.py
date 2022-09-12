@@ -164,6 +164,53 @@ def processFolder(folder):
 
           break
 
+def getMovieData(movieFileName):
+  parts = movieFileName.split('.')
+
+  # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
+  cntParts=0
+  for part in parts:
+    cntParts += 1
+    # prvoga bi trebalo preskočiti
+    if cntParts == 1:
+      continue
+    
+    if( part.isnumeric() ):
+      year = int(part)
+      if year > 1930 and year < 2023 :
+        #nasli smo ga
+        realMovieName = ""
+        searchMovieName = ""
+        for piece in parts:
+          if piece != part:
+            realMovieName += piece + " "
+          else :
+            searchMovieName = realMovieName.strip('_')
+            # riješiti ukoliko ima ___ na početku
+
+            realMovieName += "(" + piece + ")"
+            break
+        
+        print (realMovieName, " - ", movieFileName)
+
+        #fetchMovieDataPerformRenameSaveText(movieFileName, realMovieName, searchMovieName)
+
+        break
+
+def analyzeFolder(folder):
+  print("------------------------------------------")
+  print("------", folder, "------")
+  print("------------------------------------------")
+
+  movieSubFolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
+
+  for movieFileName in movieSubFolders:
+    if movieFileName.find("IMDB") != -1:
+      print("\nALREADY DONE: " + movieFileName)
+    else:
+      print("\nNOT DONE: " + movieFileName)
+
+
          
 # get all movies in given dir
 #   i godinu dohvatiti, za selekciju ako ima više filmova
@@ -181,3 +228,4 @@ folder = "D:\To Watch\Filmovi"
 # u for petlji za sve filmove dovuci što se može iz IMDBa
 
 # i onda nek korisnik odluči
+analyzeFolder(folder)
