@@ -1,4 +1,5 @@
-﻿from imdb import Cinemagoer
+﻿from sys import orig_argv
+from imdb import Cinemagoer
 
 import os
 
@@ -17,6 +18,9 @@ def fetchMovieDataPerformRenameSaveText(movieName, realMovieName, searchMovieNam
 
     rating = movie.data.get('rating', None)
     print("IMDB rating {0}".format(rating))
+
+    year = movie.data.get('year', None)
+    print("Year: {0}".format(year))
 
     runtime = int(movie.data['runtimes'][0])
     print("Runtime: ", runtime, " min")
@@ -49,7 +53,7 @@ def fetchMovieDataPerformRenameSaveText(movieName, realMovieName, searchMovieNam
 
     cast = ""
     shortCast = "CAST - "
-    for i in range(0,9):
+    for i in range(0,4):
       s = movie.data['cast'][i]
       cast += s.data['name']
       cast += ", "
@@ -66,7 +70,12 @@ def fetchMovieDataPerformRenameSaveText(movieName, realMovieName, searchMovieNam
 
     # ime novog direktorija
     # Naziv (2022) IMDB-7.5 Adventure,Comedy,Thriller Cast-Mel Gibson, Jim Belushi, Joan Crawford
-    newDirName = realMovieName + " IMDB-" + str(rating) + " " + shortGenres + " " + shortCast
+    newDirName = searchMovieName + "(" + str(year) + ")" + " IMDB-" + str(rating) + " " + shortGenres + " " + shortCast
+
+    if rating > 8.0:
+      newDirName = "__" + newDirName
+    elif rating > 7.0:
+      newDirName = "_" + newDirName
 
     print("NEWDIR = ",newDirName)
     print ()
@@ -92,6 +101,13 @@ def fetchMovieDataPerformRenameSaveText(movieName, realMovieName, searchMovieNam
 
   except:
     print("\nERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
+    
+    origDir = folder + "\\" + movieName
+    destDir = folder + "\\" + "___" + movieName
+    print("RENAMING {0} to {1}", origDir, destDir)
+
+    # i sad idemo preimenovati direktorij
+    os.rename(origDir, destDir)
 
     # zapisati u datoteku 
     fileErrors.write(realMovieName + '\n')
@@ -191,11 +207,17 @@ def getMovieData(movieFileName):
             realMovieName += "(" + piece + ")"
             break
         
-        print (realMovieName, " - ", movieFileName)
+        print (realMovieName, " - ", searchMovieName, " - ", movieFileName)
 
-        #fetchMovieDataPerformRenameSaveText(movieFileName, realMovieName, searchMovieName)
+        fetchMovieDataPerformRenameSaveText(movieFileName, realMovieName, searchMovieName)
 
         break
+  else:
+    origDir = folder + "\\" + movieFileName
+    destDir = folder + "\\" + "___" + movieFileName
+    print("RENAMING {0} to {1}", origDir, destDir)
+
+    os.rename(origDir, destDir)
 
 def analyzeFolder(folder):
   print("------------------------------------------")
@@ -206,11 +228,25 @@ def analyzeFolder(folder):
 
   for movieFileName in movieSubFolders:
     if movieFileName.find("IMDB") != -1:
-      #print("\nALREADY DONE: " + movieFileName)
+      ind = movieFileName.find("IMDB")
+      imdb_rat = movieFileName[ind+5:ind+8]
+      
+      print(imdb_rat)
+      
+      if float(imdb_rat) > 8.0:
+        origDir = folder + "\\" + movieFileName
+        destDir = folder + "\\" + "__" + movieFileName
+        print("RENAMING {0} to {1}", origDir, destDir)
+        os.rename(origDir, destDir)
+      elif float(imdb_rat) > 7.0:
+        origDir = folder + "\\" + movieFileName
+        destDir = folder + "\\" + "_" + movieFileName
+        print("RENAMING {0} to {1}", origDir, destDir)
+        os.rename(origDir, destDir)
       continue
     else:
       print("\nNOT DONE: " + movieFileName)
-      getMovieData(movieFileName)
+      #getMovieData(movieFileName)
 
 
          
@@ -222,6 +258,7 @@ def analyzeFolder(folder):
 #folder = "F:\FILMOVI\___1930-60"
 #folder = "F:\\FILMOVI\\Novi_filmovi"
 folder = "D:\To Watch\Filmovi"
+#folder = "D:\To Watch\___TEST"
 #rootFolder = "F:\FILMOVI"
 
 #rootSubFolders = [ f.path for f in os.scandir(rootFolder) if f.is_dir() ]
@@ -230,4 +267,6 @@ folder = "D:\To Watch\Filmovi"
 # u for petlji za sve filmove dovuci što se može iz IMDBa
 
 # i onda nek korisnik odluči
+fileErrors = open(folder + "\\FileErrors.txt",'w', encoding="utf-8") 
+
 analyzeFolder(folder)
