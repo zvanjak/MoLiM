@@ -72,10 +72,12 @@ def fetchMovieDataPerformRenameSaveText(movieName, realMovieName, searchMovieNam
     # Naziv (2022) IMDB-7.5 Adventure,Comedy,Thriller Cast-Mel Gibson, Jim Belushi, Joan Crawford
     newDirName = searchMovieName + "(" + str(year) + ")" + " IMDB-" + str(rating) + " " + shortGenres + " " + shortCast
 
-    if rating > 8.0:
+    if rating >= 8.0:
       newDirName = "__" + newDirName
-    elif rating > 7.0:
+    elif rating >= 7.0:
       newDirName = "_" + newDirName
+    elif rating <= 6.0:
+      newDirName = "zzz_" + newDirName
 
     print("NEWDIR = ",newDirName)
     print ()
@@ -104,10 +106,10 @@ def fetchMovieDataPerformRenameSaveText(movieName, realMovieName, searchMovieNam
     
     origDir = folder + "\\" + movieName
     destDir = folder + "\\" + "___" + movieName
-    print("RENAMING {0} to {1}", origDir, destDir)
+    print("SHOULD WE RENAME {0} to {1}?", origDir, destDir)
 
     # i sad idemo preimenovati direktorij
-    os.rename(origDir, destDir)
+    #os.rename(origDir, destDir)
 
     # zapisati u datoteku 
     fileErrors.write(realMovieName + '\n')
@@ -262,17 +264,18 @@ def analyzeFolder(folder):
 #folder = "D:\Downloads\_Problematic"
 #folder = "F:\FILMOVI\___1930-60"
 #folder = "F:\\FILMOVI\\Novi_filmovi"
-folder = "D:\To Watch\Filmovi"
+#folder = "D:\To Watch\Filmovi"
 #folder = "D:\To Watch\___TEST"
+folder = "F:\FILMOVI"
 rootFolder = "F:\FILMOVI"
-#foldersToAnalyze = [ "F:\\FILMOVI\\_Al Pacino", \
-"F:\\FILMOVI\\_Clint Eastwood",       \
-"F:\\FILMOVI\\_Jack Nicholson",       \
-"F:\\FILMOVI\\_Jason Statham",       \
-"F:\\FILMOVI\\_John Wayne",       \
-"F:\\FILMOVI\\_Mel Gibson",       \
-"F:\\FILMOVI\\_Robert De Niro",       \
-"F:\\FILMOVI\\_Tom Hanks",       \
+#"F:\\FILMOVI\\_Al Pacino", \
+#"F:\\FILMOVI\\_Clint Eastwood"
+#"F:\\FILMOVI\\_Jack Nicholson",         \
+#"F:\\FILMOVI\\_Jason Statham",       \
+#"F:\\FILMOVI\\_John Wayne",       \
+#"F:\\FILMOVI\\_Mel Gibson",       \
+#"F:\\FILMOVI\\_Robert De Niro",       \
+#"F:\\FILMOVI\\_Tom Hanks",       \
 #"F:\\FILMOVI\\__Alien Anthology 1-4 (1979-1997)",       \
 #"F:\\FILMOVI\\__Back to the Future",       \
 #"F:\\FILMOVI\\__Batman",       \
@@ -299,6 +302,7 @@ rootFolder = "F:\FILMOVI"
 #"F:\\FILMOVI\\__Lethal Weapon",       \
 #"F:\\FILMOVI\\__Lord of the Rings Trilogy BluRay Extended 1080p QEBS5 AAC51 PS3 MP4-FASM",       \
 #"F:\\FILMOVI\\__Mad Max",       \
+#"F:\\FILMOVI\\__Man in black",       \
 #"F:\\FILMOVI\\__Marvel - Avengers, Hulk, Thor, Capt America, Spiderman, Ant-man",       \
 #"F:\\FILMOVI\\__Matrix Trilogy",       \
 #"F:\\FILMOVI\\__Mission Impossible",       \
@@ -324,8 +328,8 @@ rootFolder = "F:\FILMOVI"
 #"F:\\FILMOVI\\___1980's",       \
 #"F:\\FILMOVI\\___1990's",       \
 #"F:\\FILMOVI\\___2000's",       \
-#"F:\\FILMOVI\\___2010's",       \
-#"F:\\FILMOVI\\___2020's",       \
+foldersToAnalyze = [ "F:\\FILMOVI\\___2010's",       \
+"F:\\FILMOVI\\___2020's",       \
 #"F:\\FILMOVI\\___CLASSICS",       \
 #"F:\\FILMOVI\\___DOMACI",       \
 #"F:\\FILMOVI\\___HITCHCOCK",       \
@@ -338,10 +342,9 @@ rootFolder = "F:\FILMOVI"
 #rootSubFolders = [ f.path for f in os.scandir(rootFolder) if f.is_dir() ]
 
 #for folderName in rootSubFolders:
-#  print("\"" + folderName + "\",       prdo" )
 
 # i onda nek korisnik odluči
-fileErrors = open(folder + "\\FileErrors.txt",'w', encoding="utf-8") 
+fileErrors = open(folder + "\\FileErrors.txt",'w+', encoding="utf-8") 
 
 for folderName in foldersToAnalyze:
   print(folderName)
