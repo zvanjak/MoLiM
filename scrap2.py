@@ -16,7 +16,10 @@ def fetchMovieDataPerformRenameSaveText(movieName, realMovieName, searchMovieNam
     #  ind = 1
     movie = ia.get_movie(findMovie[ind].movieID)
 
+    movie_data = {}
+
     rating = movie.data.get('rating', None)
+    movie_data['rating'] = rating
     print("IMDB rating {0}".format(rating))
 
     year = movie.data.get('year', None)
@@ -255,8 +258,19 @@ def analyzeFolder(folder):
       print("\nNOT DONE: " + movieFileName)
       getMovieData(movieFileName)
 
+def reapplyUnderscoreRating(folderName):
+  # skupiti sve foldere
+  # vidjeti koji ima IMDB
+  movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
 
-         
+  for movieFileName in movieSubFolders:
+    if movieFileName.find("IMDB") != -1:
+      ind = movieFileName.find("IMDB")
+      imdb_rat = movieFileName[ind+5:ind+8]
+
+      # strip sve underscore na poečtku
+
+
 # get all movies in given dir
 #   i godinu dohvatiti, za selekciju ako ima više filmova
 #  npr. testirati s Love, 
@@ -346,9 +360,9 @@ foldersToAnalyze = [ "F:\\FILMOVI\\___2010's",       \
 # i onda nek korisnik odluči
 fileErrors = open(folder + "\\FileErrors.txt",'w+', encoding="utf-8") 
 
-for folderName in foldersToAnalyze:
-  print(folderName)
-  folder = folderName
-  analyzeFolder(folderName)
+#for folderName in foldersToAnalyze:
+#  print(folderName)
+#  folder = folderName
+#  analyzeFolder(folderName)
 
 #analyzeFolder(folder)
