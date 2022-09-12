@@ -60,9 +60,9 @@ def fetchMovieDataPerformRenameSaveText(movieName, realMovieName, searchMovieNam
       s = movie.data['cast'][i]
       cast += s.data['name']
       cast += ", "
-      if i > 0 and i < 3 :
+      if i > 0 and i < 4 :
         shortCast += ","
-      if i < 3 :
+      if i < 4 :
         shortCast += s.data['name']
               
     print('Cast: ' + cast)
@@ -273,12 +273,12 @@ def reapplyUnderscoreRating(folderName):
         origDir = folder + "\\" + movieFileName
         destDir = folder + "\\" + "__" + movieFileName.strip('_')
         print("RENAMING {0} to {1}", origDir, destDir)
-        #os.rename(origDir, destDir)
+        os.rename(origDir, destDir)
       elif float(imdb_rat) >= 7.0:
         origDir = folder + "\\" + movieFileName
         destDir = folder + "\\" + "_" + movieFileName.strip('_')
         print("RENAMING {0} to {1}", origDir, destDir)
-        #os.rename(origDir, destDir)
+        os.rename(origDir, destDir)
       elif float(imdb_rat) < 6.0:
         origDir = folder + "\\" + movieFileName
         destDir = folder + "\\" + "zzz_" + movieFileName.strip("zzz_")
