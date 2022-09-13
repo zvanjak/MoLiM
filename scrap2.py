@@ -102,6 +102,7 @@ def fetchMovieDataPerformRenameSaveText(movieName, realMovieName, searchMovieNam
     origDir = folder + "\\" + movieName
     destDir = folder + "\\" + newDirName
 
+    # TODO provjeriti da li već postoji dest dir
     os.rename(origDir, destDir)
 
   except:
@@ -308,6 +309,9 @@ def folderStatistics(folderName):
         cntImdbLower6 = cntImdbLower6 + 1
     else:
       cntNotDone = cntNotDone + 1
+
+  if cntNotDone < 10:
+    return
 
   print("NOT DONE  ", cntNotDone)
   print("IMDB > 8.0", cntImdb8)
