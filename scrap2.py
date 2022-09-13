@@ -285,6 +285,14 @@ def reapplyUnderscoreRating(folderName):
         print("RENAMING {0} to {1}", origDir, destDir)
         #os.rename(origDir, destDir)
 
+def rootFolderStatistics(rootFolderName):
+  print("------", rootFolderName, "------")
+  
+  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
+
+  for folderName in rootSubFolders:
+    print(folderName)
+  
 def folderStatistics(folderName):
   print("------", folder, "------")
 
