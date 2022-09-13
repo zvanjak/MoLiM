@@ -309,7 +309,7 @@ def folderStatistics(folderName):
     else:
       cntNotDone = cntNotDone + 1
 
-  print("NOT DONE  ", cntNotDone
+  print("NOT DONE  ", cntNotDone)
   print("IMDB > 8.0", cntImdb8)
   print("IMDB > 7.0", cntImdb7)
   print("IMDB < 6.0", cntImdbLower6)
