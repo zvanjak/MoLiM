@@ -379,7 +379,7 @@ fileErrors = open(folder + "\\FileErrors.txt",'w+', encoding="utf-8")
 for folderName in foldersToAnalyze:
   print(folderName)
   folder = folderName
-  reapplyUnderscoreRating(folderName)
+  #reapplyUnderscoreRating(folderName)
   #analyzeFolder(folderName)
 
 #analyzeFolder(folder)
