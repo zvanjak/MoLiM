@@ -288,7 +288,7 @@ def reapplyUnderscoreRating(folderName):
 def folderStatistics(folderName):
   print("------", folder, "------")
 
-  movieSubFolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
+  movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
   
   cntNotDone = 0
   cntImdb8 = 0
@@ -300,8 +300,6 @@ def folderStatistics(folderName):
       ind = movieFileName.find("IMDB")
       imdb_rat = movieFileName[ind+5:ind+8]
       
-      print(imdb_rat)
-      
       if float(imdb_rat) >= 8.0:
         cntImdb8 = cntImdb8 + 1
       elif float(imdb_rat) >= 7.0:
@@ -311,6 +309,10 @@ def folderStatistics(folderName):
     else:
       cntNotDone = cntNotDone + 1
 
+  print("NOT DONE  ", cntNotDone
+  print("IMDB > 8.0", cntImdb8)
+  print("IMDB > 7.0", cntImdb7)
+  print("IMDB < 6.0", cntImdbLower6)
 
 # get all movies in given dir
 #   i godinu dohvatiti, za selekciju ako ima više filmova
@@ -399,11 +401,13 @@ foldersToAnalyze = [ "F:\\FILMOVI\\___2000's",       \
 #for folderName in rootSubFolders:
 
 # i onda nek korisnik odluči
-fileErrors = open(folder + "\\FileErrors.txt",'w+', encoding="utf-8") 
+#fileErrors = open(folder + "\\FileErrors.txt",'w+', encoding="utf-8") 
 
-for folderName in foldersToAnalyze:
-  print(folderName)
-  folder = folderName
+folderStatistics("H:\\FILMOVI\\___2010's")
+
+#for folderName in foldersToAnalyze:
+#  print(folderName)
+#  folder = folderName
   #reapplyUnderscoreRating(folderName)
   #analyzeFolder(folderName)
 
