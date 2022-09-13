@@ -285,16 +285,8 @@ def reapplyUnderscoreRating(folderName):
         print("RENAMING {0} to {1}", origDir, destDir)
         #os.rename(origDir, destDir)
 
-def rootFolderStatistics(rootFolderName):
-  print("------", rootFolderName, "------")
-  
-  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
-
-  for folderName in rootSubFolders:
-    print(folderName)
-  
 def folderStatistics(folderName):
-  print("------", folder, "------")
+  print("------", folderName, "------")
 
   movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
   
@@ -322,6 +314,15 @@ def folderStatistics(folderName):
   print("IMDB > 7.0", cntImdb7)
   print("IMDB < 6.0", cntImdbLower6)
 
+
+def rootFolderStatistics(rootFolderName):
+  print("------", rootFolderName, "------")
+  
+  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
+
+  for folderName in rootSubFolders:
+    folderStatistics(folderName)
+  
 # get all movies in given dir
 #   i godinu dohvatiti, za selekciju ako ima više filmova
 #  npr. testirati s Love, 
@@ -411,7 +412,8 @@ foldersToAnalyze = [ "F:\\FILMOVI\\___2000's",       \
 # i onda nek korisnik odluči
 #fileErrors = open(folder + "\\FileErrors.txt",'w+', encoding="utf-8") 
 
-folderStatistics("H:\\FILMOVI\\___2010's")
+#folderStatistics("H:\\FILMOVI\\___2010's")
+rootFolderStatistics("H:\\FILMOVI")
 
 #for folderName in foldersToAnalyze:
 #  print(folderName)
