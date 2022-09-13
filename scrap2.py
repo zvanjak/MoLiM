@@ -285,6 +285,31 @@ def reapplyUnderscoreRating(folderName):
         print("RENAMING {0} to {1}", origDir, destDir)
         #os.rename(origDir, destDir)
 
+def folderStatistics(folderName):
+  print("------", folder, "------")
+
+  movieSubFolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
+  
+  cntNotDone = 0
+  cntImdb8 = 0
+  cntImdb7 = 0
+  cntImdbLower6 = 0
+
+  for movieFileName in movieSubFolders:
+    if movieFileName.find("IMDB") != -1:
+      ind = movieFileName.find("IMDB")
+      imdb_rat = movieFileName[ind+5:ind+8]
+      
+      print(imdb_rat)
+      
+      if float(imdb_rat) >= 8.0:
+        cntImdb8 = cntImdb8 + 1
+      elif float(imdb_rat) >= 7.0:
+        cntImdb7 = cntImdb7 + 1
+      elif float(imdb_rat) < 6.0:
+        cntImdbLower6 = cntImdbLower6 + 1
+    else:
+      cntNotDone = cntNotDone + 1
 
 
 # get all movies in given dir
