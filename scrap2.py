@@ -259,14 +259,14 @@ def analyzeFolder(folder):
       print("\nNOT DONE: " + movieFileName)
       getMovieData(movieFileName)
 
-def getMovieNameFromFolder(movieFolderName)
+def getMovieNameFromFolder(movieFolderName):
   parts = movieFolderName.split('.')
 
   # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
   cntParts=0
   for part in parts:
     cntParts += 1
-    # prvoga bi trebalo preskočiti
+    # prvoga bi trebalo preskočiti (za filmove koji imaju broj u nazivu: 300, 1917, 2012)
     if cntParts == 1:
       continue
     
@@ -286,7 +286,8 @@ def getMovieNameFromFolder(movieFolderName)
             realMovieName += "(" + piece + ")"
             break
         
-        print (realMovieName, " - ", searchMovieName, " - ", movieFileName)  
+        print (realMovieName, " - ", searchMovieName, " - ", movieFolderName)
+
 def folderReapplyUnderscoreRating(folderName):
   # skupiti sve foldere
   # vidjeti koji ima IMDB
