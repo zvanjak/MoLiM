@@ -209,7 +209,7 @@ def fetchMovieDataPerformRenameSaveText(folderWhereItIs, movieFolderName, search
 
     fileErrors.flush()
 
-def saveMovieDataAndRenameFolder(movie_data : MovieData, origFolderName):
+def saveMovieDataAndRenameFolder(movie_data : MovieData, folderWhereItIs, movieFolderName):
 
     # ime novog direktorija
     # Naziv (2022) IMDB-7.5 Adventure,Comedy,Thriller Cast-Mel Gibson, Jim Belushi, Joan Crawford
@@ -226,36 +226,36 @@ def saveMovieDataAndRenameFolder(movie_data : MovieData, origFolderName):
     print ()
 
     # formirati TXT datoteku s podacima
-    fileName = folder + "\\" + movieName + "\\" + "Film data - " + realMovieName + ".txt"
+    fileName = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + realMovieName + ".txt"
 
     fileFilmData = open(fileName, 'w')
-    fileFilmData.write(str(movieFolderName).strip('_') + "\n")
-    fileFilmData.write("Runtime:   " + str(runtime) + " min\n")
-    fileFilmData.write("Genres:    " + genres + "\n")
-    fileFilmData.write("Directors: " + directors + "\n")
-    fileFilmData.write("Cast:      " + cast + "\n")
-    fileFilmData.write("Plot:      " + str(plot))
+    fileFilmData.write(movie_data.name + "(" + str(movie_data.year) + ")\n")
+    fileFilmData.write("Runtime:   " + str(movie_data.runtime) + " min\n")
+    fileFilmData.write("Genres:    " + movie_data.genres + "\n")
+    fileFilmData.write("Directors: " + movie_data.directors + "\n")
+    fileFilmData.write("Cast:      " + movie_data.cast + "\n")
+    fileFilmData.write("Plot:      " + str(movie_data.plot))
 
     fileFilmData.close()
 
     # i sad idemo preimenovati direktorij
-    origDir = folder + "\\" + movieName
-    destDir = folder + "\\" + newDirName
+    origDir = folderWhereItIs + "\\" + movieFolderName
+    destDir = folderWhereItIs + "\\" + newDirName
 
     # TODO provjeriti da li već postoji dest dir
-    os.rename(origDir, destDir)
+    #os.rename(origDir, destDir)
 
-def processFolder(folder):
+def processFolder(folderName):
   print("------------------------------------------")
-  print("------", folder, "------")
+  print("------", folderName, "------")
   print("------------------------------------------")
 
-  movieSubFolders = [ f.name for f in os.scandir(folder) if f.is_dir() ]
+  movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
 
-  fileErrors = open(folder + "\\FileErrors.txt",'w', encoding="utf-8") 
+  fileErrors = open(folderName + "\\FileErrors.txt",'w', encoding="utf-8") 
 
-  for movieFileName in movieSubFolders:
-    if movieFileName.find("IMDB") != -1:
+  for movieFolderName in movieSubFolders:
+    if movieFolderName.find("IMDB") != -1:
       # TODO treba popraviti cast :(
       #parPos = movieFileName.find('(')
       #searchMovieName = movieFileName[0:parPos-1].strip('_')
@@ -265,14 +265,14 @@ def processFolder(folder):
 
       #fetchMovieDataPerformRenameSaveText(movieFileName, realMovieName, searchMovieName)
 
-      print("\nDONE: " + movieFileName)
+      print("\nDONE: " + movieFolderName)
       continue
 
-    searchMovieName = getMovieNameFromFolder(movieFileName)
+    searchMovieName = getMovieNameFromFolder(movieFolderName)
 
-    movie_data = fetchMovieData(folder, movieFileName, searchMovieName)
+    movie_data = fetchMovieData(folder, movieFolderName, searchMovieName)
     if movie_data.name != "":
-
+      saveMovieDataAndRenameFolder(movie_data,folderName,movieFolderName)
 
     
 def analyzeFolder(folder):
