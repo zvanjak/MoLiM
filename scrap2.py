@@ -21,6 +21,8 @@ ia = Cinemagoer()
 
 
 def fetchMovieData(folderWhereItIs, movieFolderName, searchMovieName):
+  movie_data = MovieData(searchMovieName)
+
   try:
     findMovie = ia.search_movie(searchMovieName)
     ind = 0
@@ -30,13 +32,12 @@ def fetchMovieData(folderWhereItIs, movieFolderName, searchMovieName):
     #  ind = 1
     movie = ia.get_movie(findMovie[ind].movieID)
 
-    movie_data = MovieData(searchMovieName)
-
     rating = movie.data.get('rating', None)
-    movie_data['rating'] = rating
+    movie_data.rating = rating
     print("IMDB rating {0}".format(rating))
 
     year = movie.data.get('year', None)
+    movie_data.year = year
     print("Year: {0}".format(year))
 
     runtime = int(movie.data['runtimes'][0])
@@ -84,8 +85,11 @@ def fetchMovieData(folderWhereItIs, movieFolderName, searchMovieName):
     print ()
     plot = movie.data.get('plot outline', None)
     #print("Plot outline: " + str(plot))
+
   except:
     print("\nERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
+
+  return movie_data
     
 
 def fetchMovieDataPerformRenameSaveText(folderWhereItIs, movieFolderName, searchMovieName):
@@ -229,7 +233,7 @@ def processFolder(folder):
 
     searchMovieName = getMovieNameFromFolder(movieFileName)
 
-    fetchMovieDataPerformRenameSaveText(movieFileName, realMovieName, searchMovieName)
+    movie_data = fetchMovieData(folder, movieFileName, searchMovieName)
 
     
 def analyzeFolder(folder):
@@ -458,8 +462,9 @@ foldersToAnalyze = [ "F:\\FILMOVI\\___2000's",       \
 #fileErrors = open(folder + "\\FileErrors.txt",'w+', encoding="utf-8") 
 
 #folderStatistics("H:\\FILMOVI\\___2010's")
-rootFolderStatistics("H:\\FILMOVI")
+#rootFolderStatistics("H:\\FILMOVI")
 
+processFolder("H:\\FILMOVI\\___HORROS")
 #for folderName in foldersToAnalyze:
 #  print(folderName)
 #  folder = folderName
