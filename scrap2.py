@@ -1,4 +1,5 @@
-﻿from sys import orig_argv
+﻿from re import search
+from sys import orig_argv
 from imdb import Cinemagoer
 
 import os
@@ -186,45 +187,6 @@ def processFolder(folder):
 
           break
 
-def getMovieData(movieFileName):
-  parts = movieFileName.split('.')
-
-  # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
-  cntParts=0
-  for part in parts:
-    cntParts += 1
-    # prvoga bi trebalo preskočiti
-    if cntParts == 1:
-      continue
-    
-    if( part.isnumeric() ):
-      year = int(part)
-      if year > 1930 and year < 2023 :
-        #nasli smo ga
-        realMovieName = ""
-        searchMovieName = ""
-        for piece in parts:
-          if piece != part:
-            realMovieName += piece + " "
-          else :
-            searchMovieName = realMovieName.strip('_')
-            # riješiti ukoliko ima ___ na početku
-
-            realMovieName += "(" + piece + ")"
-            break
-        
-        print (realMovieName, " - ", searchMovieName, " - ", movieFileName)
-
-        fetchMovieDataPerformRenameSaveText(movieFileName, realMovieName, searchMovieName)
-
-        break
-  else:
-    origDir = folder + "\\" + movieFileName
-    destDir = folder + "\\" + "___" + movieFileName
-    print("RENAMING {0} to {1}", origDir, destDir)
-
-    os.rename(origDir, destDir)
-
 def analyzeFolder(folder):
   print("------------------------------------------")
   print("------", folder, "------")
@@ -260,6 +222,8 @@ def analyzeFolder(folder):
       getMovieData(movieFileName)
 
 def getMovieNameFromFolder(movieFolderName):
+  earchMovieName = ""
+  # provjeriti ima li točaka u nazivu
   parts = movieFolderName.split('.')
 
   # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
@@ -274,19 +238,22 @@ def getMovieNameFromFolder(movieFolderName):
       year = int(part)
       if year > 1930 and year < 2023 :
         #nasli smo ga
-        realMovieName = ""
+        diskMovieName = ""
         searchMovieName = ""
         for piece in parts:
           if piece != part:
-            realMovieName += piece + " "
+            diskMovieName += piece + " "
           else :
-            searchMovieName = realMovieName.strip('_')
-            # riješiti ukoliko ima ___ na početku
+            # riješiti ukoliko ima _ na početku, da search name bude cist
+            searchMovieName = diskMovieName.strip('_')
 
-            realMovieName += "(" + piece + ")"
+            # na diskMovieName cemo dodati i godinu
+            diskMovieName += "(" + piece + ")"
             break
         
-        print (realMovieName, " - ", searchMovieName, " - ", movieFolderName)
+        print (diskMovieName, " - ", searchMovieName, " - ", movieFolderName)
+  
+  return searchMovieName
 
 def folderReapplyUnderscoreRating(folderName):
   # skupiti sve foldere
@@ -347,7 +314,6 @@ def folderStatistics(folderName):
   print("IMDB > 7.0", cntImdb7)
   print("IMDB < 6.0", cntImdbLower6)
 
-
 def rootFolderStatistics(rootFolderName):
   print("------", rootFolderName, "------")
   
@@ -367,6 +333,7 @@ def rootFolderStatistics(rootFolderName):
 #folder = "D:\To Watch\___TEST"
 folder = "F:\FILMOVI"
 rootFolder = "F:\FILMOVI"
+
 #"F:\\FILMOVI\\_Al Pacino", \
 #"F:\\FILMOVI\\_Clint Eastwood"
 #"F:\\FILMOVI\\_Jack Nicholson",         \
