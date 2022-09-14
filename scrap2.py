@@ -7,7 +7,7 @@ import os
 # create an instance of the Cinemagoer class
 ia = Cinemagoer()
 
-def fetchMovieDataPerformRenameSaveText(movieName, realMovieName, searchMovieName):
+def fetchMovieDataPerformRenameSaveText(folderWhereItIs, movieFolderName, searchMovieName):
   try:
     findMovie = ia.search_movie(searchMovieName)
     ind = 0
@@ -40,7 +40,7 @@ def fetchMovieDataPerformRenameSaveText(movieName, realMovieName, searchMovieNam
           cntDir += 1
       print("Directors: " + directors)
     else:
-      fileErrors.write("\n" + realMovieName + " Problem with directors!!! " + "\n")
+      fileErrors.write("\n" + movieFolderName + " Problem with directors!!! " + "\n")
 
     genres = ""
     shortGenres = ""
@@ -83,14 +83,14 @@ def fetchMovieDataPerformRenameSaveText(movieName, realMovieName, searchMovieNam
     elif rating <= 6.0:
       newDirName = "zzz_" + newDirName
 
-    print("NEWDIR = ",newDirName)
+    print("NEWDIR = ", newDirName)
     print ()
 
     # formirati TXT datoteku s podacima
     fileName = folder + "\\" + movieName + "\\" + "Film data - " + realMovieName + ".txt"
 
     fileFilmData = open(fileName, 'w')
-    fileFilmData.write(str(realMovieName).strip('_') + "\n")
+    fileFilmData.write(str(movieFolderName).strip('_') + "\n")
     fileFilmData.write("Runtime:   " + str(runtime) + " min\n")
     fileFilmData.write("Genres:    " + genres + "\n")
     fileFilmData.write("Directors: " + directors + "\n")
@@ -133,60 +133,24 @@ def processFolder(folder):
   fileErrors = open(folder + "\\FileErrors.txt",'w', encoding="utf-8") 
 
   for movieFileName in movieSubFolders:
-    # provjeriti da li ima točku, ako nema ne diramo to -> provjerimo da li unutra ima nekih filmova!
-    if movieFileName.count('.') < 2:
-      if movieFileName.find("IMDB") != -1:
-        # TODO treba popraviti cast :(
-        #parPos = movieFileName.find('(')
-        #searchMovieName = movieFileName[0:parPos-1].strip('_')
+    if movieFileName.find("IMDB") != -1:
+      # TODO treba popraviti cast :(
+      #parPos = movieFileName.find('(')
+      #searchMovieName = movieFileName[0:parPos-1].strip('_')
       
-        #parPos = movieFileName.find(')')
-        #realMovieName = movieFileName[0:parPos+1]
+      #parPos = movieFileName.find(')')
+      #realMovieName = movieFileName[0:parPos+1]
 
-        #fetchMovieDataPerformRenameSaveText(movieFileName, realMovieName, searchMovieName)
+      #fetchMovieDataPerformRenameSaveText(movieFileName, realMovieName, searchMovieName)
 
-        print("\nDONE: " + movieFileName)
-        continue
+      print("\nDONE: " + movieFileName)
+      continue
 
-      # ako nema točku, i NISMO ga već obradili, onda ćemo probati split po spaceu ' '
-      parts = movieFileName.split(' ')
+    searchMovieName = getMovieNameFromFolder(movieFileName)
 
-      #print("\nSKIPPING: " + movieName)
-      fileErrors.write("\nTRYING SPACES - " + str(movieFileName) + "\n\n")
+    fetchMovieDataPerformRenameSaveText(movieFileName, realMovieName, searchMovieName)
 
-    else:
-      parts = movieFileName.split('.')
-
-    # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
-    cntParts=0
-    for part in parts:
-      cntParts += 1
-      # prvoga bi trebalo preskočiti
-      if cntParts == 1:
-        continue
     
-      if( part.isnumeric() ):
-        year = int(part)
-        if year > 1930 and year < 2023 :
-          #nasli smo ga
-          realMovieName = ""
-          searchMovieName = ""
-          for piece in parts:
-            if piece != part:
-              realMovieName += piece + " "
-            else :
-              searchMovieName = realMovieName.strip('_')
-              # riješiti ukoliko ima ___ na početku
-
-              realMovieName += "(" + piece + ")"
-              break
-        
-          print (realMovieName, " - ", movieFileName)
-
-          fetchMovieDataPerformRenameSaveText(movieFileName, realMovieName, searchMovieName)
-
-          break
-
 def analyzeFolder(folder):
   print("------------------------------------------")
   print("------", folder, "------")
