@@ -88,6 +88,7 @@ def fetchMovieData(folderWhereItIs, movieFolderName, searchMovieName):
 
   except:
     print("\nERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
+    movie_data.name = ""
 
   return movie_data
     
@@ -208,6 +209,42 @@ def fetchMovieDataPerformRenameSaveText(folderWhereItIs, movieFolderName, search
 
     fileErrors.flush()
 
+def saveMovieDataAndRenameFolder(movie_data : MovieData, origFolderName):
+
+    # ime novog direktorija
+    # Naziv (2022) IMDB-7.5 Adventure,Comedy,Thriller Cast-Mel Gibson, Jim Belushi, Joan Crawford
+    newDirName = movie_data.name + "(" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " " + movie_data.cast
+
+    if movie_data.rating >= 8.0:
+      newDirName = "__" + newDirName
+    elif movie_data.rating >= 7.0:
+      newDirName = "_" + newDirName
+    elif movie_data.rating <= 6.0:
+      newDirName = "zzz_" + newDirName
+
+    print("NEWDIR = ", newDirName)
+    print ()
+
+    # formirati TXT datoteku s podacima
+    fileName = folder + "\\" + movieName + "\\" + "Film data - " + realMovieName + ".txt"
+
+    fileFilmData = open(fileName, 'w')
+    fileFilmData.write(str(movieFolderName).strip('_') + "\n")
+    fileFilmData.write("Runtime:   " + str(runtime) + " min\n")
+    fileFilmData.write("Genres:    " + genres + "\n")
+    fileFilmData.write("Directors: " + directors + "\n")
+    fileFilmData.write("Cast:      " + cast + "\n")
+    fileFilmData.write("Plot:      " + str(plot))
+
+    fileFilmData.close()
+
+    # i sad idemo preimenovati direktorij
+    origDir = folder + "\\" + movieName
+    destDir = folder + "\\" + newDirName
+
+    # TODO provjeriti da li već postoji dest dir
+    os.rename(origDir, destDir)
+
 def processFolder(folder):
   print("------------------------------------------")
   print("------", folder, "------")
@@ -234,6 +271,8 @@ def processFolder(folder):
     searchMovieName = getMovieNameFromFolder(movieFileName)
 
     movie_data = fetchMovieData(folder, movieFileName, searchMovieName)
+    if movie_data.name != "":
+
 
     
 def analyzeFolder(folder):
