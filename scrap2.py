@@ -4,8 +4,89 @@ from imdb import Cinemagoer
 
 import os
 
+# A class is defined using the class statement.The body of a class contains a series of statements that execute during class definition
+class MovieData(object):
+    def __init__(self,name):        # poziva se kod inicijalizacije
+        self.name = name
+        self.year = 0
+        self.runtime = 0
+        self.rating = 0.0
+        self.director = ""
+        self.genres = ""
+        self.cast = ""
+        self.plot = ""
+
 # create an instance of the Cinemagoer class
 ia = Cinemagoer()
+
+
+def fetchMovieData(folderWhereItIs, movieFolderName, searchMovieName):
+  try:
+    findMovie = ia.search_movie(searchMovieName)
+    ind = 0
+    #movieID1 = findMovie[0].movieID
+    #movieID2 = findMovie[1].movieID
+    #if int(movieID2) < int(movieID1) :
+    #  ind = 1
+    movie = ia.get_movie(findMovie[ind].movieID)
+
+    movie_data = MovieData(searchMovieName)
+
+    rating = movie.data.get('rating', None)
+    movie_data['rating'] = rating
+    print("IMDB rating {0}".format(rating))
+
+    year = movie.data.get('year', None)
+    print("Year: {0}".format(year))
+
+    runtime = int(movie.data['runtimes'][0])
+    print("Runtime: ", runtime, " min")
+
+    directors = ""
+    cntDir = 0
+    movieDirectors = movie.data.get('director', None)
+    if movieDirectors != None:
+      for director in movieDirectors:
+          if cntDir > 0 :
+            directors += ", "
+          directors += director['name']
+          cntDir += 1
+    else:
+      directors = " Problem with directors!!! "
+    print("Directors: " + directors)
+
+    genres = ""
+    shortGenres = ""
+    cntGen = 0
+    for gen in movie.data['genres']:
+      genres += gen + ", "
+      if cntGen > 0 and cntGen <3 :
+        shortGenres += ","
+      if cntGen < 3:
+        shortGenres += gen
+
+      cntGen += 1
+    print('Genres: ' + genres)
+
+    cast = ""
+    shortCast = "CAST - "
+    for i in range(0,4):
+      s = movie.data['cast'][i]
+      cast += s.data['name']
+      cast += ", "
+      if i > 0 and i < 4 :
+        shortCast += ","
+      if i < 4 :
+        shortCast += s.data['name']
+              
+    print('Cast: ' + cast)
+        
+    print ()
+    plot = movie.data.get('plot outline', None)
+    #print("Plot outline: " + str(plot))
+  except:
+    print("\nERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
+    
 
 def fetchMovieDataPerformRenameSaveText(folderWhereItIs, movieFolderName, searchMovieName):
   try:
