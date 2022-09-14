@@ -11,7 +11,7 @@ class MovieData(object):
         self.year = 0
         self.runtime = 0
         self.rating = 0.0
-        self.director = ""
+        self.directors = ""
         self.genres = ""
         self.cast = ""
         self.plot = ""
@@ -41,6 +41,7 @@ def fetchMovieData(folderWhereItIs, movieFolderName, searchMovieName):
     print("Year: {0}".format(year))
 
     runtime = int(movie.data['runtimes'][0])
+    movie_data.runtime = runtime
     print("Runtime: ", runtime, " min")
 
     directors = ""
@@ -54,6 +55,7 @@ def fetchMovieData(folderWhereItIs, movieFolderName, searchMovieName):
           cntDir += 1
     else:
       directors = " Problem with directors!!! "
+    movie_data.directors = directors
     print("Directors: " + directors)
 
     genres = ""
@@ -67,6 +69,7 @@ def fetchMovieData(folderWhereItIs, movieFolderName, searchMovieName):
         shortGenres += gen
 
       cntGen += 1
+    movie_data.genres = genres
     print('Genres: ' + genres)
 
     cast = ""
@@ -81,10 +84,12 @@ def fetchMovieData(folderWhereItIs, movieFolderName, searchMovieName):
         shortCast += s.data['name']
               
     print('Cast: ' + cast)
+    movie_data.cast = cast
         
     print ()
     plot = movie.data.get('plot outline', None)
-    #print("Plot outline: " + str(plot))
+    movie_data.plot = plot
+    print("Plot outline: " + str(plot))
 
   except:
     print("\nERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
@@ -226,7 +231,7 @@ def saveMovieDataAndRenameFolder(movie_data : MovieData, folderWhereItIs, movieF
     print ()
 
     # formirati TXT datoteku s podacima
-    fileName = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + realMovieName + ".txt"
+    fileName = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + "(" + str(movie_data.year) + ")"+ movie_data.name + ".txt"
 
     fileFilmData = open(fileName, 'w')
     fileFilmData.write(movie_data.name + "(" + str(movie_data.year) + ")\n")
@@ -271,6 +276,7 @@ def processFolder(folderName):
     searchMovieName = getMovieNameFromFolder(movieFolderName)
 
     movie_data = fetchMovieData(folder, movieFolderName, searchMovieName)
+    
     if movie_data.name != "":
       saveMovieDataAndRenameFolder(movie_data,folderName,movieFolderName)
 
