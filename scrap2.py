@@ -259,30 +259,58 @@ def analyzeFolder(folder):
       print("\nNOT DONE: " + movieFileName)
       getMovieData(movieFileName)
 
+def getMovieNameFromFolder(movieFolderName)
+  parts = movieFolderName.split('.')
+
+  # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
+  cntParts=0
+  for part in parts:
+    cntParts += 1
+    # prvoga bi trebalo preskočiti
+    if cntParts == 1:
+      continue
+    
+    if( part.isnumeric() ):
+      year = int(part)
+      if year > 1930 and year < 2023 :
+        #nasli smo ga
+        realMovieName = ""
+        searchMovieName = ""
+        for piece in parts:
+          if piece != part:
+            realMovieName += piece + " "
+          else :
+            searchMovieName = realMovieName.strip('_')
+            # riješiti ukoliko ima ___ na početku
+
+            realMovieName += "(" + piece + ")"
+            break
+        
+        print (realMovieName, " - ", searchMovieName, " - ", movieFileName)  
 def folderReapplyUnderscoreRating(folderName):
   # skupiti sve foldere
   # vidjeti koji ima IMDB
   movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
 
-  for movieFileName in movieSubFolders:
-    if movieFileName.find("IMDB") != -1:
-      ind = movieFileName.find("IMDB")
-      imdb_rat = movieFileName[ind+5:ind+8]
+  for movieFolderName in movieSubFolders:
+    if movieFolderName.find("IMDB") != -1:
+      ind = movieFolderName.find("IMDB")
+      imdb_rat = movieFolderName[ind+5:ind+8]
 
       # strip sve underscore na poečtku
       if float(imdb_rat) >= 8.0:
-        origDir = folderName + "\\" + movieFileName
-        destDir = folderName + "\\" + "__" + movieFileName.strip('_')
+        origDir = folderName + "\\" + movieFolderName
+        destDir = folderName + "\\" + "__" + movieFolderName.strip('_')
         print("RENAMING {0} to {1}", origDir, destDir)
         os.rename(origDir, destDir)
       elif float(imdb_rat) >= 7.0:
-        origDir = folderName + "\\" + movieFileName
-        destDir = folderName + "\\" + "_" + movieFileName.strip('_')
+        origDir = folderName + "\\" + movieFolderName
+        destDir = folderName + "\\" + "_" + movieFolderName.strip('_')
         print("RENAMING {0} to {1}", origDir, destDir)
         os.rename(origDir, destDir)
       elif float(imdb_rat) < 6.0:
-        origDir = folderName + "\\" + movieFileName
-        destDir = folderName + "\\" + "zzz_" + movieFileName.strip("zzz_")
+        origDir = folderName + "\\" + movieFolderName
+        destDir = folderName + "\\" + "zzz_" + movieFolderName.strip("zzz_")
         print("RENAMING {0} to {1}", origDir, destDir)
         #os.rename(origDir, destDir)
 
