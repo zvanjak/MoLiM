@@ -89,7 +89,7 @@ def fetchMovieData(folderWhereItIs, movieFolderName, searchMovieName):
     print ()
     plot = movie.data.get('plot outline', None)
     movie_data.plot = plot
-    print("Plot outline: " + str(plot))
+    #print("Plot outline: " + str(plot))
 
   except:
     print("\nERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
@@ -248,7 +248,8 @@ def saveMovieDataAndRenameFolder(movie_data : MovieData, folderWhereItIs, movieF
     destDir = folderWhereItIs + "\\" + newDirName
 
     # TODO provjeriti da li već postoji dest dir
-    #os.rename(origDir, destDir)
+    print("RENAMING {0} to {1}", origDir, destDir)
+    os.rename(origDir, destDir)
 
 def processFolder(folderName):
   print("------------------------------------------")
@@ -377,8 +378,6 @@ def folderReapplyUnderscoreRating(folderName):
         #os.rename(origDir, destDir)
 
 def folderStatistics(folderName):
-  print("------", folderName, "------")
-
   movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
   
   cntNotDone = 0
@@ -400,9 +399,10 @@ def folderStatistics(folderName):
     else:
       cntNotDone = cntNotDone + 1
 
-  if cntNotDone < 10:
+  if cntNotDone == 0:
     return
 
+  print("------", folderName, "------")
   print("NOT DONE  ", cntNotDone)
   print("IMDB > 8.0", cntImdb8)
   print("IMDB > 7.0", cntImdb7)
@@ -506,10 +506,11 @@ foldersToAnalyze = [ "F:\\FILMOVI\\___2000's",       \
 # i onda nek korisnik odluči
 #fileErrors = open(folder + "\\FileErrors.txt",'w+', encoding="utf-8") 
 
-#folderStatistics("H:\\FILMOVI\\___2010's")
-#rootFolderStatistics("H:\\FILMOVI")
+#folderStatistics("H:\\FILMOVI\\___2000's")
+rootFolderStatistics("H:\\FILMOVI")
 
-processFolder("H:\\FILMOVI\\___HORROS")
+#processFolder("H:\\FILMOVI\\___WAR MOVIES")
+
 #for folderName in foldersToAnalyze:
 #  print(folderName)
 #  folder = folderName
