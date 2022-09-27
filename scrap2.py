@@ -4,6 +4,77 @@ from imdb import Cinemagoer
 
 import os
 
+#"F:\\FILMOVI\\_Al Pacino", \
+#"F:\\FILMOVI\\_Clint Eastwood"
+#"F:\\FILMOVI\\_Jack Nicholson",         \
+#"F:\\FILMOVI\\_Jason Statham",       \
+#"F:\\FILMOVI\\_John Wayne",       \
+#"F:\\FILMOVI\\_Mel Gibson",       \
+#"F:\\FILMOVI\\_Robert De Niro",       \
+#"F:\\FILMOVI\\_Tom Hanks",       \
+#"F:\\FILMOVI\\__Alien Anthology 1-4 (1979-1997)",       \
+#"F:\\FILMOVI\\__Back to the Future",       \
+#"F:\\FILMOVI\\__Batman",       \
+#"F:\\FILMOVI\\__Before Sunrise-Sunset-Midnight Trilogy 1995-2013 720p x264 aac jbr",       \
+#"F:\\FILMOVI\\__Beverly Hills Cop",       \
+#"F:\\FILMOVI\\__Bourne",       \
+#"F:\\FILMOVI\\__Conan",       \
+#"F:\\FILMOVI\\__Die Hard 1-5 (1988-20013)",       \
+#"F:\\FILMOVI\\__Dirty Harry Collection (1971-1988) 1080p Bluray.x264.anoXmous",       \
+#"F:\\FILMOVI\\__Expendables",       \
+#"F:\\FILMOVI\\__Fast and Furious 1-7 (2001-2015)",       \
+#"F:\\FILMOVI\\__Godfather Trilogy 1972-1990",       \
+#"F:\\FILMOVI\\__Godzilla",       \
+#"F:\\FILMOVI\\__Gremlins.Duology.1984-1990.1080p.BluRay.DTS.x264-ETRG",       \
+#"F:\\FILMOVI\\__Guardians of the Galaxy",       \
+#"F:\\FILMOVI\\__Harry Potter Collection Box Set (1-8) (2001-2011)",       \
+#"F:\\FILMOVI\\__Hobbit",       \
+#"F:\\FILMOVI\\__Hunger games",       \
+#"F:\\FILMOVI\\__Indiana Jones Quadrilogy  1-4 (1981-2008)",       \
+#"F:\\FILMOVI\\__Iron man",       \
+#"F:\\FILMOVI\\__James Bond Collection 1962 - 2015",       \
+#"F:\\FILMOVI\\__John Wick",       \
+#"F:\\FILMOVI\\__Jurassic Park",       \
+#"F:\\FILMOVI\\__Lethal Weapon",       \
+#"F:\\FILMOVI\\__Lord of the Rings Trilogy BluRay Extended 1080p QEBS5 AAC51 PS3 MP4-FASM",       \
+#"F:\\FILMOVI\\__Mad Max",       \
+#"F:\\FILMOVI\\__Man in black",       \
+#"F:\\FILMOVI\\__Marvel - Avengers, Hulk, Thor, Capt America, Spiderman, Ant-man",       \
+#"F:\\FILMOVI\\__Matrix Trilogy",       \
+#"F:\\FILMOVI\\__Mission Impossible",       \
+#"F:\\FILMOVI\\__Monty Python",       \
+#"F:\\FILMOVI\\__Olympus, London, Angel has Fallen Trilogy",       \
+#"F:\\FILMOVI\\__Pirates of The Caribbean 1-5 (2003-2017)",       \
+#"F:\\FILMOVI\\__Planet of the Apes",       \
+#"F:\\FILMOVI\\__Predator",       \
+#"F:\\FILMOVI\\__Predator Quadrilogy BRRip 720p H264-3Li",       \
+#"F:\\FILMOVI\\__Rambo",       \
+#"F:\\FILMOVI\\__Resident evil, Underworld",       \
+#"F:\\FILMOVI\\__Rocky",       \
+#"F:\\FILMOVI\\__Star Trek",       \
+#"F:\\FILMOVI\\__Star Wars",       \
+#"F:\\FILMOVI\\__Superman",       \
+#"F:\\FILMOVI\\__Taken",       \
+#"F:\\FILMOVI\\__Terminator 1-6 (1984-2019)",       \
+#"F:\\FILMOVI\\__Transformers 1-5",       \
+#"F:\\FILMOVI\\__Transporter series",       \
+#"F:\\FILMOVI\\__X-men",       \
+#"F:\\FILMOVI\\___1930-60",       \
+#"F:\\FILMOVI\\___1970's",       \
+#"F:\\FILMOVI\\___1980's",       \
+#"F:\\FILMOVI\\___1990's",       \
+foldersToAnalyze = [ "F:\\FILMOVI\\___2000's",       \
+  "F:\\FILMOVI\\___2010's",       \
+"F:\\FILMOVI\\___2020's",       \
+#"F:\\FILMOVI\\___CLASSICS",       \
+#"F:\\FILMOVI\\___DOMACI",       \
+#"F:\\FILMOVI\\___HITCHCOCK",       \
+#"F:\\FILMOVI\\___HORROS",       \
+#"F:\\FILMOVI\\___Japan movies",       \
+#"F:\\FILMOVI\\___WAR MOVIES",       \
+#"F:\\FILMOVI\\___WESTERNS",       \
+]  
+
 # A class is defined using the class statement.The body of a class contains a series of statements that execute during class definition
 class MovieData(object):
     def __init__(self,name):        # poziva se kod inicijalizacije
@@ -330,6 +401,8 @@ def getMovieNameFromFolder(movieFolderName):
 
   # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
   cntParts=0
+  year = 0
+  searchMovieName = ""
   for part in parts:
     cntParts += 1
     # prvoga bi trebalo preskočiti (za filmove koji imaju broj u nazivu: 300, 1917, 2012)
@@ -409,11 +482,12 @@ def folderStatistics(folderName):
   if cntNotDone == 0:
     return
 
-  print("------", folderName, "------")
-  print("NOT DONE  ", cntNotDone)
-  print("IMDB > 8.0", cntImdb8)
-  print("IMDB > 7.0", cntImdb7)
-  print("IMDB < 6.0", cntImdbLower6)
+  print("-- {0:60} -- {1:2}, {2:2}, {3:2}, {4:2}".format(folderName, cntNotDone, cntImdb8, cntImdb7, cntImdbLower6))
+
+  #print("NOT DONE  ", cntNotDone)
+  #print("IMDB > 8.0", cntImdb8)
+  #print("IMDB > 7.0", cntImdb7)
+  #print("IMDB < 6.0", cntImdbLower6)
 
 def rootFolderStatistics(rootFolderName):
   print("------", rootFolderName, "------")
@@ -423,88 +497,7 @@ def rootFolderStatistics(rootFolderName):
   for folderName in rootSubFolders:
     folderStatistics(folderName)
   
-# get all movies in given dir
-#   i godinu dohvatiti, za selekciju ako ima više filmova
-#  npr. testirati s Love, 
-#folder = "D:\Downloads"
-#folder = "D:\Downloads\_Problematic"
-#folder = "F:\FILMOVI\___1930-60"
-#folder = "F:\\FILMOVI\\Novi_filmovi"
-#folder = "D:\To Watch\Filmovi"
-#folder = "D:\To Watch\___TEST"
-folder = "E:\Temp"
-rootFolder = "E:\Temp"
 
-#"F:\\FILMOVI\\_Al Pacino", \
-#"F:\\FILMOVI\\_Clint Eastwood"
-#"F:\\FILMOVI\\_Jack Nicholson",         \
-#"F:\\FILMOVI\\_Jason Statham",       \
-#"F:\\FILMOVI\\_John Wayne",       \
-#"F:\\FILMOVI\\_Mel Gibson",       \
-#"F:\\FILMOVI\\_Robert De Niro",       \
-#"F:\\FILMOVI\\_Tom Hanks",       \
-#"F:\\FILMOVI\\__Alien Anthology 1-4 (1979-1997)",       \
-#"F:\\FILMOVI\\__Back to the Future",       \
-#"F:\\FILMOVI\\__Batman",       \
-#"F:\\FILMOVI\\__Before Sunrise-Sunset-Midnight Trilogy 1995-2013 720p x264 aac jbr",       \
-#"F:\\FILMOVI\\__Beverly Hills Cop",       \
-#"F:\\FILMOVI\\__Bourne",       \
-#"F:\\FILMOVI\\__Conan",       \
-#"F:\\FILMOVI\\__Die Hard 1-5 (1988-20013)",       \
-#"F:\\FILMOVI\\__Dirty Harry Collection (1971-1988) 1080p Bluray.x264.anoXmous",       \
-#"F:\\FILMOVI\\__Expendables",       \
-#"F:\\FILMOVI\\__Fast and Furious 1-7 (2001-2015)",       \
-#"F:\\FILMOVI\\__Godfather Trilogy 1972-1990",       \
-#"F:\\FILMOVI\\__Godzilla",       \
-#"F:\\FILMOVI\\__Gremlins.Duology.1984-1990.1080p.BluRay.DTS.x264-ETRG",       \
-#"F:\\FILMOVI\\__Guardians of the Galaxy",       \
-#"F:\\FILMOVI\\__Harry Potter Collection Box Set (1-8) (2001-2011)",       \
-#"F:\\FILMOVI\\__Hobbit",       \
-#"F:\\FILMOVI\\__Hunger games",       \
-#"F:\\FILMOVI\\__Indiana Jones Quadrilogy  1-4 (1981-2008)",       \
-#"F:\\FILMOVI\\__Iron man",       \
-#"F:\\FILMOVI\\__James Bond Collection 1962 - 2015",       \
-#"F:\\FILMOVI\\__John Wick",       \
-#"F:\\FILMOVI\\__Jurassic Park",       \
-#"F:\\FILMOVI\\__Lethal Weapon",       \
-#"F:\\FILMOVI\\__Lord of the Rings Trilogy BluRay Extended 1080p QEBS5 AAC51 PS3 MP4-FASM",       \
-#"F:\\FILMOVI\\__Mad Max",       \
-#"F:\\FILMOVI\\__Man in black",       \
-#"F:\\FILMOVI\\__Marvel - Avengers, Hulk, Thor, Capt America, Spiderman, Ant-man",       \
-#"F:\\FILMOVI\\__Matrix Trilogy",       \
-#"F:\\FILMOVI\\__Mission Impossible",       \
-#"F:\\FILMOVI\\__Monty Python",       \
-#"F:\\FILMOVI\\__Olympus, London, Angel has Fallen Trilogy",       \
-#"F:\\FILMOVI\\__Pirates of The Caribbean 1-5 (2003-2017)",       \
-#"F:\\FILMOVI\\__Planet of the Apes",       \
-#"F:\\FILMOVI\\__Predator",       \
-#"F:\\FILMOVI\\__Predator Quadrilogy BRRip 720p H264-3Li",       \
-#"F:\\FILMOVI\\__Rambo",       \
-#"F:\\FILMOVI\\__Resident evil, Underworld",       \
-#"F:\\FILMOVI\\__Rocky",       \
-#"F:\\FILMOVI\\__Star Trek",       \
-#"F:\\FILMOVI\\__Star Wars",       \
-#"F:\\FILMOVI\\__Superman",       \
-#"F:\\FILMOVI\\__Taken",       \
-#"F:\\FILMOVI\\__Terminator 1-6 (1984-2019)",       \
-#"F:\\FILMOVI\\__Transformers 1-5",       \
-#"F:\\FILMOVI\\__Transporter series",       \
-#"F:\\FILMOVI\\__X-men",       \
-#"F:\\FILMOVI\\___1930-60",       \
-#"F:\\FILMOVI\\___1970's",       \
-#"F:\\FILMOVI\\___1980's",       \
-#"F:\\FILMOVI\\___1990's",       \
-foldersToAnalyze = [ "F:\\FILMOVI\\___2000's",       \
-  "F:\\FILMOVI\\___2010's",       \
-"F:\\FILMOVI\\___2020's",       \
-#"F:\\FILMOVI\\___CLASSICS",       \
-#"F:\\FILMOVI\\___DOMACI",       \
-#"F:\\FILMOVI\\___HITCHCOCK",       \
-#"F:\\FILMOVI\\___HORROS",       \
-#"F:\\FILMOVI\\___Japan movies",       \
-#"F:\\FILMOVI\\___WAR MOVIES",       \
-#"F:\\FILMOVI\\___WESTERNS",       \
-]  
 
 #rootSubFolders = [ f.path for f in os.scandir(rootFolder) if f.is_dir() ]
 
@@ -514,9 +507,9 @@ foldersToAnalyze = [ "F:\\FILMOVI\\___2000's",       \
 #fileErrors = open(folder + "\\FileErrors.txt",'w+', encoding="utf-8") 
 
 #folderStatistics("H:\\FILMOVI\\___2000's")
-#rootFolderStatistics("H:\\FILMOVI")
+rootFolderStatistics("H:\\FILMOVI")
 
-processFolder("E:\Temp")
+#processFolder("E:\Temp")
 
 #for folderName in foldersToAnalyze:
 #  print(folderName)
