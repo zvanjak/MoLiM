@@ -20,17 +20,22 @@ class MovieData(object):
 ia = Cinemagoer()
 
 
-def fetchMovieData(folderWhereItIs, movieFolderName, searchMovieName):
+def fetchMovieData(folderWhereItIs, movieFolderName, searchMovieName, releaseYear):
   movie_data = MovieData(searchMovieName)
+
+  searchMovieName = searchMovieName.rstrip()
 
   try:
     findMovie = ia.search_movie(searchMovieName)
-    ind = 0
-    #movieID1 = findMovie[0].movieID
-    #movieID2 = findMovie[1].movieID
-    #if int(movieID2) < int(movieID1) :
-    #  ind = 1
-    movie = ia.get_movie(findMovie[ind].movieID)
+    movieID = findMovie[0].movieID
+    for m in findMovie:
+      t = m.data.get('title')
+      y = m.data.get('year')
+      if t == searchMovieName and y == releaseYear:
+        movieID = m.movieID
+        break
+    
+    movie = ia.get_movie(movieID)
 
     rating = movie.data.get('rating', None)
     movie_data.rating = rating
@@ -218,9 +223,11 @@ def saveMovieDataAndRenameFolder(movie_data : MovieData, folderWhereItIs, movieF
 
     # ime novog direktorija
     # Naziv (2022) IMDB-7.5 Adventure,Comedy,Thriller Cast-Mel Gibson, Jim Belushi, Joan Crawford
-    newDirName = movie_data.name + "(" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " " + movie_data.cast
+    newDirName = movie_data.name + "(" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " CAST - " + movie_data.cast
 
-    if movie_data.rating >= 8.0:
+    if movie_data.rating >= 9.0:
+      newDirName = "___" + newDirName
+    elif movie_data.rating >= 8.0:
       newDirName = "__" + newDirName
     elif movie_data.rating >= 7.0:
       newDirName = "_" + newDirName
@@ -231,7 +238,7 @@ def saveMovieDataAndRenameFolder(movie_data : MovieData, folderWhereItIs, movieF
     print ()
 
     # formirati TXT datoteku s podacima
-    fileName = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + "(" + str(movie_data.year) + ")"+ movie_data.name + ".txt"
+    fileName = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + movie_data.name + " (" + str(movie_data.year) + ")" + ".txt"
 
     fileFilmData = open(fileName, 'w')
     fileFilmData.write(movie_data.name + "(" + str(movie_data.year) + ")\n")
@@ -274,9 +281,9 @@ def processFolder(folderName):
       print("\nDONE: " + movieFolderName)
       continue
 
-    searchMovieName = getMovieNameFromFolder(movieFolderName)
+    (searchMovieName, year) = getMovieNameFromFolder(movieFolderName)
 
-    movie_data = fetchMovieData(folder, movieFolderName, searchMovieName)
+    movie_data = fetchMovieData(folder, movieFolderName, searchMovieName, year)
     
     if movie_data.name != "":
       saveMovieDataAndRenameFolder(movie_data,folderName,movieFolderName)
@@ -348,7 +355,7 @@ def getMovieNameFromFolder(movieFolderName):
         
         print (diskMovieName, " - ", searchMovieName, " - ", movieFolderName)
   
-  return searchMovieName
+  return (searchMovieName, year)
 
 def folderReapplyUnderscoreRating(folderName):
   # skupiti sve foldere
@@ -425,8 +432,8 @@ def rootFolderStatistics(rootFolderName):
 #folder = "F:\\FILMOVI\\Novi_filmovi"
 #folder = "D:\To Watch\Filmovi"
 #folder = "D:\To Watch\___TEST"
-folder = "F:\FILMOVI"
-rootFolder = "F:\FILMOVI"
+folder = "E:\Temp"
+rootFolder = "E:\Temp"
 
 #"F:\\FILMOVI\\_Al Pacino", \
 #"F:\\FILMOVI\\_Clint Eastwood"
@@ -507,9 +514,9 @@ foldersToAnalyze = [ "F:\\FILMOVI\\___2000's",       \
 #fileErrors = open(folder + "\\FileErrors.txt",'w+', encoding="utf-8") 
 
 #folderStatistics("H:\\FILMOVI\\___2000's")
-rootFolderStatistics("H:\\FILMOVI")
+#rootFolderStatistics("H:\\FILMOVI")
 
-#processFolder("H:\\FILMOVI\\___WAR MOVIES")
+processFolder("E:\Temp")
 
 #for folderName in foldersToAnalyze:
 #  print(folderName)
