@@ -498,18 +498,28 @@ def rootFolderStatistics(rootFolderName):
     folderStatistics(folderName)
   
 
+def rootFolderTryoutNonIMDB(rootFolderName):
+  print("------", rootFolderName, "------")
+  
+  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
 
-#rootSubFolders = [ f.path for f in os.scandir(rootFolder) if f.is_dir() ]
+  for folderName in rootSubFolders:
+    print("------", folderName, "------")
+    print("------------------------------------------")
 
-#for folderName in rootSubFolders:
+    movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
 
-# i onda nek korisnik odluči
-#fileErrors = open(folder + "\\FileErrors.txt",'w+', encoding="utf-8") 
+    for movieFileName in movieSubFolders:
+      if movieFileName.find("IMDB") == -1:
+        print("\nNOT DONE: " + movieFileName)
+        #getMovieData(movieFileName)
+
 
 #folderStatistics("H:\\FILMOVI\\___2000's")
 rootFolderStatistics("H:\\FILMOVI")
+#rootFolderTryoutNonIMDB("H:\\FILMOVI")
 
-#processFolder("E:\Temp")
+#processFolder("H:\FILMOVI\_Clint Eastwood")
 
 #for folderName in foldersToAnalyze:
 #  print(folderName)
