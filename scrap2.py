@@ -91,7 +91,7 @@ class MovieData(object):
 ia = Cinemagoer()
 
 
-def fetchMovieData(folderWhereItIs, movieFolderName, searchMovieName, releaseYear):
+def fetchMovieData(searchMovieName, releaseYear):
   movie_data = MovieData(searchMovieName)
 
   searchMovieName = searchMovieName.rstrip()
@@ -354,7 +354,7 @@ def processFolder(folderName):
 
     (searchMovieName, year) = getMovieNameFromFolder(movieFolderName)
 
-    movie_data = fetchMovieData(folder, movieFolderName, searchMovieName, year)
+    movie_data = fetchMovieData(searchMovieName, year)
     
     if movie_data.name != "":
       saveMovieDataAndRenameFolder(movie_data,folderName,movieFolderName)
