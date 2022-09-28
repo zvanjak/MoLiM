@@ -96,18 +96,21 @@ def fetchMovieData(searchMovieName, releaseYear):
 
   searchMovieName = searchMovieName.rstrip()
 
-  try:
-    findMovie = ia.search_movie(searchMovieName)
-    movieID = findMovie[0].movieID
-    for m in findMovie:
+  findMovie = ia.search_movie(searchMovieName)
+  movieID = findMovie[0].movieID
+  for m in findMovie:
+    try:
       t = m.data.get('title')
       y = m.data.get('year')
       if t == searchMovieName and y == releaseYear:
         movieID = m.movieID
         break
+    except:
+      print("OUCH")
     
-    movie = ia.get_movie(movieID)
+  movie = ia.get_movie(movieID)
 
+  try:
     rating = movie.data.get('rating', None)
     movie_data.rating = rating
     print("IMDB rating {0}".format(rating))
@@ -519,7 +522,7 @@ def rootFolderTryoutNonIMDB(rootFolderName):
 rootFolderStatistics("H:\\FILMOVI")
 #rootFolderTryoutNonIMDB("H:\\FILMOVI")
 
-#processFolder("H:\FILMOVI\_Clint Eastwood")
+processFolder("H:\trouble filmovi")
 
 #for folderName in foldersToAnalyze:
 #  print(folderName)
