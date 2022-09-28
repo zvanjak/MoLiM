@@ -79,6 +79,7 @@ foldersToAnalyze = [ "F:\\FILMOVI\\___2000's",       \
 class MovieData(object):
     def __init__(self,name):        # poziva se kod inicijalizacije
         self.name = name
+        self.movieID = 0
         self.year = 0
         self.runtime = 0
         self.rating = 0.0
@@ -109,6 +110,8 @@ def fetchMovieData(searchMovieName, releaseYear):
       print("OUCH")
     
   movie = ia.get_movie(movieID)
+
+  movie_data.movieID = movieID
 
   try:
     rating = movie.data.get('rating', None)
@@ -261,6 +264,7 @@ def fetchMovieDataPerformRenameSaveText(folderWhereItIs, movieFolderName, search
 
     fileFilmData = open(fileName, 'w')
     fileFilmData.write(str(movieFolderName).strip('_') + "\n")
+    fileFilmData.write("MoieID:    " + findMovie[ind].movieID + " min\n")
     fileFilmData.write("Runtime:   " + str(runtime) + " min\n")
     fileFilmData.write("Genres:    " + genres + "\n")
     fileFilmData.write("Directors: " + directors + "\n")
@@ -316,6 +320,7 @@ def saveMovieDataAndRenameFolder(movie_data : MovieData, folderWhereItIs, movieF
 
     fileFilmData = open(fileName, 'w')
     fileFilmData.write(movie_data.name + "(" + str(movie_data.year) + ")\n")
+    fileFilmData.write("MovieID:   " + str(movie_data.movieID)
     fileFilmData.write("Runtime:   " + str(movie_data.runtime) + " min\n")
     fileFilmData.write("Genres:    " + movie_data.genres + "\n")
     fileFilmData.write("Directors: " + movie_data.directors + "\n")
