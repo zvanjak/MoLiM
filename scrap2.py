@@ -522,7 +522,7 @@ def rootFolderTryoutNonIMDB(rootFolderName):
 rootFolderStatistics("H:\\FILMOVI")
 #rootFolderTryoutNonIMDB("H:\\FILMOVI")
 
-processFolder("H:\trouble filmovi")
+processFolder("H:\FILMOVI\__X-men - TODO")
 
 #for folderName in foldersToAnalyze:
 #  print(folderName)
