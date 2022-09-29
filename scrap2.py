@@ -2,6 +2,7 @@
 from sys import orig_argv
 from imdb import Cinemagoer
 
+import time
 import os
 
 #"F:\\FILMOVI\\_Al Pacino", \
@@ -91,7 +92,7 @@ class MovieData(object):
 # create an instance of the Cinemagoer class
 ia = Cinemagoer()
 
-
+#fetchMovieData(searchMovieName, releaseYear)
 def fetchMovieData(searchMovieName, releaseYear):
   movie_data = MovieData(searchMovieName)
 
@@ -168,11 +169,11 @@ def fetchMovieData(searchMovieName, releaseYear):
 
     cast = ""
     shortCast = "CAST - "
-    for i in range(0,4):
+    for i in range(0,5):
       s = movie.data['cast'][i]
       cast += s.data['name']
       cast += ", "
-      if i > 0 and i < 4 :
+      if i > 0 and i < 5 :
         shortCast += ","
       if i < 4 :
         shortCast += s.data['name']
@@ -309,37 +310,47 @@ def fetchMovieDataPerformRenameSaveText(folderWhereItIs, movieFolderName, search
 
     fileErrors.flush()
 
+def getMovieFolderNameFromMovieData(movie_data : MovieData):
+  prefix = ""
+  if movie_data.rating >= 9.0:
+    prefix = "___"
+  elif movie_data.rating >= 8.0:
+    prefix = "__"
+  elif movie_data.rating >= 7.0:
+    prefix = "_"
+  elif movie_data.rating < 6.0:
+    prefix = "zzz_"
+  
+  newDirName = prefix + movie_data.name + " (" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " CAST - " + movie_data.cast
+  
+  return newDirName
+
+def saveTXTWithMovieData(movie_data : MovieData, folderWhereItIs, movieFolderName):
+  # formirati TXT datoteku s podacima
+  fileName = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + movie_data.name + " (" + str(movie_data.year) + ")" + ".txt"
+
+  fileFilmData = open(fileName, 'w')
+  fileFilmData.write(movie_data.name + "(" + str(movie_data.year) + ")\n")
+  fileFilmData.write("MovieID:   " + str(movie_data.movieID) + "\n")
+  fileFilmData.write("Runtime:   " + str(movie_data.runtime) + " min\n")
+  fileFilmData.write("Genres:    " + movie_data.genres + "\n")
+  fileFilmData.write("Directors: " + movie_data.directors + "\n")
+  fileFilmData.write("Cast:      " + movie_data.cast + "\n")
+  fileFilmData.write("Plot:      " + str(movie_data.plot))
+
+  fileFilmData.close()
+    
 def saveMovieDataAndRenameFolder(movie_data : MovieData, folderWhereItIs, movieFolderName):
 
     # ime novog direktorija
     # Naziv (2022) IMDB-7.5 Adventure,Comedy,Thriller Cast-Mel Gibson, Jim Belushi, Joan Crawford
-    newDirName = movie_data.name + "(" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " CAST - " + movie_data.cast
-
-    if movie_data.rating >= 9.0:
-      newDirName = "___" + newDirName
-    elif movie_data.rating >= 8.0:
-      newDirName = "__" + newDirName
-    elif movie_data.rating >= 7.0:
-      newDirName = "_" + newDirName
-    elif movie_data.rating <= 6.0:
-      newDirName = "zzz_" + newDirName
+    newDirName = getMovieFolderNameFromMovieData(movie_data)   # movie_data.name + "(" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " CAST - " + movie_data.cast
 
     print("NEWDIR = ", newDirName)
     print ()
 
     # formirati TXT datoteku s podacima
-    fileName = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + movie_data.name + " (" + str(movie_data.year) + ")" + ".txt"
-
-    fileFilmData = open(fileName, 'w')
-    fileFilmData.write(movie_data.name + "(" + str(movie_data.year) + ")\n")
-    fileFilmData.write("MovieID:   " + str(movie_data.movieID) + "\n")
-    fileFilmData.write("Runtime:   " + str(movie_data.runtime) + " min\n")
-    fileFilmData.write("Genres:    " + movie_data.genres + "\n")
-    fileFilmData.write("Directors: " + movie_data.directors + "\n")
-    fileFilmData.write("Cast:      " + movie_data.cast + "\n")
-    fileFilmData.write("Plot:      " + str(movie_data.plot))
-
-    fileFilmData.close()
+    saveTXTWithMovieData(movie_data, folderWhereItIs, movieFolderName)
 
     # i sad idemo preimenovati direktorij
     origDir = folderWhereItIs + "\\" + movieFolderName
@@ -379,7 +390,6 @@ def processFolder(folderName):
     if movie_data.name != "":
       saveMovieDataAndRenameFolder(movie_data,folderName,movieFolderName)
 
-    
 def analyzeFolder(folder):
   print("------------------------------------------")
   print("------", folder, "------")
@@ -481,7 +491,6 @@ def folderStatistics(folderName):
   for movie in listNotDone: 
     print (movie)
 
-
 def rootFolderStatistics(rootFolderName):
   print("------", rootFolderName, "------")
   
@@ -490,7 +499,6 @@ def rootFolderStatistics(rootFolderName):
   for folderName in rootSubFolders:
     folderStatistics(folderName)
   
-
 def rootFolderTryoutNonIMDB(rootFolderName):
   print("------", rootFolderName, "------")
   
@@ -507,33 +515,79 @@ def rootFolderTryoutNonIMDB(rootFolderName):
         print("\nNOT DONE: " + movieFileName)
         #getMovieData(movieFileName)
 
+def folderRecheckDataWithIMDB(folderName):
+  print("------", folderName, "------")
+  print("------------------------------------------")
+
+  movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
+
+  for movieFolderName in movieSubFolders:
+    if movieFolderName.find("IMDB") != -1:
+      ind1 = movieFolderName.find("(")
+      ind2 = movieFolderName.find(")")
+      imdb_name = movieFolderName[0:ind1-1].strip("_")
+      year_str  = movieFolderName[ind1+1:ind2]
+      
+      print("-----------------------------------------------------")
+      print("\nReal movie name: " + imdb_name)
+      print("Year           : " + year_str)
+      movie_data = fetchMovieData(imdb_name, int(year_str))
+
+      if movie_data.name == "":
+        print("SLEEPING 5 seconds :(((((")
+        time.sleep(5)
+      else:
+        # produce novi naziv direktorija
+        newDirName = getMovieFolderNameFromMovieData(movie_data)
+
+        # usporedi s movieFileName
+        if newDirName != movieFolderName:
+          print("AHAAAA")
+          print(newDirName)
+          print(movieFolderName)
+
+          # formirati TXT datoteku s podacima
+          saveTXTWithMovieData(movie_data, folderName, movieFolderName)
+
+          # i sad idemo preimenovati direktorij
+          origDir = folderName + "\\" + movieFolderName
+          destDir = folderName + "\\" + newDirName
+
+          # TODO provjeriti da li već postoji dest dir
+          print("RENAMING - ", origDir, destDir)
+          os.rename(origDir, destDir)
+
 
 def setFolderNameUnderscoreRating(folderName, movieFolderName, imdbRating):
   m1 = movieFolderName.strip("zzz")
   realMovieName = m1.strip("_")
 
   # strip sve underscore na poečtku
-  if imdb_rat >= 9.0:
+  if imdbRating >= 9.0:
     origDir = folderName + "\\" + movieFolderName
     destDir = folderName + "\\" + "___" + realMovieName
-    print("RENAMING {0} to {1}", origDir, destDir)
+    print("RENAMING - ", origDir, destDir)
     os.rename(origDir, destDir)
-  elif imdb_rat >= 8.0:
+  elif imdbRating >= 8.0:
     origDir = folderName + "\\" + movieFolderName
     destDir = folderName + "\\" + "__" + realMovieName
-    print("RENAMING {0} to {1}", origDir, destDir)
+    print("RENAMING - ", origDir, " -> ", destDir)
     os.rename(origDir, destDir)
-  elif imdb_rat >= 7.0:
+  elif imdbRating >= 7.0:
     origDir = folderName + "\\" + movieFolderName
     destDir = folderName + "\\" + "_" + realMovieName
-    print("RENAMING {0} to {1}", origDir, destDir)
+    print("RENAMING - ", origDir, destDir)
     os.rename(origDir, destDir)
-  elif float(imdb_rat) < 6.0:
+  elif imdbRating >= 6.0:
+    origDir = folderName + "\\" + movieFolderName
+    destDir = folderName + "\\" + realMovieName
+    print("RENAMING - ", origDir, destDir)
+    os.rename(origDir, destDir)
+  elif imdbRating < 6.0:
     origDir = folderName + "\\" + movieFolderName
     destDir = folderName + "\\" + "zzz_" + realMovieName
-    print("RENAMING {0} to {1}", origDir, destDir)
-    #os.rename(origDir, destDir)
-
+    print("RENAMING - ", origDir, destDir)
+    os.rename(origDir, destDir)
 
 def folderReapplyUnderscoreRating(folderName):
   print("------", folderName, "------")
@@ -554,22 +608,28 @@ def folderReapplyUnderscoreRating(folderName):
       if imdb_name.startswith("___"):
         if imdb_rat < 9.0:
           print("ERRROR - ", movieFileName)
+          setFolderNameUnderscoreRating(folderName, movieFileName, imdb_rat)
       elif imdb_name.startswith("__"):
         if imdb_rat < 8.0:
           print("ERRROR - ", movieFileName)
+          setFolderNameUnderscoreRating(folderName, movieFileName, imdb_rat)
         elif imdb_rat >= 9.0:
           print("ERROR - SHOULD BE HIGHER", movieFileName)
+          setFolderNameUnderscoreRating(folderName, movieFileName, imdb_rat)
       elif imdb_name.startswith("_"):
         if imdb_rat < 7.0:
           print("ERRROR - ", movieFileName)
+          setFolderNameUnderscoreRating(folderName, movieFileName, imdb_rat)
         elif imdb_rat >= 8.0:
           print("ERROR - SHOULD BE HIGHER", movieFileName)
+          setFolderNameUnderscoreRating(folderName, movieFileName, imdb_rat)
       elif imdb_name.startswith("_") == False and imdb_rat >= 7.0:
         print("ERROR - SHOULD BE HIGHER", movieFileName)
+        setFolderNameUnderscoreRating(folderName, movieFileName, imdb_rat)
       elif imdb_name.startswith("zzz_"):
         if imdb_rat >= 6.0:
           print("ERRROR - ", movieFileName)
-
+          setFolderNameUnderscoreRating(folderName, movieFileName, imdb_rat)
 
 def folderUnderscoreStatistics(folderName):
   print("------", folderName, "------")
@@ -620,8 +680,11 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 
 #folderStatistics("H:\\FILMOVI\\___2000's")
 #rootFolderStatistics("Z:\Movies\FILMOVI")
-rootFolderUnderscoreStatistics("Z:\Movies\FILMOVI")
+#rootFolderUnderscoreStatistics("Z:\Movies\FILMOVI")
 #rootFolderTryoutNonIMDB("H:\\FILMOVI")
+
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___HORROS")
+#folderReapplyUnderscoreRating("Z:\Movies\FILMOVI\___HITCHCOCK")
 
 #processFolder("D:\TroubleFilmovi")
 
