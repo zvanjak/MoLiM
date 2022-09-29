@@ -100,7 +100,7 @@ def fetchMovieData(searchMovieName, releaseYear):
   foundMoviesList = ia.search_movie(searchMovieName)
   if len(foundMoviesList) == 0 :
     movie_data.name = ""
-    print ("SEARCH RETURNED NOTHING!!!")
+    print ("SEARCH RETURNED NOTHING!!!\n")
     return movie_data
 
   movieID = foundMoviesList[0].movieID
@@ -332,7 +332,7 @@ def saveMovieDataAndRenameFolder(movie_data : MovieData, folderWhereItIs, movieF
 
     fileFilmData = open(fileName, 'w')
     fileFilmData.write(movie_data.name + "(" + str(movie_data.year) + ")\n")
-    fileFilmData.write("MovieID:   " + str(movie_data.movieID) )
+    fileFilmData.write("MovieID:   " + str(movie_data.movieID) + "\n")
     fileFilmData.write("Runtime:   " + str(movie_data.runtime) + " min\n")
     fileFilmData.write("Genres:    " + movie_data.genres + "\n")
     fileFilmData.write("Directors: " + movie_data.directors + "\n")
@@ -450,33 +450,6 @@ def getMovieNameFromFolder(movieFolderName):
   
   return (searchMovieName, year)
 
-def folderReapplyUnderscoreRating(folderName):
-  # skupiti sve foldere
-  # vidjeti koji ima IMDB
-  movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
-
-  for movieFolderName in movieSubFolders:
-    if movieFolderName.find("IMDB") != -1:
-      ind = movieFolderName.find("IMDB")
-      imdb_rat = movieFolderName[ind+5:ind+8]
-
-      # strip sve underscore na poečtku
-      if float(imdb_rat) >= 8.0:
-        origDir = folderName + "\\" + movieFolderName
-        destDir = folderName + "\\" + "__" + movieFolderName.strip('_')
-        print("RENAMING {0} to {1}", origDir, destDir)
-        os.rename(origDir, destDir)
-      elif float(imdb_rat) >= 7.0:
-        origDir = folderName + "\\" + movieFolderName
-        destDir = folderName + "\\" + "_" + movieFolderName.strip('_')
-        print("RENAMING {0} to {1}", origDir, destDir)
-        os.rename(origDir, destDir)
-      elif float(imdb_rat) < 6.0:
-        origDir = folderName + "\\" + movieFolderName
-        destDir = folderName + "\\" + "zzz_" + movieFolderName.strip("zzz_")
-        print("RENAMING {0} to {1}", origDir, destDir)
-        #os.rename(origDir, destDir)
-
 def folderStatistics(folderName):
   movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
   
@@ -535,14 +508,124 @@ def rootFolderTryoutNonIMDB(rootFolderName):
         #getMovieData(movieFileName)
 
 
+def setFolderNameUnderscoreRating(folderName, movieFolderName, imdbRating):
+
+def folderReapplyUnderscoreRating(folderName):
+  print("------", folderName, "------")
+
+  movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
+  
+  listNotDone = []
+  for movieFileName in movieSubFolders:
+    if movieFileName.find("IMDB") != -1:
+      ind = movieFileName.find("IMDB")
+      imdb_rat_str = movieFileName[ind+5:ind+8]
+      imdb_rat = float(imdb_rat_str)
+      
+      ind = movieFileName.find("(")
+      imdb_name = movieFileName[0:ind-1]
+
+      underscore_rat = 0
+      if imdb_name.startswith("___"):
+        if imdb_rat < 9.0:
+          print("ERRROR - ", movieFileName)
+      elif imdb_name.startswith("__"):
+        if imdb_rat < 8.0:
+          print("ERRROR - ", movieFileName)
+        elif imdb_rat >= 9.0:
+          print("ERROR - SHOULD BE HIGHER", movieFileName)
+      elif imdb_name.startswith("_"):
+        if imdb_rat < 7.0:
+          print("ERRROR - ", movieFileName)
+        elif imdb_rat >= 8.0:
+          print("ERROR - SHOULD BE HIGHER", movieFileName)
+      elif imdb_name.startswith("_") == False and imdb_rat >= 7.0:
+        print("ERROR - SHOULD BE HIGHER", movieFileName)
+      elif imdb_name.startswith("zzz_"):
+        if imdb_rat >= 6.0:
+          print("ERRROR - ", movieFileName)
+
+
+  # skupiti sve foldere
+  # vidjeti koji ima IMDB
+  movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
+
+  for movieFolderName in movieSubFolders:
+    if movieFolderName.find("IMDB") != -1:
+      ind = movieFolderName.find("IMDB")
+      imdb_rat = movieFolderName[ind+5:ind+8]
+
+      # strip sve underscore na poečtku
+      if float(imdb_rat) >= 8.0:
+        origDir = folderName + "\\" + movieFolderName
+        destDir = folderName + "\\" + "__" + movieFolderName.strip('_')
+        print("RENAMING {0} to {1}", origDir, destDir)
+        os.rename(origDir, destDir)
+      elif float(imdb_rat) >= 7.0:
+        origDir = folderName + "\\" + movieFolderName
+        destDir = folderName + "\\" + "_" + movieFolderName.strip('_')
+        print("RENAMING {0} to {1}", origDir, destDir)
+        os.rename(origDir, destDir)
+      elif float(imdb_rat) < 6.0:
+        origDir = folderName + "\\" + movieFolderName
+        destDir = folderName + "\\" + "zzz_" + movieFolderName.strip("zzz_")
+        print("RENAMING {0} to {1}", origDir, destDir)
+        #os.rename(origDir, destDir)
+
+
+def folderUnderscoreStatistics(folderName):
+  print("------", folderName, "------")
+
+  movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
+  
+  listNotDone = []
+  for movieFileName in movieSubFolders:
+    if movieFileName.find("IMDB") != -1:
+      ind = movieFileName.find("IMDB")
+      imdb_rat_str = movieFileName[ind+5:ind+8]
+      imdb_rat = float(imdb_rat_str)
+      ind = movieFileName.find("(")
+      imdb_name = movieFileName[0:ind-1]
+
+      underscore_rat = 0
+      if imdb_name.startswith("___"):
+        if imdb_rat < 9.0:
+          print("ERRROR - ", movieFileName)
+      elif imdb_name.startswith("__"):
+        if imdb_rat < 8.0:
+          print("ERRROR - ", movieFileName)
+        elif imdb_rat >= 9.0:
+          print("ERROR - SHOULD BE HIGHER", movieFileName)
+      elif imdb_name.startswith("_"):
+        if imdb_rat < 7.0:
+          print("ERRROR - ", movieFileName)
+        elif imdb_rat >= 8.0:
+          print("ERROR - SHOULD BE HIGHER", movieFileName)
+      elif imdb_name.startswith("_") == False and imdb_rat >= 7.0:
+        print("ERROR - SHOULD BE HIGHER", movieFileName)
+      elif imdb_name.startswith("zzz_"):
+        if imdb_rat >= 6.0:
+          print("ERRROR - ", movieFileName)
+        
+def rootFolderUnderscoreStatistics(rootFolderName):
+  print("------", rootFolderName, "------")
+  
+  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
+
+  for folderName in rootSubFolders:
+    folderUnderscoreStatistics(folderName)
+  
+
 #TODO
-# proći kroz sve IMDB, i provjeriti
+# proći kroz sve IMDB, i provjeriti da li se naziv direktorija slaže, s onim kako bi sada bilo
+# statistika - koji se sve ne slažu underscore s ocjenom
 
 #folderStatistics("H:\\FILMOVI\\___2000's")
 #rootFolderStatistics("Z:\Movies\FILMOVI")
+rootFolderUnderscoreStatistics("Z:\Movies\FILMOVI")
 #rootFolderTryoutNonIMDB("H:\\FILMOVI")
 
-processFolder("D:\TroubleFilmovi")
+#processFolder("D:\TroubleFilmovi")
 
 #for folderName in foldersToAnalyze:
 #  print(folderName)
