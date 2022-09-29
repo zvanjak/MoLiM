@@ -97,18 +97,30 @@ def fetchMovieData(searchMovieName, releaseYear):
 
   searchMovieName = searchMovieName.rstrip()
 
-  findMovie = ia.search_movie(searchMovieName)
-  movieID = findMovie[0].movieID
-  for m in findMovie:
+  foundMoviesList = ia.search_movie(searchMovieName)
+  if len(foundMoviesList) == 0 :
+    movie_data.name = ""
+    print ("SEARCH RETURNED NOTHING!!!")
+    return movie_data
+
+  movieID = foundMoviesList[0].movieID
+  movieFound = False
+  for m in foundMoviesList:
     try:
       t = m.data.get('title')
       y = m.data.get('year')
       if t == searchMovieName and y == releaseYear:
         movieID = m.movieID
+        movieFound = True
         break
     except:
       print("OUCH")
-    
+  
+  if movieFound == False:
+    for movie in foundMoviesList:
+      #print(movie.movieID, movie.data.get('title'), movie.data.get('year'))
+      print("-- {0:15} -- {1:30}, {2}".format(movie.movieID, movie.data.get('title'), movie.data.get('year')))
+
   movie = ia.get_movie(movieID)
 
   movie_data.movieID = movieID
@@ -320,7 +332,7 @@ def saveMovieDataAndRenameFolder(movie_data : MovieData, folderWhereItIs, movieF
 
     fileFilmData = open(fileName, 'w')
     fileFilmData.write(movie_data.name + "(" + str(movie_data.year) + ")\n")
-    fileFilmData.write("MovieID:   " + str(movie_data.movieID)
+    fileFilmData.write("MovieID:   " + str(movie_data.movieID) )
     fileFilmData.write("Runtime:   " + str(movie_data.runtime) + " min\n")
     fileFilmData.write("Genres:    " + movie_data.genres + "\n")
     fileFilmData.write("Directors: " + movie_data.directors + "\n")
@@ -473,6 +485,7 @@ def folderStatistics(folderName):
   cntImdb7 = 0
   cntImdbLower6 = 0
 
+  listNotDone = []
   for movieFileName in movieSubFolders:
     if movieFileName.find("IMDB") != -1:
       ind = movieFileName.find("IMDB")
@@ -486,16 +499,15 @@ def folderStatistics(folderName):
         cntImdbLower6 = cntImdbLower6 + 1
     else:
       cntNotDone = cntNotDone + 1
+      listNotDone.append(movieFileName)
 
-  if cntNotDone == 0:
-    return
+  #if cntNotDone == 0:
+  #  return
 
-  print("-- {0:60} -- {1:2}, {2:2}, {3:2}, {4:2}".format(folderName, cntNotDone, cntImdb8, cntImdb7, cntImdbLower6))
+  print("-- {0:65} -- {1:2}, {2:2}, {3:2}, {4:2}".format(folderName, cntNotDone, cntImdb8, cntImdb7, cntImdbLower6))
+  for movie in listNotDone: 
+    print (movie)
 
-  #print("NOT DONE  ", cntNotDone)
-  #print("IMDB > 8.0", cntImdb8)
-  #print("IMDB > 7.0", cntImdb7)
-  #print("IMDB < 6.0", cntImdbLower6)
 
 def rootFolderStatistics(rootFolderName):
   print("------", rootFolderName, "------")
@@ -523,11 +535,14 @@ def rootFolderTryoutNonIMDB(rootFolderName):
         #getMovieData(movieFileName)
 
 
+#TODO
+# proći kroz sve IMDB, i provjeriti
+
 #folderStatistics("H:\\FILMOVI\\___2000's")
-rootFolderStatistics("H:\\FILMOVI")
+#rootFolderStatistics("Z:\Movies\FILMOVI")
 #rootFolderTryoutNonIMDB("H:\\FILMOVI")
 
-processFolder("H:\FILMOVI\__X-men - TODO")
+processFolder("D:\TroubleFilmovi")
 
 #for folderName in foldersToAnalyze:
 #  print(folderName)
