@@ -195,123 +195,6 @@ def fetchMovieData(searchMovieName, releaseYear):
   return movie_data
     
 
-def fetchMovieDataPerformRenameSaveText(folderWhereItIs, movieFolderName, searchMovieName):
-  try:
-    findMovie = ia.search_movie(searchMovieName)
-    ind = 0
-    #movieID1 = findMovie[0].movieID
-    #movieID2 = findMovie[1].movieID
-    #if int(movieID2) < int(movieID1) :
-    #  ind = 1
-    movie = ia.get_movie(findMovie[ind].movieID)
-
-    movie_data = {}
-
-    rating = movie.data.get('rating', None)
-    movie_data['rating'] = rating
-    print("IMDB rating {0}".format(rating))
-
-    year = movie.data.get('year', None)
-    print("Year: {0}".format(year))
-
-    runtime = int(movie.data['runtimes'][0])
-    print("Runtime: ", runtime, " min")
-
-    directors = ""
-    cntDir = 0
-    movieDirectors = movie.data.get('director', None)
-    if movieDirectors != None:
-      for director in movieDirectors:
-          if cntDir > 0 :
-            directors += ", "
-          directors += director['name']
-          cntDir += 1
-      print("Directors: " + directors)
-    else:
-      fileErrors.write("\n" + movieFolderName + " Problem with directors!!! " + "\n")
-
-    genres = ""
-    shortGenres = ""
-    cntGen = 0
-    for gen in movie.data['genres']:
-      genres += gen + ", "
-      if cntGen > 0 and cntGen <3 :
-        shortGenres += ","
-      if cntGen < 3:
-        shortGenres += gen
-
-      cntGen += 1
-    print('Genres: ' + genres)
-
-    cast = ""
-    shortCast = "CAST - "
-    for i in range(0,4):
-      s = movie.data['cast'][i]
-      cast += s.data['name']
-      cast += ", "
-      if i > 0 and i < 4 :
-        shortCast += ","
-      if i < 4 :
-        shortCast += s.data['name']
-              
-    print('Cast: ' + cast)
-        
-    print ()
-    plot = movie.data.get('plot outline', None)
-    #print("Plot outline: " + str(plot))
-
-    # ime novog direktorija
-    # Naziv (2022) IMDB-7.5 Adventure,Comedy,Thriller Cast-Mel Gibson, Jim Belushi, Joan Crawford
-    newDirName = searchMovieName + "(" + str(year) + ")" + " IMDB-" + str(rating) + " " + shortGenres + " " + shortCast
-
-    if rating >= 8.0:
-      newDirName = "__" + newDirName
-    elif rating >= 7.0:
-      newDirName = "_" + newDirName
-    elif rating <= 6.0:
-      newDirName = "zzz_" + newDirName
-
-    print("NEWDIR = ", newDirName)
-    print ()
-
-    # formirati TXT datoteku s podacima
-    fileName = folder + "\\" + movieName + "\\" + "Film data - " + realMovieName + ".txt"
-
-    fileFilmData = open(fileName, 'w')
-    fileFilmData.write(str(movieFolderName).strip('_') + "\n")
-    fileFilmData.write("MoieID:    " + findMovie[ind].movieID + " min\n")
-    fileFilmData.write("Runtime:   " + str(runtime) + " min\n")
-    fileFilmData.write("Genres:    " + genres + "\n")
-    fileFilmData.write("Directors: " + directors + "\n")
-    fileFilmData.write("Cast:      " + cast + "\n")
-    fileFilmData.write("Plot:      " + str(plot))
-
-    fileFilmData.close()
-
-    # i sad idemo preimenovati direktorij
-    origDir = folder + "\\" + movieName
-    destDir = folder + "\\" + newDirName
-
-    # TODO provjeriti da li već postoji dest dir
-    os.rename(origDir, destDir)
-
-  except:
-    print("\nERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
-    
-    origDir = folder + "\\" + movieName
-    destDir = folder + "\\" + "___" + movieName
-    print("SHOULD WE RENAME {0} to {1}?", origDir, destDir)
-
-    # i sad idemo preimenovati direktorij
-    #os.rename(origDir, destDir)
-
-    # zapisati u datoteku 
-    fileErrors.write(realMovieName + '\n')
-    fileErrors.write(movieName + "\n")
-    fileErrors.write("\n")
-
-    fileErrors.flush()
-
 def getMovieFolderNameFromMovieData(movie_data : MovieData):
   prefix = ""
   if movie_data.rating >= 9.0:
@@ -372,12 +255,13 @@ def processFolder(folderName):
   fileErrors = open(folderName + "\\FileErrors.txt",'w', encoding="utf-8") 
 
   for movieFolderName in movieSubFolders:
-    (searchMovieName, year) = getMovieNameFromFolder(movieFolderName)
+    if movieFolderName.find("IMDB") == -1:
+      (searchMovieName, year) = getMovieNameFromFolder(movieFolderName)
 
-    movie_data = fetchMovieData(searchMovieName, year)
+      movie_data = fetchMovieData(searchMovieName, year)
     
-    if movie_data.name != "":
-      saveMovieDataAndRenameFolder(movie_data,folderName,movieFolderName)
+      if movie_data.name != "":
+        saveMovieDataAndRenameFolder(movie_data,folderName,movieFolderName)
  
 
 def getMovieNameFromFolder(movieFolderName):
@@ -664,14 +548,14 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 # DONE - statistika - koji se sve ne slažu underscore s ocjenom
 
 #folderStatistics("Z:\Movies\FILMOVI\___1970's")
-#rootFolderStatistics("Z:\Movies\FILMOVI")
 
 #rootFolderUnderscoreStatistics("Z:\Movies\FILMOVI")
 #folderReapplyUnderscoreRating("Z:\Movies\FILMOVI\___HITCHCOCK")
 
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1930-60")
 
-processFolder("Z:\Movies\FILMOVI\____Alfred Hitchcock")
+#rootFolderStatistics("Z:\Movies\FILMOVI")
+processFolder("Z:\Movies\FILMOVI\___HORROS")
 
 #for folderName in foldersToAnalyze:
 #  print(folderName)
