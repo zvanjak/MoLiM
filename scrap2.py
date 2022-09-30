@@ -445,20 +445,26 @@ def folderStatistics(folderName):
       elif float(imdb_rat) < 6.0:
         cntImdbLower6 = cntImdbLower6 + 1
 
-      if doesFilmDataHasMovieID(folderName, movieFolderName, imdb_name, int(movieYear)):
+      if doesFilmDataHasMovieID(folderName, movieFolderName, imdb_name, int(year_str)) == False:
         listWithoutMovieID.append(movieFolderName)
     else:
       cntNotDone = cntNotDone + 1
       listNotDone.append(movieFolderName)
 
-  #if cntNotDone == 0:
-  #  return
+  if cntNotDone == 0:
+    return
 
-  print("-- {0:65} -- {1:2}, {2:2}, {3:2}, {4:2}".format(folderName, cntNotDone, cntImdb8, cntImdb7, cntImdbLower6))
+  print("-- {0:65} -- {1:2}, {2:2}, {3:3}, {4:2}, {5:2}, {6:2}".format(folderName, cntNotDone, cntImdb8, cntImdb7, cntImdbLower6, len(listNotDone), len(listWithoutMovieID)))
   
-  print("LIST NOT DONE:")
-  for movie in listNotDone: 
-    print (movie)
+  if len(listNotDone) > 0:
+    print("LIST NOT DONE:")
+    for movie in listNotDone: 
+      print ("  ", movie)
+
+  #if len(listWithoutMovieID) > 0:
+  #  print("LIST WITHOUT MOVIE ID:")
+  #  for movie in listWithoutMovieID:
+  #    print ("  ", movie)
 
 def rootFolderStatistics(rootFolderName):
   print("------", rootFolderName, "------")
@@ -468,26 +474,13 @@ def rootFolderStatistics(rootFolderName):
   for folderName in rootSubFolders:
     folderStatistics(folderName)
   
-def rootFolderTryoutNonIMDB(rootFolderName):
-  print("------", rootFolderName, "------")
-  
-  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
-
-  for folderName in rootSubFolders:
-    print("------", folderName, "------")
-    print("------------------------------------------")
-
-    movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
-
-    for movieFileName in movieSubFolders:
-      if movieFileName.find("IMDB") == -1:
-        print("\nNOT DONE: " + movieFileName)
-        #getMovieData(movieFileName)
-
 def doesFilmDataHasMovieID(folderWhereItIs, movieFolderName, movieName, movieYear):
   fileName = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + movieName + " (" + str(movieYear) + ")" + ".txt"
 
-  fileFilmData = open(fileName, 'r')
+  try:
+    fileFilmData = open(fileName, 'r')
+  except:
+    return False
 
   if fileFilmData:
     first = fileFilmData.readline()
@@ -621,6 +614,7 @@ def folderReapplyUnderscoreRating(folderName):
           print("ERRROR - ", movieFileName)
           setFolderNameUnderscoreRating(folderName, movieFileName, imdb_rat)
 
+# UNDERSCORE STATISTICS
 def folderUnderscoreStatistics(folderName):
   print("------", folderName, "------")
 
@@ -669,15 +663,15 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 # provjeriti da li postoji movieID
 # DONE - statistika - koji se sve ne slažu underscore s ocjenom
 
-#folderStatistics("H:\\FILMOVI\\___2000's")
+#folderStatistics("Z:\Movies\FILMOVI\___1970's")
 #rootFolderStatistics("Z:\Movies\FILMOVI")
-#rootFolderUnderscoreStatistics("Z:\Movies\FILMOVI")
-#rootFolderTryoutNonIMDB("H:\\FILMOVI")
 
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1930-60")
+#rootFolderUnderscoreStatistics("Z:\Movies\FILMOVI")
 #folderReapplyUnderscoreRating("Z:\Movies\FILMOVI\___HITCHCOCK")
 
-#processFolder("D:\TroubleFilmovi")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1930-60")
+
+processFolder("Z:\Movies\FILMOVI\____Alfred Hitchcock")
 
 #for folderName in foldersToAnalyze:
 #  print(folderName)
