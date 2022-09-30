@@ -121,7 +121,6 @@ def fetchMovieData(searchMovieName, releaseYear):
   
   if movieFound == False:
     for movie in foundMoviesList:
-      #print(movie.movieID, movie.data.get('title'), movie.data.get('year'))
       print("-- {0:15} -- {1:30}, {2}".format(movie.movieID, movie.data.get('title'), movie.data.get('year')))
 
   movie = ia.get_movie(movieID)
@@ -555,7 +554,7 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1930-60")
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
-processFolder("Z:\Movies\FILMOVI\___HORROS")
+processFolder("Z:\Movies\FILMOVI\___1970's")
 
 #for folderName in foldersToAnalyze:
 #  print(folderName)
