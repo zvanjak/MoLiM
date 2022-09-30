@@ -425,25 +425,38 @@ def folderStatistics(folderName):
   cntImdbLower6 = 0
 
   listNotDone = []
-  for movieFileName in movieSubFolders:
-    if movieFileName.find("IMDB") != -1:
-      ind = movieFileName.find("IMDB")
-      imdb_rat = movieFileName[ind+5:ind+8]
+  listWithoutMovieID = []
+
+  for movieFolderName in movieSubFolders:
+    if movieFolderName.find("IMDB") != -1:
+      ind = movieFolderName.find("IMDB")
+      imdb_rat = movieFolderName[ind+5:ind+8]
       
+      ind1 = movieFolderName.find("(")
+      ind2 = movieFolderName.find(")")
+      
+      imdb_name = movieFolderName[0:ind1-1].strip("_")
+      year_str  = movieFolderName[ind1+1:ind2]
+
       if float(imdb_rat) >= 8.0:
         cntImdb8 = cntImdb8 + 1
       elif float(imdb_rat) >= 7.0:
         cntImdb7 = cntImdb7 + 1
       elif float(imdb_rat) < 6.0:
         cntImdbLower6 = cntImdbLower6 + 1
+
+      if doesFilmDataHasMovieID(folderName, movieFolderName, imdb_name, int(movieYear)):
+        listWithoutMovieID.append(movieFolderName)
     else:
       cntNotDone = cntNotDone + 1
-      listNotDone.append(movieFileName)
+      listNotDone.append(movieFolderName)
 
   #if cntNotDone == 0:
   #  return
 
   print("-- {0:65} -- {1:2}, {2:2}, {3:2}, {4:2}".format(folderName, cntNotDone, cntImdb8, cntImdb7, cntImdbLower6))
+  
+  print("LIST NOT DONE:")
   for movie in listNotDone: 
     print (movie)
 
