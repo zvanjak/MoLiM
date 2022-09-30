@@ -3,6 +3,7 @@ from sys import orig_argv
 from imdb import Cinemagoer
 
 import time
+import random
 import os
 
 #"F:\\FILMOVI\\_Al Pacino", \
@@ -98,6 +99,7 @@ def fetchMovieData(searchMovieName, releaseYear):
 
   searchMovieName = searchMovieName.rstrip()
 
+  # TODO kad internet zakaže
   foundMoviesList = ia.search_movie(searchMovieName)
   if len(foundMoviesList) == 0 :
     movie_data.name = ""
@@ -515,6 +517,21 @@ def rootFolderTryoutNonIMDB(rootFolderName):
         print("\nNOT DONE: " + movieFileName)
         #getMovieData(movieFileName)
 
+def doesFilmDataHasMovieID(folderWhereItIs, movieFolderName, movieName, movieYear):
+  fileName = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + movieName + " (" + str(movieYear) + ")" + ".txt"
+
+  fileFilmData = open(fileName, 'r')
+
+  if fileFilmData:
+    first = fileFilmData.readline()
+    second = fileFilmData.readline()
+    
+    if second.startswith("MovieID:"):
+      return True
+
+  return False
+
+
 def folderRecheckDataWithIMDB(folderName):
   print("------", folderName, "------")
   print("------------------------------------------")
@@ -528,14 +545,18 @@ def folderRecheckDataWithIMDB(folderName):
       imdb_name = movieFolderName[0:ind1-1].strip("_")
       year_str  = movieFolderName[ind1+1:ind2]
       
+      # TODO - provjeriti ima li movieID,ako ima, onda nista
+      if doesFilmDataHasMovieID(folderName, movieFolderName, imdb_name, int(year_str)) :
+        continue
+
       print("-----------------------------------------------------")
       print("\nReal movie name: " + imdb_name)
       print("Year           : " + year_str)
       movie_data = fetchMovieData(imdb_name, int(year_str))
 
       if movie_data.name == "":
-        print("SLEEPING 5 seconds :(((((")
-        time.sleep(5)
+        print("SLEEPING 10-15 seconds :(((((")
+        time.sleep(10 + random.randrange(0,5))
       else:
         # produce novi naziv direktorija
         newDirName = getMovieFolderNameFromMovieData(movie_data)
@@ -556,6 +577,8 @@ def folderRecheckDataWithIMDB(folderName):
           # TODO provjeriti da li već postoji dest dir
           print("RENAMING - ", origDir, destDir)
           os.rename(origDir, destDir)
+
+        time.sleep(10 + random.randrange(0,5))
 
 
 def setFolderNameUnderscoreRating(folderName, movieFolderName, imdbRating):
@@ -676,14 +699,15 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 
 #TODO
 # proći kroz sve IMDB, i provjeriti da li se naziv direktorija slaže, s onim kako bi sada bilo
-# statistika - koji se sve ne slažu underscore s ocjenom
+# provjeriti da li postoji movieID
+# DONE - statistika - koji se sve ne slažu underscore s ocjenom
 
 #folderStatistics("H:\\FILMOVI\\___2000's")
-#rootFolderStatistics("Z:\Movies\FILMOVI")
+rootFolderStatistics("Z:\Movies\FILMOVI")
 #rootFolderUnderscoreStatistics("Z:\Movies\FILMOVI")
 #rootFolderTryoutNonIMDB("H:\\FILMOVI")
 
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___HORROS")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1930-60")
 #folderReapplyUnderscoreRating("Z:\Movies\FILMOVI\___HITCHCOCK")
 
 #processFolder("D:\TroubleFilmovi")
