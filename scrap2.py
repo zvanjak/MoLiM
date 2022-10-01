@@ -81,6 +81,7 @@ foldersToAnalyze = [ "F:\\FILMOVI\\___2000's",       \
 class MovieData(object):
     def __init__(self,name):        # poziva se kod inicijalizacije
         self.name = name
+        self.imdb_name = ""
         self.movieID = 0
         self.year = 0
         self.runtime = 0
@@ -88,6 +89,7 @@ class MovieData(object):
         self.directors = ""
         self.genres = ""
         self.cast = ""
+        self.cast_complete = ""
         self.plot = ""
 
 # create an instance of the Cinemagoer class
@@ -133,6 +135,8 @@ def fetchMovieData(searchMovieName, releaseYear):
   movie_data.movieID = movieID
 
   try:
+    movie_data.imdb_name = movie.data.get('title')
+
     rating = movie.data.get('rating', None)
     movie_data.rating = rating
     print("IMDB rating {0}".format(rating))
@@ -174,15 +178,15 @@ def fetchMovieData(searchMovieName, releaseYear):
     print('Genres: ' + genres)
 
     cast = ""
-    shortCast = "CAST - "
-    for i in range(0,5):
+    shortCast = ""
+    for i in range(0,len(movie.data['cast'])-1):
       s = movie.data['cast'][i]
       cast += s.data['name']
       cast += ", "
-      if i > 0 and i < 5 :
-        shortCast += ","
-      if i < 4 :
+      if i < 5 :
         shortCast += s.data['name']
+      if i >= 0 and i < 4 :
+        shortCast += ","
               
     print('Cast: ' + cast)
     movie_data.cast = cast
@@ -225,7 +229,9 @@ def saveTXTWithMovieData(movie_data : MovieData, folderWhereItIs, movieFolderNam
   fileFilmData = open(fileName, 'w')
   fileFilmData.write(movie_data.name + " (" + str(movie_data.year) + ")\n")
   fileFilmData.write("MovieID:   " + str(movie_data.movieID) + "\n")
+  fileFilmData.write("Title:     " + movie_data.imdb_name + "\n")
   fileFilmData.write("Runtime:   " + str(movie_data.runtime) + " min\n")
+  fileFilmData.write("Rating:    " + str(movie_data.rating) + "\n")
   fileFilmData.write("Genres:    " + movie_data.genres + "\n")
   fileFilmData.write("Directors: " + movie_data.directors + "\n")
   fileFilmData.write("Cast:      " + movie_data.cast + "\n")
