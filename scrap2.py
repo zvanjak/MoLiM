@@ -102,7 +102,16 @@ def fetchMovieData(searchMovieName, releaseYear):
   searchMovieName = searchMovieName.rstrip()
 
   # TODO kad internet zakaže
-  foundMoviesList = ia.search_movie(searchMovieName)
+  try:
+    foundMoviesList = ia.search_movie(searchMovieName)
+  except:
+    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
+    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
+    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
+    time.sleep(60)
+    movie_data.name = ""
+    return movie_data
+
   if len(foundMoviesList) == 0 :
     movie_data.name = ""
     print ("SEARCH RETURNED NOTHING!!!\n")
