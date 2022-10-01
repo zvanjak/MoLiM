@@ -188,8 +188,9 @@ def fetchMovieData(searchMovieName, releaseYear):
       if i >= 0 and i < 4 :
         shortCast += ","
               
-    print('Cast: ' + cast)
-    movie_data.cast = cast
+    print('Cast: ' + shortCast)
+    movie_data.cast_complete = cast
+    movie_data.cast = shortCast
         
     print ()
     plot = movie.data.get('plot outline', None)
@@ -234,7 +235,7 @@ def saveTXTWithMovieData(movie_data : MovieData, folderWhereItIs, movieFolderNam
   fileFilmData.write("Rating:    " + str(movie_data.rating) + "\n")
   fileFilmData.write("Genres:    " + movie_data.genres + "\n")
   fileFilmData.write("Directors: " + movie_data.directors + "\n")
-  fileFilmData.write("Cast:      " + movie_data.cast + "\n")
+  fileFilmData.write("Cast:      " + movie_data.cast_complete + "\n")
   fileFilmData.write("Plot:      " + str(movie_data.plot))
 
   fileFilmData.close()
