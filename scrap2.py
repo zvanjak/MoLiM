@@ -120,10 +120,15 @@ def fetchMovieData(searchMovieName, releaseYear):
       print("OUCH")
   
   if movieFound == False:
+    print ("COULD FIND MOVIE WITH NAME AND YEAR")
     for movie in foundMoviesList:
       print("-- {0:15} -- {1:30}, {2}".format(movie.movieID, movie.data.get('title'), movie.data.get('year')))
+    movie_data.name = ""
+    return movie_data
 
   movie = ia.get_movie(movieID)
+
+  time.sleep(5+random.randrange(0,5))
 
   movie_data.movieID = movieID
 
@@ -205,16 +210,20 @@ def getMovieFolderNameFromMovieData(movie_data : MovieData):
   elif movie_data.rating < 6.0:
     prefix = "zzz_"
   
-  newDirName = prefix + movie_data.name + " (" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " CAST - " + movie_data.cast
+  newDirName = prefix + str(movie_data.name).rstrip() + "  (" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " CAST - " + movie_data.cast
   
   return newDirName
 
+def getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear):
+  filePath = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + movieName.strip() + " (" + str(movieYear) + ")" + ".txt"
+  return filePath
+
 def saveTXTWithMovieData(movie_data : MovieData, folderWhereItIs, movieFolderName):
   # formirati TXT datoteku s podacima
-  fileName = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + movie_data.name + " (" + str(movie_data.year) + ")" + ".txt"
+  fileName = getFilmDataFilePath(folderWhereItIs, movieFolderName, movie_data.name, movie_data.year)
 
   fileFilmData = open(fileName, 'w')
-  fileFilmData.write(movie_data.name + "(" + str(movie_data.year) + ")\n")
+  fileFilmData.write(movie_data.name + " (" + str(movie_data.year) + ")\n")
   fileFilmData.write("MovieID:   " + str(movie_data.movieID) + "\n")
   fileFilmData.write("Runtime:   " + str(movie_data.runtime) + " min\n")
   fileFilmData.write("Genres:    " + movie_data.genres + "\n")
@@ -334,8 +343,8 @@ def folderStatistics(folderName):
       cntNotDone = cntNotDone + 1
       listNotDone.append(movieFolderName)
 
-  if cntNotDone == 0:
-    return
+  #if cntNotDone == 0:
+  #  return
 
   print("-- {0:65} -- {1:2}, {2:2}, {3:3}, {4:2}, {5:2}, {6:2}".format(folderName, cntNotDone, cntImdb8, cntImdb7, cntImdbLower6, len(listNotDone), len(listWithoutMovieID)))
   
@@ -358,10 +367,10 @@ def rootFolderStatistics(rootFolderName):
     folderStatistics(folderName)
   
 def doesFilmDataHasMovieID(folderWhereItIs, movieFolderName, movieName, movieYear):
-  fileName = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + movieName + " (" + str(movieYear) + ")" + ".txt"
+  filePath = getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear)
 
   try:
-    fileFilmData = open(fileName, 'r')
+    fileFilmData = open(filePath, 'r')
   except:
     return False
 
@@ -385,7 +394,12 @@ def folderRecheckDataWithIMDB(folderName):
     if movieFolderName.find("IMDB") != -1:
       ind1 = movieFolderName.find("(")
       ind2 = movieFolderName.find(")")
-      imdb_name = movieFolderName[0:ind1-1].strip("_")
+      imdb_name_raw = movieFolderName[0:ind1-1]
+      if imdb_name_raw.startswith("zzz"):
+        imdb_name1 = movieFolderName[4:ind1-1]
+      else:
+        imdb_name1 = imdb_name_raw
+      imdb_name = imdb_name1.strip("_")
       year_str  = movieFolderName[ind1+1:ind2]
       
       # TODO - provjeriti ima li movieID,ako ima, onda nista
@@ -542,19 +556,32 @@ def rootFolderUnderscoreStatistics(rootFolderName):
   
 
 #TODO
+# ucitavanje podatak o filmu iz Film data
+# analiza velicine direktorija (a mozda ima i vise verzija!)
 # proći kroz sve IMDB, i provjeriti da li se naziv direktorija slaže, s onim kako bi sada bilo
-# provjeriti da li postoji movieID
+# pocistiti file errors
+
 # DONE - statistika - koji se sve ne slažu underscore s ocjenom
+# DONE - provjeriti da li postoji movieID
 
 #folderStatistics("Z:\Movies\FILMOVI\___1970's")
 
 #rootFolderUnderscoreStatistics("Z:\Movies\FILMOVI")
 #folderReapplyUnderscoreRating("Z:\Movies\FILMOVI\___HITCHCOCK")
 
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1930-60")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Al Pacino")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Clint Eastwood")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Jack Nicholson")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Jason Statham")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_John Wayne")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Mel Gibson")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Robert De Niro")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Tom Hanks")
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
-processFolder("Z:\Movies\FILMOVI\___1970's")
+#processFolder("Z:\Movies\FILMOVI\___1970's")
+#processFolder("Z:\Movies\FILMOVI\__James Bond Collection 1962 - 2015 - TODO")
+#processFolder("Z:\Movies\FILMOVI\___1980's")
 
 #for folderName in foldersToAnalyze:
 #  print(folderName)
