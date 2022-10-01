@@ -137,7 +137,15 @@ def fetchMovieData(searchMovieName, releaseYear):
     movie_data.name = ""
     return movie_data
 
-  movie = ia.get_movie(movieID)
+  try:
+    movie = ia.get_movie(movieID)
+  except:
+    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
+    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
+    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
+    time.sleep(60)
+    movie_data.name = ""
+    return movie_data
 
   time.sleep(5+random.randrange(0,5))
 
@@ -195,7 +203,7 @@ def fetchMovieData(searchMovieName, releaseYear):
       if i < 5 :
         shortCast += s.data['name']
       if i >= 0 and i < 4 :
-        shortCast += ","
+        shortCast += ", "
               
     print('Cast: ' + shortCast)
     movie_data.cast_complete = cast
