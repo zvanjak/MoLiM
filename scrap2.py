@@ -585,6 +585,13 @@ folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Mel Gibson")
 folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Robert De Niro")
 folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Tom Hanks")
 
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1930-60")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1970's")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1980's")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1990's")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2000's")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1970's")
+
 #rootFolderStatistics("Z:\Movies\FILMOVI")
 #processFolder("Z:\Movies\FILMOVI\___1970's")
 #processFolder("Z:\Movies\FILMOVI\__James Bond Collection 1962 - 2015 - TODO")
