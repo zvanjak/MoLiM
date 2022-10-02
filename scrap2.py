@@ -95,7 +95,68 @@ class MovieData(object):
 # create an instance of the Cinemagoer class
 ia = Cinemagoer()
 
+
+# FILE OPERATIONS
+def getMovieFolderNameFromMovieData(movie_data : MovieData):
+  prefix = ""
+  if movie_data.rating >= 9.0:
+    prefix = "___"
+  elif movie_data.rating >= 8.0:
+    prefix = "__"
+  elif movie_data.rating >= 7.0:
+    prefix = "_"
+  elif movie_data.rating < 6.0:
+    prefix = "zzz_"
   
+  newDirName = prefix + str(movie_data.name).rstrip() + "  (" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " CAST - " + movie_data.cast
+  
+  return newDirName
+
+def getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear):
+  filePath = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + movieName.strip() + " (" + str(movieYear) + ")" + ".txt"
+  return filePath
+
+def saveTXTWithMovieData(movie_data : MovieData, folderWhereItIs, movieFolderName):
+  # formirati TXT datoteku s podacima
+  fileName = getFilmDataFilePath(folderWhereItIs, movieFolderName, movie_data.name, movie_data.year)
+
+  fileFilmData = open(fileName, 'w')
+  fileFilmData.write(movie_data.name + " (" + str(movie_data.year) + ")\n")
+  fileFilmData.write("MovieID:   " + str(movie_data.movieID) + "\n")
+  fileFilmData.write("Title:     " + movie_data.imdb_name + "\n")
+  fileFilmData.write("Runtime:   " + str(movie_data.runtime) + " min\n")
+  fileFilmData.write("Rating:    " + str(movie_data.rating) + "\n")
+  fileFilmData.write("Genres:    " + movie_data.genres + "\n")
+  fileFilmData.write("Directors: " + movie_data.directors + "\n")
+  fileFilmData.write("Cast:      " + movie_data.cast_complete + "\n")
+  fileFilmData.write("Plot:      " + str(movie_data.plot))
+
+  fileFilmData.close()
+    
+def saveMovieDataAndRenameFolder(movie_data : MovieData, folderWhereItIs, movieFolderName):
+
+    # ime novog direktorija
+    # Naziv (2022) IMDB-7.5 Adventure,Comedy,Thriller Cast-Mel Gibson, Jim Belushi, Joan Crawford
+    newDirName = getMovieFolderNameFromMovieData(movie_data)   # movie_data.name + "(" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " CAST - " + movie_data.cast
+
+    print("NEWDIR = ", newDirName)
+    print ()
+
+    # formirati TXT datoteku s podacima
+    saveTXTWithMovieData(movie_data, folderWhereItIs, movieFolderName)
+
+    # i sad idemo preimenovati direktorij
+    origDir = folderWhereItIs + "\\" + movieFolderName
+    destDir = folderWhereItIs + "\\" + newDirName
+
+    # TODO provjeriti da li već postoji dest dir
+    print("RENAMING - ", origDir, "   -   ", destDir)
+    if os.path.isdir(destDir):
+      print("\n\nDESTINATION DIR ALREADY EXISTS!!!!!!\n\n")
+    else:
+      print("RENAMING - ", origDir, destDir)
+      os.rename(origDir, destDir)
+
 def doesFilmDataHasMovieID(folderWhereItIs, movieFolderName, movieName, movieYear):
   filePath = getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear)
 
@@ -238,62 +299,6 @@ def fetchMovieData(searchMovieName, releaseYear):
 
   return movie_data
     
-
-def getMovieFolderNameFromMovieData(movie_data : MovieData):
-  prefix = ""
-  if movie_data.rating >= 9.0:
-    prefix = "___"
-  elif movie_data.rating >= 8.0:
-    prefix = "__"
-  elif movie_data.rating >= 7.0:
-    prefix = "_"
-  elif movie_data.rating < 6.0:
-    prefix = "zzz_"
-  
-  newDirName = prefix + str(movie_data.name).rstrip() + "  (" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " CAST - " + movie_data.cast
-  
-  return newDirName
-
-def getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear):
-  filePath = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + movieName.strip() + " (" + str(movieYear) + ")" + ".txt"
-  return filePath
-
-def saveTXTWithMovieData(movie_data : MovieData, folderWhereItIs, movieFolderName):
-  # formirati TXT datoteku s podacima
-  fileName = getFilmDataFilePath(folderWhereItIs, movieFolderName, movie_data.name, movie_data.year)
-
-  fileFilmData = open(fileName, 'w')
-  fileFilmData.write(movie_data.name + " (" + str(movie_data.year) + ")\n")
-  fileFilmData.write("MovieID:   " + str(movie_data.movieID) + "\n")
-  fileFilmData.write("Title:     " + movie_data.imdb_name + "\n")
-  fileFilmData.write("Runtime:   " + str(movie_data.runtime) + " min\n")
-  fileFilmData.write("Rating:    " + str(movie_data.rating) + "\n")
-  fileFilmData.write("Genres:    " + movie_data.genres + "\n")
-  fileFilmData.write("Directors: " + movie_data.directors + "\n")
-  fileFilmData.write("Cast:      " + movie_data.cast_complete + "\n")
-  fileFilmData.write("Plot:      " + str(movie_data.plot))
-
-  fileFilmData.close()
-    
-def saveMovieDataAndRenameFolder(movie_data : MovieData, folderWhereItIs, movieFolderName):
-
-    # ime novog direktorija
-    # Naziv (2022) IMDB-7.5 Adventure,Comedy,Thriller Cast-Mel Gibson, Jim Belushi, Joan Crawford
-    newDirName = getMovieFolderNameFromMovieData(movie_data)   # movie_data.name + "(" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " CAST - " + movie_data.cast
-
-    print("NEWDIR = ", newDirName)
-    print ()
-
-    # formirati TXT datoteku s podacima
-    saveTXTWithMovieData(movie_data, folderWhereItIs, movieFolderName)
-
-    # i sad idemo preimenovati direktorij
-    origDir = folderWhereItIs + "\\" + movieFolderName
-    destDir = folderWhereItIs + "\\" + newDirName
-
-    # TODO provjeriti da li već postoji dest dir
-    print("RENAMING - ", origDir, "   -   ", destDir)
-    os.rename(origDir, destDir)
 
 def processFolder(folderName):
   print("------------------------------------------")
@@ -456,7 +461,7 @@ def folderRecheckDataWithIMDB(folderName):
           origDir = folderName + "\\" + movieFolderName
           destDir = folderName + "\\" + newDirName
 
-          # TODO provjeriti da li već postoji dest dir
+          # provjeriti da li već postoji dest dir
           if os.path.isdir(destDir):
             print("\n\nDESTINATION DIR ALREADY EXISTS!!!!!!\n\n")
           else:
