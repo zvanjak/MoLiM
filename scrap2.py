@@ -1,5 +1,7 @@
 ﻿from re import search
 from sys import orig_argv
+from typing import Tuple
+from xmlrpc.client import Boolean
 from imdb import Cinemagoer
 
 import time
@@ -97,7 +99,7 @@ ia = Cinemagoer()
 
 
 # FILE OPERATIONS
-def getMovieFolderNameFromMovieData(movie_data : MovieData):
+def getMovieFolderNameFromMovieData(movie_data : MovieData) -> str:
   prefix = ""
   if movie_data.rating >= 9.0:
     prefix = "___"
@@ -112,7 +114,7 @@ def getMovieFolderNameFromMovieData(movie_data : MovieData):
   
   return newDirName
 
-def getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear):
+def getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear) -> str:
   filePath = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + movieName.strip() + " (" + str(movieYear) + ")" + ".txt"
   return filePath
 
@@ -157,7 +159,7 @@ def saveMovieDataAndRenameFolder(movie_data : MovieData, folderWhereItIs, movieF
       print("RENAMING - ", origDir, destDir)
       os.rename(origDir, destDir)
 
-def doesFilmDataHasMovieID(folderWhereItIs, movieFolderName, movieName, movieYear):
+def doesFilmDataHasMovieID(folderWhereItIs, movieFolderName, movieName, movieYear) -> bool:
   filePath = getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear)
 
   try:
@@ -175,7 +177,7 @@ def doesFilmDataHasMovieID(folderWhereItIs, movieFolderName, movieName, movieYea
   return False
 
 #fetchMovieData(searchMovieName, releaseYear)
-def fetchMovieData(searchMovieName, releaseYear):
+def fetchMovieData(searchMovieName, releaseYear) -> MovieData:
   movie_data = MovieData(searchMovieName)
 
   searchMovieName = searchMovieName.rstrip()
@@ -319,7 +321,7 @@ def processFolder(folderName):
         saveMovieDataAndRenameFolder(movie_data,folderName,movieFolderName)
  
 
-def getMovieNameFromFolder(movieFolderName):
+def getMovieNameFromFolder(movieFolderName) -> Tuple(str,str):
   earchMovieName = ""
   # provjeriti ima li točaka u nazivu
   parts = movieFolderName.split('.')
@@ -589,7 +591,7 @@ def rootFolderUnderscoreStatistics(rootFolderName):
   
 
 #TODO
-# ucitavanje podatak o filmu iz Film data
+# ucitavanje podataka o filmu iz Film data
 # analiza velicine direktorija (a mozda ima i vise verzija!)
 # proći kroz sve IMDB, i provjeriti da li se naziv direktorija slaže, s onim kako bi sada bilo
 # pocistiti file errors
