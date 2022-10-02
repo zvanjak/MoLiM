@@ -79,7 +79,6 @@ foldersToAnalyze = [ "F:\\FILMOVI\\___2000's",       \
 #"F:\\FILMOVI\\___WESTERNS",       \
 ]  
 
-# A class is defined using the class statement.The body of a class contains a series of statements that execute during class definition
 class MovieData(object):
     def __init__(self,name):        # poziva se kod inicijalizacije
         self.name = name
@@ -99,6 +98,7 @@ ia = Cinemagoer()
 
 
 # FILE OPERATIONS
+#region
 def getMovieFolderNameFromMovieData(movie_data : MovieData) -> str:
   prefix = ""
   if movie_data.rating >= 9.0:
@@ -176,7 +176,32 @@ def doesFilmDataHasMovieID(folderWhereItIs, movieFolderName, movieName, movieYea
 
   return False
 
-#fetchMovieData(searchMovieName, releaseYear)
+def loadMovieDataFromFilmData(folderWhereItIs, movieFolderName, movieName, movieYear) -> MovieData:
+  movie_data = MovieData()
+
+  filePath = getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear)
+
+  try:
+    fileFilmData = open(filePath, 'r')
+  except:
+    movie_data.name = ""
+    return movie_data
+
+  name_and_year = fileFilmData.readline()
+  lines = fileFilmData.readlines()
+  for line in lines:
+    if line.startswith("Title:"):
+      title = ""
+    elif line.startswith("MovieID:"):
+      movieID = ""
+    elif line.startswith("Genres:"):
+      movieID = ""
+    
+    
+  return movie_data
+#endregion
+
+# fetchMovieData(searchMovieName, releaseYear)
 def fetchMovieData(searchMovieName, releaseYear) -> MovieData:
   movie_data = MovieData(searchMovieName)
 
@@ -321,7 +346,7 @@ def processFolder(folderName):
         saveMovieDataAndRenameFolder(movie_data,folderName,movieFolderName)
  
 
-def getMovieNameFromFolder(movieFolderName) -> Tuple(str,str):
+def getMovieNameFromFolder(movieFolderName): # TODO  -> tuple(str,str):
   earchMovieName = ""
   # provjeriti ima li točaka u nazivu
   parts = movieFolderName.split('.')
@@ -444,8 +469,8 @@ def folderRecheckDataWithIMDB(folderName):
       movie_data = fetchMovieData(imdb_name, int(year_str))
 
       if movie_data.name == "":
-        print("SLEEPING 10-15 seconds :(((((")
-        time.sleep(10 + random.randrange(0,5))
+        print("SLEEPING 5-10 seconds :(((((")
+        time.sleep(5 + random.randrange(0,5))
       else:
         # produce novi naziv direktorija
         newDirName = getMovieFolderNameFromMovieData(movie_data)
@@ -470,7 +495,7 @@ def folderRecheckDataWithIMDB(folderName):
             print("RENAMING - ", origDir, destDir)
             os.rename(origDir, destDir)
 
-        time.sleep(10 + random.randrange(0,5))
+        time.sleep(5 + random.randrange(0,5))
 
 # UNDERSCORE RATING
 def setFolderNameUnderscoreRating(folderName, movieFolderName, imdbRating):
@@ -621,6 +646,8 @@ folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1990's")
 folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2000's")
 folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2010's")
 folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2020's")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___WAR MOVIES")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___WESTERNS")
 
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Marvel Cinematic Universe (2003-2019)")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Star Trek (1979-2016)")
