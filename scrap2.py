@@ -95,6 +95,24 @@ class MovieData(object):
 # create an instance of the Cinemagoer class
 ia = Cinemagoer()
 
+  
+def doesFilmDataHasMovieID(folderWhereItIs, movieFolderName, movieName, movieYear):
+  filePath = getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear)
+
+  try:
+    fileFilmData = open(filePath, 'r')
+  except:
+    return False
+
+  if fileFilmData:
+    first = fileFilmData.readline()
+    second = fileFilmData.readline()
+    
+    if second.startswith("MovieID:"):
+      return True
+
+  return False
+
 #fetchMovieData(searchMovieName, releaseYear)
 def fetchMovieData(searchMovieName, releaseYear):
   movie_data = MovieData(searchMovieName)
@@ -389,23 +407,6 @@ def rootFolderStatistics(rootFolderName):
 
   for folderName in rootSubFolders:
     folderStatistics(folderName)
-  
-def doesFilmDataHasMovieID(folderWhereItIs, movieFolderName, movieName, movieYear):
-  filePath = getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear)
-
-  try:
-    fileFilmData = open(filePath, 'r')
-  except:
-    return False
-
-  if fileFilmData:
-    first = fileFilmData.readline()
-    second = fileFilmData.readline()
-    
-    if second.startswith("MovieID:"):
-      return True
-
-  return False
 
 
 def folderRecheckDataWithIMDB(folderName):
@@ -456,12 +457,15 @@ def folderRecheckDataWithIMDB(folderName):
           destDir = folderName + "\\" + newDirName
 
           # TODO provjeriti da li već postoji dest dir
-          print("RENAMING - ", origDir, destDir)
-          os.rename(origDir, destDir)
+          if os.path.isdir(destDir):
+            print("\n\nDESTINATION DIR ALREADY EXISTS!!!!!!\n\n")
+          else:
+            print("RENAMING - ", origDir, destDir)
+            os.rename(origDir, destDir)
 
         time.sleep(10 + random.randrange(0,5))
 
-
+# UNDERSCORE RATING
 def setFolderNameUnderscoreRating(folderName, movieFolderName, imdbRating):
   m1 = movieFolderName.strip("zzz")
   realMovieName = m1.strip("_")
@@ -593,21 +597,27 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 #rootFolderUnderscoreStatistics("Z:\Movies\FILMOVI")
 #folderReapplyUnderscoreRating("Z:\Movies\FILMOVI\___HITCHCOCK")
 
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Al Pacino")
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Clint Eastwood")
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Jack Nicholson")
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Jason Statham")
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_John Wayne")
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Mel Gibson")
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Robert De Niro")
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Tom Hanks")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Al Pacino")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Clint Eastwood")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Jack Nicholson")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Jason Statham")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_John Wayne")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Mel Gibson")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Robert De Niro")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Tom Hanks")
 
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1930-60")
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1970's")
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1980's")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1930-60")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1970's")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1980's")
+
 folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1990's")
 folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2000's")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1970's")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2010's")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2020's")
+
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Marvel Cinematic Universe (2003-2019)")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Star Trek (1979-2016)")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Star Wars (1977-2019)")
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
 #processFolder("Z:\Movies\FILMOVI\___1970's")
