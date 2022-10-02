@@ -422,10 +422,10 @@ def folderStatistics(folderName):
 
   print("-- {0:65} -- {1:2}, {2:2}, {3:3}, {4:2}, {5:2}, {6:2}".format(folderName, cntNotDone, cntImdb8, cntImdb7, cntImdbLower6, len(listNotDone), len(listWithoutMovieID)))
   
-  if len(listNotDone) > 0:
-    print("LIST NOT DONE:")
-    for movie in listNotDone: 
-      print ("  ", movie)
+  #if len(listNotDone) > 0:
+  #  print("LIST NOT DONE:")
+  #  for movie in listNotDone: 
+  #    print ("  ", movie)
 
   #if len(listWithoutMovieID) > 0:
   #  print("LIST WITHOUT MOVIE ID:")
@@ -617,6 +617,7 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 
 #TODO
 # ucitavanje podataka o filmu iz Film data
+# dodati podatke o budgetu i zaradi
 # analiza velicine direktorija (a mozda ima i vise verzija!)
 # proći kroz sve IMDB, i provjeriti da li se naziv direktorija slaže, s onim kako bi sada bilo
 # pocistiti file errors
@@ -642,12 +643,12 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1970's")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1980's")
 
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1990's")
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2000's")
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2010's")
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2020's")
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___WAR MOVIES")
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___WESTERNS")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1990's")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2000's")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2010's")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2020's")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___WAR MOVIES")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___WESTERNS")
 
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Marvel Cinematic Universe (2003-2019)")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Star Trek (1979-2016)")
