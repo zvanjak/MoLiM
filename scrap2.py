@@ -616,6 +616,7 @@ def rootFolderUnderscoreStatistics(rootFolderName):
   
 
 #TODO
+# doesContainMovie za folder
 # ucitavanje podataka o filmu iz Film data
 # dodati podatke o budgetu i zaradi
 # analiza velicine direktorija (a mozda ima i vise verzija!)
@@ -641,16 +642,16 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1930-60")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1970's")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1980's")
 
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1980's")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1990's")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2000's")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2010's")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2020's")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___WAR MOVIES")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___WESTERNS")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2010's")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2020's")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___War movies")
+folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___Westerns")
 
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Marvel Cinematic Universe (2003-2019)")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Marvel Cinematic Universe (2008-2019)")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Star Trek (1979-2016)")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Star Wars (1977-2019)")
 
