@@ -99,6 +99,17 @@ ia = Cinemagoer()
 
 # FILE OPERATIONS
 #region
+def getFolderSize(start_path):
+    total_size = 0
+    for dirpath, dirnames, filenames in os.walk(start_path):
+        for f in filenames:
+            fp = os.path.join(dirpath, f)
+            # skip if it is symbolic link
+            if not os.path.islink(fp):
+                total_size += os.path.getsize(fp)
+
+    return total_size
+
 def getMovieFolderNameFromMovieData(movie_data : MovieData) -> str:
   prefix = ""
   if movie_data.rating >= 9.0:
@@ -576,6 +587,20 @@ def folderRecheckDataWithIMDB(folderName):
 
         time.sleep(5 + random.randrange(0,5))
 
+def folderSizeStatistic(folderName):
+  print("------------------------------------------")
+  print("------", folderName, "------")
+  print("------------------------------------------")
+
+  movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
+
+  for movieFolderName in movieSubFolders:
+    if movieFolderName.find("IMDB") != -1:
+      size = getFolderSize(folderName + "\\" + movieFolderName)
+      printName = movieFolderName[0:60]
+      print("{0:60} - {1}".format(printName, size / 1000000000))
+
+ 
 # UNDERSCORE RATING
 def setFolderNameUnderscoreRating(folderName, movieFolderName, imdbRating):
   m1 = movieFolderName.strip("zzz")
@@ -695,6 +720,10 @@ def rootFolderUnderscoreStatistics(rootFolderName):
   
 
 #TODO
+# analyze folder
+#   prikupi FilmData i ispiše statistike
+# copy empty folder names - 
+#   Directors -> Actors, po godinama
 # doesContainMovie za folder
 # ucitavanje podataka o filmu iz Film data
 # dodati podatke o budgetu i zaradi
@@ -735,11 +764,13 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 #rootFolderRecheckDataWithIMDB("Z:\Movies\FILMOVI")
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
-rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
+#rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
 
 #rootFolderReportNotDone("Z:\Movies\FILMOVI")
 #processFolder("Z:\Movies\FILMOVI\___1970's")
 #processFolder("Z:\Movies\FILMOVI\___1980's")
+
+folderSizeStatistic("Z:\Movies\FILMOVI\___Westerns")
 
 #for folderName in foldersToAnalyze:
 #  print(folderName)
