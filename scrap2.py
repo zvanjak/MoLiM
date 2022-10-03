@@ -441,6 +441,15 @@ def rootFolderStatistics(rootFolderName):
     folderStatistics(folderName)
 
 
+def rootFolderRecheckDataWithIMDB(folderName):
+  print("------", rootFolderName, "------")
+  
+  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
+
+  for folderName in rootSubFolders:
+    folderRecheckDataWithIMDB(folderName)
+
+
 def folderRecheckDataWithIMDB(folderName):
   print("------", folderName, "------")
   print("------------------------------------------")
@@ -639,21 +648,21 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Mel Gibson")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Robert De Niro")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Tom Hanks")
-
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1930-60")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1970's")
-
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1980's")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1980's")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1990's")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2000's")
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2010's")
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2020's")
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___War movies")
-folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___Westerns")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2010's")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2020's")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___War movies")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___Westerns")
 
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Marvel Cinematic Universe (2008-2019)")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Star Trek (1979-2016)")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Star Wars (1977-2019)")
+
+rootFolderRecheckDataWithIMDB("Z:\Movies\FILMOVI")
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
 #processFolder("Z:\Movies\FILMOVI\___1970's")
