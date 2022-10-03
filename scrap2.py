@@ -719,7 +719,7 @@ def rootFolderUnderscoreStatistics(rootFolderName):
     folderUnderscoreStatistics(folderName)
   
 
-#TODO
+# TODO
 # dodati konstante na pocetku
 # analyze folder
 #   prikupi FilmData i ispiše statistike
@@ -728,12 +728,15 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 # doesContainMovie za folder
 # ucitavanje podataka o filmu iz Film data
 # analiza velicine direktorija (a mozda ima i vise verzija!)
+#   ispis manjih od 2 Gb
 
 # dodati podatke o budgetu i zaradi
 # dodati awards - Best Picture Osar
+# writer, producer
+# dodati person id
 
 # proći kroz sve IMDB, i provjeriti da li se naziv direktorija slaže, s onim kako bi sada bilo
-# pocistiti file errors
+# pocistiti file errors, RARBG.txt, i not mirror
 
 # DONE - statistika - koji se sve ne slažu underscore s ocjenom
 # DONE - provjeriti da li postoji movieID
@@ -765,7 +768,7 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Star Trek (1979-2016)")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Star Wars (1977-2019)")
 
-#rootFolderRecheckDataWithIMDB("Z:\Movies\FILMOVI")
+rootFolderRecheckDataWithIMDB("Z:\Movies\FILMOVI")
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
 #rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
@@ -774,7 +777,7 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 #processFolder("Z:\Movies\FILMOVI\___1970's")
 #processFolder("Z:\Movies\FILMOVI\___1980's")
 
-folderSizeStatistic("Z:\Movies\FILMOVI\___Westerns")
+#folderSizeStatistic("Z:\Movies\FILMOVI\___Westerns")
 
 #for folderName in foldersToAnalyze:
 #  print(folderName)
