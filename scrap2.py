@@ -214,7 +214,7 @@ def fetchMovieData(searchMovieName, releaseYear) -> MovieData:
     print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
     print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
     print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
-    time.sleep(60)
+    time.sleep(30)
     movie_data.name = ""
     return movie_data
 
@@ -243,18 +243,16 @@ def fetchMovieData(searchMovieName, releaseYear) -> MovieData:
     #movie_data.name = ""
     #return movie_data
 
-  #try:
-  #  movie = ia.get_movie(movieID)
-  #except:
-  #  print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
-  #  print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
-  #  print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
-  #  time.sleep(60)
-  #  movie_data.name = ""
-  #  return movie_data
+  try:
+    movie = ia.get_movie(movieID)
+  except:
+    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
+    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
+    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
+    time.sleep(30)
+    movie_data.name = ""
+    return movie_data
   
-  movie = ia.get_movie(movieID)
-
   time.sleep(5+random.randrange(0,5))
 
   movie_data.movieID = movieID
@@ -434,6 +432,72 @@ def folderStatistics(folderName):
   #  for movie in listWithoutMovieID:
   #    print ("  ", movie)
 
+def rootFolderReportNotDone(rootFolderName):
+  print("------", rootFolderName, "------")
+  
+  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
+
+  for folderName in rootSubFolders:
+    movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
+  
+    cntNotDone = 0
+    listNotDone = []
+
+    for movieFolderName in movieSubFolders:
+      if movieFolderName.find("IMDB") == -1:
+        cntNotDone = cntNotDone + 1
+        listNotDone.append(movieFolderName)
+
+    if cntNotDone == 0:
+      continue
+
+    print("-- {0:65} -- {1:2}, {2:2} ".format(folderName, cntNotDone, len(listNotDone) ))
+  
+    if len(listNotDone) > 0:
+      print("LIST NOT DONE:")
+      for movie in listNotDone: 
+        print ("  ", movie)
+
+
+def rootFolderReportNoIMDBData(rootFolderName):
+  print("------", rootFolderName, "------")
+  
+  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
+
+  for folderName in rootSubFolders:
+    movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
+  
+    cntImdb8 = 0
+    cntImdb7 = 0
+    cntImdbLower6 = 0
+
+    listWithoutMovieID = []
+
+    for movieFolderName in movieSubFolders:
+      if movieFolderName.find("IMDB") != -1:
+        ind = movieFolderName.find("IMDB")
+        imdb_rat = movieFolderName[ind+5:ind+8]
+      
+        ind1 = movieFolderName.find("(")
+        ind2 = movieFolderName.find(")")
+      
+        imdb_name = movieFolderName[0:ind1-1].strip("_")
+        year_str  = movieFolderName[ind1+1:ind2]
+
+        if doesFilmDataHasMovieID(folderName, movieFolderName, imdb_name, int(year_str)) == False:
+          listWithoutMovieID.append(movieFolderName)
+
+    if len(listWithoutMovieID) == 0:
+      continue
+
+    print("-- {0:65} -- {1:2}".format(folderName, len(listWithoutMovieID)))
+  
+    if len(listWithoutMovieID) > 0:
+      print("LIST WITHOUT MOVIE ID:")
+      for movie in listWithoutMovieID:
+        print ("  ", movie)
+
+
 def rootFolderStatistics(rootFolderName):
   print("------", rootFolderName, "------")
   
@@ -441,7 +505,6 @@ def rootFolderStatistics(rootFolderName):
 
   for folderName in rootSubFolders:
     folderStatistics(folderName)
-
 
 def rootFolderRecheckDataWithIMDB(rootFolderName):
   print("------", rootFolderName, "------")
@@ -667,8 +730,10 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 rootFolderRecheckDataWithIMDB("Z:\Movies\FILMOVI")
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
+#rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
+
+#rootFolderReportNotDone("Z:\Movies\FILMOVI")
 #processFolder("Z:\Movies\FILMOVI\___1970's")
-#processFolder("Z:\Movies\FILMOVI\__James Bond Collection 1962 - 2015 - TODO")
 #processFolder("Z:\Movies\FILMOVI\___1980's")
 
 #for folderName in foldersToAnalyze:
