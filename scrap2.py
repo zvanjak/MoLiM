@@ -240,18 +240,20 @@ def fetchMovieData(searchMovieName, releaseYear) -> MovieData:
     print ("COULD FIND MOVIE WITH NAME AND YEAR")
     for movie in foundMoviesList:
       print("-- {0:15} -- {1:30}, {2}".format(movie.movieID, movie.data.get('title'), movie.data.get('year')))
-    movie_data.name = ""
-    return movie_data
+    #movie_data.name = ""
+    #return movie_data
 
-  try:
-    movie = ia.get_movie(movieID)
-  except:
-    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
-    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
-    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
-    time.sleep(60)
-    movie_data.name = ""
-    return movie_data
+  #try:
+  #  movie = ia.get_movie(movieID)
+  #except:
+  #  print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
+  #  print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
+  #  print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
+  #  time.sleep(60)
+  #  movie_data.name = ""
+  #  return movie_data
+
+  movie = ia.get_movie(movieID)
 
   time.sleep(5+random.randrange(0,5))
 
@@ -441,7 +443,7 @@ def rootFolderStatistics(rootFolderName):
     folderStatistics(folderName)
 
 
-def rootFolderRecheckDataWithIMDB(folderName):
+def rootFolderRecheckDataWithIMDB(rootFolderName):
   print("------", rootFolderName, "------")
   
   rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
