@@ -115,6 +115,7 @@ def getMovieFolderNameFromMovieData(movie_data : MovieData) -> str:
   return newDirName
 
 def getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear) -> str:
+  beba = movieName.strip()
   filePath = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + movieName.strip() + " (" + str(movieYear) + ")" + ".txt"
   return filePath
 
@@ -475,13 +476,14 @@ def rootFolderReportNoIMDBData(rootFolderName):
 
     for movieFolderName in movieSubFolders:
       if movieFolderName.find("IMDB") != -1:
-        ind = movieFolderName.find("IMDB")
-        imdb_rat = movieFolderName[ind+5:ind+8]
-      
         ind1 = movieFolderName.find("(")
         ind2 = movieFolderName.find(")")
-      
-        imdb_name = movieFolderName[0:ind1-1].strip("_")
+        imdb_name_raw = movieFolderName[0:ind1-1]
+        if imdb_name_raw.startswith("zzz"):
+          imdb_name1 = movieFolderName[4:ind1-1]
+        else:
+          imdb_name1 = imdb_name_raw
+        imdb_name = imdb_name1.strip("_")
         year_str  = movieFolderName[ind1+1:ind2]
 
         if doesFilmDataHasMovieID(folderName, movieFolderName, imdb_name, int(year_str)) == False:
@@ -568,6 +570,9 @@ def folderRecheckDataWithIMDB(folderName):
           else:
             print("RENAMING - ", origDir, destDir)
             os.rename(origDir, destDir)
+        else:
+          saveTXTWithMovieData(movie_data, folderName, movieFolderName)
+
 
         time.sleep(5 + random.randrange(0,5))
 
@@ -723,14 +728,14 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___War movies")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___Westerns")
 
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Marvel Cinematic Universe (2008-2019)")
+#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Transformers 1-5 (2007-2017)")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Star Trek (1979-2016)")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Star Wars (1977-2019)")
 
-rootFolderRecheckDataWithIMDB("Z:\Movies\FILMOVI")
+#rootFolderRecheckDataWithIMDB("Z:\Movies\FILMOVI")
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
-#rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
+rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
 
 #rootFolderReportNotDone("Z:\Movies\FILMOVI")
 #processFolder("Z:\Movies\FILMOVI\___1970's")
