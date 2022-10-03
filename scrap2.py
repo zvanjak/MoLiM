@@ -252,7 +252,7 @@ def fetchMovieData(searchMovieName, releaseYear) -> MovieData:
   #  time.sleep(60)
   #  movie_data.name = ""
   #  return movie_data
-
+  
   movie = ia.get_movie(movieID)
 
   time.sleep(5+random.randrange(0,5))
