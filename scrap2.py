@@ -720,14 +720,18 @@ def rootFolderUnderscoreStatistics(rootFolderName):
   
 
 #TODO
+# dodati konstante na pocetku
 # analyze folder
 #   prikupi FilmData i ispiše statistike
 # copy empty folder names - 
 #   Directors -> Actors, po godinama
 # doesContainMovie za folder
 # ucitavanje podataka o filmu iz Film data
-# dodati podatke o budgetu i zaradi
 # analiza velicine direktorija (a mozda ima i vise verzija!)
+
+# dodati podatke o budgetu i zaradi
+# dodati awards - Best Picture Osar
+
 # proći kroz sve IMDB, i provjeriti da li se naziv direktorija slaže, s onim kako bi sada bilo
 # pocistiti file errors
 
