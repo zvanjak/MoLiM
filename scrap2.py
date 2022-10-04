@@ -14,18 +14,35 @@ foldersToAnalyze = [ "F:\\FILMOVI\\___2000's",       \
 ]  
 
 class IMDBMovieData(object):
-    def __init__(self,name):        # poziva se kod inicijalizacije
-        self.name = name
-        self.imdb_name = ""
-        self.movieID = 0
-        self.year = 0
-        self.runtime = 0
-        self.rating = 0.0
-        self.directors = ""
-        self.genres = ""
-        self.cast = ""
-        self.cast_complete = ""
-        self.plot = ""
+  def __init__(self,name):        # poziva se kod inicijalizacije
+    self.name = name
+    self.imdb_name = ""
+    self.movieID = 0
+    self.year = 0
+    self.runtime = 0
+    self.rating = 0.0
+    self.directors = ""
+    self.genres = ""
+    self.cast = ""
+    self.cast_complete = ""
+    self.plot = ""
+
+class MovieData(object):
+  def __init__(self,name):        # poziva se kod inicijalizacije
+    self.name = name
+    self.imdb_name = ""
+    self.movieID = 0
+    self.year = 0
+    self.runtime = 0
+    self.rating = 0.0
+    self.directors = []
+    self.genres = []
+    self.short_cast = ""
+    self.cast = []
+    self.plot = ""
+    self.producers = []
+    self.writers = []
+    self.box_office = ""
 
 # create an instance of the Cinemagoer class
 ia = Cinemagoer()
@@ -101,6 +118,11 @@ def getNameYearFromNameWithIMDB(movieFolderName : str) :
 
   return (imdb_name, year_str)
 
+def getRatingFromIMDBFolderName(movieFolderName : str) -> float :
+  ind = movieFolderName.find("IMDB-")
+  rating = movieFolderName[ind+5:ind+8]
+  return float(rating)
+
 def getMovieFolderNameFromMovieData(movie_data : IMDBMovieData) -> str:
   prefix = ""
   if movie_data.rating >= 9.0:
@@ -175,7 +197,7 @@ def saveTXTWithMovieData(movie_data : IMDBMovieData, folderWhereItIs, movieFolde
   fileFilmData.close()
  
 def loadMovieDataFromFilmData(folderWhereItIs, movieFolderName, movieName, movieYear) -> IMDBMovieData:
-  movie_data = IMDBMovieData()
+  movie_data = IMDBMovieData(movieName)
 
   filePath = getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear)
 
@@ -189,13 +211,34 @@ def loadMovieDataFromFilmData(folderWhereItIs, movieFolderName, movieName, movie
   lines = fileFilmData.readlines()
   for line in lines:
     if line.startswith("Title:"):
-      title = ""
+      title = line[10:].strip()
+      movie_data.imdb_name = title
     elif line.startswith("MovieID:"):
-      movieID = ""
+      movieID = line[10:].strip()
+      movie_data.movieID = movieID
+    elif line.startswith("Runtime:"):
+      ind = line.find("min")
+      runtime = line[10:ind-1].strip()
+      movie_data.runtime = runtime
+    elif line.startswith("Rating:"):
+      rating = line[10:].strip()
+      movie_data.rating = rating
     elif line.startswith("Genres:"):
-      movieID = ""
+      genres = line[10:].strip()
+      movie_data.genres = genres
+    elif line.startswith("Directors:"):
+      directors = line[10:].strip()
+      movie_data.directors = directors
+    elif line.startswith("Cast:"):
+      cast = line[10:].strip()
+      movie_data.cast_complete = cast
+    elif line.startswith("Plot:"):
+      plot = line[10:].strip()
+      movie_data.plot = plot
     
-    
+  if movie_data.rating == 0.0:
+    movie_data.rating = getRatingFromIMDBFolderName(movieFolderName)
+
   return movie_data
 #endregion
 
