@@ -64,23 +64,6 @@ def getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear) 
   filePath = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + movieName.strip() + " (" + str(movieYear) + ")" + ".txt"
   return filePath
 
-def saveTXTWithMovieData(movie_data : IMDBMovieData, folderWhereItIs, movieFolderName):
-  # formirati TXT datoteku s podacima
-  fileName = getFilmDataFilePath(folderWhereItIs, movieFolderName, movie_data.name, movie_data.year)
-
-  fileFilmData = open(fileName, 'w')
-  fileFilmData.write(movie_data.name + " (" + str(movie_data.year) + ")\n")
-  fileFilmData.write("MovieID:   " + str(movie_data.movieID) + "\n")
-  fileFilmData.write("Title:     " + movie_data.imdb_name + "\n")
-  fileFilmData.write("Runtime:   " + str(movie_data.runtime) + " min\n")
-  fileFilmData.write("Rating:    " + str(movie_data.rating) + "\n")
-  fileFilmData.write("Genres:    " + movie_data.genres + "\n")
-  fileFilmData.write("Directors: " + movie_data.directors + "\n")
-  fileFilmData.write("Cast:      " + movie_data.cast_complete + "\n")
-  fileFilmData.write("Plot:      " + str(movie_data.plot))
-
-  fileFilmData.close()
-    
 def saveMovieDataAndRenameFolder(movie_data : IMDBMovieData, folderWhereItIs, movieFolderName):
 
     # ime novog direktorija
@@ -122,6 +105,23 @@ def doesFilmDataHasMovieID(folderWhereItIs, movieFolderName, movieName, movieYea
 
   return False
 
+def saveTXTWithMovieData(movie_data : IMDBMovieData, folderWhereItIs, movieFolderName):
+  # formirati TXT datoteku s podacima
+  fileName = getFilmDataFilePath(folderWhereItIs, movieFolderName, movie_data.name, movie_data.year)
+
+  fileFilmData = open(fileName, 'w')
+  fileFilmData.write(movie_data.name + " (" + str(movie_data.year) + ")\n")
+  fileFilmData.write("MovieID:   " + str(movie_data.movieID) + "\n")
+  fileFilmData.write("Title:     " + movie_data.imdb_name + "\n")
+  fileFilmData.write("Runtime:   " + str(movie_data.runtime) + " min\n")
+  fileFilmData.write("Rating:    " + str(movie_data.rating) + "\n")
+  fileFilmData.write("Genres:    " + movie_data.genres + "\n")
+  fileFilmData.write("Directors: " + movie_data.directors + "\n")
+  fileFilmData.write("Cast:      " + movie_data.cast_complete + "\n")
+  fileFilmData.write("Plot:      " + str(movie_data.plot))
+
+  fileFilmData.close()
+ 
 def loadMovieDataFromFilmData(folderWhereItIs, movieFolderName, movieName, movieYear) -> IMDBMovieData:
   movie_data = IMDBMovieData()
 
@@ -417,6 +417,20 @@ def rootFolderReportNotDone(rootFolderName):
       for movie in listNotDone: 
         print ("  ", movie)
 
+def getNameYearFromNameWithIMDB(movieFolderName : str) :
+  ind1 = movieFolderName.find("(")
+  ind2 = movieFolderName.find(")")
+
+  imdb_name_raw = movieFolderName[0:ind1-1]
+  if imdb_name_raw.startswith("zzz"):
+    imdb_name1 = movieFolderName[4:ind1-1]
+  else:
+    imdb_name1 = imdb_name_raw
+
+  imdb_name = imdb_name1.strip("_")
+  year_str  = movieFolderName[ind1+1:ind2]
+
+  return (imdb_name, year_str)
 
 def rootFolderReportNoIMDBData(rootFolderName):
   print("------", rootFolderName, "------")
@@ -430,15 +444,7 @@ def rootFolderReportNoIMDBData(rootFolderName):
 
     for movieFolderName in movieSubFolders:
       if movieFolderName.find("IMDB") != -1:
-        ind1 = movieFolderName.find("(")
-        ind2 = movieFolderName.find(")")
-        imdb_name_raw = movieFolderName[0:ind1-1]
-        if imdb_name_raw.startswith("zzz"):
-          imdb_name1 = movieFolderName[4:ind1-1]
-        else:
-          imdb_name1 = imdb_name_raw
-        imdb_name = imdb_name1.strip("_")
-        year_str  = movieFolderName[ind1+1:ind2]
+        (imdb_name, year_str) = getNameYearFromNameWithIMDB(movieFolderName)
 
         if doesFilmDataHasMovieID(folderName, movieFolderName, imdb_name, int(year_str)) == False:
           listWithoutMovieID.append(movieFolderName)
