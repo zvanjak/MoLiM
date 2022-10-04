@@ -249,7 +249,7 @@ def fetchMovieData(searchMovieName, releaseYear) -> MovieData:
       print("OUCH")
   
   if movieFound == False:
-    print ("COULD FIND MOVIE WITH NAME AND YEAR")
+    print ("COULD FIND MOVIE WITH NAME AND YEAR") 
     for movie in foundMoviesList:
       print("-- {0:15} -- {1:30}, {2}".format(movie.movieID, movie.data.get('title'), movie.data.get('year')))
     #movie_data.name = ""
@@ -280,9 +280,15 @@ def fetchMovieData(searchMovieName, releaseYear) -> MovieData:
     movie_data.year = year
     print("Year: {0}".format(year))
 
-    runtime = int(movie.data['runtimes'][0])
-    movie_data.runtime = runtime
-    print("Runtime: ", runtime, " min")
+    if 'runtimes' in movie.data:
+      runtime = int(movie.data['runtimes'][0])
+      movie_data.runtime = runtime
+      print("Runtime: ", runtime, " min")
+    else:
+      print("-------------------------------------------")
+      print("NO RUNTIME!!!!")
+      print("-------------------------------------------")
+      movie_data.runtime = 0
 
     directors = ""
     cntDir = 0
@@ -314,18 +320,23 @@ def fetchMovieData(searchMovieName, releaseYear) -> MovieData:
 
     cast = ""
     shortCast = ""
-    for i in range(0,len(movie.data['cast'])-1):
-      s = movie.data['cast'][i]
-      cast += s.data['name']
-      cast += ", "
-      if i < 5 :
-        shortCast += s.data['name']
-      if i >= 0 and i < 4 :
-        shortCast += ", "
+    if 'cast' in movie.data:
+      for i in range(0,len(movie.data['cast'])-1):
+        s = movie.data['cast'][i]
+        cast += s.data['name']
+        cast += ", "
+        if i < 5 :
+          shortCast += s.data['name']
+        if i >= 0 and i < 4 :
+          shortCast += ", "
               
-    print('Cast: ' + shortCast)
-    movie_data.cast_complete = cast
-    movie_data.cast = shortCast
+      print('Cast: ' + shortCast)
+      movie_data.cast_complete = cast
+      movie_data.cast = shortCast
+    else:
+      print("-------------------------------------------")
+      print("NO CAST!!!")
+      print("-------------------------------------------")
         
     print ()
     plot = movie.data.get('plot outline', None)
@@ -770,9 +781,9 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 
 rootFolderRecheckDataWithIMDB("Z:\Movies\FILMOVI")
 
-#rootFolderStatistics("Z:\Movies\FILMOVI")
 #rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
 
+#rootFolderStatistics("Z:\Movies\FILMOVI")
 #rootFolderReportNotDone("Z:\Movies\FILMOVI")
 #processFolder("Z:\Movies\FILMOVI\___1970's")
 #processFolder("Z:\Movies\FILMOVI\___1980's")
