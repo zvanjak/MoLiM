@@ -44,6 +44,63 @@ def getFolderSize(start_path):
 
     return total_size
 
+def getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear) -> str:
+  beba = movieName.strip()
+  filePath = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + movieName.strip() + " (" + str(movieYear) + ")" + ".txt"
+  return filePath
+
+
+def getMovieNameFromFolder(movieFolderName): # TODO  -> tuple(str,str):
+  earchMovieName = ""
+  # provjeriti ima li točaka u nazivu
+  parts = movieFolderName.split('.')
+
+  # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
+  cntParts=0
+  year = 0
+  searchMovieName = ""
+  for part in parts:
+    cntParts += 1
+    # prvoga bi trebalo preskočiti (za filmove koji imaju broj u nazivu: 300, 1917, 2012)
+    if cntParts == 1:
+      continue
+    
+    if( part.isnumeric() ):
+      year = int(part)
+      if year > 1930 and year < 2023 :
+        #nasli smo ga
+        diskMovieName = ""
+        searchMovieName = ""
+        for piece in parts:
+          if piece != part:
+            diskMovieName += piece + " "
+          else :
+            # riješiti ukoliko ima _ na početku, da search name bude cist
+            searchMovieName = diskMovieName.strip('_')
+
+            # na diskMovieName cemo dodati i godinu
+            diskMovieName += "(" + piece + ")"
+            break
+        
+        print (diskMovieName, " - ", searchMovieName, " - ", movieFolderName)
+  
+  return (searchMovieName, year)
+
+def getNameYearFromNameWithIMDB(movieFolderName : str) :
+  ind1 = movieFolderName.find("(")
+  ind2 = movieFolderName.find(")")
+
+  imdb_name_raw = movieFolderName[0:ind1-1]
+  if imdb_name_raw.startswith("zzz"):
+    imdb_name1 = movieFolderName[4:ind1-1]
+  else:
+    imdb_name1 = imdb_name_raw
+
+  imdb_name = imdb_name1.strip("_")
+  year_str  = movieFolderName[ind1+1:ind2]
+
+  return (imdb_name, year_str)
+
 def getMovieFolderNameFromMovieData(movie_data : IMDBMovieData) -> str:
   prefix = ""
   if movie_data.rating >= 9.0:
@@ -58,11 +115,6 @@ def getMovieFolderNameFromMovieData(movie_data : IMDBMovieData) -> str:
   newDirName = prefix + str(movie_data.name).rstrip() + "  (" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " CAST - " + movie_data.cast
   
   return newDirName
-
-def getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear) -> str:
-  beba = movieName.strip()
-  filePath = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + movieName.strip() + " (" + str(movieYear) + ")" + ".txt"
-  return filePath
 
 def saveMovieDataAndRenameFolder(movie_data : IMDBMovieData, folderWhereItIs, movieFolderName):
 
@@ -147,58 +199,6 @@ def loadMovieDataFromFilmData(folderWhereItIs, movieFolderName, movieName, movie
   return movie_data
 #endregion
 
-
-def getMovieNameFromFolder(movieFolderName): # TODO  -> tuple(str,str):
-  earchMovieName = ""
-  # provjeriti ima li točaka u nazivu
-  parts = movieFolderName.split('.')
-
-  # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
-  cntParts=0
-  year = 0
-  searchMovieName = ""
-  for part in parts:
-    cntParts += 1
-    # prvoga bi trebalo preskočiti (za filmove koji imaju broj u nazivu: 300, 1917, 2012)
-    if cntParts == 1:
-      continue
-    
-    if( part.isnumeric() ):
-      year = int(part)
-      if year > 1930 and year < 2023 :
-        #nasli smo ga
-        diskMovieName = ""
-        searchMovieName = ""
-        for piece in parts:
-          if piece != part:
-            diskMovieName += piece + " "
-          else :
-            # riješiti ukoliko ima _ na početku, da search name bude cist
-            searchMovieName = diskMovieName.strip('_')
-
-            # na diskMovieName cemo dodati i godinu
-            diskMovieName += "(" + piece + ")"
-            break
-        
-        print (diskMovieName, " - ", searchMovieName, " - ", movieFolderName)
-  
-  return (searchMovieName, year)
-
-
-def getNameYearFromNameWithIMDB(movieFolderName : str) :
-  ind1 = movieFolderName.find("(")
-  ind2 = movieFolderName.find(")")
-
-  imdb_name_raw = movieFolderName[0:ind1-1]
-  if imdb_name_raw.startswith("zzz"):
-    imdb_name1 = movieFolderName[4:ind1-1]
-  else:
-    imdb_name1 = imdb_name_raw
-
-  imdb_name = imdb_name1.strip("_")
-  year_str  = movieFolderName[ind1+1:ind2]
-
-  return (imdb_name, year_str)
 
 # fetchMovieData(searchMovieName, releaseYear)
 def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
@@ -356,57 +356,7 @@ def processFolder(folderName):
     
       if movie_data.name != "":
         saveMovieDataAndRenameFolder(movie_data,folderName,movieFolderName)
- 
 
-def folderStatistics(folderName):
-  movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
-  
-  cntNotDone = 0
-  cntImdb8 = 0
-  cntImdb7 = 0
-  cntImdbLower6 = 0
-
-  listNotDone = []
-  listWithoutMovieID = []
-
-  for movieFolderName in movieSubFolders:
-    if movieFolderName.find("IMDB") != -1:
-      ind = movieFolderName.find("IMDB")
-      imdb_rat = movieFolderName[ind+5:ind+8]
-      
-      ind1 = movieFolderName.find("(")
-      ind2 = movieFolderName.find(")")
-      
-      imdb_name = movieFolderName[0:ind1-1].strip("_")
-      year_str  = movieFolderName[ind1+1:ind2]
-
-      if float(imdb_rat) >= 8.0:
-        cntImdb8 = cntImdb8 + 1
-      elif float(imdb_rat) >= 7.0:
-        cntImdb7 = cntImdb7 + 1
-      elif float(imdb_rat) < 6.0:
-        cntImdbLower6 = cntImdbLower6 + 1
-
-      if doesFilmDataHasMovieID(folderName, movieFolderName, imdb_name, int(year_str)) == False:
-        listWithoutMovieID.append(movieFolderName)
-    else:
-      cntNotDone = cntNotDone + 1
-      listNotDone.append(movieFolderName)
-
-  #if cntNotDone == 0:
-  #  return
-
-  print("-- {0:65} -- {1:2}, {2:2}, {3:3}, {4:2}, {5:2}, {6:2}".format(folderName, cntNotDone, cntImdb8, cntImdb7, cntImdbLower6, len(listNotDone), len(listWithoutMovieID)))
-  
-  #if len(listNotDone) > 0:
-  #  print("LIST NOT DONE:")
-  #  for movie in listNotDone: 
-  #    print ("  ", movie)
-
-  #if len(listWithoutMovieID) > 0:
-  #  print("LIST WITHOUT MOVIE ID:")
-  #  for movie in listWithoutMovieID:
-  #    print ("  ", movie)
 
 
 def folderRecheckDataWithIMDB(folderName):
@@ -467,6 +417,56 @@ def folderRecheckDataWithIMDB(folderName):
 
 
         time.sleep(5 + random.randrange(0,5))
+
+def folderStatistics(folderName):
+  movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
+  
+  cntNotDone = 0
+  cntImdb8 = 0
+  cntImdb7 = 0
+  cntImdbLower6 = 0
+
+  listNotDone = []
+  listWithoutMovieID = []
+
+  for movieFolderName in movieSubFolders:
+    if movieFolderName.find("IMDB") != -1:
+      ind = movieFolderName.find("IMDB")
+      imdb_rat = movieFolderName[ind+5:ind+8]
+      
+      ind1 = movieFolderName.find("(")
+      ind2 = movieFolderName.find(")")
+      
+      imdb_name = movieFolderName[0:ind1-1].strip("_")
+      year_str  = movieFolderName[ind1+1:ind2]
+
+      if float(imdb_rat) >= 8.0:
+        cntImdb8 = cntImdb8 + 1
+      elif float(imdb_rat) >= 7.0:
+        cntImdb7 = cntImdb7 + 1
+      elif float(imdb_rat) < 6.0:
+        cntImdbLower6 = cntImdbLower6 + 1
+
+      if doesFilmDataHasMovieID(folderName, movieFolderName, imdb_name, int(year_str)) == False:
+        listWithoutMovieID.append(movieFolderName)
+    else:
+      cntNotDone = cntNotDone + 1
+      listNotDone.append(movieFolderName)
+
+  #if cntNotDone == 0:
+  #  return
+
+  print("-- {0:65} -- {1:2}, {2:2}, {3:3}, {4:2}, {5:2}, {6:2}".format(folderName, cntNotDone, cntImdb8, cntImdb7, cntImdbLower6, len(listNotDone), len(listWithoutMovieID)))
+  
+  #if len(listNotDone) > 0:
+  #  print("LIST NOT DONE:")
+  #  for movie in listNotDone: 
+  #    print ("  ", movie)
+
+  #if len(listWithoutMovieID) > 0:
+  #  print("LIST WITHOUT MOVIE ID:")
+  #  for movie in listWithoutMovieID:
+  #    print ("  ", movie)
 
 def folderSizeStatistic(folderName):
   print("------------------------------------------")
