@@ -44,6 +44,17 @@ class MovieData(object):
     self.writers = []
     self.box_office = ""
 
+class FolderWithMovies(object):
+  def __init__(self, folderName):
+    self.name = folderName
+    self.movies = []                # list of MovieData
+
+class RootFolder(object):
+  def __init__(self,rootFolderName : str):
+    self.name = rootFolderName
+    self.folders = []               # list of FolderWithMovies
+
+
 # create an instance of the Cinemagoer class
 ia = Cinemagoer()
 
