@@ -8,78 +8,12 @@ import time
 import random
 import os
 
-#"F:\\FILMOVI\\_Al Pacino", \
-#"F:\\FILMOVI\\_Clint Eastwood"
-#"F:\\FILMOVI\\_Jack Nicholson",         \
-#"F:\\FILMOVI\\_Jason Statham",       \
-#"F:\\FILMOVI\\_John Wayne",       \
-#"F:\\FILMOVI\\_Mel Gibson",       \
-#"F:\\FILMOVI\\_Robert De Niro",       \
-#"F:\\FILMOVI\\_Tom Hanks",       \
-#"F:\\FILMOVI\\__Alien Anthology 1-4 (1979-1997)",       \
-#"F:\\FILMOVI\\__Back to the Future",       \
-#"F:\\FILMOVI\\__Batman",       \
-#"F:\\FILMOVI\\__Before Sunrise-Sunset-Midnight Trilogy 1995-2013 720p x264 aac jbr",       \
-#"F:\\FILMOVI\\__Beverly Hills Cop",       \
-#"F:\\FILMOVI\\__Bourne",       \
-#"F:\\FILMOVI\\__Conan",       \
-#"F:\\FILMOVI\\__Die Hard 1-5 (1988-20013)",       \
-#"F:\\FILMOVI\\__Dirty Harry Collection (1971-1988) 1080p Bluray.x264.anoXmous",       \
-#"F:\\FILMOVI\\__Expendables",       \
-#"F:\\FILMOVI\\__Fast and Furious 1-7 (2001-2015)",       \
-#"F:\\FILMOVI\\__Godfather Trilogy 1972-1990",       \
-#"F:\\FILMOVI\\__Godzilla",       \
-#"F:\\FILMOVI\\__Gremlins.Duology.1984-1990.1080p.BluRay.DTS.x264-ETRG",       \
-#"F:\\FILMOVI\\__Guardians of the Galaxy",       \
-#"F:\\FILMOVI\\__Harry Potter Collection Box Set (1-8) (2001-2011)",       \
-#"F:\\FILMOVI\\__Hobbit",       \
-#"F:\\FILMOVI\\__Hunger games",       \
-#"F:\\FILMOVI\\__Indiana Jones Quadrilogy  1-4 (1981-2008)",       \
-#"F:\\FILMOVI\\__Iron man",       \
-#"F:\\FILMOVI\\__James Bond Collection 1962 - 2015",       \
-#"F:\\FILMOVI\\__John Wick",       \
-#"F:\\FILMOVI\\__Jurassic Park",       \
-#"F:\\FILMOVI\\__Lethal Weapon",       \
-#"F:\\FILMOVI\\__Lord of the Rings Trilogy BluRay Extended 1080p QEBS5 AAC51 PS3 MP4-FASM",       \
-#"F:\\FILMOVI\\__Mad Max",       \
-#"F:\\FILMOVI\\__Man in black",       \
-#"F:\\FILMOVI\\__Marvel - Avengers, Hulk, Thor, Capt America, Spiderman, Ant-man",       \
-#"F:\\FILMOVI\\__Matrix Trilogy",       \
-#"F:\\FILMOVI\\__Mission Impossible",       \
-#"F:\\FILMOVI\\__Monty Python",       \
-#"F:\\FILMOVI\\__Olympus, London, Angel has Fallen Trilogy",       \
-#"F:\\FILMOVI\\__Pirates of The Caribbean 1-5 (2003-2017)",       \
-#"F:\\FILMOVI\\__Planet of the Apes",       \
-#"F:\\FILMOVI\\__Predator",       \
-#"F:\\FILMOVI\\__Predator Quadrilogy BRRip 720p H264-3Li",       \
-#"F:\\FILMOVI\\__Rambo",       \
-#"F:\\FILMOVI\\__Resident evil, Underworld",       \
-#"F:\\FILMOVI\\__Rocky",       \
-#"F:\\FILMOVI\\__Star Trek",       \
-#"F:\\FILMOVI\\__Star Wars",       \
-#"F:\\FILMOVI\\__Superman",       \
-#"F:\\FILMOVI\\__Taken",       \
-#"F:\\FILMOVI\\__Terminator 1-6 (1984-2019)",       \
-#"F:\\FILMOVI\\__Transformers 1-5",       \
-#"F:\\FILMOVI\\__Transporter series",       \
-#"F:\\FILMOVI\\__X-men",       \
-#"F:\\FILMOVI\\___1930-60",       \
-#"F:\\FILMOVI\\___1970's",       \
-#"F:\\FILMOVI\\___1980's",       \
-#"F:\\FILMOVI\\___1990's",       \
 foldersToAnalyze = [ "F:\\FILMOVI\\___2000's",       \
   "F:\\FILMOVI\\___2010's",       \
-"F:\\FILMOVI\\___2020's",       \
-#"F:\\FILMOVI\\___CLASSICS",       \
-#"F:\\FILMOVI\\___DOMACI",       \
-#"F:\\FILMOVI\\___HITCHCOCK",       \
-#"F:\\FILMOVI\\___HORROS",       \
-#"F:\\FILMOVI\\___Japan movies",       \
-#"F:\\FILMOVI\\___WAR MOVIES",       \
-#"F:\\FILMOVI\\___WESTERNS",       \
+"F:\\FILMOVI\\___2020's"
 ]  
 
-class MovieData(object):
+class IMDBMovieData(object):
     def __init__(self,name):        # poziva se kod inicijalizacije
         self.name = name
         self.imdb_name = ""
@@ -110,7 +44,7 @@ def getFolderSize(start_path):
 
     return total_size
 
-def getMovieFolderNameFromMovieData(movie_data : MovieData) -> str:
+def getMovieFolderNameFromMovieData(movie_data : IMDBMovieData) -> str:
   prefix = ""
   if movie_data.rating >= 9.0:
     prefix = "___"
@@ -130,7 +64,7 @@ def getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear) 
   filePath = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + movieName.strip() + " (" + str(movieYear) + ")" + ".txt"
   return filePath
 
-def saveTXTWithMovieData(movie_data : MovieData, folderWhereItIs, movieFolderName):
+def saveTXTWithMovieData(movie_data : IMDBMovieData, folderWhereItIs, movieFolderName):
   # formirati TXT datoteku s podacima
   fileName = getFilmDataFilePath(folderWhereItIs, movieFolderName, movie_data.name, movie_data.year)
 
@@ -147,7 +81,7 @@ def saveTXTWithMovieData(movie_data : MovieData, folderWhereItIs, movieFolderNam
 
   fileFilmData.close()
     
-def saveMovieDataAndRenameFolder(movie_data : MovieData, folderWhereItIs, movieFolderName):
+def saveMovieDataAndRenameFolder(movie_data : IMDBMovieData, folderWhereItIs, movieFolderName):
 
     # ime novog direktorija
     # Naziv (2022) IMDB-7.5 Adventure,Comedy,Thriller Cast-Mel Gibson, Jim Belushi, Joan Crawford
@@ -188,8 +122,8 @@ def doesFilmDataHasMovieID(folderWhereItIs, movieFolderName, movieName, movieYea
 
   return False
 
-def loadMovieDataFromFilmData(folderWhereItIs, movieFolderName, movieName, movieYear) -> MovieData:
-  movie_data = MovieData()
+def loadMovieDataFromFilmData(folderWhereItIs, movieFolderName, movieName, movieYear) -> IMDBMovieData:
+  movie_data = IMDBMovieData()
 
   filePath = getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear)
 
@@ -214,8 +148,8 @@ def loadMovieDataFromFilmData(folderWhereItIs, movieFolderName, movieName, movie
 #endregion
 
 # fetchMovieData(searchMovieName, releaseYear)
-def fetchMovieData(searchMovieName, releaseYear) -> MovieData:
-  movie_data = MovieData(searchMovieName)
+def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
+  movie_data = IMDBMovieData(searchMovieName)
 
   searchMovieName = searchMovieName.rstrip()
 
@@ -492,10 +426,6 @@ def rootFolderReportNoIMDBData(rootFolderName):
   for folderName in rootSubFolders:
     movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
   
-    cntImdb8 = 0
-    cntImdb7 = 0
-    cntImdbLower6 = 0
-
     listWithoutMovieID = []
 
     for movieFolderName in movieSubFolders:
@@ -785,14 +715,8 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 #rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
-#rootFolderReportNotDone("Z:\Movies\FILMOVI")
-processFolder("Z:\Movies\FILMOVI\___1970's")
-processFolder("Z:\Movies\FILMOVI\___1980's")
-processFolder("Z:\Movies\FILMOVI\___1990's")
-processFolder("Z:\Movies\FILMOVI\___2000's")
-processFolder("Z:\Movies\FILMOVI\___2010's")
-processFolder("Z:\Movies\FILMOVI\___2020's")
-processFolder("Z:\Movies\FILMOVI\__Man in black (1997-2012)")
+rootFolderReportNotDone("Z:\Movies\FILMOVI")
+#processFolder("Z:\Movies\FILMOVI\___1970's")
 
 
 #folderSizeStatistic("Z:\Movies\FILMOVI\___Westerns")
