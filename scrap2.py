@@ -33,7 +33,7 @@ ia = Cinemagoer()
 
 # FILE OPERATIONS
 #region
-def getFolderSize(start_path):
+def getFolderSize(start_path : str):
     total_size = 0
     for dirpath, dirnames, filenames in os.walk(start_path):
         for f in filenames:
@@ -44,7 +44,7 @@ def getFolderSize(start_path):
 
     return total_size
 
-def getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear) -> str:
+def getFilmDataFilePath(folderWhereItIs : str, movieFolderName : str, movieName : str, movieYear : int) -> str:
   beba = movieName.strip()
   filePath = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + movieName.strip() + " (" + str(movieYear) + ")" + ".txt"
   return filePath
@@ -336,6 +336,10 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
 
   return movie_data
     
+def fetchMovieDataByMovieID(movieID : str) -> IMDBMovieData:
+  movie_data = IMDBMovieData()
+
+  return movie_data
 
 def processFolder(folderName):
   print("------------------------------------------")
@@ -356,7 +360,6 @@ def processFolder(folderName):
     
       if movie_data.name != "":
         saveMovieDataAndRenameFolder(movie_data,folderName,movieFolderName)
-
 
 
 def folderRecheckDataWithIMDB(folderName):
@@ -418,6 +421,18 @@ def folderRecheckDataWithIMDB(folderName):
 
         time.sleep(5 + random.randrange(0,5))
 
+# Folder statistics
+#region
+def folderFilmDataStatistics(folderName):
+  movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
+
+  for movieFolderName in movieSubFolders:
+    if movieFolderName.find("IMDB") != -1:
+      (imdb_name, year_str) = getNameYearFromNameWithIMDB(movieFolderName)
+      
+      if doesFilmDataHasMovieID(folderName, movieFolderName, imdb_name, int(year_str)) == True:
+        movie_data = loadMovieDataFromFilmData(folderName, movieFolderName, imdb_name, int(year_str))
+
 def folderStatistics(folderName):
   movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
   
@@ -431,15 +446,11 @@ def folderStatistics(folderName):
 
   for movieFolderName in movieSubFolders:
     if movieFolderName.find("IMDB") != -1:
+      (imdb_name, year_str) = getNameYearFromNameWithIMDB(movieFolderName)
+
       ind = movieFolderName.find("IMDB")
       imdb_rat = movieFolderName[ind+5:ind+8]
       
-      ind1 = movieFolderName.find("(")
-      ind2 = movieFolderName.find(")")
-      
-      imdb_name = movieFolderName[0:ind1-1].strip("_")
-      year_str  = movieFolderName[ind1+1:ind2]
-
       if float(imdb_rat) >= 8.0:
         cntImdb8 = cntImdb8 + 1
       elif float(imdb_rat) >= 7.0:
@@ -480,6 +491,7 @@ def folderSizeStatistic(folderName):
       size = getFolderSize(folderName + "\\" + movieFolderName)
       printName = movieFolderName[0:60]
       print("{0:60} - {1}".format(printName, size / 1000000000))
+#endregion
 
 # Underscore functionality
 #region
@@ -656,7 +668,7 @@ def rootFolderReportNoIMDBData(rootFolderName):
         print ("  ", movie)
 
 
-# Root folder iterators
+# Root folder iterators - Statistics & RecheckDataWithIMDB
 def rootFolderStatistics(rootFolderName):
   print("------", rootFolderName, "------")
   
@@ -672,6 +684,8 @@ def rootFolderRecheckDataWithIMDB(rootFolderName):
 
   for folderName in rootSubFolders:
     folderRecheckDataWithIMDB(folderName)
+
+folderFilmDataStatistics("Z:\Movies\FILMOVI\_Al Pacino")
 
 # TODO
 # dodati konstante na pocetku
@@ -726,7 +740,7 @@ def rootFolderRecheckDataWithIMDB(rootFolderName):
 #rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
-rootFolderReportNotDone("Z:\Movies\FILMOVI")
+#rootFolderReportNotDone("Z:\Movies\FILMOVI")
 #processFolder("Z:\Movies\FILMOVI\___1970's")
 
 
