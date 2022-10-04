@@ -147,6 +147,59 @@ def loadMovieDataFromFilmData(folderWhereItIs, movieFolderName, movieName, movie
   return movie_data
 #endregion
 
+
+def getMovieNameFromFolder(movieFolderName): # TODO  -> tuple(str,str):
+  earchMovieName = ""
+  # provjeriti ima li točaka u nazivu
+  parts = movieFolderName.split('.')
+
+  # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
+  cntParts=0
+  year = 0
+  searchMovieName = ""
+  for part in parts:
+    cntParts += 1
+    # prvoga bi trebalo preskočiti (za filmove koji imaju broj u nazivu: 300, 1917, 2012)
+    if cntParts == 1:
+      continue
+    
+    if( part.isnumeric() ):
+      year = int(part)
+      if year > 1930 and year < 2023 :
+        #nasli smo ga
+        diskMovieName = ""
+        searchMovieName = ""
+        for piece in parts:
+          if piece != part:
+            diskMovieName += piece + " "
+          else :
+            # riješiti ukoliko ima _ na početku, da search name bude cist
+            searchMovieName = diskMovieName.strip('_')
+
+            # na diskMovieName cemo dodati i godinu
+            diskMovieName += "(" + piece + ")"
+            break
+        
+        print (diskMovieName, " - ", searchMovieName, " - ", movieFolderName)
+  
+  return (searchMovieName, year)
+
+
+def getNameYearFromNameWithIMDB(movieFolderName : str) :
+  ind1 = movieFolderName.find("(")
+  ind2 = movieFolderName.find(")")
+
+  imdb_name_raw = movieFolderName[0:ind1-1]
+  if imdb_name_raw.startswith("zzz"):
+    imdb_name1 = movieFolderName[4:ind1-1]
+  else:
+    imdb_name1 = imdb_name_raw
+
+  imdb_name = imdb_name1.strip("_")
+  year_str  = movieFolderName[ind1+1:ind2]
+
+  return (imdb_name, year_str)
+
 # fetchMovieData(searchMovieName, releaseYear)
 def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
   movie_data = IMDBMovieData(searchMovieName)
@@ -305,42 +358,6 @@ def processFolder(folderName):
         saveMovieDataAndRenameFolder(movie_data,folderName,movieFolderName)
  
 
-def getMovieNameFromFolder(movieFolderName): # TODO  -> tuple(str,str):
-  earchMovieName = ""
-  # provjeriti ima li točaka u nazivu
-  parts = movieFolderName.split('.')
-
-  # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
-  cntParts=0
-  year = 0
-  searchMovieName = ""
-  for part in parts:
-    cntParts += 1
-    # prvoga bi trebalo preskočiti (za filmove koji imaju broj u nazivu: 300, 1917, 2012)
-    if cntParts == 1:
-      continue
-    
-    if( part.isnumeric() ):
-      year = int(part)
-      if year > 1930 and year < 2023 :
-        #nasli smo ga
-        diskMovieName = ""
-        searchMovieName = ""
-        for piece in parts:
-          if piece != part:
-            diskMovieName += piece + " "
-          else :
-            # riješiti ukoliko ima _ na početku, da search name bude cist
-            searchMovieName = diskMovieName.strip('_')
-
-            # na diskMovieName cemo dodati i godinu
-            diskMovieName += "(" + piece + ")"
-            break
-        
-        print (diskMovieName, " - ", searchMovieName, " - ", movieFolderName)
-  
-  return (searchMovieName, year)
-
 def folderStatistics(folderName):
   movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
   
@@ -390,91 +407,6 @@ def folderStatistics(folderName):
   #  print("LIST WITHOUT MOVIE ID:")
   #  for movie in listWithoutMovieID:
   #    print ("  ", movie)
-
-def rootFolderReportNotDone(rootFolderName):
-  print("------", rootFolderName, "------")
-  
-  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
-
-  for folderName in rootSubFolders:
-    movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
-  
-    cntNotDone = 0
-    listNotDone = []
-
-    for movieFolderName in movieSubFolders:
-      if movieFolderName.find("IMDB") == -1:
-        cntNotDone = cntNotDone + 1
-        listNotDone.append(movieFolderName)
-
-    if cntNotDone == 0:
-      continue
-
-    print("-- {0:65} -- {1:2}, {2:2} ".format(folderName, cntNotDone, len(listNotDone) ))
-  
-    if len(listNotDone) > 0:
-      print("LIST NOT DONE:")
-      for movie in listNotDone: 
-        print ("  ", movie)
-
-def getNameYearFromNameWithIMDB(movieFolderName : str) :
-  ind1 = movieFolderName.find("(")
-  ind2 = movieFolderName.find(")")
-
-  imdb_name_raw = movieFolderName[0:ind1-1]
-  if imdb_name_raw.startswith("zzz"):
-    imdb_name1 = movieFolderName[4:ind1-1]
-  else:
-    imdb_name1 = imdb_name_raw
-
-  imdb_name = imdb_name1.strip("_")
-  year_str  = movieFolderName[ind1+1:ind2]
-
-  return (imdb_name, year_str)
-
-def rootFolderReportNoIMDBData(rootFolderName):
-  print("------", rootFolderName, "------")
-  
-  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
-
-  for folderName in rootSubFolders:
-    movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
-  
-    listWithoutMovieID = []
-
-    for movieFolderName in movieSubFolders:
-      if movieFolderName.find("IMDB") != -1:
-        (imdb_name, year_str) = getNameYearFromNameWithIMDB(movieFolderName)
-
-        if doesFilmDataHasMovieID(folderName, movieFolderName, imdb_name, int(year_str)) == False:
-          listWithoutMovieID.append(movieFolderName)
-
-    if len(listWithoutMovieID) == 0:
-      continue
-
-    print("-- {0:65} -- {1:2}".format(folderName, len(listWithoutMovieID)))
-  
-    if len(listWithoutMovieID) > 0:
-      print("LIST WITHOUT MOVIE ID:")
-      for movie in listWithoutMovieID:
-        print ("  ", movie)
-
-
-def rootFolderStatistics(rootFolderName):
-  print("------", rootFolderName, "------")
-  
-  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
-
-  for folderName in rootSubFolders:
-    folderStatistics(folderName)
-
-def rootFolderRecheckDataWithIMDB(rootFolderName):
-  print("------", rootFolderName, "------")
-  
-  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
-
-  for folderName in rootSubFolders:
-    folderRecheckDataWithIMDB(folderName)
 
 
 def folderRecheckDataWithIMDB(folderName):
@@ -549,7 +481,8 @@ def folderSizeStatistic(folderName):
       printName = movieFolderName[0:60]
       print("{0:60} - {1}".format(printName, size / 1000000000))
 
- 
+# Underscore functionality
+#region
 # UNDERSCORE RATING
 def setFolderNameUnderscoreRating(folderName, movieFolderName, imdbRating):
   m1 = movieFolderName.strip("zzz")
@@ -666,7 +599,79 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 
   for folderName in rootSubFolders:
     folderUnderscoreStatistics(folderName)
+ #endregion
+
+ # Root folder reports
+def rootFolderReportNotDone(rootFolderName):
+  print("------", rootFolderName, "------")
   
+  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
+
+  for folderName in rootSubFolders:
+    movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
+  
+    cntNotDone = 0
+    listNotDone = []
+
+    for movieFolderName in movieSubFolders:
+      if movieFolderName.find("IMDB") == -1:
+        cntNotDone = cntNotDone + 1
+        listNotDone.append(movieFolderName)
+
+    if cntNotDone == 0:
+      continue
+
+    print("-- {0:65} -- {1:2}, {2:2} ".format(folderName, cntNotDone, len(listNotDone) ))
+  
+    if len(listNotDone) > 0:
+      print("LIST NOT DONE:")
+      for movie in listNotDone: 
+        print ("  ", movie)
+
+def rootFolderReportNoIMDBData(rootFolderName):
+  print("------", rootFolderName, "------")
+  
+  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
+
+  for folderName in rootSubFolders:
+    movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
+  
+    listWithoutMovieID = []
+
+    for movieFolderName in movieSubFolders:
+      if movieFolderName.find("IMDB") != -1:
+        (imdb_name, year_str) = getNameYearFromNameWithIMDB(movieFolderName)
+
+        if doesFilmDataHasMovieID(folderName, movieFolderName, imdb_name, int(year_str)) == False:
+          listWithoutMovieID.append(movieFolderName)
+
+    if len(listWithoutMovieID) == 0:
+      continue
+
+    print("-- {0:65} -- {1:2}".format(folderName, len(listWithoutMovieID)))
+  
+    if len(listWithoutMovieID) > 0:
+      print("LIST WITHOUT MOVIE ID:")
+      for movie in listWithoutMovieID:
+        print ("  ", movie)
+
+
+# Root folder iterators
+def rootFolderStatistics(rootFolderName):
+  print("------", rootFolderName, "------")
+  
+  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
+
+  for folderName in rootSubFolders:
+    folderStatistics(folderName)
+
+def rootFolderRecheckDataWithIMDB(rootFolderName):
+  print("------", rootFolderName, "------")
+  
+  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
+
+  for folderName in rootSubFolders:
+    folderRecheckDataWithIMDB(folderName)
 
 # TODO
 # dodati konstante na pocetku
