@@ -361,6 +361,8 @@ def processFolder(folderName):
 
   for movieFolderName in movieSubFolders:
     if movieFolderName.find("IMDB") == -1:
+      print(movieFolderName)
+
       (searchMovieName, year) = getMovieNameFromFolder(movieFolderName)
 
       movie_data = fetchMovieData(searchMovieName, year)
@@ -779,14 +781,19 @@ def rootFolderUnderscoreStatistics(rootFolderName):
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Star Trek (1979-2016)")
 #folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Star Wars (1977-2019)")
 
-rootFolderRecheckDataWithIMDB("Z:\Movies\FILMOVI")
-
+#rootFolderRecheckDataWithIMDB("Z:\Movies\FILMOVI")
 #rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
 #rootFolderReportNotDone("Z:\Movies\FILMOVI")
-#processFolder("Z:\Movies\FILMOVI\___1970's")
-#processFolder("Z:\Movies\FILMOVI\___1980's")
+processFolder("Z:\Movies\FILMOVI\___1970's")
+processFolder("Z:\Movies\FILMOVI\___1980's")
+processFolder("Z:\Movies\FILMOVI\___1990's")
+processFolder("Z:\Movies\FILMOVI\___2000's")
+processFolder("Z:\Movies\FILMOVI\___2010's")
+processFolder("Z:\Movies\FILMOVI\___2020's")
+processFolder("Z:\Movies\FILMOVI\__Man in black (1997-2012)")
+
 
 #folderSizeStatistic("Z:\Movies\FILMOVI\___Westerns")
 
