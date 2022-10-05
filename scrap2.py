@@ -15,25 +15,25 @@ foldersToAnalyze = [ "F:\\FILMOVI\\___2000's",       \
 
 directorsFolders = [ "Z:\Movies\FILMOVI\__Akira Kurosawa",       \
   "Z:\Movies\FILMOVI\__Alfred Hitchcock",       \
-  "Z:\Movies\FILMOVI\__Christopher Nolan",       \
-  "Z:\Movies\FILMOVI\__Coen brothers",       \
-  "Z:\Movies\FILMOVI\__John Ford",       \
-  "Z:\Movies\FILMOVI\__Martic Scorsese",       \
-  "Z:\Movies\FILMOVI\__Quentin Tarantino",       \
-  "Z:\Movies\FILMOVI\__Ridley Scott",       \
-  "Z:\Movies\FILMOVI\__Stanley Kubrick",       \
-s  "Z:\Movies\FILMOVI\__Steven Spielberg"
+  "Z:\Movies\FILMOVI\__Christopher Nolan",      \
+  "Z:\Movies\FILMOVI\__Coen brothers",          \
+  "Z:\Movies\FILMOVI\__John Ford",              \
+  "Z:\Movies\FILMOVI\__Martic Scorsese",        \
+  "Z:\Movies\FILMOVI\__Quentin Tarantino",      \
+  "Z:\Movies\FILMOVI\__Ridley Scott",           \
+  "Z:\Movies\FILMOVI\__Stanley Kubrick",        \
+  "Z:\Movies\FILMOVI\__Steven Spielberg"
 ]  
 
-directorsList = [ "Akira Kurosawa", 
-                  "Alfred Hitchcock",
-                  "Christopher Nolan",
-                  "Coen brothers",
-                  "John Ford"
-                  "Martin Scorsese", 
-                  "Quentin Tarantino"
-                  "Ridley Scott",
-                  "Stanley Kubrick",
+directorsList = [ "Akira Kurosawa",     \
+                  "Alfred Hitchcock",   \
+                  "Christopher Nolan",  \
+                  "Coen brothers",      \
+                  "John Ford"           \
+                  "Martin Scorsese",    \
+                  "Quentin Tarantino"   \
+                  "Ridley Scott",       \
+                  "Stanley Kubrick",    \
                   "Steven Spielberg" ]
 
 actorsFolders = [ "Z:\Movies\FILMOVI\___Al Pacino",   \
@@ -885,12 +885,11 @@ def printMoviesList(listMovies):
 #root.loadDataFromListOfFolders(directorsFolders)
 #root = RootFolder("Test genres")
 #root.loadDataFromListOfFolders(genresFolders)
-#root = RootFolder("Test actors")
-#root.loadDataFromListOfFolders(actorsFolders)
-root = RootFolder("Test decades")
-root.loadDataFromListOfFolders(decadesFolders)
+root = RootFolder("Test actors")
+root.loadDataFromListOfFolders(actorsFolders+decadesFolders+genresFolders)
+#root = RootFolder("Test decades")
+#root.loadDataFromListOfFolders(decadesFolders)
 
-list1 = root.getMoviesWithRatingHigherThan(8.0)
 
 for director in directorsList:
   root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, director)
