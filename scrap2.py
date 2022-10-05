@@ -18,6 +18,8 @@ directorsFolders = [ "F:\\FILMOVI\\___2000's",       \
   "F:\\FILMOVI\\___2020's"
 ]  
 
+directorsList = [ "Martin Scorsese", "John Ford", "Ridley Scott" ]
+
 actorsFolders = [ "Z:\Movies\FILMOVI\___Al Pacino",   \
   "Z:\Movies\FILMOVI\___Bruce Lee",                   \
   "Z:\Movies\FILMOVI\___Clint Eastwood",              \
@@ -116,6 +118,10 @@ class FolderWithMovies(object):
     listMovies = [ movie for movie in self.movies if float(movie.rating) >= rating ]
     return listMovies
 
+  def getMoviesWithRatingHigherThanWithGivenDirector(self, rating : float, director : str) :
+    listMovies = [ movie for movie in self.movies if float(movie.rating) >= rating and movie.isDirectedBy(director) == True ]
+    return listMovies
+
   # getMoviesDirectedBy
   # getMoviesWithActor# getMoviesWithGenre
 
@@ -141,6 +147,13 @@ class RootFolder(object):
       self.folders.append(newFolder)
 
   def getMoviesWithRatingHigherThan(self, rating : float) :
+    listMovies = []
+    for folder in self.folders:
+      listMovies += folder.getMoviesWithRatingHigherThan(rating)
+
+    return listMovies
+
+  def getMoviesWithRatingHigherThanWithGivenDirector(self, rating : float, director : str) :
     listMovies = []
     for folder in self.folders:
       listMovies += folder.getMoviesWithRatingHigherThan(rating)
