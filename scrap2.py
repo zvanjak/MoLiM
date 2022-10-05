@@ -20,20 +20,34 @@ directorsFolders = [ "F:\\FILMOVI\\___2000's",       \
 
 actorsFolders = [ "Z:\Movies\FILMOVI\___Al Pacino",   \
   "Z:\Movies\FILMOVI\___Bruce Lee",                   \
-  #"Z:\Movies\FILMOVI\___Clint Eastwood",              \
-  #"Z:\Movies\FILMOVI\___Daniel Day Lewis",            \
-  #"Z:\Movies\FILMOVI\___Jack Nicholson",              \
-  #"Z:\Movies\FILMOVI\___John Wayne",                  \
-  #"Z:\Movies\FILMOVI\___Mel Gibson",                  \
+  "Z:\Movies\FILMOVI\___Clint Eastwood",              \
+  "Z:\Movies\FILMOVI\___Daniel Day Lewis",            \
+  "Z:\Movies\FILMOVI\___Jack Nicholson",              \
+  "Z:\Movies\FILMOVI\___John Wayne",                  \
+  "Z:\Movies\FILMOVI\___Mel Gibson",                  \
   "Z:\Movies\FILMOVI\___Robert De Niro",              \
   "Z:\Movies\FILMOVI\___Tom Cruise",                  \
   "Z:\Movies\FILMOVI\___Tom Hanks",
 ]  
 
+genresFolders = [ "Z:\Movies\FILMOVI\____Action, Crime & Thriller",       \
+  "Z:\Movies\FILMOVI\____Biography & History",       \
+  "Z:\Movies\FILMOVI\____Comedy",       \
+  "Z:\Movies\FILMOVI\____Drama",       \
+  "Z:\Movies\FILMOVI\____Europe & Asia movies",       \
+  "Z:\Movies\FILMOVI\____Horrors",       \
+  "Z:\Movies\FILMOVI\____Science Fiction & Fantasy",       \
+  "Z:\Movies\FILMOVI\____War movies",       \
+  "Z:\Movies\FILMOVI\____Westerns"
+]  
 
-genresFolders = [ "F:\\FILMOVI\\___2000's",       \
-  "F:\\FILMOVI\\___2010's",       \
-  "F:\\FILMOVI\\___2020's"
+decadesFolders = [ "Z:\Movies\FILMOVI\_1930-60",       \
+  "Z:\Movies\FILMOVI\_1970's",       \
+  "Z:\Movies\FILMOVI\_1980's",       \
+  "Z:\Movies\FILMOVI\_1990's",       \
+  "Z:\Movies\FILMOVI\_2000's",       \
+  "Z:\Movies\FILMOVI\_2010's",       \
+  "Z:\Movies\FILMOVI\_2020's"
 ]  
 
 class IMDBMovieData(object):
@@ -831,14 +845,20 @@ def printMoviesList(listMovies):
     short_cast = movie.cast_complete[0:50]
     print("Rating - {0} - {1:40} - {2}        -   {3:30}   - {4}".format( movie.rating, movie.name + " (" + str(movie.year) + ") ", short_cast, movie.directors, movie.genres ) )
 
-root = RootFolder("Test directors")
-root.loadDataFromListOfFolders(actorsFolders)
+#root = RootFolder("Test directors")
+#root.loadDataFromListOfFolders(directorsFolders)
+#root = RootFolder("Test genres")
+#root.loadDataFromListOfFolders(genresFolders)
+#root = RootFolder("Test actors")
+#root.loadDataFromListOfFolders(actorsFolders)
+root = RootFolder("Test decades")
+root.loadDataFromListOfFolders(decadesFolders)
 
 list1 = root.getMoviesWithRatingHigherThan(8.0)
 
 root.printMoviesWithRatingHigherThan(8.0)
 
-printMoviesList(list1)
+#printMoviesList(list1)
 # TODO
 # dodati konstante na pocetku
 # analyze folder
