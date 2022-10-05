@@ -881,8 +881,28 @@ def printMoviesList(listMovies):
     short_cast = movie.cast_complete[0:50]
     print("Rating - {0} - {1:40} - {2}        -   {3:30}   - {4}".format( movie.rating, movie.name + " (" + str(movie.year) + ") ", short_cast, movie.directors, movie.genres ) )
 
-root = RootFolder("Test directors")
-root.loadDataFromListOfFolders(directorsFolders)
+def getSeriesFolderNames():
+  listNames = []
+  startFolder = "Z:\Movies\FILMOVI"
+  subFolders= [ f.name for f in os.scandir(startFolder) if f.is_dir() ]
+
+  for folderName in subFolders:
+    if folderName.startswith("_") == True and folderName.startswith("__") == False and folderName.startswith("___") == False and folderName.startswith("____") == False :
+      if folderName[2] >= '0' and folderName[2] <= '9' :
+        continue
+      else:
+        listNames.append(startFolder + "\\" + folderName)
+        print(folderName)
+
+  return listNames
+
+
+seriesFolders = getSeriesFolderNames()
+root = RootFolder("Test series")
+root.loadDataFromListOfFolders(seriesFolders) 
+
+#root = RootFolder("Test directors")
+#root.loadDataFromListOfFolders(directorsFolders) 
 #root = RootFolder("Test genres")
 #root.loadDataFromListOfFolders(genresFolders)
 #root = RootFolder("Test actors")
