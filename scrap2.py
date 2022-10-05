@@ -55,6 +55,18 @@ class FolderWithMovies(object):
     self.name = folderName
     self.movies = []                # list of MovieData
 
+  # getMoviesWithRatingHigherThan
+  def getMoviesWithRatingHigherThan(self, rating : float) :
+    listMovies = []
+    for movie in self.movies:
+      if movie.rating > rating:
+        listMovies.append(movie)
+    return listMovies
+
+  # getMoviesDirectedBy
+  # getMoviesWithActor
+  # getMoviesWithGenre
+
 class RootFolder(object):
   def __init__(self,rootFolderName : str):
     self.name = rootFolderName
@@ -761,6 +773,8 @@ def getRootFolderFilmData(rootFolderName):
 
 folder1 = folderFilmDataStatistics("Z:\Movies\FILMOVI\_Al Pacino")
 folder2 = folderFilmDataStatistics("Z:\Movies\FILMOVI\_John Wayne")
+
+list1 = folder1.getMoviesWithRatingHigherThan(8.0)
 
 root = RootFolder("Test")
 root.folders.append(folder1)
