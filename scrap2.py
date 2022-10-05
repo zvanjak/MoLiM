@@ -59,18 +59,34 @@ class FolderWithMovies(object):
   def getMoviesWithRatingHigherThan(self, rating : float) :
     listMovies = []
     for movie in self.movies:
-      if movie.rating > rating:
+      if float(movie.rating) >= rating:
         listMovies.append(movie)
     return listMovies
 
   # getMoviesDirectedBy
-  # getMoviesWithActor
-  # getMoviesWithGenre
+  # getMoviesWithActor# getMoviesWithGenre
 
 class RootFolder(object):
   def __init__(self,rootFolderName : str):
     self.name = rootFolderName
     self.folders = []               # list of FolderWithMovies
+
+  def loadData(self):
+    rootSubFolders = [ f.path for f in os.scandir(self.name) if f.is_dir() ]
+
+    for folderName in rootSubFolders:
+      print("Adding - ", folderName)
+      folderFilmDataStatistics(folderName)
+
+  def getMoviesWithRatingHigherThan(self, rating : float) :
+    listMovies = []
+    for folder in self.folders:
+      folderMovies = folder.getMoviesWithRatingHigherThan(rating)
+      for movie in folderMovies:
+        if float(movie.rating) >= rating:
+          listMovies.append(movie)
+
+    return listMovies
 
 
 # create an instance of the Cinemagoer class
@@ -763,13 +779,7 @@ def rootFolderRecheckDataWithIMDB(rootFolderName):
   for folderName in rootSubFolders:
     folderRecheckDataWithIMDB(folderName)
 
-def getRootFolderFilmData(rootFolderName):
-  print("------", rootFolderName, "------")
-  
-  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
 
-  for folderName in rootSubFolders:
-    folderFilmDataStatistics(folderName)
 
 folder1 = folderFilmDataStatistics("Z:\Movies\FILMOVI\_Al Pacino")
 folder2 = folderFilmDataStatistics("Z:\Movies\FILMOVI\_John Wayne")
@@ -780,6 +790,9 @@ root = RootFolder("Test")
 root.folders.append(folder1)
 root.folders.append(folder2)
 
+list2 = root.getMoviesWithRatingHigherThan(8.0)
+
+print(list2)
 # TODO
 # dodati konstante na pocetku
 # analyze folder
