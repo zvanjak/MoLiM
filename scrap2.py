@@ -73,11 +73,23 @@ class MovieData(object):
     self.producers = []
     self.writers = []
     self.box_office = ""
-    xx
+    
 class FolderWithMovies(object):
   def __init__(self, folderName):
     self.name = folderName
     self.movies = []                # list of MovieData
+
+  def loadData(self, folderName):
+    movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
+
+    for movieFolderName in movieSubFolders:
+      if movieFolderName.find("IMDB") != -1:
+        (imdb_name, year_str) = getNameYearFromNameWithIMDB(movieFolderName)
+      
+        if doesFilmDataHasMovieID(folderName, movieFolderName, imdb_name, int(year_str)) == True:
+          movie_data = loadIMDBMovieDataFromFilmData(folderName, movieFolderName, imdb_name, int(year_str))
+
+          self.movies.append(movie_data)
 
   def getMoviesWithRatingHigherThan(self, rating : float) :
     listMovies = [ movie for movie in self.movies if float(movie.rating) >= rating ]
@@ -528,21 +540,6 @@ def folderRecheckDataWithIMDB(folderName):
 
 # Folder statistics
 #region
-def folderFilmDataStatistics(folderName) -> FolderWithMovies:
-  retFolder = FolderWithMovies(folderName)
-
-  movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
-
-  for movieFolderName in movieSubFolders:
-    if movieFolderName.find("IMDB") != -1:
-      (imdb_name, year_str) = getNameYearFromNameWithIMDB(movieFolderName)
-      
-      if doesFilmDataHasMovieID(folderName, movieFolderName, imdb_name, int(year_str)) == True:
-        movie_data = loadIMDBMovieDataFromFilmData(folderName, movieFolderName, imdb_name, int(year_str))
-
-        retFolder.movies.append(movie_data)
-
-  return retFolder
 
 def folderStatistics(folderName):
   movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
@@ -834,31 +831,6 @@ print(list2)
 
 #folderStatistics("Z:\Movies\FILMOVI\___1970's")
 
-#rootFolderUnderscoreStatistics("Z:\Movies\FILMOVI")
-#folderReapplyUnderscoreRating("Z:\Movies\FILMOVI\___HITCHCOCK")
-
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Al Pacino")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Clint Eastwood")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Jack Nicholson")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Jason Statham")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_John Wayne")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Mel Gibson")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Robert De Niro")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_Tom Hanks")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1930-60")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1970's")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1980's")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___1990's")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2000's")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2010's")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___2020's")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___War movies")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\___Westerns")
-
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Transformers 1-5 (2007-2017)")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Star Trek (1979-2016)")
-#folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\__Star Wars (1977-2019)")
-
 #rootFolderRecheckDataWithIMDB("Z:\Movies\FILMOVI")
 #rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
 
@@ -866,13 +838,5 @@ print(list2)
 #rootFolderReportNotDone("Z:\Movies\FILMOVI")
 #processFolder("Z:\Movies\FILMOVI\___1970's")
 
-
 #folderSizeStatistic("Z:\Movies\FILMOVI\___Westerns")
 
-#for folderName in foldersToAnalyze:
-#  print(folderName)
-#  folder = folderName
-  #reapplyUnderscoreRating(folderName)
-  #analyzeFolder(folderName)
-
-#analyzeFolder(folder)
