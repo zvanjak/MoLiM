@@ -829,7 +829,7 @@ def rootFolderRecheckDataWithIMDB(rootFolderName):
 def printMoviesList(listMovies):
   for movie in listMovies:
     short_cast = movie.cast_complete[0:50]
-    print("Rating - {0} - {1:40} - {2} - {3}".format( movie.rating, movie.name + " (" + str(movie.year) + ") ", short_cast, movie.directors ) )
+    print("Rating - {0} - {1:40} - {2}        -   {3:30}   - {4}".format( movie.rating, movie.name + " (" + str(movie.year) + ") ", short_cast, movie.directors, movie.genres ) )
 
 root = RootFolder("Test directors")
 root.loadDataFromListOfFolders(actorsFolders)
