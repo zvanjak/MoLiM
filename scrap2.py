@@ -881,18 +881,19 @@ def printMoviesList(listMovies):
     short_cast = movie.cast_complete[0:50]
     print("Rating - {0} - {1:40} - {2}        -   {3:30}   - {4}".format( movie.rating, movie.name + " (" + str(movie.year) + ") ", short_cast, movie.directors, movie.genres ) )
 
-#root = RootFolder("Test directors")
-#root.loadDataFromListOfFolders(directorsFolders)
+root = RootFolder("Test directors")
+root.loadDataFromListOfFolders(directorsFolders)
 #root = RootFolder("Test genres")
 #root.loadDataFromListOfFolders(genresFolders)
-root = RootFolder("Test actors")
-root.loadDataFromListOfFolders(actorsFolders+decadesFolders+genresFolders)
+#root = RootFolder("Test actors")
+#root.loadDataFromListOfFolders(actorsFolders+decadesFolders+genresFolders)
 #root = RootFolder("Test decades")
 #root.loadDataFromListOfFolders(decadesFolders)
 
+root.printMoviesWithRatingHigherThan(8.0)
 
-for director in directorsList:
-  root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, director)
+#for director in directorsList:
+#  root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, director)
 
 #printMoviesList(list1)
 # TODO
