@@ -897,20 +897,29 @@ def getSeriesFolderNames():
   return listNames
 
 
-seriesFolders = getSeriesFolderNames()
-root = RootFolder("Test series")
-root.loadDataFromListOfFolders(seriesFolders) 
+#seriesFolders = getSeriesFolderNames()
+#root = RootFolder("Test series")
+#root.loadDataFromListOfFolders(seriesFolders) 
+
+#processFolder("Z:\Movies\FILMOVI\__Alfred Hitchcock")
+
 
 #root = RootFolder("Test directors")
 #root.loadDataFromListOfFolders(directorsFolders) 
+
 #root = RootFolder("Test genres")
 #root.loadDataFromListOfFolders(genresFolders)
 #root = RootFolder("Test actors")
-#root.loadDataFromListOfFolders(actorsFolders+decadesFolders+genresFolders)
-#root = RootFolder("Test decades")
-#root.loadDataFromListOfFolders(decadesFolders)
-
+#root.loadDataFromListOfFolders(actorsFolders)
+root = RootFolder("Test decades")
+root.loadDataFromListOfFolders(decadesFolders)
 root.printMoviesWithRatingHigherThan(8.0)
+
+#root = RootFolder("Test actors")
+#root.loadDataFromListOfFolders(actorsFolders+decadesFolders+genresFolders)
+
+#root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, "Ridley Scott")
+
 
 #for director in directorsList:
 #  root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, director)
