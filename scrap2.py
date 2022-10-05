@@ -13,6 +13,22 @@ foldersToAnalyze = [ "F:\\FILMOVI\\___2000's",       \
 "F:\\FILMOVI\\___2020's"
 ]  
 
+directorsFolders = [ "F:\\FILMOVI\\___2000's",       \
+  "F:\\FILMOVI\\___2010's",       \
+  "F:\\FILMOVI\\___2020's"
+]  
+
+actorsFolders = [ "Z:\Movies\FILMOVI\_Al Pacino",   \
+  "Z:\Movies\FILMOVI\_Clint Eastwood",              \
+  "Z:\Movies\FILMOVI\_Jack Nicholson"
+]  
+
+
+genresFolders = [ "F:\\FILMOVI\\___2000's",       \
+  "F:\\FILMOVI\\___2010's",       \
+  "F:\\FILMOVI\\___2020's"
+]  
+
 class IMDBMovieData(object):
   def __init__(self,name):        # poziva se kod inicijalizacije
     self.name = name
@@ -26,8 +42,16 @@ class IMDBMovieData(object):
     self.cast = ""
     self.cast_complete = ""
     self.plot = ""
+    self.box_office = ""
+    
+    self.directors_list = []
+    self.genres_list = []
+    self.short_cast = ""
+    self.cast_list = []
+    self.producers_list = []
+    self.writers_list = []
 
-  def isDirectedBy(director : str) -> bool:
+  def isDirectedBy(self, director : str) -> bool:
     if self.directors.find(director) != -1:
       return True
     else:
@@ -49,18 +73,14 @@ class MovieData(object):
     self.producers = []
     self.writers = []
     self.box_office = ""
-
+    xx
 class FolderWithMovies(object):
   def __init__(self, folderName):
     self.name = folderName
     self.movies = []                # list of MovieData
 
-  # getMoviesWithRatingHigherThan
   def getMoviesWithRatingHigherThan(self, rating : float) :
-    listMovies = []
-    for movie in self.movies:
-      if float(movie.rating) >= rating:
-        listMovies.append(movie)
+    listMovies = [ movie for movie in self.movies if float(movie.rating) >= rating ]
     return listMovies
 
   # getMoviesDirectedBy
@@ -81,10 +101,7 @@ class RootFolder(object):
   def getMoviesWithRatingHigherThan(self, rating : float) :
     listMovies = []
     for folder in self.folders:
-      folderMovies = folder.getMoviesWithRatingHigherThan(rating)
-      for movie in folderMovies:
-        if float(movie.rating) >= rating:
-          listMovies.append(movie)
+      listMovies += folder.getMoviesWithRatingHigherThan(rating)
 
     return listMovies
 
