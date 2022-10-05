@@ -18,9 +18,16 @@ directorsFolders = [ "F:\\FILMOVI\\___2000's",       \
   "F:\\FILMOVI\\___2020's"
 ]  
 
-actorsFolders = [ "Z:\Movies\FILMOVI\_Al Pacino",   \
-  "Z:\Movies\FILMOVI\_Clint Eastwood",              \
-  "Z:\Movies\FILMOVI\_Jack Nicholson"
+actorsFolders = [ "Z:\Movies\FILMOVI\___Al Pacino",   \
+  "Z:\Movies\FILMOVI\___Bruce Lee",                   \
+  "Z:\Movies\FILMOVI\___Clint Eastwood",              \
+  "Z:\Movies\FILMOVI\___Daniel Day Lewis",            \
+  "Z:\Movies\FILMOVI\___Jack Nicholson",              \
+  "Z:\Movies\FILMOVI\___John Wayne",                  \
+  "Z:\Movies\FILMOVI\___Mel Gibson",                  \
+  "Z:\Movies\FILMOVI\___Robert De Niro",              \
+  "Z:\Movies\FILMOVI\___Tom Cruise",                  \
+  "Z:\Movies\FILMOVI\___Tom Hanks",
 ]  
 
 
@@ -79,15 +86,15 @@ class FolderWithMovies(object):
     self.name = folderName
     self.movies = []                # list of MovieData
 
-  def loadData(self, folderName):
-    movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
+  def loadData(self):
+    movieSubFolders = [ f.name for f in os.scandir(self.name) if f.is_dir() ]
 
     for movieFolderName in movieSubFolders:
       if movieFolderName.find("IMDB") != -1:
         (imdb_name, year_str) = getNameYearFromNameWithIMDB(movieFolderName)
       
-        if doesFilmDataHasMovieID(folderName, movieFolderName, imdb_name, int(year_str)) == True:
-          movie_data = loadIMDBMovieDataFromFilmData(folderName, movieFolderName, imdb_name, int(year_str))
+        if doesFilmDataHasMovieID(self.name, movieFolderName, imdb_name, int(year_str)) == True:
+          movie_data = loadIMDBMovieDataFromFilmData(self.name, movieFolderName, imdb_name, int(year_str))
 
           self.movies.append(movie_data)
 
@@ -108,7 +115,16 @@ class RootFolder(object):
 
     for folderName in rootSubFolders:
       print("Adding - ", folderName)
-      folderFilmDataStatistics(folderName)
+      newFolder = FolderWithMovies(folderName)
+      newFolder.loadData()
+      self.folders.append(newFolder)
+
+  def loadDataFromListOfFolders(self, listFolders):
+    for folderName in listFolders:
+      print("Adding - ", folderName)
+      newFolder = FolderWithMovies(folderName)
+      newFolder.loadData()
+      self.folders.append(newFolder)
 
   def getMoviesWithRatingHigherThan(self, rating : float) :
     listMovies = []
@@ -793,20 +809,16 @@ def rootFolderRecheckDataWithIMDB(rootFolderName):
   for folderName in rootSubFolders:
     folderRecheckDataWithIMDB(folderName)
 
+def printMoviesList(listMovies):
+  for movie in listMovies:
+    print("Rating - ", movie.rating, " - ", movie.name)
 
+root = RootFolder("Test directors")
+root.loadDataFromListOfFolders(actorsFolders)
 
-folder1 = folderFilmDataStatistics("Z:\Movies\FILMOVI\_Al Pacino")
-folder2 = folderFilmDataStatistics("Z:\Movies\FILMOVI\_John Wayne")
+list1 = root.getMoviesWithRatingHigherThan(8.0)
 
-list1 = folder1.getMoviesWithRatingHigherThan(8.0)
-
-root = RootFolder("Test")
-root.folders.append(folder1)
-root.folders.append(folder2)
-
-list2 = root.getMoviesWithRatingHigherThan(8.0)
-
-print(list2)
+printMoviesList(list1)
 # TODO
 # dodati konstante na pocetku
 # analyze folder
