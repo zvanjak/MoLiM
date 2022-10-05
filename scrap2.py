@@ -27,6 +27,12 @@ class IMDBMovieData(object):
     self.cast_complete = ""
     self.plot = ""
 
+  def isDirectedBy(director : str) -> bool:
+    if self.directors.find(director) != -1:
+      return True
+    else:
+      return False
+
 class MovieData(object):
   def __init__(self,name):        # poziva se kod inicijalizacije
     self.name = name
@@ -207,7 +213,7 @@ def saveTXTWithMovieData(movie_data : IMDBMovieData, folderWhereItIs, movieFolde
 
   fileFilmData.close()
  
-def loadMovieDataFromFilmData(folderWhereItIs, movieFolderName, movieName, movieYear) -> IMDBMovieData:
+def loadIMDBMovieDataFromFilmData(folderWhereItIs, movieFolderName, movieName, movieYear) -> IMDBMovieData:
   movie_data = IMDBMovieData(movieName)
 
   filePath = getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear)
@@ -477,7 +483,9 @@ def folderRecheckDataWithIMDB(folderName):
 
 # Folder statistics
 #region
-def folderFilmDataStatistics(folderName):
+def folderFilmDataStatistics(folderName) -> FolderWithMovies:
+  retFolder = FolderWithMovies(folderName)
+
   movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
 
   for movieFolderName in movieSubFolders:
@@ -485,7 +493,11 @@ def folderFilmDataStatistics(folderName):
       (imdb_name, year_str) = getNameYearFromNameWithIMDB(movieFolderName)
       
       if doesFilmDataHasMovieID(folderName, movieFolderName, imdb_name, int(year_str)) == True:
-        movie_data = loadMovieDataFromFilmData(folderName, movieFolderName, imdb_name, int(year_str))
+        movie_data = loadIMDBMovieDataFromFilmData(folderName, movieFolderName, imdb_name, int(year_str))
+
+        retFolder.movies.append(movie_data)
+
+  return retFolder
 
 def folderStatistics(folderName):
   movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
@@ -739,7 +751,20 @@ def rootFolderRecheckDataWithIMDB(rootFolderName):
   for folderName in rootSubFolders:
     folderRecheckDataWithIMDB(folderName)
 
-folderFilmDataStatistics("Z:\Movies\FILMOVI\_Al Pacino")
+def getRootFolderFilmData(rootFolderName):
+  print("------", rootFolderName, "------")
+  
+  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
+
+  for folderName in rootSubFolders:
+    folderFilmDataStatistics(folderName)
+
+folder1 = folderFilmDataStatistics("Z:\Movies\FILMOVI\_Al Pacino")
+folder2 = folderFilmDataStatistics("Z:\Movies\FILMOVI\_John Wayne")
+
+root = RootFolder("Test")
+root.folders.append(folder1)
+root.folders.append(folder2)
 
 # TODO
 # dodati konstante na pocetku
