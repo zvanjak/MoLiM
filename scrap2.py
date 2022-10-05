@@ -20,11 +20,11 @@ directorsFolders = [ "F:\\FILMOVI\\___2000's",       \
 
 actorsFolders = [ "Z:\Movies\FILMOVI\___Al Pacino",   \
   "Z:\Movies\FILMOVI\___Bruce Lee",                   \
-  "Z:\Movies\FILMOVI\___Clint Eastwood",              \
-  "Z:\Movies\FILMOVI\___Daniel Day Lewis",            \
-  "Z:\Movies\FILMOVI\___Jack Nicholson",              \
-  "Z:\Movies\FILMOVI\___John Wayne",                  \
-  "Z:\Movies\FILMOVI\___Mel Gibson",                  \
+  #"Z:\Movies\FILMOVI\___Clint Eastwood",              \
+  #"Z:\Movies\FILMOVI\___Daniel Day Lewis",            \
+  #"Z:\Movies\FILMOVI\___Jack Nicholson",              \
+  #"Z:\Movies\FILMOVI\___John Wayne",                  \
+  #"Z:\Movies\FILMOVI\___Mel Gibson",                  \
   "Z:\Movies\FILMOVI\___Robert De Niro",              \
   "Z:\Movies\FILMOVI\___Tom Cruise",                  \
   "Z:\Movies\FILMOVI\___Tom Hanks",
@@ -133,6 +133,12 @@ class RootFolder(object):
 
     return listMovies
 
+  def printMoviesWithRatingHigherThan(self, rating : float) :
+    for folder in self.folders:
+      newMovies = folder.getMoviesWithRatingHigherThan(rating)
+      if len(newMovies) > 0 :
+        print(folder.name)
+        printMoviesList(newMovies)
 
 # create an instance of the Cinemagoer class
 ia = Cinemagoer()
@@ -208,6 +214,13 @@ def getNameYearFromNameWithIMDB(movieFolderName : str) :
 
   return (imdb_name, year_str)
 
+def getYearFromIMDBFolderName(movieFolderName : str) -> int :
+  ind1 = movieFolderName.find("(")
+  ind2 = movieFolderName.find(")")
+  year_str  = movieFolderName[ind1+1:ind2]
+  
+  return int(year_str)
+
 def getRatingFromIMDBFolderName(movieFolderName : str) -> float :
   ind = movieFolderName.find("IMDB-")
   rating = movieFolderName[ind+5:ind+8]
@@ -277,6 +290,7 @@ def saveTXTWithMovieData(movie_data : IMDBMovieData, folderWhereItIs, movieFolde
   fileFilmData.write(movie_data.name + " (" + str(movie_data.year) + ")\n")
   fileFilmData.write("MovieID:   " + str(movie_data.movieID) + "\n")
   fileFilmData.write("Title:     " + movie_data.imdb_name + "\n")
+  fileFilmData.write("Year:      " + str(movie_data.year) + "\n")
   fileFilmData.write("Runtime:   " + str(movie_data.runtime) + " min\n")
   fileFilmData.write("Rating:    " + str(movie_data.rating) + "\n")
   fileFilmData.write("Genres:    " + movie_data.genres + "\n")
@@ -328,6 +342,9 @@ def loadIMDBMovieDataFromFilmData(folderWhereItIs, movieFolderName, movieName, m
     
   if movie_data.rating == 0.0:
     movie_data.rating = getRatingFromIMDBFolderName(movieFolderName)
+
+  if movie_data.year == 0:
+    movie_data.year = getYearFromIMDBFolderName(movieFolderName)
 
   return movie_data
 #endregion
@@ -811,12 +828,15 @@ def rootFolderRecheckDataWithIMDB(rootFolderName):
 
 def printMoviesList(listMovies):
   for movie in listMovies:
-    print("Rating - ", movie.rating, " - ", movie.name)
+    short_cast = movie.cast_complete[0:50]
+    print("Rating - {0} - {1:40} - {2} - {3}".format( movie.rating, movie.name + " (" + str(movie.year) + ") ", short_cast, movie.directors ) )
 
 root = RootFolder("Test directors")
 root.loadDataFromListOfFolders(actorsFolders)
 
 list1 = root.getMoviesWithRatingHigherThan(8.0)
+
+root.printMoviesWithRatingHigherThan(8.0)
 
 printMoviesList(list1)
 # TODO
