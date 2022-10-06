@@ -8,10 +8,9 @@ import time
 import random
 import os
 
-foldersToAnalyze = [ "F:\\FILMOVI\\___2000's",       \
-  "F:\\FILMOVI\\___2010's",       \
-"F:\\FILMOVI\\___2020's"
-]  
+ 
+otherActorsFolder = "Z:\Movies\FILMOVI\__00_Actors_others"
+otherDirectorsFolder = "Z:\Movies\FILMOVI\__00_Directors_others"
 
 directorsFolders = [ "Z:\Movies\FILMOVI\__Akira Kurosawa",       \
   "Z:\Movies\FILMOVI\__Alfred Hitchcock",       \
@@ -391,6 +390,12 @@ def loadIMDBMovieDataFromFilmData(folderWhereItIs, movieFolderName, movieName, m
     elif line.startswith("Directors:"):
       directors = line[10:].strip()
       movie_data.directors = directors
+    elif line.startswith("Producers:"):
+      producers = line[10:].strip()
+      movie_data.producers = producers
+    elif line.startswith("Writers:"):
+      writers = line[10:].strip()
+      movie_data.writers = writers
     elif line.startswith("Cast:"):
       cast = line[10:].strip()
       movie_data.cast_complete = cast
@@ -950,6 +955,12 @@ def getSeriesFolderNames():
 
   return listNames
 
+def getMiscDirectorsList():
+  startFolder = otherDirectorsFolder
+  listDirectors = [ f.name for f in os.scandir(startFolder) if f.is_dir() ]
+
+  return listDirectors
+
 
 #seriesFolders = getSeriesFolderNames()
 #root = RootFolder("Test series")
@@ -961,17 +972,22 @@ def getSeriesFolderNames():
 #processFolder("Z:\Movies\FILMOVI\__Quentin Tarantino")
 
 
-root = RootFolder("Test directors")
-root.loadDataFromListOfFolders(directorsFolders) 
-root.printMoviesWithRatingHigherThan(5.0)
+root = RootFolder("Other directors")
+root.loadDataFromListOfFolders(decadesFolders) 
+#root.printMoviesWithRatingHigherThan(5.0)
 
+listDir = getMiscDirectorsList()
+for dir in listDir:
+  root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, dir)
+
+#root = RootFolder("Test directors")
+#root.loadDataFromListOfFolders(directorsFolders) 
 #root = RootFolder("Test genres")
 #root.loadDataFromListOfFolders(genresFolders)
 #root = RootFolder("Test actors")
 #root.loadDataFromListOfFolders(actorsFolders)
 #root = RootFolder("Test decades")
 #root.loadDataFromListOfFolders(decadesFolders)
-
 #root = RootFolder("Test actors")
 #root.loadDataFromListOfFolders(actorsFolders+decadesFolders+genresFolders)
 
