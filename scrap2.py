@@ -99,6 +99,9 @@ class IMDBMovieData(object):
     else:
       return False
 
+  def hasGenre(self, genre: str) -> bool:
+    return genre in self.genres
+
 class MovieData(object):
   def __init__(self,name):        # poziva se kod inicijalizacije
     self.name = name
@@ -141,6 +144,10 @@ class FolderWithMovies(object):
     listMovies = [ movie for movie in self.movies if (float(movie.rating) >= rating and movie.isDirectedBy(director) == True) ]
     return listMovies
 
+  def getMoviesWithRatingHigherThanWithGivenGenre(self, rating : float, genre: str) :
+    listMovies = [ movie for movie in self.movies if (float(movie.rating) >= rating and movie.hasGenre(genre) == True) ]
+    return listMovies
+
   # getMoviesDirectedBy
   # getMoviesWithActor# getMoviesWithGenre
 
@@ -169,14 +176,18 @@ class RootFolder(object):
     listMovies = []
     for folder in self.folders:
       listMovies += folder.getMoviesWithRatingHigherThan(rating)
-
     return listMovies
 
   def getMoviesWithRatingHigherThanWithGivenDirector(self, rating : float, director : str) :
     listMovies = []
     for folder in self.folders:
-      listMovies += folder.getMoviesWithRatingHigherThan(rating)
+      listMovies += folder.getMoviesWithRatingHigherThanWithGivenDirector(rating, director)
+    return listMovies
 
+  def getMoviesWithRatingHigherThanWithGivenGenre(self, rating : float, genre : str) :
+    listMovies = []
+    for folder in self.folders:
+      listMovies += folder.getMoviesWithRatingHigherThanWithGivenGenre(rating, genre)
     return listMovies
 
   def printMoviesWithRatingHigherThan(self, rating : float) :
@@ -189,6 +200,13 @@ class RootFolder(object):
   def printMoviesWithRatingHigherThanWithGivenDirector(self, rating : float, director : str) :
     for folder in self.folders:
       newMovies = folder.getMoviesWithRatingHigherThanWithGivenDirector(rating, director)
+      if len(newMovies) > 0 :
+        print(folder.name)
+        printMoviesList(newMovies)
+
+  def printMoviesWithRatingHigherThanWithGivenGenre(self, rating : float, genre : str) :
+    for folder in self.folders:
+      newMovies = folder.getMoviesWithRatingHigherThanWithGivenGenre(rating, genre)
       if len(newMovies) > 0 :
         print(folder.name)
         printMoviesList(newMovies)
@@ -972,13 +990,12 @@ def getMiscDirectorsList():
 #processFolder("Z:\Movies\FILMOVI\__Quentin Tarantino")
 
 
-root = RootFolder("Other directors")
-root.loadDataFromListOfFolders(decadesFolders) 
-#root.printMoviesWithRatingHigherThan(5.0)
-
-listDir = getMiscDirectorsList()
-for dir in listDir:
-  root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, dir)
+#root = RootFolder("Other directors")
+#root.loadDataFromListOfFolders(seriesFolders) 
+#root.loadDataFromListOfFolders(actorsFolders + decadesFolders + genresFolders) 
+#listDir = getMiscDirectorsList()
+#for dir in listDir:
+#  root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, dir)
 
 #root = RootFolder("Test directors")
 #root.loadDataFromListOfFolders(directorsFolders) 
@@ -988,9 +1005,10 @@ for dir in listDir:
 #root.loadDataFromListOfFolders(actorsFolders)
 #root = RootFolder("Test decades")
 #root.loadDataFromListOfFolders(decadesFolders)
-#root = RootFolder("Test actors")
-#root.loadDataFromListOfFolders(actorsFolders+decadesFolders+genresFolders)
+root = RootFolder("Test actors")
+root.loadDataFromListOfFolders(decadesFolders)
 
+root.printMoviesWithRatingHigherThanWithGivenGenre(7.0, "Adventure")
 #root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, "Ridley Scott")
 
 
