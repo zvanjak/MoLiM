@@ -76,11 +76,15 @@ class IMDBMovieData(object):
     self.year = 0
     self.runtime = 0
     self.rating = 0.0
+    self.votes = 0
     self.directors = ""
+    self.producers = ""
+    self.writers = ""
     self.genres = ""
     self.cast = ""
     self.cast_complete = ""
     self.plot = ""
+    
     self.box_office = ""
     
     self.directors_list = []
@@ -308,7 +312,7 @@ def saveMovieDataAndRenameFolder(movie_data : IMDBMovieData, folderWhereItIs, mo
     destDir = folderWhereItIs + "\\" + newDirName
 
     # TODO provjeriti da li već postoji dest dir
-    print("RENAMING - ", origDir, "   -   ", destDir)
+    #print("RENAMING - ", origDir, "   -   ", destDir)
     if os.path.isdir(destDir):
       print("\n\nDESTINATION DIR ALREADY EXISTS!!!!!!\n\n")
     else:
@@ -343,8 +347,11 @@ def saveTXTWithMovieData(movie_data : IMDBMovieData, folderWhereItIs, movieFolde
   fileFilmData.write("Year:      " + str(movie_data.year) + "\n")
   fileFilmData.write("Runtime:   " + str(movie_data.runtime) + " min\n")
   fileFilmData.write("Rating:    " + str(movie_data.rating) + "\n")
+  fileFilmData.write("Votes:     " + str(movie_data.votes) + "\n")
   fileFilmData.write("Genres:    " + movie_data.genres + "\n")
   fileFilmData.write("Directors: " + movie_data.directors + "\n")
+  fileFilmData.write("Producers: " + movie_data.producers + "\n")
+  fileFilmData.write("Writers:   " + movie_data.writers + "\n")
   fileFilmData.write("Cast:      " + movie_data.cast_complete + "\n")
   fileFilmData.write("Plot:      " + str(movie_data.plot))
 
@@ -901,19 +908,23 @@ def getSeriesFolderNames():
 #root = RootFolder("Test series")
 #root.loadDataFromListOfFolders(seriesFolders) 
 
-#processFolder("Z:\Movies\FILMOVI\__Alfred Hitchcock")
+#processFolder("Z:\Movies\FILMOVI\__Christopher Nolan")
+#processFolder("Z:\Movies\FILMOVI\__Coen brothers")
+#processFolder("Z:\Movies\FILMOVI\__John Ford")
+#processFolder("Z:\Movies\FILMOVI\__Stanley Kubrick")
+#processFolder("Z:\Movies\FILMOVI\__Quentin Tarantino")
 
 
-#root = RootFolder("Test directors")
-#root.loadDataFromListOfFolders(directorsFolders) 
+root = RootFolder("Test directors")
+root.loadDataFromListOfFolders(directorsFolders) 
+root.printMoviesWithRatingHigherThan(5.0)
 
 #root = RootFolder("Test genres")
 #root.loadDataFromListOfFolders(genresFolders)
 #root = RootFolder("Test actors")
 #root.loadDataFromListOfFolders(actorsFolders)
-root = RootFolder("Test decades")
-root.loadDataFromListOfFolders(decadesFolders)
-root.printMoviesWithRatingHigherThan(8.0)
+#root = RootFolder("Test decades")
+#root.loadDataFromListOfFolders(decadesFolders)
 
 #root = RootFolder("Test actors")
 #root.loadDataFromListOfFolders(actorsFolders+decadesFolders+genresFolders)
