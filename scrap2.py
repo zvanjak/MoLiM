@@ -470,6 +470,14 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
     movie_data.rating = rating
     print("IMDB rating {0}".format(rating))
 
+    votes = movie.data.get('votes', 0)
+    movie_data.votes = votes
+    print("Num. votes {0}".format(votes))
+
+    box_office = movie.data.get('box office', None)
+    movie_data.box_office = box_office
+    print("IMDB rating {0}".format(box_office))
+
     year = movie.data.get('year', None)
     movie_data.year = year
     print("Year: {0}".format(year))
@@ -486,8 +494,8 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
 
     directors = ""
     cntDir = 0
-    movieDirectors = movie.data.get('director', None)
-    if movieDirectors != None:
+    if 'director' in movie.data:
+      movieDirectors = movie.data.get('director')
       for director in movieDirectors:
           if cntDir > 0 :
             directors += ", "
@@ -497,6 +505,20 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
       directors = " Problem with directors!!! "
     movie_data.directors = directors
     print("Directors: " + directors)
+
+    producers = ""
+    cntDir = 0
+    if 'producer' in movie.data:
+      movieProducers = movie.data.get('producer')
+      for producer in movieProducers:
+          if cntDir > 0 :
+            producers += ", "
+          producers += producer['name']
+          cntDir += 1
+    else:
+      producers = " Problem with producers!!! "
+    movie_data.directors = producers
+    print("Producers: " + producers)
 
     genres = ""
     shortGenres = ""
