@@ -352,6 +352,7 @@ def saveTXTWithMovieData(movie_data : IMDBMovieData, folderWhereItIs, movieFolde
   fileFilmData.write("Directors: " + movie_data.directors + "\n")
   fileFilmData.write("Producers: " + movie_data.producers + "\n")
   fileFilmData.write("Writers:   " + movie_data.writers + "\n")
+  fileFilmData.write("Box office:" + str(movie_data.box_office) + "\n")
   fileFilmData.write("Cast:      " + movie_data.cast_complete + "\n")
   fileFilmData.write("Plot:      " + str(movie_data.plot))
 
@@ -476,7 +477,7 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
 
     box_office = movie.data.get('box office', None)
     movie_data.box_office = box_office
-    print("IMDB rating {0}".format(box_office))
+    print("Box office {0}".format(box_office))
 
     year = movie.data.get('year', None)
     movie_data.year = year
@@ -513,26 +514,33 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
       for producer in movieProducers:
           if cntProd > 0 :
             producers += ", "
-          producers += producer['name']
+
+          if 'name' in producer:
+            producers += producer['name']
           cntProd += 1
+
+          if cntProd > 5:
+            break
     else:
       producers = " Problem with producers!!! "
-    movie_data.directors = producers
+    movie_data.producers = producers
     print("Producers: " + producers)
 
     writers = ""
     cntWrit = 0
     if 'writer' in movie.data:
       movieWriters = movie.data.get('writer')
-      for writer in movieProducers:
+      for writer in movieWriters:
           if cntWrit > 0 :
             writers += ", "
-          writers += writer['name']
+
+          if 'name' in writer:
+            writers += writer['name']
           cntWrit += 1
     else:
       writers = " Problem with writers!!! "
     movie_data.writers = writers
-    print("Producers: " + writers)
+    print("Writers: " + writers)
 
     genres = ""
     shortGenres = ""
@@ -551,14 +559,17 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
     cast = ""
     shortCast = ""
     if 'cast' in movie.data:
-      for i in range(0,len(movie.data['cast'])-1):
-        s = movie.data['cast'][i]
-        cast += s.data['name']
+      i = 0
+      for actor in movie.data['cast']:
+  #    for i in range(0,len(movie.data['cast'])-1):
+        #s = movie.data['cast'][i]
+        cast += actor['name']
         cast += ", "
         if i < 5 :
-          shortCast += s.data['name']
+          shortCast += actor['name']
         if i >= 0 and i < 4 :
           shortCast += ", "
+        i = i + 1
               
       print('Cast: ' + shortCast)
       movie_data.cast_complete = cast
@@ -945,7 +956,6 @@ def getSeriesFolderNames():
 #root.loadDataFromListOfFolders(seriesFolders) 
 
 #processFolder("Z:\Movies\FILMOVI\__Christopher Nolan")
-#processFolder("Z:\Movies\FILMOVI\__Coen brothers")
 #processFolder("Z:\Movies\FILMOVI\__John Ford")
 #processFolder("Z:\Movies\FILMOVI\__Stanley Kubrick")
 #processFolder("Z:\Movies\FILMOVI\__Quentin Tarantino")
