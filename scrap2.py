@@ -507,18 +507,32 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
     print("Directors: " + directors)
 
     producers = ""
-    cntDir = 0
+    cntProd = 0
     if 'producer' in movie.data:
       movieProducers = movie.data.get('producer')
       for producer in movieProducers:
-          if cntDir > 0 :
+          if cntProd > 0 :
             producers += ", "
           producers += producer['name']
-          cntDir += 1
+          cntProd += 1
     else:
       producers = " Problem with producers!!! "
     movie_data.directors = producers
     print("Producers: " + producers)
+
+    writers = ""
+    cntWrit = 0
+    if 'writer' in movie.data:
+      movieWriters = movie.data.get('writer')
+      for writer in movieProducers:
+          if cntWrit > 0 :
+            writers += ", "
+          writers += writer['name']
+          cntWrit += 1
+    else:
+      writers = " Problem with writers!!! "
+    movie_data.writers = writers
+    print("Producers: " + writers)
 
     genres = ""
     shortGenres = ""
