@@ -1005,10 +1005,11 @@ def getMiscDirectorsList():
 #root.loadDataFromListOfFolders(actorsFolders)
 #root = RootFolder("Test decades")
 #root.loadDataFromListOfFolders(decadesFolders)
+
 root = RootFolder("Test actors")
 root.loadDataFromListOfFolders(decadesFolders)
 
-root.printMoviesWithRatingHigherThanWithGivenGenre(7.0, "Adventure")
+root.printMoviesWithRatingHigherThanWithGivenGenre(7.0, "Romance")
 #root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, "Ridley Scott")
 
 
