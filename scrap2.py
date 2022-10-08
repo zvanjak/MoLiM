@@ -319,7 +319,6 @@ def saveMovieDataAndRenameFolder(movie_data : IMDBMovieData, folderWhereItIs, mo
     newDirName = getMovieFolderNameFromMovieData(movie_data)   # movie_data.name + "(" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " CAST - " + movie_data.cast
 
     print("NEWDIR = ", newDirName)
-    print ()
 
     # formirati TXT datoteku s podacima
     saveTXTWithMovieData(movie_data, folderWhereItIs, movieFolderName)
@@ -335,6 +334,8 @@ def saveMovieDataAndRenameFolder(movie_data : IMDBMovieData, folderWhereItIs, mo
     else:
       print("RENAMING - ", origDir, destDir)
       os.rename(origDir, destDir)
+
+    print()
 
 def doesFilmDataHasMovieID(folderWhereItIs, movieFolderName, movieName, movieYear) -> bool:
   filePath = getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear)
@@ -985,7 +986,7 @@ def getMiscDirectorsList():
 #root.loadDataFromListOfFolders(seriesFolders) 
 
 #processFolder("Z:\Movies\FILMOVI\__Christopher Nolan")
-#processFolder("Z:\Movies\FILMOVI\__John Ford")
+processFolder("D:\Downloads\GOOD done")
 #processFolder("Z:\Movies\FILMOVI\__Stanley Kubrick")
 #processFolder("Z:\Movies\FILMOVI\__Quentin Tarantino")
 
@@ -1006,10 +1007,10 @@ def getMiscDirectorsList():
 #root = RootFolder("Test decades")
 #root.loadDataFromListOfFolders(decadesFolders)
 
-root = RootFolder("Test actors")
-root.loadDataFromListOfFolders(decadesFolders)
+#root = RootFolder("Test actors")
+#root.loadDataFromListOfFolders(decadesFolders)
 
-root.printMoviesWithRatingHigherThanWithGivenGenre(7.0, "Romance")
+#root.printMoviesWithRatingHigherThanWithGivenGenre(7.0, "Romance")
 #root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, "Ridley Scott")
 
 
