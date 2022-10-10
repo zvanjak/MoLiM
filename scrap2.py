@@ -987,10 +987,10 @@ def printBigFiles():
   startFolder = "Z:\Movies\FILMOVI"
   subFolders= [ f.name for f in os.scandir(startFolder) if f.is_dir() ]
 
-  count = 0
   countTotal = 0
   for folderName in subFolders:
     myPath = os.path.join(startFolder, folderName)
+    count = 0
     for path, subdirs, files in os.walk(myPath):
       for name in files:
         filePath = os.path.join(path, name)
@@ -1004,9 +1004,8 @@ def printBigFiles():
 
   return count
 
-#printBigFiles("Z:\Movies\FILMOVI")
+printBigFiles()
 
-print("NUm of big files = " + str(getNumBigFiles("Z:\Movies\FILMOVI")) )
 
 #seriesFolders = getSeriesFolderNames()
 #root = RootFolder("Test series")
