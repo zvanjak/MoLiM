@@ -980,7 +980,7 @@ def getMiscDirectorsList():
 
   return listDirectors
 
-def getBigFiles(myPath : str):
+def printBigFiles(myPath : str):
   # The min size of the file in Bytes
   mySize = '1000000000'
 
@@ -999,8 +999,31 @@ def getBigFiles(myPath : str):
       if int(fileSize) >= int(mySize):
           print("The File: " + str(i) + " is: " + str(fileSize) + " Bytes")
 
+def getNumBigFiles(myPath : str) -> int :
+  # The min size of the file in Bytes
+  mySize = '1000000000'
 
-getBigFiles("D:\Downloads")
+  # All the file paths will be stored in this list
+  filesList= []
+
+  for path, subdirs, files in os.walk(myPath):
+      for name in files:
+          filesList.append(os.path.join(path, name))
+
+  count = 0
+  for i in filesList:
+      # Getting the size in a variable
+      fileSize = os.path.getsize(str(i))
+
+      # Print the files that meet the condition
+      if int(fileSize) >= int(mySize):
+          count += 1
+
+  return count
+
+printBigFiles("D:\Downloads")
+
+print("NUm of big files = " + str(getNumBigFiles("D:\Downloads")) )
 
 #seriesFolders = getSeriesFolderNames()
 #root = RootFolder("Test series")
