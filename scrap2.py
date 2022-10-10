@@ -980,50 +980,33 @@ def getMiscDirectorsList():
 
   return listDirectors
 
-def printBigFiles(myPath : str):
+def printBigFiles():
   # The min size of the file in Bytes
   mySize = '1000000000'
 
-  # All the file paths will be stored in this list
-  filesList= []
-
-  for path, subdirs, files in os.walk(myPath):
-      for name in files:
-          filesList.append(os.path.join(path, name))
-
-  for i in filesList:
-      # Getting the size in a variable
-      fileSize = os.path.getsize(str(i))
-
-      # Print the files that meet the condition
-      if int(fileSize) >= int(mySize):
-          print("The File: " + str(i) + " is: " + str(fileSize) + " Bytes")
-
-def getNumBigFiles(myPath : str) -> int :
-  # The min size of the file in Bytes
-  mySize = '1000000000'
-
-  # All the file paths will be stored in this list
-  filesList= []
-
-  for path, subdirs, files in os.walk(myPath):
-      for name in files:
-          filesList.append(os.path.join(path, name))
+  startFolder = "Z:\Movies\FILMOVI"
+  subFolders= [ f.name for f in os.scandir(startFolder) if f.is_dir() ]
 
   count = 0
-  for i in filesList:
-      # Getting the size in a variable
-      fileSize = os.path.getsize(str(i))
+  countTotal = 0
+  for folderName in subFolders:
+    myPath = os.path.join(startFolder, folderName)
+    for path, subdirs, files in os.walk(myPath):
+      for name in files:
+        filePath = os.path.join(path, name)
+        fileSize = os.path.getsize(filePath)
 
-      # Print the files that meet the condition
-      if int(fileSize) >= int(mySize):
-          count += 1
+        if int(fileSize) >= int(mySize):
+            count += 1
+            countTotal += 1
+    
+    print(myPath + " - " + str(count))
 
   return count
 
-printBigFiles("D:\Downloads")
+#printBigFiles("Z:\Movies\FILMOVI")
 
-print("NUm of big files = " + str(getNumBigFiles("D:\Downloads")) )
+print("NUm of big files = " + str(getNumBigFiles("Z:\Movies\FILMOVI")) )
 
 #seriesFolders = getSeriesFolderNames()
 #root = RootFolder("Test series")
