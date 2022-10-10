@@ -1000,9 +1000,9 @@ def printBigFiles():
             count += 1
             countTotal += 1
     
-    print(myPath + " - " + str(count))
+    print("{0:75} - {1:3}".format(myPath , count))
 
-  return count
+  print("TOTAL = " + str(countTotal))
 
 printBigFiles()
 
