@@ -1004,7 +1004,7 @@ def printBigFiles():
 
   print("TOTAL = " + str(countTotal))
 
-printBigFiles()
+#printBigFiles()
 
 
 #seriesFolders = getSeriesFolderNames()
@@ -1044,6 +1044,19 @@ printBigFiles()
 #  root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, director)
 
 #printMoviesList(list1)
+
+
+#folderStatistics("Z:\Movies\FILMOVI\___1970's")
+
+#rootFolderRecheckDataWithIMDB("Z:\Movies\FILMOVI")
+#rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
+
+#rootFolderStatistics("Z:\Movies\FILMOVI")
+#rootFolderReportNotDone("Z:\Movies\FILMOVI")
+#processFolder("Z:\Movies\FILMOVI\___Bruce Lee")
+
+#folderSizeStatistic("Z:\Movies\FILMOVI\___Westerns")
+
 # TODO
 # dodati konstante na pocetku
 # analyze folder
@@ -1066,14 +1079,4 @@ printBigFiles()
 # DONE - statistika - koji se sve ne slažu underscore s ocjenom
 # DONE - provjeriti da li postoji movieID
 
-#folderStatistics("Z:\Movies\FILMOVI\___1970's")
-
-#rootFolderRecheckDataWithIMDB("Z:\Movies\FILMOVI")
-#rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
-
-#rootFolderStatistics("Z:\Movies\FILMOVI")
-#rootFolderReportNotDone("Z:\Movies\FILMOVI")
-#processFolder("Z:\Movies\FILMOVI\___1970's")
-
-#folderSizeStatistic("Z:\Movies\FILMOVI\___Westerns")
 
