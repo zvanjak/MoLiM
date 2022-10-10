@@ -980,13 +980,34 @@ def getMiscDirectorsList():
 
   return listDirectors
 
+def getBigFiles(myPath : str):
+  # The min size of the file in Bytes
+  mySize = '1000000000'
+
+  # All the file paths will be stored in this list
+  filesList= []
+
+  for path, subdirs, files in os.walk(myPath):
+      for name in files:
+          filesList.append(os.path.join(path, name))
+
+  for i in filesList:
+      # Getting the size in a variable
+      fileSize = os.path.getsize(str(i))
+
+      # Print the files that meet the condition
+      if int(fileSize) >= int(mySize):
+          print("The File: " + str(i) + " is: " + str(fileSize) + " Bytes")
+
+
+getBigFiles("D:\Downloads")
 
 #seriesFolders = getSeriesFolderNames()
 #root = RootFolder("Test series")
 #root.loadDataFromListOfFolders(seriesFolders) 
 
 #processFolder("Z:\Movies\FILMOVI\__Christopher Nolan")
-processFolder("D:\Downloads\GOOD done")
+#processFolder("D:\Downloads\ROMANCE MOVIES")
 #processFolder("Z:\Movies\FILMOVI\__Stanley Kubrick")
 #processFolder("Z:\Movies\FILMOVI\__Quentin Tarantino")
 
