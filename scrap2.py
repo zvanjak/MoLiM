@@ -1053,7 +1053,7 @@ def printBigFiles():
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
 #rootFolderReportNotDone("Z:\Movies\FILMOVI")
-#processFolder("Z:\Movies\FILMOVI\___Bruce Lee")
+processFolder("Z:\Movies\FILMOVI\_____GOOD DONE")
 
 #folderSizeStatistic("Z:\Movies\FILMOVI\___Westerns")
 
