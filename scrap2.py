@@ -1069,20 +1069,34 @@ root = RootFolder("Other actors")
 seriesFolders = getSeriesFolderNames()
 listActors = getMiscActorsList() + actorsList
 listActors.sort()
-root.loadDataFromListOfFolders(genresFolders + decadesFolders + actorsFolders + directorsFolders + seriesFolders) 
+root.loadDataFromListOfFolders(actorsFolders) # + genresFolders + decadesFolders + directorsFolders + seriesFolders) 
+
+tuplesList = []
+
 for actor in listActors:
-  print("-----------------------------------------------------------------")
-  print("ACTOR - " + actor)
-  print("-----------------------------------------------------------------")
   listMovies = root.getMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
   listMovies.sort(key=lambda x: x.rating, reverse=True)
-  printMoviesList(listMovies[0:6])
+#  printMoviesList(listMovies[0:6])
   if len(listMovies) > 0:
     sum = 0.0
     for movie in listMovies[0:5]:
       sum += movie.rating
-    print("AVG = " + str(sum / len(listMovies[0:5])))
+#    print("AVG = " + str(sum / len(listMovies[0:5])))
+    newTuple = (actor, sum / len(listMovies[0:5]) )
+    tuplesList.append(newTuple)
 
+tuplesList.sort(key=lambda x: x[1], reverse=True)
+for tup in tuplesList:
+  actor = tup[0]
+  print("-----------------------------------------------------------------")
+  print("ACTOR - " + actor)
+  print("-----------------------------------------------------------------")
+
+  listMovies = root.getMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
+  listMovies.sort(key=lambda x: x.rating, reverse=True)
+  printMoviesList(listMovies[0:5])
+  print("AVG = ", tup[1])
+ 
 #root = RootFolder("Test directors")
 #root.loadDataFromListOfFolders(directorsFolders) 
 #root = RootFolder("Test genres")
