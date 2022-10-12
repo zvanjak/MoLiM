@@ -420,7 +420,7 @@ def loadIMDBMovieDataFromFilmData(folderWhereItIs, movieFolderName, movieName, m
       movie_data.runtime = runtime
     elif line.startswith("Rating:"):
       rating = line[10:].strip()
-      movie_data.rating = rating
+      movie_data.rating = float(rating)
     elif line.startswith("Genres:"):
       genres = line[10:].strip()
       movie_data.genres = genres
@@ -975,7 +975,7 @@ def rootFolderRecheckDataWithIMDB(rootFolderName):
 def printMoviesList(listMovies):
   for movie in listMovies:
     short_cast = movie.cast_complete[0:50]
-    print("Rating - {0} - {1:40} - {2}        -   {3:30}   - {4}".format( movie.rating, movie.name + " (" + str(movie.year) + ") ", short_cast, movie.directors, movie.genres ) )
+    print("Rating - {0} - {1:60} - {2}     -   {3:30}   - {4}".format( movie.rating, movie.name + " (" + str(movie.year) + ") ", short_cast, movie.directors, movie.genres ) )
 
 def getSeriesFolderNames():
   listNames = []
@@ -1057,9 +1057,10 @@ for actor in listActors:
   print("-----------------------------------------------------------------")
   print("ACTOR - " + actor)
   print("-----------------------------------------------------------------")
-  root.printMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
+  #root.printMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
   listMovies = root.getMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
-
+  listMovies.sort(key=lambda x: x.rating, reverse=True)
+  printMoviesList(listMovies)
 
 #root = RootFolder("Test directors")
 #root.loadDataFromListOfFolders(directorsFolders) 
