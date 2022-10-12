@@ -58,7 +58,8 @@ genresFolders = [ "Z:\Movies\FILMOVI\____Action, Crime & Thriller",       \
   "Z:\Movies\FILMOVI\____Westerns"
 ]  
 
-decadesFolders = [ "Z:\Movies\FILMOVI\_1930-60",       \
+decadesFolders = [ "Z:\Movies\FILMOVI\_1920-50's",       \
+  "Z:\Movies\FILMOVI\_1960's",       \
   "Z:\Movies\FILMOVI\_1970's",       \
   "Z:\Movies\FILMOVI\_1980's",       \
   "Z:\Movies\FILMOVI\_1990's",       \
@@ -1007,7 +1008,7 @@ def printBigFiles():
 #printBigFiles()
 
 
-#seriesFolders = getSeriesFolderNames()
+seriesFolders = getSeriesFolderNames()
 #root = RootFolder("Test series")
 #root.loadDataFromListOfFolders(seriesFolders) 
 
@@ -1017,12 +1018,12 @@ def printBigFiles():
 #processFolder("Z:\Movies\FILMOVI\__Quentin Tarantino")
 
 
-#root = RootFolder("Other directors")
-#root.loadDataFromListOfFolders(seriesFolders) 
-#root.loadDataFromListOfFolders(actorsFolders + decadesFolders + genresFolders) 
-#listDir = getMiscDirectorsList()
-#for dir in listDir:
-#  root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, dir)
+root = RootFolder("Other directors")
+listDir = getMiscDirectorsList()
+root.loadDataFromListOfFolders(actorsFolders + decadesFolders + genresFolders + seriesFolders) 
+
+for dir in listDir:
+  root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, dir)
 
 #root = RootFolder("Test directors")
 #root.loadDataFromListOfFolders(directorsFolders) 
@@ -1053,7 +1054,7 @@ def printBigFiles():
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
 #rootFolderReportNotDone("Z:\Movies\FILMOVI")
-processFolder("Z:\Movies\FILMOVI\_____GOOD DONE")
+#processFolder("Z:\Movies\FILMOVI\____Westerns")
 
 #folderSizeStatistic("Z:\Movies\FILMOVI\___Westerns")
 
