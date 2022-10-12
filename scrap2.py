@@ -975,7 +975,7 @@ def rootFolderRecheckDataWithIMDB(rootFolderName):
 def printMoviesList(listMovies):
   for movie in listMovies:
     short_cast = movie.cast_complete[0:50]
-    print("Rating - {0} - {1:60} - {2}     -   {3:30}   - {4}".format( movie.rating, movie.name + " (" + str(movie.year) + ") ", short_cast, movie.directors, movie.genres ) )
+    print("Rating - {0} - {1:40} - {2}     -   {3:50}   - {4}".format( movie.rating, movie.name + " (" + str(movie.year) + ") ", short_cast, movie.directors, movie.genres ) )
 
 def getSeriesFolderNames():
   listNames = []
@@ -1052,7 +1052,7 @@ def printBigFiles():
 root = RootFolder("Other actors")
 seriesFolders = getSeriesFolderNames()
 listActors = getMiscActorsList()
-root.loadDataFromListOfFolders(genresFolders) # + decadesFolders + actorsFolders + seriesFolders) 
+root.loadDataFromListOfFolders(genresFolders + decadesFolders + actorsFolders + seriesFolders) 
 for actor in listActors:
   print("-----------------------------------------------------------------")
   print("ACTOR - " + actor)
