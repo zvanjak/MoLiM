@@ -9,7 +9,7 @@ import random
 import os
 
  
-otherActorsFolder = "Z:\Movies\FILMOVI\__00_Actors_others"
+otherActorsFolder = "Z:\Movies\FILMOVI\___00_Actors_others"
 otherDirectorsFolder = "Z:\Movies\FILMOVI\__00_Directors_others"
 
 directorsFolders = [ "Z:\Movies\FILMOVI\__Akira Kurosawa",       \
@@ -998,6 +998,12 @@ def getMiscDirectorsList():
 
   return listDirectors
 
+def getMiscActorsList():
+  startFolder = otherActorsFolder
+  listActors = [ f.name for f in os.scandir(startFolder) if f.is_dir() ]
+
+  return listActors 
+
 def printBigFiles():
   # The min size of the file in Bytes
   mySize = '1000000000'
@@ -1035,20 +1041,20 @@ seriesFolders = getSeriesFolderNames()
 #processFolder("Z:\Movies\FILMOVI\__Quentin Tarantino")
 
 
-root = RootFolder("Other directors")
-seriesFolders = getSeriesFolderNames()
-listDir = getMiscDirectorsList()
-root.loadDataFromListOfFolders(actorsFolders + decadesFolders + genresFolders + seriesFolders) 
-for dir in listDir:
-  root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, dir)
+#root = RootFolder("Other directors")
+#seriesFolders = getSeriesFolderNames()
+#listDir = getMiscDirectorsList()
+#root.loadDataFromListOfFolders(actorsFolders + decadesFolders + genresFolders + seriesFolders) 
+#for dir in listDir:
+#  root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, dir)
 
 
 root = RootFolder("Other actors")
 seriesFolders = getSeriesFolderNames()
-listDir = getMiscDirectorsList()
-root.loadDataFromListOfFolders(actorsFolders + decadesFolders + genresFolders + seriesFolders) 
-for dir in listDir:
-  root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, dir)
+listActors = getMiscActorsList()
+root.loadDataFromListOfFolders(actorsFolders) # + decadesFolders + genresFolders + seriesFolders) 
+for dir in listActors:
+  root.printMoviesWithRatingHigherThanWithGivenActor(5.0, dir)
 
 
 #root = RootFolder("Test directors")
