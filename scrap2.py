@@ -104,7 +104,7 @@ class IMDBMovieData(object):
     return genre in self.genres
 
   def hasActor(self, actor: str) -> bool:
-    return actor in self.cast_complete
+    return actor in self.cast_complete[0:120]
 
 class MovieData(object):
   def __init__(self,name):        # poziva se kod inicijalizacije
@@ -1052,12 +1052,13 @@ def printBigFiles():
 root = RootFolder("Other actors")
 seriesFolders = getSeriesFolderNames()
 listActors = getMiscActorsList()
-root.loadDataFromListOfFolders(genresFolders + decadesFolders + actorsFolders + seriesFolders) 
+root.loadDataFromListOfFolders(genresFolders) # + decadesFolders + actorsFolders + seriesFolders) 
 for actor in listActors:
   print("-----------------------------------------------------------------")
   print("ACTOR - " + actor)
   print("-----------------------------------------------------------------")
   root.printMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
+  listMovies = root.getMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
 
 
 #root = RootFolder("Test directors")
