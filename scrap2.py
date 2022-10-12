@@ -103,6 +103,9 @@ class IMDBMovieData(object):
   def hasGenre(self, genre: str) -> bool:
     return genre in self.genres
 
+  def hasActor(self, actor: str) -> bool:
+    return actor in self.cast
+
 class MovieData(object):
   def __init__(self,name):        # poziva se kod inicijalizacije
     self.name = name
@@ -149,9 +152,10 @@ class FolderWithMovies(object):
     listMovies = [ movie for movie in self.movies if (float(movie.rating) >= rating and movie.hasGenre(genre) == True) ]
     return listMovies
 
-  # getMoviesDirectedBy
-  # getMoviesWithActor# getMoviesWithGenre
-
+  def getMoviesWithRatingHigherThanWithGivenActor(self, rating : float, actor: str) :
+    listMovies = [ movie for movie in self.movies if (float(movie.rating) >= rating and movie.hasActor(actor) == True) ]
+    return listMovies
+  
 class RootFolder(object):
   def __init__(self,rootFolderName : str):
     self.name = rootFolderName
@@ -1019,9 +1023,9 @@ seriesFolders = getSeriesFolderNames()
 
 
 root = RootFolder("Other directors")
+seriesFolders = getSeriesFolderNames()
 listDir = getMiscDirectorsList()
 root.loadDataFromListOfFolders(actorsFolders + decadesFolders + genresFolders + seriesFolders) 
-
 for dir in listDir:
   root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, dir)
 
