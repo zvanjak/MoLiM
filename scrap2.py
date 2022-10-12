@@ -38,7 +38,7 @@ directorsList = [ "Akira Kurosawa",     \
 actorsFolders = [ "Z:\Movies\FILMOVI\___Al Pacino",   \
   "Z:\Movies\FILMOVI\___Bruce Lee",                   \
   "Z:\Movies\FILMOVI\___Clint Eastwood",              \
-  "Z:\Movies\FILMOVI\___Daniel Day Lewis",            \
+  "Z:\Movies\FILMOVI\___Daniel Day-Lewis",            \
   "Z:\Movies\FILMOVI\___Jack Nicholson",              \
   "Z:\Movies\FILMOVI\___John Wayne",                  \
   "Z:\Movies\FILMOVI\___Mel Gibson",                  \
@@ -46,6 +46,18 @@ actorsFolders = [ "Z:\Movies\FILMOVI\___Al Pacino",   \
   "Z:\Movies\FILMOVI\___Tom Cruise",                  \
   "Z:\Movies\FILMOVI\___Tom Hanks",
 ]  
+
+actorsList = [ "Al Pacino",   \
+  "Bruce Lee",                   \
+  "Clint Eastwood",              \
+  "Daniel Day-Lewis",            \
+  "Jack Nicholson",              \
+  "John Wayne",                  \
+  "Mel Gibson",                  \
+  "Robert De Niro",              \
+  "Tom Cruise",                  \
+  "Tom Hanks",
+] 
 
 genresFolders = [ "Z:\Movies\FILMOVI\____Action, Crime & Thriller",       \
   "Z:\Movies\FILMOVI\____Biography & History",       \
@@ -198,7 +210,11 @@ class RootFolder(object):
   def getMoviesWithRatingHigherThanWithGivenActor(self, rating : float, actor : str) :
     listMovies = []
     for folder in self.folders:
-      listMovies += folder.getMoviesWithRatingHigherThanWithGivenActor(rating, actor)
+      newMovies = folder.getMoviesWithRatingHigherThanWithGivenActor(rating, actor)
+      for newMovie in newMovies:
+        if next((x for x in listMovies if x.name == newMovie.name),None) == None:
+          listMovies.append(newMovie)
+
     return listMovies
 
   def printMoviesWithRatingHigherThan(self, rating : float) :
@@ -1051,7 +1067,8 @@ def printBigFiles():
 
 root = RootFolder("Other actors")
 seriesFolders = getSeriesFolderNames()
-listActors = getMiscActorsList()
+listActors = getMiscActorsList() + actorsList
+listActors.sort()
 root.loadDataFromListOfFolders(genresFolders + decadesFolders + actorsFolders + seriesFolders) 
 for actor in listActors:
   print("-----------------------------------------------------------------")
@@ -1060,7 +1077,7 @@ for actor in listActors:
   #root.printMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
   listMovies = root.getMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
   listMovies.sort(key=lambda x: x.rating, reverse=True)
-  printMoviesList(listMovies)
+  printMoviesList(listMovies[0:6])
 
 #root = RootFolder("Test directors")
 #root.loadDataFromListOfFolders(directorsFolders) 
