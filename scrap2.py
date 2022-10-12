@@ -195,6 +195,12 @@ class RootFolder(object):
       listMovies += folder.getMoviesWithRatingHigherThanWithGivenGenre(rating, genre)
     return listMovies
 
+  def getMoviesWithRatingHigherThanWithGivenActor(self, rating : float, actor : str) :
+    listMovies = []
+    for folder in self.folders:
+      listMovies += folder.getMoviesWithRatingHigherThanWithGivenActor(rating, actor)
+    return listMovies
+
   def printMoviesWithRatingHigherThan(self, rating : float) :
     for folder in self.folders:
       newMovies = folder.getMoviesWithRatingHigherThan(rating)
@@ -212,6 +218,13 @@ class RootFolder(object):
   def printMoviesWithRatingHigherThanWithGivenGenre(self, rating : float, genre : str) :
     for folder in self.folders:
       newMovies = folder.getMoviesWithRatingHigherThanWithGivenGenre(rating, genre)
+      if len(newMovies) > 0 :
+        print(folder.name)
+        printMoviesList(newMovies)
+
+  def printMoviesWithRatingHigherThanWithGivenActor(self, rating : float, actor : str) :
+    for folder in self.folders:
+      newMovies = folder.getMoviesWithRatingHigherThanWithGivenActor(rating, actor)
       if len(newMovies) > 0 :
         print(folder.name)
         printMoviesList(newMovies)
@@ -1028,6 +1041,15 @@ listDir = getMiscDirectorsList()
 root.loadDataFromListOfFolders(actorsFolders + decadesFolders + genresFolders + seriesFolders) 
 for dir in listDir:
   root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, dir)
+
+
+root = RootFolder("Other actors")
+seriesFolders = getSeriesFolderNames()
+listDir = getMiscDirectorsList()
+root.loadDataFromListOfFolders(actorsFolders + decadesFolders + genresFolders + seriesFolders) 
+for dir in listDir:
+  root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, dir)
+
 
 #root = RootFolder("Test directors")
 #root.loadDataFromListOfFolders(directorsFolders) 
