@@ -1069,15 +1069,19 @@ root = RootFolder("Other actors")
 seriesFolders = getSeriesFolderNames()
 listActors = getMiscActorsList() + actorsList
 listActors.sort()
-root.loadDataFromListOfFolders(genresFolders + decadesFolders + actorsFolders + seriesFolders) 
+root.loadDataFromListOfFolders(genresFolders + decadesFolders + actorsFolders + directorsFolders + seriesFolders) 
 for actor in listActors:
   print("-----------------------------------------------------------------")
   print("ACTOR - " + actor)
   print("-----------------------------------------------------------------")
-  #root.printMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
   listMovies = root.getMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
   listMovies.sort(key=lambda x: x.rating, reverse=True)
   printMoviesList(listMovies[0:6])
+  if len(listMovies) > 0:
+    sum = 0.0
+    for movie in listMovies[0:5]:
+      sum += movie.rating
+    print("AVG = " + str(sum / len(listMovies[0:5])))
 
 #root = RootFolder("Test directors")
 #root.loadDataFromListOfFolders(directorsFolders) 
