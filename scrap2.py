@@ -1031,7 +1031,7 @@ def printBigFiles():
 #printBigFiles()
 
 
-seriesFolders = getSeriesFolderNames()
+#seriesFolders = getSeriesFolderNames()
 #root = RootFolder("Test series")
 #root.loadDataFromListOfFolders(seriesFolders) 
 
@@ -1052,7 +1052,7 @@ seriesFolders = getSeriesFolderNames()
 root = RootFolder("Other actors")
 seriesFolders = getSeriesFolderNames()
 listActors = getMiscActorsList()
-root.loadDataFromListOfFolders(genresFolders) # + decadesFolders + actorsFolders + seriesFolders) 
+root.loadDataFromListOfFolders(genresFolders + decadesFolders + actorsFolders + seriesFolders) 
 for actor in listActors:
   print("-----------------------------------------------------------------")
   print("ACTOR - " + actor)
