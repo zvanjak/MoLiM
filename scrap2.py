@@ -1056,6 +1056,7 @@ root.loadDataFromListOfFolders(genresFolders + decadesFolders + actorsFolders + 
 for actor in listActors:
   print("-----------------------------------------------------------------")
   print("ACTOR - " + actor)
+  print("-----------------------------------------------------------------")
   root.printMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
 
 
