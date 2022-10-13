@@ -1048,6 +1048,38 @@ def printBigFiles():
   print("TOTAL = " + str(countTotal))
 
 
+def printDirectorsStatistics():
+  root = RootFolder("Directors")
+  seriesFolders = getSeriesFolderNames()
+  listDirectors = getMiscDirectorsList() + directorsList
+  listDirectors.sort()
+  root.loadDataFromListOfFolders(actorsFolders) # + genresFolders + decadesFolders + directorsFolders + seriesFolders) 
+
+  tuplesList = []
+
+  for director in listDirectors:
+    listMovies = root.getMoviesWithRatingHigherThanWithGivenDirector(5.0, director)
+    listMovies.sort(key=lambda x: x.rating, reverse=True)
+    if len(listMovies) > 0:
+      sum = 0.0
+      for movie in listMovies[0:10]:
+        sum += movie.rating
+      newTuple = (director, sum / len(listMovies[0:10]) )
+      tuplesList.append(newTuple)
+
+  tuplesList.sort(key=lambda x: x[1], reverse=True)
+
+  for tup in tuplesList:
+    director = tup[0]
+    print("-----------------------------------------------------------------")
+    print("DIRECTOR - " + director)
+    print("-----------------------------------------------------------------")
+
+    listMovies = root.getMoviesWithRatingHigherThanWithGivenDirector(5.0, director)
+    listMovies.sort(key=lambda x: x.rating, reverse=True)
+    printMoviesList(listMovies[0:10])
+    print("AVG = ", tup[1])
+ 
 def printActorsStatistics():
   root = RootFolder("Other actors")
   seriesFolders = getSeriesFolderNames()
@@ -1080,6 +1112,8 @@ def printActorsStatistics():
     printMoviesList(listMovies[0:10])
     print("AVG = ", tup[1])
  
+
+printDirectorsStatistics()
 
 #printBigFiles()
 
