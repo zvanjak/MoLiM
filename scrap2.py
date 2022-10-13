@@ -60,11 +60,14 @@ actorsList = [ "Al Pacino",   \
 ] 
 
 genresFolders = [ "Z:\Movies\FILMOVI\____Action, Crime & Thriller",       \
+  "Z:\Movies\FILMOVI\____Adventure",       \
   "Z:\Movies\FILMOVI\____Biography & History",       \
   "Z:\Movies\FILMOVI\____Comedy",       \
   "Z:\Movies\FILMOVI\____Drama",       \
   "Z:\Movies\FILMOVI\____Europe & Asia movies",       \
+  "Z:\Movies\FILMOVI\____Family fun",       \
   "Z:\Movies\FILMOVI\____Horrors",       \
+  "Z:\Movies\FILMOVI\____Romance",       \
   "Z:\Movies\FILMOVI\____Science Fiction & Fantasy",       \
   "Z:\Movies\FILMOVI\____War movies",       \
   "Z:\Movies\FILMOVI\____Westerns"
@@ -116,7 +119,7 @@ class IMDBMovieData(object):
     return genre in self.genres
 
   def hasActor(self, actor: str) -> bool:
-    return actor in self.cast_complete[0:120]
+    return actor in self.cast_complete[0:200]
 
 class MovieData(object):
   def __init__(self,name):        # poziva se kod inicijalizacije
@@ -991,7 +994,7 @@ def rootFolderRecheckDataWithIMDB(rootFolderName):
 def printMoviesList(listMovies):
   for movie in listMovies:
     short_cast = movie.cast_complete[0:50]
-    print("Rating - {0} - {1:40} - {2}     -   {3:50}   - {4}".format( movie.rating, movie.name + " (" + str(movie.year) + ") ", short_cast, movie.directors, movie.genres ) )
+    print("Rating - {0} - {1:55} - {2}    -   {3:40}   - {4}".format( movie.rating, movie.name + " (" + str(movie.year) + ") ", short_cast, movie.directors, movie.genres ) )
 
 def getSeriesFolderNames():
   listNames = []
@@ -1044,6 +1047,40 @@ def printBigFiles():
 
   print("TOTAL = " + str(countTotal))
 
+
+def printActorsStatistics():
+  root = RootFolder("Other actors")
+  seriesFolders = getSeriesFolderNames()
+  listActors = getMiscActorsList() + actorsList
+  listActors.sort()
+  root.loadDataFromListOfFolders(actorsFolders + genresFolders + decadesFolders + directorsFolders + seriesFolders) 
+
+  tuplesList = []
+
+  for actor in listActors:
+    listMovies = root.getMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
+    listMovies.sort(key=lambda x: x.rating, reverse=True)
+    if len(listMovies) > 0:
+      sum = 0.0
+      for movie in listMovies[0:10]:
+        sum += movie.rating
+      newTuple = (actor, sum / len(listMovies[0:10]) )
+      tuplesList.append(newTuple)
+
+  tuplesList.sort(key=lambda x: x[1], reverse=True)
+
+  for tup in tuplesList:
+    actor = tup[0]
+    print("-----------------------------------------------------------------")
+    print("ACTOR - " + actor)
+    print("-----------------------------------------------------------------")
+
+    listMovies = root.getMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
+    listMovies.sort(key=lambda x: x.rating, reverse=True)
+    printMoviesList(listMovies[0:10])
+    print("AVG = ", tup[1])
+ 
+
 #printBigFiles()
 
 
@@ -1064,39 +1101,6 @@ def printBigFiles():
 #for dir in listDir:
 #  root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, dir)
 
-
-root = RootFolder("Other actors")
-seriesFolders = getSeriesFolderNames()
-listActors = getMiscActorsList() + actorsList
-listActors.sort()
-root.loadDataFromListOfFolders(actorsFolders) # + genresFolders + decadesFolders + directorsFolders + seriesFolders) 
-
-tuplesList = []
-
-for actor in listActors:
-  listMovies = root.getMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
-  listMovies.sort(key=lambda x: x.rating, reverse=True)
-#  printMoviesList(listMovies[0:6])
-  if len(listMovies) > 0:
-    sum = 0.0
-    for movie in listMovies[0:5]:
-      sum += movie.rating
-#    print("AVG = " + str(sum / len(listMovies[0:5])))
-    newTuple = (actor, sum / len(listMovies[0:5]) )
-    tuplesList.append(newTuple)
-
-tuplesList.sort(key=lambda x: x[1], reverse=True)
-for tup in tuplesList:
-  actor = tup[0]
-  print("-----------------------------------------------------------------")
-  print("ACTOR - " + actor)
-  print("-----------------------------------------------------------------")
-
-  listMovies = root.getMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
-  listMovies.sort(key=lambda x: x.rating, reverse=True)
-  printMoviesList(listMovies[0:5])
-  print("AVG = ", tup[1])
- 
 #root = RootFolder("Test directors")
 #root.loadDataFromListOfFolders(directorsFolders) 
 #root = RootFolder("Test genres")
