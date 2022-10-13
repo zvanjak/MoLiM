@@ -1119,39 +1119,19 @@ def printActorsStatistics():
 
 #printDirectorsStatistics()
 
-#printBigFiles()
+printBigFiles()
+
+#processFolder("Z:\Movies\FILMOVI\__Christopher Nolan")
 
 
 #seriesFolders = getSeriesFolderNames()
 #root = RootFolder("Test series")
 #root.loadDataFromListOfFolders(seriesFolders) 
-
-#processFolder("Z:\Movies\FILMOVI\__Christopher Nolan")
-#processFolder("D:\Downloads\ROMANCE MOVIES")
-#processFolder("Z:\Movies\FILMOVI\__Stanley Kubrick")
-#processFolder("Z:\Movies\FILMOVI\__Quentin Tarantino")
-
-
-#root = RootFolder("Test directors")
-#root.loadDataFromListOfFolders(directorsFolders) 
-#root = RootFolder("Test genres")
-#root.loadDataFromListOfFolders(genresFolders)
-#root = RootFolder("Test actors")
-#root.loadDataFromListOfFolders(actorsFolders)
-#root = RootFolder("Test decades")
-#root.loadDataFromListOfFolders(decadesFolders)
-
-#root = RootFolder("Test actors")
-#root.loadDataFromListOfFolders(decadesFolders)
-
 #root.printMoviesWithRatingHigherThanWithGivenGenre(7.0, "Romance")
 #root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, "Ridley Scott")
 
-
 #for director in directorsList:
 #  root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, director)
-
-#printMoviesList(list1)
 
 
 #folderStatistics("Z:\Movies\FILMOVI\___1970's")
@@ -1160,15 +1140,13 @@ def printActorsStatistics():
 #rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
-rootFolderReportNotDone("Z:\Movies\FILMOVI")
+#rootFolderReportNotDone("Z:\Movies\FILMOVI")
 #processFolder("Z:\Movies\FILMOVI\____Westerns")
 
 #folderSizeStatistic("Z:\Movies\FILMOVI\___Westerns")
 
 # TODO
 # dodati konstante na pocetku
-# analyze folder
-#   prikupi FilmData i ispiše statistike
 # copy empty folder names - 
 #   Directors -> Actors, po godinama
 # doesContainMovie za folder
@@ -1176,15 +1154,16 @@ rootFolderReportNotDone("Z:\Movies\FILMOVI")
 # analiza velicine direktorija (a mozda ima i vise verzija!)
 #   ispis manjih od 2 Gb
 
+
+# pocistiti file errors, RARBG.txt, i not mirror
+
+# DONE -------------------------------------------------------
+# statistika - koji se sve ne slažu underscore s ocjenom
+# provjeriti da li postoji movieID
 # dodati podatke o budgetu i zaradi
 # dodati awards - Best Picture Osar
 # writer, producer
 # dodati person id
-
 # proći kroz sve IMDB, i provjeriti da li se naziv direktorija slaže, s onim kako bi sada bilo
-# pocistiti file errors, RARBG.txt, i not mirror
-
-# DONE - statistika - koji se sve ne slažu underscore s ocjenom
-# DONE - provjeriti da li postoji movieID
 
 
