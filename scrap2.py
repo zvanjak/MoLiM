@@ -30,7 +30,7 @@ directorsList = [ "Akira Kurosawa",     \
                   "Coen brothers",      \
                   "John Ford",          \
                   "Martin Scorsese",    \
-                  "Quentin Tarantino"   \
+                  "Quentin Tarantino",  \
                   "Ridley Scott",       \
                   "Stanley Kubrick",    \
                   "Steven Spielberg" ]
@@ -1113,6 +1113,8 @@ def printActorsStatistics():
         sum += movie.rating
       newTuple = (actor, sum / len(listMovies[0:10]) )
       tuplesList.append(newTuple)
+    else:
+      print("     -----------------                   NO MOVIES FOR ACTOR - ", actor)
 
   tuplesList.sort(key=lambda x: x[1], reverse=True)
 
@@ -1151,8 +1153,8 @@ def copyDirectors(foldersList):
 
 #copyDirectors(genresFolders)
 
-#printActorsStatistics()
-printDirectorsStatistics()
+printActorsStatistics()
+#printDirectorsStatistics()
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
 #folderStatistics("Z:\Movies\FILMOVI\_1970's")
