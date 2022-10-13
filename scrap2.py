@@ -202,7 +202,7 @@ class FolderWithMovies(object):
     return listMovies
   
 class RootFolder(object):
-  def __init__(self,rootFolderName : str):
+  def __init__(self, rootFolderName : str):
     self.name = rootFolderName
     self.folders = []               # list of FolderWithMovies
 
@@ -241,7 +241,11 @@ class RootFolder(object):
   def getMoviesWithRatingHigherThanWithGivenGenre(self, rating : float, genre : str) :
     listMovies = []
     for folder in self.folders:
-      listMovies += folder.getMoviesWithRatingHigherThanWithGivenGenre(rating, genre)
+      newMovies = folder.getMoviesWithRatingHigherThanWithGivenGenre(rating, genre)
+      for newMovie in newMovies:
+        if next((x for x in listMovies if x.name == newMovie.name),None) == None:
+          listMovies.append(newMovie)
+
     return listMovies
 
   def getMoviesWithRatingHigherThanWithGivenActor(self, rating : float, actor : str) :
@@ -303,7 +307,6 @@ def getFilmDataFilePath(folderWhereItIs : str, movieFolderName : str, movieName 
   beba = movieName.strip()
   filePath = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + movieName.strip() + " (" + str(movieYear) + ")" + ".txt"
   return filePath
-
 
 def getMovieNameFromFolder(movieFolderName): # TODO  -> tuple(str,str):
   earchMovieName = ""
@@ -383,6 +386,23 @@ def getMovieFolderNameFromMovieData(movie_data : IMDBMovieData) -> str:
   
   return newDirName
 
+def doesFilmDataHasMovieID(folderWhereItIs, movieFolderName, movieName, movieYear) -> bool:
+  filePath = getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear)
+
+  try:
+    fileFilmData = open(filePath, 'r')
+  except:
+    return False
+
+  if fileFilmData:
+    first = fileFilmData.readline()
+    second = fileFilmData.readline()
+    
+    if second.startswith("MovieID:"):
+      return True
+
+  return False
+
 def saveMovieDataAndRenameFolder(movie_data : IMDBMovieData, folderWhereItIs, movieFolderName):
 
     # ime novog direktorija
@@ -407,23 +427,6 @@ def saveMovieDataAndRenameFolder(movie_data : IMDBMovieData, folderWhereItIs, mo
       os.rename(origDir, destDir)
 
     print()
-
-def doesFilmDataHasMovieID(folderWhereItIs, movieFolderName, movieName, movieYear) -> bool:
-  filePath = getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear)
-
-  try:
-    fileFilmData = open(filePath, 'r')
-  except:
-    return False
-
-  if fileFilmData:
-    first = fileFilmData.readline()
-    second = fileFilmData.readline()
-    
-    if second.startswith("MovieID:"):
-      return True
-
-  return False
 
 def saveTXTWithMovieData(movie_data : IMDBMovieData, folderWhereItIs, movieFolderName):
   # formirati TXT datoteku s podacima
@@ -513,16 +516,14 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
   try:
     foundMoviesList = ia.search_movie(searchMovieName)
   except:
-    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
-    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
-    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
+    print("\n--------   EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET --------\n")
     time.sleep(30)
     movie_data.name = ""
     return movie_data
 
   if len(foundMoviesList) == 0 :
     movie_data.name = ""
-    print ("SEARCH RETURNED NOTHING!!!\n")
+    print ("\n   ----   SEARCH RETURNED NOTHING!!!   ----\n")
     return movie_data
 
   movieID = foundMoviesList[0].movieID
@@ -696,8 +697,6 @@ def processFolder(folderName):
   print("------------------------------------------")
 
   movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
-
-  fileErrors = open(folderName + "\\FileErrors.txt",'w', encoding="utf-8") 
 
   for movieFolderName in movieSubFolders:
     if movieFolderName.find("IMDB") == -1:
