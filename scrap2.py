@@ -1125,11 +1125,27 @@ def printActorsStatistics():
     printMoviesList(listMovies[0:10])
     print("AVG = ", tup[1])
  
+def copyDirectors():
+  root = RootFolder("Copy")
+  listDirectors = getMiscDirectorsList() + directorsList
+  listDirectors.sort()
+  root.loadDataFromListOfFolders(genresFolders) # + actorsFolders + decadesFolders + directorsFolders + seriesFolders) 
+
+  tuplesList = []
+
+  for director in listDirectors:
+    print(director)
+    listMovies = root.getMoviesWithRatingHigherThanWithGivenDirector(5.0, director)
+    for movie in listMovies:
+      # treba mi lista foldera za svakog directora
+      print(listMovies)
+
+copyDirectors()
 
 #printActorsStatistics()
 #printDirectorsStatistics()
 
-rootFolderStatistics("Z:\Movies\FILMOVI")
+#rootFolderStatistics("Z:\Movies\FILMOVI")
 #folderStatistics("Z:\Movies\FILMOVI\_1970's")
 
 #rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
@@ -1152,13 +1168,24 @@ rootFolderStatistics("Z:\Movies\FILMOVI")
 
 
 # TODO
+# getAllMoviesByActor
+# getAllMoviesByDirector
+# getAllMoviesInGenre
+
+# vidjeti za dodati MetaCritic i Tomatoes rating
 # dodati konstante na pocetku
+
 # copy empty folder names - 
+#   proći kroz sve Genre direktorije
+#     uzeti movieFolder
+#     ucitati filmData
+#     proci kroz directors list
+#       ako je rezirao
+#     proci kroz actors list
+#     
 #   Directors -> Actors, po godinama
 # doesContainMovie za folder
-# ucitavanje podataka o filmu iz Film data
-# analiza velicine direktorija (a mozda ima i vise verzija!)
-#   ispis manjih od 2 Gb
+
 
 
 # pocistiti file errors, RARBG.txt, i not mirror
@@ -1171,5 +1198,7 @@ rootFolderStatistics("Z:\Movies\FILMOVI")
 # writer, producer
 # dodati person id
 # proći kroz sve IMDB, i provjeriti da li se naziv direktorija slaže, s onim kako bi sada bilo
-
+# ucitavanje podataka o filmu iz Film data
+# analiza velicine direktorija (a mozda ima i vise verzija!)
+#   ispis manjih od 2 Gb
 
