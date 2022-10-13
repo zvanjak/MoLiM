@@ -83,6 +83,36 @@ decadesFolders = [ "Z:\Movies\FILMOVI\_1920-50's",       \
   "Z:\Movies\FILMOVI\_2020's"
 ]  
 
+
+def getMiscDirectorsList():
+  startFolder = otherDirectorsFolder
+  listDirectors = [ f.name for f in os.scandir(startFolder) if f.is_dir() ]
+
+  return listDirectors
+
+def getMiscActorsList():
+  startFolder = otherActorsFolder
+  listActors = [ f.name for f in os.scandir(startFolder) if f.is_dir() ]
+
+  return listActors 
+
+
+def getSeriesFolderNames():
+  listNames = []
+  startFolder = "Z:\Movies\FILMOVI"
+  subFolders= [ f.name for f in os.scandir(startFolder) if f.is_dir() ]
+
+  for folderName in subFolders:
+    if folderName.startswith("_") == True and folderName.startswith("__") == False and folderName.startswith("___") == False and folderName.startswith("____") == False :
+      if folderName[2] >= '0' and folderName[2] <= '9' :
+        continue
+      else:
+        listNames.append(startFolder + "\\" + folderName)
+        print(folderName)
+
+  return listNames
+
+
 class IMDBMovieData(object):
   def __init__(self,name):        # poziva se kod inicijalizacije
     self.name = name
@@ -747,8 +777,10 @@ def folderStatistics(folderName):
   movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
   
   cntNotDone = 0
+  cntImdb9 = 0
   cntImdb8 = 0
   cntImdb7 = 0
+  cntImdb6 = 0
   cntImdbLower6 = 0
 
   listNotDone = []
@@ -761,12 +793,16 @@ def folderStatistics(folderName):
       ind = movieFolderName.find("IMDB")
       imdb_rat = movieFolderName[ind+5:ind+8]
       
-      if float(imdb_rat) >= 8.0:
-        cntImdb8 = cntImdb8 + 1
+      if float(imdb_rat) >= 9.0:
+        cntImdb9 +=  1
+      elif float(imdb_rat) >= 8.0:
+        cntImdb8 += 1
       elif float(imdb_rat) >= 7.0:
-        cntImdb7 = cntImdb7 + 1
+        cntImdb7 += 1
+      elif float(imdb_rat) >= 6.0:
+        cntImdb6 += 1
       elif float(imdb_rat) < 6.0:
-        cntImdbLower6 = cntImdbLower6 + 1
+        cntImdbLower6 += 1
 
       if doesFilmDataHasMovieID(folderName, movieFolderName, imdb_name, int(year_str)) == False:
         listWithoutMovieID.append(movieFolderName)
@@ -777,7 +813,7 @@ def folderStatistics(folderName):
   #if cntNotDone == 0:
   #  return
 
-  print("-- {0:65} -- {1:2}, {2:2}, {3:3}, {4:2}, {5:2}, {6:2}".format(folderName, cntNotDone, cntImdb8, cntImdb7, cntImdbLower6, len(listNotDone), len(listWithoutMovieID)))
+  print("-- {0:65} -- {1:3}, {2:3}, {3:3}, {4:3}, {5:3}   -- {6:2}, {7:2}".format(folderName, cntImdb9, cntImdb8, cntImdb7, cntImdb6, cntImdbLower6, len(listNotDone), len(listWithoutMovieID)))
   
   #if len(listNotDone) > 0:
   #  print("LIST NOT DONE:")
@@ -1000,33 +1036,6 @@ def printMoviesList(listMovies):
     short_cast = movie.cast_complete[0:50]
     print("Rating - {0} - {1:55} - {2}    -   {3:40}   - {4}".format( movie.rating, movie.name + " (" + str(movie.year) + ") ", short_cast, movie.directors, movie.genres ) )
 
-def getSeriesFolderNames():
-  listNames = []
-  startFolder = "Z:\Movies\FILMOVI"
-  subFolders= [ f.name for f in os.scandir(startFolder) if f.is_dir() ]
-
-  for folderName in subFolders:
-    if folderName.startswith("_") == True and folderName.startswith("__") == False and folderName.startswith("___") == False and folderName.startswith("____") == False :
-      if folderName[2] >= '0' and folderName[2] <= '9' :
-        continue
-      else:
-        listNames.append(startFolder + "\\" + folderName)
-        print(folderName)
-
-  return listNames
-
-def getMiscDirectorsList():
-  startFolder = otherDirectorsFolder
-  listDirectors = [ f.name for f in os.scandir(startFolder) if f.is_dir() ]
-
-  return listDirectors
-
-def getMiscActorsList():
-  startFolder = otherActorsFolder
-  listActors = [ f.name for f in os.scandir(startFolder) if f.is_dir() ]
-
-  return listActors 
-
 def printBigFiles():
   # The min size of the file in Bytes
   mySize = '1000000000'
@@ -1117,11 +1126,19 @@ def printActorsStatistics():
     print("AVG = ", tup[1])
  
 
+#printActorsStatistics()
 #printDirectorsStatistics()
 
-printBigFiles()
+rootFolderStatistics("Z:\Movies\FILMOVI")
+#folderStatistics("Z:\Movies\FILMOVI\_1970's")
+
+#rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
+#rootFolderReportNotDone("Z:\Movies\FILMOVI")
+
+#printBigFiles()
 
 #processFolder("Z:\Movies\FILMOVI\__Christopher Nolan")
+#rootFolderRecheckDataWithIMDB("Z:\Movies\FILMOVI")
 
 
 #seriesFolders = getSeriesFolderNames()
@@ -1133,17 +1150,6 @@ printBigFiles()
 #for director in directorsList:
 #  root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, director)
 
-
-#folderStatistics("Z:\Movies\FILMOVI\___1970's")
-
-#rootFolderRecheckDataWithIMDB("Z:\Movies\FILMOVI")
-#rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
-
-#rootFolderStatistics("Z:\Movies\FILMOVI")
-#rootFolderReportNotDone("Z:\Movies\FILMOVI")
-#processFolder("Z:\Movies\FILMOVI\____Westerns")
-
-#folderSizeStatistic("Z:\Movies\FILMOVI\___Westerns")
 
 # TODO
 # dodati konstante na pocetku
