@@ -1117,7 +1117,7 @@ def printActorsStatistics():
     print("AVG = ", tup[1])
  
 
-printDirectorsStatistics()
+#printDirectorsStatistics()
 
 #printBigFiles()
 
@@ -1131,13 +1131,6 @@ printDirectorsStatistics()
 #processFolder("Z:\Movies\FILMOVI\__Stanley Kubrick")
 #processFolder("Z:\Movies\FILMOVI\__Quentin Tarantino")
 
-
-#root = RootFolder("Other directors")
-#seriesFolders = getSeriesFolderNames()
-#listDir = getMiscDirectorsList()
-#root.loadDataFromListOfFolders(actorsFolders + decadesFolders + genresFolders + seriesFolders) 
-#for dir in listDir:
-#  root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, dir)
 
 #root = RootFolder("Test directors")
 #root.loadDataFromListOfFolders(directorsFolders) 
@@ -1167,7 +1160,7 @@ printDirectorsStatistics()
 #rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
-#rootFolderReportNotDone("Z:\Movies\FILMOVI")
+rootFolderReportNotDone("Z:\Movies\FILMOVI")
 #processFolder("Z:\Movies\FILMOVI\____Westerns")
 
 #folderSizeStatistic("Z:\Movies\FILMOVI\___Westerns")
