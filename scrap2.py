@@ -201,7 +201,11 @@ class RootFolder(object):
   def getMoviesWithRatingHigherThanWithGivenDirector(self, rating : float, director : str) :
     listMovies = []
     for folder in self.folders:
-      listMovies += folder.getMoviesWithRatingHigherThanWithGivenDirector(rating, director)
+      newMovies = folder.getMoviesWithRatingHigherThanWithGivenDirector(rating, director)
+      for newMovie in newMovies:
+        if next((x for x in listMovies if x.name == newMovie.name),None) == None:
+          listMovies.append(newMovie)
+
     return listMovies
 
   def getMoviesWithRatingHigherThanWithGivenGenre(self, rating : float, genre : str) :
@@ -1053,7 +1057,7 @@ def printDirectorsStatistics():
   seriesFolders = getSeriesFolderNames()
   listDirectors = getMiscDirectorsList() + directorsList
   listDirectors.sort()
-  root.loadDataFromListOfFolders(actorsFolders) # + genresFolders + decadesFolders + directorsFolders + seriesFolders) 
+  root.loadDataFromListOfFolders(actorsFolders + genresFolders + decadesFolders + directorsFolders + seriesFolders) 
 
   tuplesList = []
 
