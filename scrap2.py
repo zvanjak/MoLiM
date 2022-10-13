@@ -710,7 +710,7 @@ def processFolder(folderName):
       if movie_data.name != "":
         saveMovieDataAndRenameFolder(movie_data,folderName,movieFolderName)
 
-
+# Rechecking IMDB data
 def folderRecheckDataWithIMDB(folderName):
   print("------", folderName, "------")
   print("------------------------------------------")
@@ -770,8 +770,16 @@ def folderRecheckDataWithIMDB(folderName):
 
         time.sleep(5 + random.randrange(0,5))
 
+def rootFolderRecheckDataWithIMDB(rootFolderName):
+  print("------", rootFolderName, "------")
+  
+  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
+
+  for folderName in rootSubFolders:
+    folderRecheckDataWithIMDB(folderName)
+
 # Folder statistics
-#region
+#region  
 
 def folderStatistics(folderName):
   movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
@@ -837,6 +845,15 @@ def folderSizeStatistic(folderName):
       size = getFolderSize(folderName + "\\" + movieFolderName)
       printName = movieFolderName[0:60]
       print("{0:60} - {1}".format(printName, size / 1000000000))
+
+def rootFolderStatistics(rootFolderName):
+  print("------", rootFolderName, "------")
+  
+  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
+
+  for folderName in rootSubFolders:
+    folderStatistics(folderName)
+
 #endregion
 
 # Underscore functionality
@@ -1014,22 +1031,6 @@ def rootFolderReportNoIMDBData(rootFolderName):
         print ("  ", movie)
 
 
-# Root folder iterators - Statistics & RecheckDataWithIMDB
-def rootFolderStatistics(rootFolderName):
-  print("------", rootFolderName, "------")
-  
-  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
-
-  for folderName in rootSubFolders:
-    folderStatistics(folderName)
-
-def rootFolderRecheckDataWithIMDB(rootFolderName):
-  print("------", rootFolderName, "------")
-  
-  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
-
-  for folderName in rootSubFolders:
-    folderRecheckDataWithIMDB(folderName)
 
 def printMoviesList(listMovies):
   for movie in listMovies:
