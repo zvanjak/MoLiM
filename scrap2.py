@@ -17,7 +17,7 @@ directorsFolders = [ "Z:\Movies\FILMOVI\__Akira Kurosawa",       \
   "Z:\Movies\FILMOVI\__Christopher Nolan",      \
   "Z:\Movies\FILMOVI\__Coen brothers",          \
   "Z:\Movies\FILMOVI\__John Ford",              \
-  "Z:\Movies\FILMOVI\__Martic Scorsese",        \
+  "Z:\Movies\FILMOVI\__Martin Scorsese",        \
   "Z:\Movies\FILMOVI\__Quentin Tarantino",      \
   "Z:\Movies\FILMOVI\__Ridley Scott",           \
   "Z:\Movies\FILMOVI\__Stanley Kubrick",        \
@@ -28,7 +28,7 @@ directorsList = [ "Akira Kurosawa",     \
                   "Alfred Hitchcock",   \
                   "Christopher Nolan",  \
                   "Coen brothers",      \
-                  "John Ford"           \
+                  "John Ford",          \
                   "Martin Scorsese",    \
                   "Quentin Tarantino"   \
                   "Ridley Scott",       \
@@ -1066,7 +1066,7 @@ def printDirectorsStatistics():
   seriesFolders = getSeriesFolderNames()
   listDirectors = getMiscDirectorsList() + directorsList
   listDirectors.sort()
-  root.loadDataFromListOfFolders(actorsFolders + genresFolders + decadesFolders + directorsFolders + seriesFolders) 
+  root.loadDataFromListOfFolders(directorsFolders + actorsFolders + genresFolders + decadesFolders +  seriesFolders) 
 
   tuplesList = []
 
@@ -1079,6 +1079,8 @@ def printDirectorsStatistics():
         sum += movie.rating
       newTuple = (director, sum / len(listMovies[0:10]) )
       tuplesList.append(newTuple)
+    else:
+      print("     -----------------                   NO MOVIES FOR DIRECTOR - ", director)
 
   tuplesList.sort(key=lambda x: x[1], reverse=True)
 
@@ -1125,25 +1127,32 @@ def printActorsStatistics():
     printMoviesList(listMovies[0:10])
     print("AVG = ", tup[1])
  
-def copyDirectors():
+def copyDirectors(foldersList):
   root = RootFolder("Copy")
   listDirectors = getMiscDirectorsList() + directorsList
   listDirectors.sort()
-  root.loadDataFromListOfFolders(genresFolders) # + actorsFolders + decadesFolders + directorsFolders + seriesFolders) 
+  
+  for folder in foldersList:
+    print("--------------------------------------------")
+    print(folder)
+    print("--------------------------------------------")
 
-  tuplesList = []
+    folderObj = FolderWithMovies(folder)
+    folderObj.loadData()
 
-  for director in listDirectors:
-    print(director)
-    listMovies = root.getMoviesWithRatingHigherThanWithGivenDirector(5.0, director)
-    for movie in listMovies:
-      # treba mi lista foldera za svakog directora
-      print(listMovies)
+    for director in listDirectors:
+      listMovies = folderObj.getMoviesWithRatingHigherThanWithGivenDirector(5.0, director)
+      if len(listMovies) > 0:
+        print(director)
+        printMoviesList(listMovies)
+      #for movie in listMovies:
+        # treba mi lista foldera za svakog directora
+        #print("FROM - ")
 
-copyDirectors()
+#copyDirectors(genresFolders)
 
 #printActorsStatistics()
-#printDirectorsStatistics()
+printDirectorsStatistics()
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
 #folderStatistics("Z:\Movies\FILMOVI\_1970's")
