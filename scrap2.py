@@ -1103,10 +1103,11 @@ def printDirectorsStatistics():
 
   tuplesList.sort(key=lambda x: x[1], reverse=True)
 
+  ordNum = 0
   for tup in tuplesList:
     director = tup[0]
     print("-----------------------------------------------------------------")
-    print("DIRECTOR - " + director)
+    print("{0} - DIRECTOR - {1}".format(ordNum+1, director) )
     print("-----------------------------------------------------------------")
 
     listMovies = root.getMoviesWithRatingHigherThanWithGivenDirector(5.0, director)
@@ -1137,10 +1138,11 @@ def printActorsStatistics():
 
   tuplesList.sort(key=lambda x: x[1], reverse=True)
 
+  ordNum = 1
   for tup in tuplesList:
     actor = tup[0]
     print("-----------------------------------------------------------------")
-    print("ACTOR - " + actor)
+    print("{0} - ACTOR - {1}".format(ordNum, actor) )
     print("-----------------------------------------------------------------")
 
     listMovies = root.getMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
@@ -1172,7 +1174,7 @@ def copyDirectors(foldersList):
 
 #copyDirectors(genresFolders)
 
-#printActorsStatistics()
+printActorsStatistics()
 #printDirectorsStatistics()
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
@@ -1184,17 +1186,17 @@ def copyDirectors(foldersList):
 #printBigFiles()
 
 #processFolder("D:\Downloads\Horrors")
-processListOfFolders( ("Z:\Movies\FILMOVI\_1920-50's",          \
-                       "E:\Downloads\GOOD MOVIES",      \
-                       "E:\Downloads\Kevin Costner",    \
-                       "E:\Downloads\Marlon Brando",    \
-                       "E:\Downloads\\Nicole Kidman",   \
-                        "E:\Downloads\Sergio Leone",     \
-                       "E:\Downloads\Sigourney Weaver", \
-                       "E:\Downloads\Michelle Pfeiffer",  \
-                       "E:\Downloads\Paul Newman",      \
-                       "E:\Downloads\Sidney Lumet",     \
-                       "E:\Downloads\Sidney Poitier") )
+#processListOfFolders( ("Z:\Movies\FILMOVI\_____GOOD DONE\Denis Vilenueve",          \
+#                       "Z:\Movies\FILMOVI\_____GOOD DONE\Humphrey Bogart",      \
+#                       #"Z:\Movies\FILMOVI\_____GOOD DONE\Jodie Foster",    \
+#                       #"E:\Downloads\Marlon Brando",    \
+#                       #"E:\Downloads\\Nicole Kidman",   \
+#                       # "E:\Downloads\Sergio Leone",     \
+#                       #"E:\Downloads\Sigourney Weaver", \
+#                       #"E:\Downloads\Michelle Pfeiffer",  \
+#                       #"E:\Downloads\Paul Newman",      \
+#                       #"E:\Downloads\Sidney Lumet",     \
+#                       "Z:\Movies\FILMOVI\_____GOOD DONE\Jodie Foster") )
 
 #rootFolderRecheckDataWithIMDB("Z:\Movies\FILMOVI")
 
