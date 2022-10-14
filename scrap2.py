@@ -547,7 +547,7 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
     #return movie_data
 
   try:
-    movie = ia.get_movie(movieID)
+     movie = ia.get_movie(movieID)
   except:
     print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
     print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
@@ -708,6 +708,25 @@ def processFolder(folderName):
     
       if movie_data.name != "":
         saveMovieDataAndRenameFolder(movie_data,folderName,movieFolderName)
+
+def processListOfFolders(foldersList):
+  for folderName in foldersList:
+    print("------------------------------------------")
+    print("------", folderName, "------")
+    print("------------------------------------------")
+
+    movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
+
+    for movieFolderName in movieSubFolders:
+      if movieFolderName.find("IMDB") == -1:
+        print(movieFolderName)
+
+        (searchMovieName, year) = getMovieNameFromFolder(movieFolderName)
+
+        movie_data = fetchMovieData(searchMovieName, year)
+    
+        if movie_data.name != "":
+          saveMovieDataAndRenameFolder(movie_data,folderName,movieFolderName)
 
 # Rechecking IMDB data
 def folderRecheckDataWithIMDB(folderName):
@@ -1153,7 +1172,7 @@ def copyDirectors(foldersList):
 
 #copyDirectors(genresFolders)
 
-printActorsStatistics()
+#printActorsStatistics()
 #printDirectorsStatistics()
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
@@ -1164,7 +1183,19 @@ printActorsStatistics()
 
 #printBigFiles()
 
-#processFolder("Z:\Movies\FILMOVI\__Christopher Nolan")
+#processFolder("D:\Downloads\Horrors")
+processListOfFolders( ("Z:\Movies\FILMOVI\_1920-50's",          \
+                       "E:\Downloads\GOOD MOVIES",      \
+                       "E:\Downloads\Kevin Costner",    \
+                       "E:\Downloads\Marlon Brando",    \
+                       "E:\Downloads\\Nicole Kidman",   \
+                        "E:\Downloads\Sergio Leone",     \
+                       "E:\Downloads\Sigourney Weaver", \
+                       "E:\Downloads\Michelle Pfeiffer",  \
+                       "E:\Downloads\Paul Newman",      \
+                       "E:\Downloads\Sidney Lumet",     \
+                       "E:\Downloads\Sidney Poitier") )
+
 #rootFolderRecheckDataWithIMDB("Z:\Movies\FILMOVI")
 
 
