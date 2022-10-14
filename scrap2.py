@@ -1106,6 +1106,7 @@ def printDirectorsStatistics():
   ordNum = 0
   for tup in tuplesList:
     director = tup[0]
+    ordNum += 1
     print("-----------------------------------------------------------------")
     print("{0} - DIRECTOR - {1}".format(ordNum+1, director) )
     print("-----------------------------------------------------------------")
@@ -1138,9 +1139,10 @@ def printActorsStatistics():
 
   tuplesList.sort(key=lambda x: x[1], reverse=True)
 
-  ordNum = 1
+  ordNum = 0
   for tup in tuplesList:
     actor = tup[0]
+    ordNum += 1
     print("-----------------------------------------------------------------")
     print("{0} - ACTOR - {1}".format(ordNum, actor) )
     print("-----------------------------------------------------------------")
