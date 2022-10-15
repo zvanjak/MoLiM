@@ -551,6 +551,8 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
 
   movie_data = fetchMovieDataByMovieID(movieID)
 
+  time.sleep(5+random.randrange(0,5))
+
   return movie_data
     
 def fetchMovieDataByMovieID(movieID : str) -> IMDBMovieData:
@@ -565,8 +567,6 @@ def fetchMovieDataByMovieID(movieID : str) -> IMDBMovieData:
     time.sleep(30)
     movie_data.name = ""
     return movie_data
-  
-  time.sleep(5+random.randrange(0,5))
 
   movie_data.movieID = movieID
 
@@ -599,6 +599,12 @@ def fetchMovieDataByMovieID(movieID : str) -> IMDBMovieData:
       print("NO RUNTIME!!!!")
       print("-------------------------------------------")
       movie_data.runtime = 0
+
+    if 'top 250 rank' in movie.data:
+      movie_data.top250rank = int(movie.data['top 250 rank'][0])
+
+    if 'countries' in movie.data:
+      movie_data.countries = str(movie.data['countries'])
 
     directors = ""
     cntDir = 0
@@ -1179,7 +1185,7 @@ def copyDirectors(foldersList):
         #print("FROM - ")
 
 
-movie = ia.get_movie("0119217")
+movie = fetchMovieDataByMovieID("0119217")
 
 print(movie)
 
