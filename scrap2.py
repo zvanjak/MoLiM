@@ -137,7 +137,6 @@ class IMDBMovieData(object):
     
     self.directors_list = []
     self.genres_list = []
-    self.short_cast = ""
     self.cast_list = []
     self.producers_list = []
     self.writers_list = []
@@ -154,22 +153,22 @@ class IMDBMovieData(object):
   def hasActor(self, actor: str) -> bool:
     return actor in self.cast_complete[0:200]
 
-class MovieData(object):
-  def __init__(self,name):        # poziva se kod inicijalizacije
-    self.name = name
-    self.imdb_name = ""
-    self.movieID = 0
-    self.year = 0
-    self.runtime = 0
-    self.rating = 0.0
-    self.directors = []
-    self.genres = []
-    self.short_cast = ""
-    self.cast = []
-    self.plot = ""
-    self.producers = []
-    self.writers = []
-    self.box_office = ""
+#class MovieData(object):
+#  def __init__(self,name):        # poziva se kod inicijalizacije
+#    self.name = name
+#    self.imdb_name = ""
+#    self.movieID = 0
+#    self.year = 0
+#    self.runtime = 0
+#    self.rating = 0.0
+#    self.directors = []
+#    self.genres = []
+#    self.cast_leads = ""
+#    self.cast = []
+#    self.plot = ""
+#    self.producers = []
+#    self.writers = []
+#    self.box_office = ""
     
 class FolderWithMovies(object):
   def __init__(self, folderName):
@@ -549,14 +548,14 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
     #movie_data.name = ""
     #return movie_data
 
-  movie_data = fetchMovieDataByMovieID(movieID)
+  movie_data = fetchMovieDataByMovieID(searchMovieName, movieID)
 
   time.sleep(5+random.randrange(0,5))
 
   return movie_data
     
-def fetchMovieDataByMovieID(movieID : str) -> IMDBMovieData:
-  movie_data = IMDBMovieData()
+def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData:
+  movie_data = IMDBMovieData(name)
 
   try:
      movie = ia.get_movie(movieID)
@@ -601,10 +600,13 @@ def fetchMovieDataByMovieID(movieID : str) -> IMDBMovieData:
       movie_data.runtime = 0
 
     if 'top 250 rank' in movie.data:
-      movie_data.top250rank = int(movie.data['top 250 rank'][0])
+      movie_data.top250rank = int(movie.data['top 250 rank'])
 
     if 'countries' in movie.data:
       movie_data.countries = str(movie.data['countries'])
+
+    if 'languages' in movie.data:
+      movie_data.languages = str(movie.data['languages'])
 
     directors = ""
     cntDir = 0
@@ -699,7 +701,7 @@ def fetchMovieDataByMovieID(movieID : str) -> IMDBMovieData:
     print("\nERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
     movie_data.name = ""
   
-    return movie_data
+  return movie_data
 
 def processFolder(folderName):
   print("------------------------------------------")
@@ -1185,7 +1187,7 @@ def copyDirectors(foldersList):
         #print("FROM - ")
 
 
-movie = fetchMovieDataByMovieID("0119217")
+movie = fetchMovieDataByMovieID("Good Will Hunting", "0119217")
 
 print(movie)
 
