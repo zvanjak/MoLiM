@@ -539,7 +539,7 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
       print("OUCH")
   
   if movieFound == False:
-    print ("COULD FIND MOVIE WITH NAME AND YEAR") 
+    print ("COULD NOT FIND MOVIE WITH NAME AND YEAR") 
     for movie in foundMoviesList:
       print("-- {0:15} -- {1:30}, {2}".format(movie.movieID, movie.data.get('title'), movie.data.get('year')))
     #movie_data.name = ""
@@ -1120,7 +1120,7 @@ def printActorsStatistics():
   seriesFolders = getSeriesFolderNames()
   listActors = getMiscActorsList() + actorsList
   listActors.sort()
-  root.loadDataFromListOfFolders(actorsFolders + genresFolders + decadesFolders + directorsFolders + seriesFolders) 
+  root.loadDataFromListOfFolders(actorsFolders + genresFolders + decadesFolders + directorsFolders + ["E:\DONE"] + seriesFolders) 
 
   tuplesList = []
 
@@ -1175,7 +1175,7 @@ def copyDirectors(foldersList):
 
 #copyDirectors(genresFolders)
 
-#printActorsStatistics()
+printActorsStatistics()
 #printDirectorsStatistics()
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
@@ -1186,7 +1186,7 @@ def copyDirectors(foldersList):
 
 #printBigFiles()
 
-processFolder("E:\DONE")
+#processFolder("E:\DONE")
 #processListOfFolders( ("Z:\Movies\FILMOVI\_____GOOD DONE\Denis Vilenueve",          \
 #                       "Z:\Movies\FILMOVI\_____GOOD DONE\Humphrey Bogart",      \
 #                       #"Z:\Movies\FILMOVI\_____GOOD DONE\Jodie Foster",    \
