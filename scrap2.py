@@ -125,11 +125,15 @@ class IMDBMovieData(object):
     self.producers = ""
     self.writers = ""
     self.genres = ""
-    self.cast = ""
+    self.countries = ""
+    self.languages = ""
+    self.cover_url = ""
+    self.cast_leads = ""
     self.cast_complete = ""
     self.plot = ""
     
     self.box_office = ""
+    self.top250rank = 0
     
     self.directors_list = []
     self.genres_list = []
@@ -381,7 +385,7 @@ def getMovieFolderNameFromMovieData(movie_data : IMDBMovieData) -> str:
   elif movie_data.rating < 6.0:
     prefix = "zzz_"
   
-  newDirName = prefix + str(movie_data.name).rstrip() + "  (" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " CAST - " + movie_data.cast
+  newDirName = prefix + str(movie_data.name).rstrip() + "  (" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " CAST - " + movie_data.cast_leads
   
   return newDirName
 
@@ -539,7 +543,7 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
       print("OUCH")
   
   if movieFound == False:
-    print ("COULD NOT FIND MOVIE WITH NAME AND YEAR") 
+    print ("COULD NOT FIND EXACT MOVIE WITH NAME AND YEAR") 
     for movie in foundMoviesList:
       print("-- {0:15} -- {1:30}, {2}".format(movie.movieID, movie.data.get('title'), movie.data.get('year')))
     #movie_data.name = ""
@@ -668,7 +672,7 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
               
       print('Cast: ' + shortCast)
       movie_data.cast_complete = cast
-      movie_data.cast = shortCast
+      movie_data.cast_leads = shortCast
     else:
       print("-------------------------------------------")
       print("NO CAST!!!")
@@ -1173,9 +1177,14 @@ def copyDirectors(foldersList):
         # treba mi lista foldera za svakog directora
         #print("FROM - ")
 
+
+movie = ia.get_movie("0119217")
+
+print(movie)
+
 #copyDirectors(genresFolders)
 
-printActorsStatistics()
+#printActorsStatistics()
 #printDirectorsStatistics()
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
