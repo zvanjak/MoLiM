@@ -43,7 +43,6 @@ actorsFolders = [ "Z:\Movies\FILMOVI\___Al Pacino",   \
   "Z:\Movies\FILMOVI\___John Wayne",                  \
   "Z:\Movies\FILMOVI\___Mel Gibson",                  \
   "Z:\Movies\FILMOVI\___Robert De Niro",              \
-  "Z:\Movies\FILMOVI\___Tom Cruise",                  \
   "Z:\Movies\FILMOVI\___Tom Hanks",
 ]  
 
@@ -1176,7 +1175,7 @@ def copyDirectors(foldersList):
 
 #copyDirectors(genresFolders)
 
-printActorsStatistics()
+#printActorsStatistics()
 #printDirectorsStatistics()
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
@@ -1187,7 +1186,7 @@ printActorsStatistics()
 
 #printBigFiles()
 
-#processFolder("D:\Downloads\Horrors")
+processFolder("E:\DONE")
 #processListOfFolders( ("Z:\Movies\FILMOVI\_____GOOD DONE\Denis Vilenueve",          \
 #                       "Z:\Movies\FILMOVI\_____GOOD DONE\Humphrey Bogart",      \
 #                       #"Z:\Movies\FILMOVI\_____GOOD DONE\Jodie Foster",    \
