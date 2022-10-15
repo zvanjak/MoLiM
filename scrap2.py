@@ -549,6 +549,13 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
     #movie_data.name = ""
     #return movie_data
 
+  movie_data = fetchMovieDataByMovieID(movieID)
+
+  return movie_data
+    
+def fetchMovieDataByMovieID(movieID : str) -> IMDBMovieData:
+  movie_data = IMDBMovieData()
+
   try:
      movie = ia.get_movie(movieID)
   except:
@@ -685,13 +692,8 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
   except:
     print("\nERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
     movie_data.name = ""
-
-  return movie_data
-    
-def fetchMovieDataByMovieID(movieID : str) -> IMDBMovieData:
-  movie_data = IMDBMovieData()
-
-  return movie_data
+  
+    return movie_data
 
 def processFolder(folderName):
   print("------------------------------------------")
