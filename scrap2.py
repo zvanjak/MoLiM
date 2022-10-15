@@ -574,9 +574,10 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
     movie_data.votes = votes
     print("Num. votes {0}".format(votes))
 
-    box_office = movie.data.get('box office', None)
-    movie_data.box_office = box_office
-    print("Box office {0}".format(box_office))
+    box_office_data = movie.data.get('box office', None)
+    if box_office_data != None:
+      movie_data.box_office = str(box_office_data)
+      print("Box office {0}".format(box_office_data))
 
     year = movie.data.get('year', None)
     movie_data.year = year
@@ -660,8 +661,6 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
     if 'cast' in movie.data:
       i = 0
       for actor in movie.data['cast']:
-  #    for i in range(0,len(movie.data['cast'])-1):
-        #s = movie.data['cast'][i]
         cast += actor['name']
         cast += ", "
         if i < 5 :
