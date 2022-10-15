@@ -483,12 +483,21 @@ def loadIMDBMovieDataFromFilmData(folderWhereItIs, movieFolderName, movieName, m
     elif line.startswith("Rating:"):
       rating = line[10:].strip()
       movie_data.rating = float(rating)
+    elif line.startswith("Top 250:"):
+      top250rank  = line[10:].strip()
+      movie_data.top250rank = int(top250rank)
     elif line.startswith("Genres:"):
       genres = line[10:].strip()
       movie_data.genres = genres
     elif line.startswith("Directors:"):
       directors = line[10:].strip()
       movie_data.directors = directors
+    elif line.startswith("Countries:"):
+      countries = line[10:].strip()
+      movie_data.countries = countries
+    elif line.startswith("Languages:"):
+      languages = line[10:].strip()
+      movie_data.languages = languages
     elif line.startswith("Producers:"):
       producers = line[10:].strip()
       movie_data.producers = producers
@@ -498,6 +507,7 @@ def loadIMDBMovieDataFromFilmData(folderWhereItIs, movieFolderName, movieName, m
     elif line.startswith("Cast:"):
       cast = line[10:].strip()
       movie_data.cast_complete = cast
+      # TODO - formirati i cast_lead
     elif line.startswith("Plot:"):
       plot = line[10:].strip()
       movie_data.plot = plot
