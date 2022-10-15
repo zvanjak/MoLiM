@@ -441,12 +441,16 @@ def saveTXTWithMovieData(movie_data : IMDBMovieData, folderWhereItIs, movieFolde
   fileFilmData.write("Year:      " + str(movie_data.year) + "\n")
   fileFilmData.write("Runtime:   " + str(movie_data.runtime) + " min\n")
   fileFilmData.write("Rating:    " + str(movie_data.rating) + "\n")
+  if movie_data.top250rank != 0 :
+    fileFilmData.write("Top 250:   " + str(movie_data.top250rank) + "\n")
   fileFilmData.write("Votes:     " + str(movie_data.votes) + "\n")
   fileFilmData.write("Genres:    " + movie_data.genres + "\n")
   fileFilmData.write("Directors: " + movie_data.directors + "\n")
+  fileFilmData.write("Countries: " + movie_data.countries + "\n")
+  fileFilmData.write("Languages: " + movie_data.languages + "\n")
   fileFilmData.write("Producers: " + movie_data.producers + "\n")
   fileFilmData.write("Writers:   " + movie_data.writers + "\n")
-  fileFilmData.write("Box office:" + str(movie_data.box_office) + "\n")
+  fileFilmData.write("Box office:" + movie_data.box_office + "\n")
   fileFilmData.write("Cast:      " + movie_data.cast_complete + "\n")
   fileFilmData.write("Plot:      " + str(movie_data.plot))
 
