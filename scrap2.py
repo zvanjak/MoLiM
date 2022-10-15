@@ -356,7 +356,7 @@ def getNameYearFromNameWithIMDB(movieFolderName : str) :
   else:
     imdb_name1 = imdb_name_raw
 
-  imdb_name = imdb_name1.strip("_")
+  imdb_name = imdb_name1.strip("_") 
   year_str  = movieFolderName[ind1+1:ind2]
 
   return (imdb_name, year_str)
@@ -420,7 +420,6 @@ def saveMovieDataAndRenameFolder(movie_data : IMDBMovieData, folderWhereItIs, mo
     origDir = folderWhereItIs + "\\" + movieFolderName
     destDir = folderWhereItIs + "\\" + newDirName
 
-    # TODO provjeriti da li već postoji dest dir
     #print("RENAMING - ", origDir, "   -   ", destDir)
     if os.path.isdir(destDir):
       print("\n\nDESTINATION DIR ALREADY EXISTS!!!!!!\n\n")
@@ -1201,9 +1200,9 @@ def copyDirectors(foldersList):
         #print("FROM - ")
 
 
-movie = fetchMovieDataByMovieID("Good Will Hunting", "0119217")
+#movie = fetchMovieDataByMovieID("Good Will Hunting", "0119217")
 
-print(movie)
+#print(movie)
 
 #copyDirectors(genresFolders)
 
@@ -1218,7 +1217,7 @@ print(movie)
 
 #printBigFiles()
 
-#processFolder("E:\DONE")
+processFolder("E:\DONE")
 #processListOfFolders( ("Z:\Movies\FILMOVI\_____GOOD DONE\Denis Vilenueve",          \
 #                       "Z:\Movies\FILMOVI\_____GOOD DONE\Humphrey Bogart",      \
 #                       #"Z:\Movies\FILMOVI\_____GOOD DONE\Jodie Foster",    \
