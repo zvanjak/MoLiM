@@ -1260,9 +1260,12 @@ processFolder("E:\DONE")
 #     proci kroz actors list
 #     
 #   Directors -> Actors, po godinama
+
 # doesContainMovie za folder
 
+# statistike po budžetu - najskuplji, najveći cumulative gross
 
+# statistike imdb top 250 - koji mi fale
 
 # pocistiti file errors, RARBG.txt, i not mirror
 
