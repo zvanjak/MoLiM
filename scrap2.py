@@ -469,7 +469,8 @@ def saveTXTWithMovieData(movie_data : IMDBMovieData, folderWhereItIs, movieFolde
   fileFilmData.write("Writers:   " + movie_data.writers + "\n")
   fileFilmData.write("Box office:" + movie_data.box_office + "\n")
   fileFilmData.write("Cast:      " + movie_data.cast_complete + "\n")
-  fileFilmData.write("Plot:      " + str(movie_data.plot))
+  fileFilmData.write("Plot:      " + str(movie_data.plot) + "\n")
+  fileFilmData.write("Saved on:  " + str(movie_data.plot))
 
   fileFilmData.close()
  
