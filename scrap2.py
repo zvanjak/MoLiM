@@ -1233,10 +1233,10 @@ def reprocessFolderIMDBData(folderName):
 
       movieID = getMovieIDFromFilmData(folderName, movieFolderName, searchMovieName, year)
 
-      if movieID > 0 :
+      if movieID != None :
         print("Processing: " + searchMovieName, "  (", year, ")")
         
-        movie_data = fetchMovieDataByMovieID(movieID)
+        movie_data = fetchMovieDataByMovieID(searchMovieName, movieID)
 
         if movie_data.name != "":
           saveTXTWithMovieData(movie_data, folderName, movieFolderName)
@@ -1244,7 +1244,7 @@ def reprocessFolderIMDBData(folderName):
         time.sleep(5 + random.randrange(0,5))
 
 
-reprocessFolderIMDBData("Z:\Movies\FILMOVI\_1970's")
+reprocessFolderIMDBData("Z:\Movies\FILMOVI\_Batman")
 
 #movie = fetchMovieDataByMovieID("Good Will Hunting", "0119217")
 
