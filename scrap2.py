@@ -4,6 +4,8 @@ from typing import Tuple
 from xmlrpc.client import Boolean
 from imdb import Cinemagoer
 
+from datetime import date
+
 import time
 import random
 import os
@@ -470,7 +472,10 @@ def saveTXTWithMovieData(movie_data : IMDBMovieData, folderWhereItIs, movieFolde
   fileFilmData.write("Box office:" + movie_data.box_office + "\n")
   fileFilmData.write("Cast:      " + movie_data.cast_complete + "\n")
   fileFilmData.write("Plot:      " + str(movie_data.plot) + "\n")
-  fileFilmData.write("Saved on:  " + str(movie_data.plot))
+
+  today = date.today()
+  dateToSave = today.strftime("%Y-%m-%d")
+  fileFilmData.write("Saved on:  " + dateToSave)
 
   fileFilmData.close()
  
@@ -1165,7 +1170,7 @@ def printActorsStatistics():
   seriesFolders = getSeriesFolderNames()
   listActors = getMiscActorsList() + actorsList
   listActors.sort()
-  root.loadDataFromListOfFolders(actorsFolders + genresFolders + decadesFolders + directorsFolders + ["E:\DONE"] + seriesFolders) 
+  root.loadDataFromListOfFolders(actorsFolders + genresFolders + decadesFolders + directorsFolders + ["E:\DONE", "Z:\Movies\FILMOVI\_____GOOD DONE"] + seriesFolders) 
 
   tuplesList = []
 
@@ -1242,10 +1247,10 @@ def reprocessFolderIMDBData(folderName):
         if movie_data.name != "":
           saveTXTWithMovieData(movie_data, folderName, movieFolderName)
 
-        time.sleep(5 + random.randrange(0,5))
+        time.sleep(2 + random.randrange(0,2))
 
 
-reprocessFolderIMDBData("Z:\Movies\FILMOVI\_Batman")
+#reprocessFolderIMDBData("Z:\Movies\FILMOVI\_Batman")
 
 #movie = fetchMovieDataByMovieID("Good Will Hunting", "0119217")
 
@@ -1253,13 +1258,13 @@ reprocessFolderIMDBData("Z:\Movies\FILMOVI\_Batman")
 
 #copyDirectors(genresFolders)
 
-#printActorsStatistics()
+printActorsStatistics()
 #printDirectorsStatistics()
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
 #folderStatistics("Z:\Movies\FILMOVI\_1970's")
 
-rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
+#rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
 #rootFolderReportNotDone("Z:\Movies\FILMOVI")
 
 #printBigFiles()
