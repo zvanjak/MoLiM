@@ -405,6 +405,24 @@ def doesFilmDataHasMovieID(folderWhereItIs, movieFolderName, movieName, movieYea
 
   return False
 
+def getMovieIDFromFilmData(folderWhereItIs, movieFolderName, movieName, movieYear) -> int:
+  filePath = getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear)
+
+  try:
+    fileFilmData = open(filePath, 'r')
+  except:
+    return -1
+
+  if fileFilmData:
+    fileFilmData.readline()             # skipping first line
+    second = fileFilmData.readline()
+    
+    if second.startswith("MovieID:"):
+      movieID = line[10:].strip()
+      return movieID
+
+  return -1
+
 def saveMovieDataAndRenameFolder(movie_data : IMDBMovieData, folderWhereItIs, movieFolderName):
 
     # ime novog direktorija
@@ -1200,6 +1218,59 @@ def copyDirectors(foldersList):
         #print("FROM - ")
 
 
+def reprocessFolderIMDBData(folderName):
+  print("------------------------------------------")
+  print("------", folderName, "------")
+  print("------------------------------------------")
+
+  movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
+
+  for movieFolderName in movieSubFolders:
+    if movieFolderName.find("IMDB") != -1:
+      print(movieFolderName)
+
+      (searchMovieName, year) = getMovieNameFromFolder(movieFolderName)
+
+      if doesFilmDataHasMovieID(folderName, movieFolderName, searchMovieName, year)) :
+        continue
+
+      print("-----------------------------------------------------")
+      print("\nReal movie name: " + imdb_name)
+      print("Year           : " + year_str)
+      movie_data = fetchMovieData(imdb_name, int(year_str))
+
+      if movie_data.name == "":
+        print("SLEEPING 5-10 seconds :(((((")
+        time.sleep(5 + random.randrange(0,5))
+      else:
+        # produce novi naziv direktorija
+        newDirName = getMovieFolderNameFromMovieData(movie_data)
+
+        # usporedi s movieFileName
+        if newDirName != movieFolderName:
+          print("AHAAAA")
+          print(newDirName)
+          print(movieFolderName)
+
+          # formirati TXT datoteku s podacima
+          saveTXTWithMovieData(movie_data, folderName, movieFolderName)
+
+          # i sad idemo preimenovati direktorij
+          origDir = folderName + "\\" + movieFolderName
+          destDir = folderName + "\\" + newDirName
+
+          # provjeriti da li već postoji dest dir
+          if os.path.isdir(destDir):
+            print("\n\nDESTINATION DIR ALREADY EXISTS!!!!!!\n\n")
+          else:
+            print("RENAMING - ", origDir, destDir)
+            os.rename(origDir, destDir)
+        else:
+          saveTXTWithMovieData(movie_data, folderName, movieFolderName)
+
+
+        time.sleep(5 + random.randrange(0,5))
+
 #movie = fetchMovieDataByMovieID("Good Will Hunting", "0119217")
 
 #print(movie)
@@ -1217,7 +1288,7 @@ def copyDirectors(foldersList):
 
 #printBigFiles()
 
-processFolder("E:\DONE")
+#processFolder("E:\DONE")
 #processListOfFolders( ("Z:\Movies\FILMOVI\_____GOOD DONE\Denis Vilenueve",          \
 #                       "Z:\Movies\FILMOVI\_____GOOD DONE\Humphrey Bogart",      \
 #                       #"Z:\Movies\FILMOVI\_____GOOD DONE\Jodie Foster",    \
