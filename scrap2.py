@@ -1170,7 +1170,7 @@ def printActorsStatistics():
   seriesFolders = getSeriesFolderNames()
   listActors = getMiscActorsList() + actorsList
   listActors.sort()
-  root.loadDataFromListOfFolders(actorsFolders + genresFolders + decadesFolders + directorsFolders + ["E:\DONE", "Z:\Movies\FILMOVI\_____GOOD DONE"] + seriesFolders) 
+  root.loadDataFromListOfFolders(actorsFolders + genresFolders + decadesFolders + directorsFolders + ["E:\DONE", "Z:\Movies\FILMOVI\_____GOOD DONE"]) # + seriesFolders) 
 
   tuplesList = []
 
@@ -1258,7 +1258,7 @@ def reprocessFolderIMDBData(folderName):
 
 #copyDirectors(genresFolders)
 
-printActorsStatistics()
+#printActorsStatistics()
 #printDirectorsStatistics()
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
@@ -1269,7 +1269,7 @@ printActorsStatistics()
 
 #printBigFiles()
 
-#processFolder("E:\DONE")
+processFolder("E:\DONE")
 #processListOfFolders( ("Z:\Movies\FILMOVI\_____GOOD DONE\Denis Vilenueve",          \
 #                       "Z:\Movies\FILMOVI\_____GOOD DONE\Humphrey Bogart",      \
 #                       #"Z:\Movies\FILMOVI\_____GOOD DONE\Jodie Foster",    \
