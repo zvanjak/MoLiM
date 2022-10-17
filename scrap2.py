@@ -153,7 +153,7 @@ class IMDBMovieData(object):
     return genre in self.genres
 
   def hasActor(self, actor: str) -> bool:
-    return actor in self.cast_complete
+    return actor in self.cast_complete[0:300]
 
 #class MovieData(object):
 #  def __init__(self,name):        # poziva se kod inicijalizacije
@@ -1098,11 +1098,10 @@ def rootFolderReportNoIMDBData(rootFolderName):
         print ("  ", movie)
 
 
-
 def printMoviesList(listMovies):
   for movie in listMovies:
-    short_cast = movie.cast_complete[0:50]
-    print("Rating - {0} - {1:55} - {2}    -   {3:40}   - {4}".format( movie.rating, movie.name + " (" + str(movie.year) + ") ", short_cast, movie.directors, movie.genres ) )
+    short_cast = movie.cast_complete[0:75]
+    print("Rating - {0} - {1:55} - {2}    -   {3:20}   - {4}".format( movie.rating, movie.name + " (" + str(movie.year) + ") ", short_cast, movie.directors, movie.genres ) )
 
 def printBigFiles():
   # The min size of the file in Bytes
@@ -1258,7 +1257,7 @@ def reprocessFolderIMDBData(folderName):
 
 #copyDirectors(genresFolders)
 
-#printActorsStatistics()
+printActorsStatistics()
 #printDirectorsStatistics()
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
@@ -1269,7 +1268,7 @@ def reprocessFolderIMDBData(folderName):
 
 #printBigFiles()
 
-processFolder("Z:\Movies\FILMOVI\____Comedy")
+#processFolder("Z:\Movies\FILMOVI\____Comedy")
 #processListOfFolders( ("Z:\Movies\FILMOVI\_____GOOD DONE\Denis Vilenueve",          \
 #                       "Z:\Movies\FILMOVI\_____GOOD DONE\Humphrey Bogart",      \
 #                       #"Z:\Movies\FILMOVI\_____GOOD DONE\Jodie Foster",    \
