@@ -153,7 +153,7 @@ class IMDBMovieData(object):
     return genre in self.genres
 
   def hasActor(self, actor: str) -> bool:
-    return actor in self.cast_complete[0:200]
+    return actor in self.cast_complete
 
 #class MovieData(object):
 #  def __init__(self,name):        # poziva se kod inicijalizacije
@@ -1269,7 +1269,7 @@ def reprocessFolderIMDBData(folderName):
 
 #printBigFiles()
 
-processFolder("E:\DONE")
+processFolder("Z:\Movies\FILMOVI\____Comedy")
 #processListOfFolders( ("Z:\Movies\FILMOVI\_____GOOD DONE\Denis Vilenueve",          \
 #                       "Z:\Movies\FILMOVI\_____GOOD DONE\Humphrey Bogart",      \
 #                       #"Z:\Movies\FILMOVI\_____GOOD DONE\Jodie Foster",    \
