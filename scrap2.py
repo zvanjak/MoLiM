@@ -184,7 +184,7 @@ class FolderWithMovies(object):
       if movieFolderName.find("IMDB") != -1:
         (imdb_name, year_str) = getNameYearFromNameWithIMDB(movieFolderName)
       
-        if doesFilmDataHasMovieID(self.name, movieFolderName, imdb_name, int(year_str)) == True:
+        if doesFilmDataHasMovieID(self.name, movieFolderName, imdb_name, int(year_str)) == True :
           movie_data = loadIMDBMovieDataFromFilmData(self.name, movieFolderName, imdb_name, int(year_str))
 
           self.movies.append(movie_data)
@@ -1134,7 +1134,8 @@ def printDirectorsStatistics():
   seriesFolders = getSeriesFolderNames()
   listDirectors = getMiscDirectorsList() + directorsList
   listDirectors.sort()
-  root.loadDataFromListOfFolders(directorsFolders + actorsFolders + genresFolders + decadesFolders +  seriesFolders) 
+#  root.loadDataFromListOfFolders(directorsFolders + actorsFolders + genresFolders + decadesFolders +  seriesFolders) 
+  root.loadDataFromListOfFolders(actorsFolders + genresFolders + decadesFolders + directorsFolders + ["E:\DONE", "Z:\Movies\FILMOVI\_____GOOD DONE"] + seriesFolders) 
 
   tuplesList = []
 
@@ -1258,7 +1259,7 @@ def reprocessFolderIMDBData(folderName):
 
 #copyDirectors(genresFolders)
 
-printActorsStatistics()
+#printActorsStatistics()
 #printDirectorsStatistics()
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
@@ -1267,9 +1268,10 @@ printActorsStatistics()
 #rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
 #rootFolderReportNotDone("Z:\Movies\FILMOVI")
 
-#printBigFiles()
+printBigFiles()
 
-#processFolder("Z:\Movies\FILMOVI\____Comedy")
+#processFolder("E:\DONE")
+
 #processListOfFolders( ("Z:\Movies\FILMOVI\_____GOOD DONE\Denis Vilenueve",          \
 #                       "Z:\Movies\FILMOVI\_____GOOD DONE\Humphrey Bogart",      \
 #                       #"Z:\Movies\FILMOVI\_____GOOD DONE\Jodie Foster",    \
