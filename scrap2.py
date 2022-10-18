@@ -38,14 +38,18 @@ directorsList = [ "Akira Kurosawa",     \
                   "Steven Spielberg" ]
 
 actorsFolders = [ "Z:\Movies\FILMOVI\___Al Pacino",   \
+  "Z:\Movies\FILMOVI\___Brad Pitt",                   \
   "Z:\Movies\FILMOVI\___Bruce Lee",                   \
   "Z:\Movies\FILMOVI\___Clint Eastwood",              \
-  "Z:\Movies\FILMOVI\___Daniel Day-Lewis",            \
+  "Z:\Movies\FILMOVI\___Humphrey Bogart",             \
   "Z:\Movies\FILMOVI\___Jack Nicholson",              \
   "Z:\Movies\FILMOVI\___John Wayne",                  \
+  "Z:\Movies\FILMOVI\___Leonardo DiCaprio",           \
   "Z:\Movies\FILMOVI\___Mel Gibson",                  \
   "Z:\Movies\FILMOVI\___Robert De Niro",              \
-  "Z:\Movies\FILMOVI\___Tom Hanks",
+  "Z:\Movies\FILMOVI\___Spencer Tracy",               \
+  "Z:\Movies\FILMOVI\___Tom Cruise",                  \
+  "Z:\Movies\FILMOVI\___Tom Hanks"
 ]  
 
 actorsList = [ "Al Pacino",   \
