@@ -53,11 +53,13 @@ actorsFolders = [ "Z:\Movies\FILMOVI\___Al Pacino",   \
 ]  
 
 actorsList = [ "Al Pacino",   \
+  "Brad Pitt",                   \
   "Bruce Lee",                   \
   "Clint Eastwood",              \
-  "Daniel Day-Lewis",            \
+  "Humphrey Bogart",             \
   "Jack Nicholson",              \
   "John Wayne",                  \
+  "Leonardo DiCaprio",           \
   "Mel Gibson",                  \
   "Robert De Niro",              \
   "Tom Cruise",                  \
