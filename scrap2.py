@@ -52,7 +52,7 @@ actorsFolders = [ "Z:\Movies\FILMOVI\___Al Pacino",   \
   "Z:\Movies\FILMOVI\___Tom Hanks"
 ]  
 
-actorsList = [ "Al Pacino",   \
+actorsList = [ "Al Pacino",      \
   "Brad Pitt",                   \
   "Bruce Lee",                   \
   "Clint Eastwood",              \
@@ -80,7 +80,8 @@ genresFolders = [ "Z:\Movies\FILMOVI\____Action, Crime & Thriller",       \
   "Z:\Movies\FILMOVI\____Westerns"
 ]  
 
-decadesFolders = [ "Z:\Movies\FILMOVI\_1920-50's",       \
+decadesFolders = [ "Z:\Movies\FILMOVI\_1920-40's",       \
+  "Z:\Movies\FILMOVI\_1950's",       \
   "Z:\Movies\FILMOVI\_1960's",       \
   "Z:\Movies\FILMOVI\_1970's",       \
   "Z:\Movies\FILMOVI\_1980's",       \
@@ -1274,9 +1275,9 @@ def reprocessFolderIMDBData(folderName):
 #rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
 #rootFolderReportNotDone("Z:\Movies\FILMOVI")
 
-printBigFiles()
+#printBigFiles()
 
-#processFolder("E:\DONE")
+processFolder("E:\DONE")
 
 #processListOfFolders( ("Z:\Movies\FILMOVI\_____GOOD DONE\Denis Vilenueve",          \
 #                       "Z:\Movies\FILMOVI\_____GOOD DONE\Humphrey Bogart",      \
