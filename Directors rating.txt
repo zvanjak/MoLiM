@@ -1,0 +1,575 @@
+-----------------------------------------------------------------
+1 - DIRECTOR - Akira Kurosawa
+-----------------------------------------------------------------
+Rating - 8.6 - Seven Samurai  (1954)                                   - Toshirô Mifune, Takashi Shimura, Keiko Tsushima, Yukiko Shimazaki, Kamatari  -  Akira Kurosawa        - Action, Drama,
+Rating - 8.4 - High And Low  (1963)                                    - Toshirô Mifune, Tatsuya Nakadai, Kyôko Kagawa, Tatsuya Mihashi, Isao Kimura  -  Akira Kurosawa        - Crime, Drama, Mystery, Thriller,
+Rating - 8.3 - Ikiru  (1952)                                           - Takashi Shimura, Shin'ichi Himori, Haruo Tanaka, Minoru Chiaki, Miki Odagir  -  Akira Kurosawa        - Drama,
+Rating - 8.3 - Red Beard  (1965)                                       - Toshirô Mifune, Yûzô Kayama, Tsutomu Yamazaki, Reiko Dan, Miyuki Kuwano, Ky  -  Akira Kurosawa        - Drama,
+Rating - 8.2 - Ran  (1985)                                             - Tatsuya Nakadai, Akira Terao, Jinpachi Nezu, Daisuke Ryû, Mieko Harada, Yos  -  Akira Kurosawa        - Action, Drama, War,
+Rating - 8.2 - Rashomon  (1950)                                        - Toshirô Mifune, Machiko Kyô, Masayuki Mori, Takashi Shimura, Minoru Chiaki,  -  Akira Kurosawa        - Crime, Drama, Mystery,
+Rating - 8.2 - Yojimbo  (1961)                                         - Toshirô Mifune, Tatsuya Nakadai, Yôko Tsukasa, Isuzu Yamada, Daisuke Katô,   -  Akira Kurosawa        - Action, Drama, Thriller,
+Rating - 8.2 - Dersu Uzala  (1975)                                     - Yuriy Solomin, Maksim Munzuk, Mikhail Bychkov, Vladimir Khrulyov, V. Lastoc  -  Akira Kurosawa        - Adventure, Biography, Drama,
+Rating - 8.1 - Throne Of Blood  (1957)                                 - Toshirô Mifune, Isuzu Yamada, Takashi Shimura, Akira Kubo, Hiroshi Tachikaw  -  Akira Kurosawa        - Drama, History,
+Rating - 8.1 - The Hidden Fortress  (1958)                             - Toshirô Mifune, Minoru Chiaki, Kamatari Fujiwara, Susumu Fujita, Takashi Sh  -  Akira Kurosawa        - Action, Adventure, Drama,
+AVG =  8.26
+-----------------------------------------------------------------
+2 - DIRECTOR - Steven Spielberg
+-----------------------------------------------------------------
+Rating - 9.0 - Schindler's List  (1993)                                - Liam Neeson, Ben Kingsley, Ralph Fiennes, Caroline Goodall, Jonathan Sagall  -  Steven Spielberg      - Biography, Drama, History,
+Rating - 8.6 - Saving Private Ryan  (1998)                             - Tom Hanks, Tom Sizemore, Edward Burns, Barry Pepper, Adam Goldberg, Vin Die  -  Steven Spielberg      - Drama, War,
+Rating - 8.4 - Indiana Jones And The Raiders Of The Lost Ark  (1981)   - Harrison Ford, Karen Allen, Paul Freeman, Ronald Lacey, John Rhys-Davies, D  -  Steven Spielberg      - Action, Adventure,
+Rating - 8.2 - Indiana Jones And The Last Crusade  (1989)              - Harrison Ford, Sean Connery, Denholm Elliott, Alison Doody, John Rhys-Davie  -  Steven Spielberg      - Action, Adventure,
+Rating - 8.2 - Jurassic Park  (1993)                                   - Sam Neill, Laura Dern, Jeff Goldblum, Richard Attenborough, Bob Peck, Marti  -  Steven Spielberg      - Action, Adventure, Sci-Fi, Thriller,
+Rating - 8.1 - Catch Me If You Can  (2002)                             - Leonardo DiCaprio, Tom Hanks, Christopher Walken, Martin Sheen, Nathalie Ba  -  Steven Spielberg      - Biography, Crime, Drama,
+Rating - 8.1 - Jaws  (1975)                                            - Roy Scheider, Robert Shaw, Richard Dreyfuss, Lorraine Gary, Murray Hamilton  -  Steven Spielberg      - Adventure, Thriller,
+Rating - 7.9 - E T  The Extra-Terrestrial  (1982)                      - Dee Wallace, Henry Thomas, Peter Coyote, Robert MacNaughton, Drew Barrymore  -  Steven Spielberg      - Adventure, Family, Sci-Fi,
+Rating - 7.7 - Minority Report  (2002)                                 - Tom Cruise, Max von Sydow, Steve Harris, Neal McDonough, Patrick Kilpatrick  -  Steven Spielberg      - Action, Crime, Mystery, Sci-Fi, Thriller,
+Rating - 7.7 - Empire of the Sun  (1987)                               - Christian Bale, John Malkovich, Miranda Richardson, Nigel Havers, Joe Panto  -  Steven Spielberg      - Drama, History, War,
+AVG =  8.190000000000001
+-----------------------------------------------------------------
+3 - DIRECTOR - Martin Scorsese
+-----------------------------------------------------------------
+Rating - 8.7 - Goodfellas  (1990)                                      - Robert De Niro, Ray Liotta, Joe Pesci, Lorraine Bracco, Paul Sorvino, Frank  -  Martin Scorsese       - Biography, Crime, Drama,
+Rating - 8.5 - The Departed  (2006)                                    - Leonardo DiCaprio, Matt Damon, Jack Nicholson, Mark Wahlberg, Martin Sheen,  -  Martin Scorsese       - Crime, Drama, Thriller,
+Rating - 8.2 - Shutter Island  (2010)                                  - Leonardo DiCaprio, Mark Ruffalo, Ben Kingsley, Max von Sydow, Michelle Will  -  Martin Scorsese       - Mystery, Thriller,
+Rating - 8.2 - The Wolf of Wall Street  (2013)                         - Leonardo DiCaprio, Jonah Hill, Margot Robbie, Matthew McConaughey, Kyle Cha  -  Martin Scorsese       - Biography, Comedy, Crime, Drama,
+Rating - 8.2 - Casino  (1995)                                          - Robert De Niro, Sharon Stone, Joe Pesci, James Woods, Don Rickles, Alan Kin  -  Martin Scorsese       - Crime, Drama,
+Rating - 8.2 - Raging Bull  (1980)                                     - Robert De Niro, Cathy Moriarty, Joe Pesci, Frank Vincent, Nicholas Colasant  -  Martin Scorsese       - Biography, Drama, Sport,
+Rating - 8.2 - Taxi Driver  (1976)                                     - Diahnne Abbott, Frank Adu, Victor Argo, Gino Ardito, Garth Avery, Peter Boy  -  Martin Scorsese       - Crime, Drama,
+Rating - 8.1 - The Last Waltz  (1978)                                  - The Band, Rick Danko, Levon Helm, Garth Hudson, Richard Manuel, Robbie Robe  -  Martin Scorsese       - Documentary, Biography, Music,
+Rating - 7.8 - The Irishman  (2019)                                    - Robert De Niro, Al Pacino, Joe Pesci, Harvey Keitel, Ray Romano, Bobby Cann  -  Martin Scorsese       - Biography, Crime, Drama,
+Rating - 7.8 - The King of Comedy  (1982)                              - Robert De Niro, Jerry Lewis, Diahnne Abbott, Sandra Bernhard, Ed Herlihy, L  -  Martin Scorsese       - Comedy, Crime, Drama, Thriller,
+AVG =  8.19
+-----------------------------------------------------------------
+4 - DIRECTOR - Stanley Kubrick
+-----------------------------------------------------------------
+Rating - 8.4 - The Shining  (1980)                                     - Jack Nicholson, Shelley Duvall, Danny Lloyd, Scatman Crothers, Barry Nelson  -  Stanley Kubrick       - Drama, Horror,
+Rating - 8.4 - Paths Of Glory  (1957)                                  - Kirk Douglas, Ralph Meeker, Adolphe Menjou, George Macready, Wayne Morris,   -  Stanley Kubrick       - Drama, War,
+Rating - 8.4 - Dr Strangelove (1964)                                   - Peter Sellers, George C. Scott, Sterling Hayden, Keenan Wynn, Slim Pickens,  -  Stanley Kubrick       - Comedy, War,
+Rating - 8.3 - 2001 A Space Odyssey (1968)                             - Keir Dullea, Gary Lockwood, William Sylvester, Daniel Richter, Leonard Ross  -  Stanley Kubrick       - Adventure, Sci-Fi,
+Rating - 8.3 - Full Metal Jacket  (1987)                               - Matthew Modine, Adam Baldwin, Vincent D'Onofrio, R. Lee Ermey, Dorian Harew  -  Stanley Kubrick       - Drama, War,
+Rating - 8.3 - A Clockwork Orange  (1971)                              - Malcolm McDowell, Patrick Magee, Michael Bates, Warren Clarke, John Clive,   -  Stanley Kubrick       - Crime, Sci-Fi,
+Rating - 8.1 - Barry Lyndon  (1975)                                    - Ryan O'Neal, Marisa Berenson, Patrick Magee, Hardy Krüger, Steven Berkoff,   -  Stanley Kubrick       - Adventure, Drama, War,
+Rating - 8.0 - The Killing  (1956)                                     - Sterling Hayden, Coleen Gray, Vince Edwards, Jay C. Flippen, Ted de Corsia,  -  Stanley Kubrick       - Crime, Drama, Film-Noir, Thriller,
+Rating - 7.9 - Spartacus  (1960)                                       - Kirk Douglas, Laurence Olivier, Jean Simmons, Charles Laughton, Peter Ustin  -  Stanley Kubrick       - Adventure, Biography, Drama, History, War,
+Rating - 7.5 - Eyes Wide Shut  (1999)                                  - Tom Cruise, Nicole Kidman, Madison Eginton, Jackie Sawiris, Sydney Pollack,  -  Stanley Kubrick       - Drama, Mystery, Thriller,
+AVG =  8.16
+-----------------------------------------------------------------
+5 - DIRECTOR - Christopher Nolan
+-----------------------------------------------------------------
+Rating - 9.0 - The Dark Knight  (2008)                                 - Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine, Maggie Gyllenha  -  Christopher Nolan     - Action, Crime, Drama, Thriller,
+Rating - 8.8 - Inception  (2010)                                       - Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Tom Hardy, Ken Watana  -  Christopher Nolan     - Action, Adventure, Sci-Fi, Thriller,
+Rating - 8.6 - Interstellar  (2014)                                    - Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow, Timothée C  -  Christopher Nolan     - Adventure, Drama, Sci-Fi,
+Rating - 8.5 - The Prestige  (2006)                                    - Hugh Jackman, Christian Bale, Michael Caine, Piper Perabo, Rebecca Hall, Sc  -  Christopher Nolan     - Drama, Mystery, Sci-Fi, Thriller,
+Rating - 8.4 - Memento  (2000)                                         - Guy Pearce, Carrie-Anne Moss, Joe Pantoliano, Mark Boone Junior, Russ Fega,  -  Christopher Nolan     - Mystery, Thriller,
+Rating - 8.4 - The Dark Knight Rises  (2012)                           - Christian Bale, Gary Oldman, Tom Hardy, Joseph Gordon-Levitt, Anne Hathaway  -  Christopher Nolan     - Action, Drama,
+Rating - 7.8 - Dunkirk  (2017)                                         - Fionn Whitehead, Damien Bonnard, Aneurin Barnard, Lee Armstrong, James Bloo  -  Christopher Nolan     - Action, Drama, History, Thriller, War,
+Rating - 7.5 - Following  (1998)                                       - Jeremy Theobald, Alex Haw, Lucy Russell, John Nolan, Dick Bradsell, Gillian  -  Christopher Nolan     - Crime, Mystery, Thriller,
+Rating - 7.3 - Tenet  (2020)                                           - Juhan Ulfsak, Jefferson Hall, Ivo Uukkivi, Andrew Howard, John David Washin  -  Christopher Nolan     - Action, Sci-Fi, Thriller,
+Rating - 7.2 - Insomnia  (2002)                                        - Al Pacino, Martin Donovan, Oliver 'Ole' Zemen, Hilary Swank, Paul Dooley,    -  Christopher Nolan     - Drama, Mystery, Thriller,
+AVG =  8.15
+-----------------------------------------------------------------
+6 - DIRECTOR - Alfred Hitchcock
+-----------------------------------------------------------------
+Rating - 8.5 - Psycho  (1960)                                          - Anthony Perkins, Vera Miles, John Gavin, Janet Leigh, Martin Balsam, John M  -  Alfred Hitchcock      - Horror, Mystery, Thriller,
+Rating - 8.5 - Rear Window  (1954)                                     - James Stewart, Grace Kelly, Wendell Corey, Thelma Ritter, Raymond Burr, Jud  -  Alfred Hitchcock      - Mystery, Thriller,
+Rating - 8.3 - North by Northwest  (1959)                              - Cary Grant, Eva Marie Saint, James Mason, Jessie Royce Landis, Leo G. Carro  -  Alfred Hitchcock      - Action, Adventure, Mystery, Thriller,
+Rating - 8.3 - Vertigo  (1958)                                         - James Stewart, Kim Novak, Barbara Bel Geddes, Tom Helmore, Henry Jones, Ray  -  Alfred Hitchcock      - Mystery, Romance, Thriller,
+Rating - 8.2 - Dial M for Murder  (1954)                               - Ray Milland, Grace Kelly, Robert Cummings, John Williams, Anthony Dawson, L  -  Alfred Hitchcock      - Crime, Thriller,
+Rating - 8.1 - Rebecca  (1940)                                         - Laurence Olivier, Joan Fontaine, George Sanders, Judith Anderson, Nigel Bru  -  Alfred Hitchcock      - Drama, Film-Noir, Mystery, Romance, Thriller,
+Rating - 7.9 - Notorious  (1946)                                       - Cary Grant, Ingrid Bergman, Claude Rains, Louis Calhern, Leopoldine Konstan  -  Alfred Hitchcock      - Drama, Film-Noir, Romance, Thriller,
+Rating - 7.9 - Rope  (1948)                                            - Dick Hogan, John Dall, Farley Granger, Edith Evanson, Douglas Dick, Joan Ch  -  Alfred Hitchcock      - Crime, Drama, Mystery, Thriller,
+Rating - 7.9 - Strangers on a Train  (1951)                            - Farley Granger, Ruth Roman, Robert Walker, Leo G. Carroll, Patricia Hitchco  -  Alfred Hitchcock      - Crime, Drama, Film-Noir, Thriller,
+Rating - 7.8 - Shadow of a Doubt  (1943)                               - Teresa Wright, Joseph Cotten, Macdonald Carey, Henry Travers, Patricia Coll  -  Alfred Hitchcock      - Film-Noir, Thriller,
+AVG =  8.14
+-----------------------------------------------------------------
+7 - DIRECTOR - Billy Wilder
+-----------------------------------------------------------------
+Rating - 8.4 - Sunset Blvd  (1950)                                     - William Holden, Gloria Swanson, Erich von Stroheim, Nancy Olson, Fred Clark  -  Billy Wilder          - Drama, Film-Noir,
+Rating - 8.4 - Witness for the Prosecution  (1957)                     - Tyrone Power, Marlene Dietrich, Charles Laughton, Elsa Lanchester, John Wil  -  Billy Wilder          - Crime, Drama, Mystery, Thriller,
+Rating - 8.3 - The Apartment  (1960)                                   - Jack Lemmon, Shirley MacLaine, Fred MacMurray, Ray Walston, Jack Kruschen,   -  Billy Wilder          - Comedy, Drama, Romance,
+Rating - 8.3 - Double Indemnity  (1944)                                - Fred MacMurray, Barbara Stanwyck, Edward G. Robinson, Porter Hall, Jean Hea  -  Billy Wilder          - Crime, Drama, Film-Noir, Mystery, Thriller,
+Rating - 8.2 - Some Like It Hot  (1959)                                - Marilyn Monroe, Tony Curtis, Jack Lemmon, George Raft, Pat O'Brien, Joe E.   -  Billy Wilder          - Comedy, Music, Romance,
+Rating - 8.1 - Ace in the Hole  (1951)                                 - Kirk Douglas, Jan Sterling, Robert Arthur, Porter Hall, Frank Cady, Richard  -  Billy Wilder          - Drama, Film-Noir,
+Rating - 8.0 - Stalag 17  (1953)                                       - William Holden, Don Taylor, Otto Preminger, Robert Strauss, Harvey Lembeck,  -  Billy Wilder          - Comedy, Drama, War,
+Rating - 7.9 - One Two Three  (1961)                                   - James Cagney, Horst Buchholz, Pamela Tiffin, Arlene Francis, Howard St. Joh  -  Billy Wilder          - Comedy,
+Rating - 7.9 - The Lost Weekend  (1945)                                - Ray Milland, Jane Wyman, Phillip Terry, Howard Da Silva, Doris Dowling, Fra  -  Billy Wilder          - Drama, Film-Noir,
+Rating - 7.6 - Sabrina  (1954)                                         - Humphrey Bogart, Audrey Hepburn, William Holden, Walter Hampden, John Willi  -  Billy Wilder          - Comedy, Drama, Romance,
+AVG =  8.110000000000001
+-----------------------------------------------------------------
+8 - DIRECTOR - Ingmar Bergman
+-----------------------------------------------------------------
+Rating - 8.4 - Scenes from a Marriage  (1974)                          - Liv Ullmann, Erland Josephson, Bibi Andersson, Gunnel Lindblom, Jan Malmsjö  -  Ingmar Bergman        - Drama,
+Rating - 8.1 - Autumn Sonata  (1978)                                   - Ingrid Bergman, Liv Ullmann, Lena Nyman, Halvar Björk, Marianne Aminoff, Ar  -  Ingmar Bergman        - Drama, Music,
+Rating - 8.1 - Fanny and Alexander  (1982)                             - Kristina Adolphson, Börje Ahlstedt, Pernilla Allwin, Kristian Almgren, Carl  -  Ingmar Bergman        - Drama,
+Rating - 8.1 - The Seventh Seal  (1957)                                - Gunnar Björnstrand, Bengt Ekerot, Nils Poppe, Max von Sydow, Bibi Andersson  -  Ingmar Bergman        - Drama, Fantasy,
+Rating - 8.1 - Persona  (1966)                                         - Bibi Andersson, Liv Ullmann, Margaretha Krook, Gunnar Björnstrand, Jörgen L  -  Ingmar Bergman        - Drama, Thriller,
+Rating - 8.1 - The Virgin Spring  (1960)                               - Max von Sydow, Birgitta Valberg, Gunnel Lindblom, Birgitta Pettersson, Axel  -  Ingmar Bergman        - Drama,
+Rating - 8.1 - Wild Strawberries  (1957)                               - Victor Sjöström, Bibi Andersson, Ingrid Thulin, Gunnar Björnstrand, Jullan   -  Ingmar Bergman        - Drama, Romance,
+Rating - 8.0 - Cries and Whispers  (1972)                              - Harriet Andersson, Kari Sylwan, Ingrid Thulin, Liv Ullmann, Anders Ek, Inga  -  Ingmar Bergman        - Drama,
+Rating - 8.0 - Through a Glass Darkly  (1961)                          - Harriet Andersson, Gunnar Björnstrand, Max von Sydow, Lars Passgård,         -  Ingmar Bergman        - Drama,
+Rating - 7.8 - The Silence  (1963)                                     - Ingrid Thulin, Gunnel Lindblom, Jörgen Lindström, Håkan Jahnberg, Birger Ma  -  Ingmar Bergman        - Drama,
+AVG =  8.08
+-----------------------------------------------------------------
+9 - DIRECTOR - Quentin Tarantino
+-----------------------------------------------------------------
+Rating - 8.9 - Pulp Fiction  (1994)                                    - Tim Roth, Amanda Plummer, Laura Lovelace, John Travolta, Samuel L. Jackson,  -  Quentin Tarantino     - Crime, Drama,
+Rating - 8.4 - Django Unchained  (2012)                                - Jamie Foxx, Christoph Waltz, Leonardo DiCaprio, Kerry Washington, Samuel L.  -  Quentin Tarantino     - Drama, Western,
+Rating - 8.3 - Reservoir Dogs  (1992)                                  - Harvey Keitel, Tim Roth, Michael Madsen, Chris Penn, Steve Buscemi, Lawrenc  -  Quentin Tarantino     - Crime, Thriller,
+Rating - 8.3 - Inglourious Bastards  (2009)                            - Brad Pitt, Mélanie Laurent, Christoph Waltz, Eli Roth, Michael Fassbender,   -  Quentin Tarantino     - Adventure, Drama, War,
+Rating - 8.2 - Kill Bill Volume 1  (2003)                              - Uma Thurman, Lucy Liu, Vivica A. Fox, Daryl Hannah, David Carradine, Michae  -  Quentin Tarantino     - Action, Crime, Drama, Thriller,
+Rating - 8.0 - Kill Bill Volume 2  (2004)                              - Uma Thurman, Vivica A. Fox, Ambrosia Kelley, Michael Parks, James Parks, Jo  -  Quentin Tarantino     - Action, Crime, Thriller,
+Rating - 7.8 - The Hateful Eight  (2015)                               - Samuel L. Jackson, Kurt Russell, Jennifer Jason Leigh, Walton Goggins, Demi  -  Quentin Tarantino     - Crime, Drama, Mystery, Thriller, Western,
+Rating - 7.6 - Once Upon a Time in Hollywood  (2019)                   - Leonardo DiCaprio, Brad Pitt, Margot Robbie, Emile Hirsch, Margaret Qualley  -  Quentin Tarantino     - Comedy, Drama,
+Rating - 7.5 - Jackie Brown  (1997)                                    - Pam Grier, Samuel L. Jackson, Robert Forster, Bridget Fonda, Michael Keaton  -  Quentin Tarantino     - Crime, Drama, Thriller,
+Rating - 7.0 - Death Proof  (2007)                                     - Kurt Russell, Zoë Bell, Rosario Dawson, Vanessa Ferlito, Sydney Tamiia Poit  -  Quentin Tarantino     - Action, Thriller,
+AVG =  8.0
+-----------------------------------------------------------------
+10 - DIRECTOR - James Cameron
+-----------------------------------------------------------------
+Rating - 8.6 - Terminator 2 Judgment Day  (1991)                       - Arnold Schwarzenegger, Linda Hamilton, Edward Furlong, Robert Patrick, Earl  -  James Cameron         - Action, Sci-Fi,
+Rating - 8.4 - Aliens  (1986)                                          - Sigourney Weaver, Carrie Henn, Michael Biehn, Paul Reiser, Lance Henriksen,  -  James Cameron         - Action, Adventure, Sci-Fi, Thriller,
+Rating - 8.1 - The Terminator  (1984)                                  - Arnold Schwarzenegger, Michael Biehn, Linda Hamilton, Paul Winfield, Lance   -  James Cameron         - Action, Sci-Fi,
+Rating - 7.9 - Titanic  (1997)                                         - Leonardo DiCaprio, Kate Winslet, Billy Zane, Kathy Bates, Frances Fisher, G  -  James Cameron         - Drama, Romance,
+Rating - 7.8 - Avatar  (2009)                                          - Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang, Michelle Rodr  -  James Cameron         - Action, Adventure, Fantasy, Sci-Fi,
+Rating - 7.5 - The Abyss  (1989)                                       - Ed Harris, Mary Elizabeth Mastrantonio, Michael Biehn, Leo Burmester, Todd   -  James Cameron         - Adventure, Drama, Mystery, Sci-Fi, Thriller,
+Rating - 7.3 - True Lies  (1994)                                       - Arnold Schwarzenegger, Jamie Lee Curtis, Tom Arnold, Bill Paxton, Tia Carre  -  James Cameron         - Action, Comedy, Thriller,
+AVG =  7.942857142857142
+-----------------------------------------------------------------
+11 - DIRECTOR - Sidney Lumet
+-----------------------------------------------------------------
+Rating - 9.0 - 12 Angry Men  (1957)                                    - Martin Balsam, John Fiedler, Lee J. Cobb, E.G. Marshall, Jack Klugman, Edwa  -  Sidney Lumet          - Crime, Drama,
+Rating - 8.1 - Network  (1976)                                         - Faye Dunaway, William Holden, Peter Finch, Robert Duvall, Wesley Addy, Ned   -  Sidney Lumet          - Drama,
+Rating - 8.0 - Dog Day Afternoon  (1975)                               - Penelope Allen, Sully Boyar, John Cazale, Beulah Garrick, Carol Kane,        -  Sidney Lumet          - Biography, Crime, Drama, Thriller,
+Rating - 8.0 - Fail Safe  (1964)                                       - Dan O'Herlihy, Walter Matthau, Frank Overton, Edward Binns, Fritz Weaver, H  -  Sidney Lumet          - Drama, Thriller,
+Rating - 7.9 - The Hill  (1965)                                        - Sean Connery, Harry Andrews, Ian Bannen, Alfred Lynch, Ossie Davis, Roy Kin  -  Sidney Lumet          - Drama, War,
+Rating - 7.7 - Serpico  (1973)                                         - Al Pacino, John Randolph, Jack Kehoe, Biff McGuire, Barbara Eda-Young,       -  Sidney Lumet          - Biography, Crime, Drama, Thriller,
+Rating - 7.7 - The Verdict  (1982)                                     - Paul Newman, Charlotte Rampling, Jack Warden, James Mason, Milo O'Shea, Lin  -  Sidney Lumet          - Drama,
+Rating - 7.6 - Running on Empty  (1988)                                - Christine Lahti, River Phoenix, Judd Hirsch, Jonas Abry, Martha Plimpton, E  -  Sidney Lumet          - Crime, Drama, Music, Romance,
+Rating - 7.5 - Long Days Journey Into Night  (1962)                    - Katharine Hepburn, Ralph Richardson, Jason Robards, Dean Stockwell, Jeanne   -  Sidney Lumet          - Drama,
+Rating - 7.4 - Prince of the City  (1981)                              - Treat Williams, Jerry Orbach, Richard Foronjy, Don Billett, Kenny Marino, C  -  Sidney Lumet          - Crime, Drama,
+AVG =  7.890000000000001
+-----------------------------------------------------------------
+12 - DIRECTOR - Sergio Leone
+-----------------------------------------------------------------
+Rating - 8.8 - The Good, the Bad and the Ugly  (1966)                  - Eli Wallach, Clint Eastwood, Lee Van Cleef, Aldo Giuffrè, Luigi Pistilli, R  -  Sergio Leone          - Adventure, Western,
+Rating - 8.5 - Once Upon a Time in the West  (1968)                    - Claudia Cardinale, Henry Fonda, Jason Robards, Charles Bronson, Gabriele Fe  -  Sergio Leone          - Western,
+Rating - 8.3 - Once Upon A Time In America  (1984)                     - Robert De Niro, James Woods, Elizabeth McGovern, Treat Williams, Tuesday We  -  Sergio Leone          - Crime, Drama,
+Rating - 8.2 - For a Few Dollars More  (1965)                          - Clint Eastwood, Lee Van Cleef, Gian Maria Volontè, Mara Krupp, Luigi Pistil  -  Sergio Leone          - Western,
+Rating - 7.9 - A Fistful of Dollars  (1964)                            - Clint Eastwood,Marianne Koch,Gian Maria Volontè,Wolfgang Lukschy,Sieghardt   -  Sergio Leone          - Action, Drama, Western,
+Rating - 7.6 - A Fistful of Dynamite  (1971)                           - Rod Steiger, James Coburn, Romolo Valli, Maria Monti, Rik Battaglia, Franco  -  Sergio Leone          - Drama, War, Western,
+Rating - 5.8 - The Colossus of Rhodes  (1961)                          - Rory Calhoun, Lea Massari, Georges Marchal, Conrado San Martín, Ángel Arand  -  Sergio Leone          - Adventure, Drama, History, War,
+AVG =  7.871428571428571
+-----------------------------------------------------------------
+13 - DIRECTOR - Peter Jackson
+-----------------------------------------------------------------
+Rating - 9.0 - Lord of the Rings The Return of the King  (2003)        - Noel Appleby, Ali Astin, Sean Astin, David Aston, John Bach, Sean Bean, Cat  -  Peter Jackson         - Action, Adventure, Drama, Fantasy,
+Rating - 8.8 - Lord of the Rings The Fellowship of the Ring  (2001)    - Alan Howard, Noel Appleby, Sean Astin, Sala Baker, Sean Bean, Billy Boyd, A  -  Peter Jackson         - Action, Adventure, Drama, Fantasy,
+Rating - 8.8 - Lord of the Rings Two towers  (2002)                    - Bruce Allpress, Sean Astin, John Bach, Sala Baker, Cate Blanchett, Orlando   -  Peter Jackson         - Action, Adventure, Drama, Fantasy,
+Rating - 7.8 - The Hobbit An Unexpected Journey  (2012)                - Ian McKellen, Martin Freeman, Richard Armitage, Ken Stott, Graham McTavish,  -  Peter Jackson         - Adventure, Fantasy,
+Rating - 7.8 - The Hobbit The Desolation Of Smaug  (2013)              - Ian McKellen, Martin Freeman, Richard Armitage, Ken Stott, Graham McTavish,  -  Peter Jackson         - Adventure, Fantasy,
+Rating - 7.5 - Dead Alive  (1992)                                      - Timothy Balme, Diana Peñalver, Elizabeth Moody, Ian Watkin, Brenda Kendall,  -  Peter Jackson         - Comedy, Fantasy, Horror, Thriller,
+Rating - 7.4 - The Hobbit The Battle of the Five Armies  (2014)        - Ian McKellen, Martin Freeman, Richard Armitage, Ken Stott, Graham McTavish,  -  Peter Jackson         - Adventure, Fantasy,
+Rating - 7.3 - Heavenly Creatures  (1994)                              - Melanie Lynskey, Kate Winslet, Sarah Peirse, Diana Kent, Clive Merrison, Si  -  Peter Jackson         - Biography, Crime, Drama, Thriller,
+Rating - 7.2 - King Kong  (2005)                                       - Naomi Watts, Jack Black, Adrien Brody, Thomas Kretschmann, Colin Hanks, And  -  Peter Jackson         - Action, Adventure, Drama, Romance,
+Rating - 7.1 - The Frighteners  (1996)                                 - Michael J. Fox, Trini Alvarado, Peter Dobson, John Astin, Jeffrey Combs, De  -  Peter Jackson         - Comedy, Fantasy, Horror,
+AVG =  7.869999999999999
+-----------------------------------------------------------------
+14 - DIRECTOR - Clint Eastwood
+-----------------------------------------------------------------
+Rating - 8.2 - Unforgiven  (1992)                                      - Clint Eastwood, Gene Hackman, Morgan Freeman, Richard Harris, Jaimz Woolvet  -  Clint Eastwood        - Drama, Western,
+Rating - 8.1 - Gran Torino  (2008)                                     - Clint Eastwood, Christopher Carley, Bee Vang, Ahney Her, Brian Haley,        -  Clint Eastwood        - Drama,
+Rating - 8.1 - Million Dollar Baby  (2004)                             - Clint Eastwood, Hilary Swank, Morgan Freeman, Jay Baruchel, Mike Colter,     -  Clint Eastwood        - Drama, Sport,
+Rating - 7.9 - Mystic River  (2003)                                    - Sean Penn, Tim Robbins, Kevin Bacon, Laurence Fishburne, Marcia Gay Harden,  -  Clint Eastwood        - Crime, Drama, Mystery, Thriller,
+Rating - 7.9 - Letters From Iwo Jima  (2006)                           - Ken Watanabe, Kazunari Ninomiya, Tsuyoshi Ihara, Ryô Kase, Shidô Nakamura,   -  Clint Eastwood        - Action, Adventure, Drama, History, War,
+Rating - 7.8 - The Outlaw Josey Wales  (1976)                          - Clint Eastwood, Chief Dan George, Sondra Locke, Bill McKinney, John Vernon,  -  Clint Eastwood        - Western,
+Rating - 7.7 - Dirty Harry  (1971)                                     - Clint Eastwood, Harry Guardino, Reni Santoni, John Vernon, Andrew Robinson,  -  Don Siegel, Clint Ea  - Action, Crime, Thriller,
+Rating - 7.6 - The Bridges of Madison County  (1995)                   - Clint Eastwood, Meryl Streep, Annie Corley, Victor Slezak, Jim Haynie,       -  Clint Eastwood        - Drama, Romance,
+Rating - 7.5 - A Perfect World  (1993)                                 - Kevin Costner, Clint Eastwood, Laura Dern, T.J. Lowther, Keith Szarabajka,   -  Clint Eastwood        - Crime, Drama, Thriller,
+Rating - 7.5 - Richard Jewell  (2019)                                  - Paul Walter Hauser, Sam Rockwell, Brandon Stanley, Ryan Boz, Charles Green,  -  Clint Eastwood        - Biography, Crime, Drama,
+AVG =  7.83
+-----------------------------------------------------------------
+15 - DIRECTOR - Ridley Scott
+-----------------------------------------------------------------
+Rating - 8.5 - Alien  (1979)                                           - Tom Skerritt, Sigourney Weaver, Veronica Cartwright, Harry Dean Stanton, Jo  -  Ridley Scott          - Horror, Sci-Fi,
+Rating - 8.5 - Gladiator  (2000)                                       - Russell Crowe, Joaquin Phoenix, Connie Nielsen, Oliver Reed, Richard Harris  -  Ridley Scott          - Action, Adventure, Drama,
+Rating - 8.1 - Blade Runner  (1982)                                    - Harrison Ford, Rutger Hauer, Sean Young, Edward James Olmos, M. Emmet Walsh  -  Ridley Scott          - Action, Drama, Sci-Fi, Thriller,
+Rating - 8.0 - The Martian  (2015)                                     - Matt Damon, Jessica Chastain, Kristen Wiig, Jeff Daniels, Michael Peña, Sea  -  Ridley Scott          - Adventure, Drama, Sci-Fi,
+Rating - 7.8 - American Gangster  (2007)                               - Denzel Washington, Russell Crowe, Chiwetel Ejiofor, Josh Brolin, Lymari Nad  -  Ridley Scott          - Biography, Crime, Drama,
+Rating - 7.7 - Black Hawk Down  (2001)                                 - Josh Hartnett, Ewan McGregor, Tom Sizemore, Eric Bana, William Fichtner, Ew  -  Ridley Scott          - Action, Drama, History, War,
+Rating - 7.5 - Thelma & Louise  (1991)                                 - Susan Sarandon, Geena Davis, Harvey Keitel, Michael Madsen, Christopher McD  -  Ridley Scott          - Adventure, Crime, Drama,
+Rating - 7.4 - The Duellists  (1977)                                   - Keith Carradine, Harvey Keitel, Albert Finney, Edward Fox, Cristina Raines,  -  Ridley Scott          - Drama, War,
+Rating - 7.4 - The Last Duel  (2021)                                   - Matt Damon, Adam Driver, Jodie Comer, Harriet Walter, Ben Affleck, Alex Law  -  Ridley Scott          - Action, Drama, History, Thriller,
+Rating - 7.3 - Matchstick Men  (2003)                                  - Nicolas Cage, Sam Rockwell, Alison Lohman, Bruce Altman, Bruce McGill, Jenn  -  Ridley Scott          - Comedy, Crime, Drama, Thriller,
+AVG =  7.82
+-----------------------------------------------------------------
+16 - DIRECTOR - David Fincher
+-----------------------------------------------------------------
+Rating - 8.8 - Fight Club  (1999)                                      - Edward Norton, Brad Pitt, Meat Loaf, Zach Grenier, Richmond Arquette, David  -  David Fincher         - Drama,
+Rating - 8.6 - Se7en  (1995)                                           - Morgan Freeman, Andrew Kevin Walker, Daniel Zacapa, Brad Pitt, Gwyneth Palt  -  David Fincher         - Crime, Drama, Mystery, Thriller,
+Rating - 8.1 - Gone Girl  (2014)                                       - Ben Affleck, Rosamund Pike, Neil Patrick Harris, Tyler Perry, Carrie Coon,   -  David Fincher         - Drama, Mystery, Thriller,
+Rating - 7.8 - The Girl with the Dragon Tattoo  (2011)                 - Daniel Craig, Rooney Mara, Christopher Plummer, Stellan Skarsgård, Steven B  -  David Fincher         - Crime, Drama, Mystery, Thriller,
+Rating - 7.8 - The Social Network  (2010)                              - Jesse Eisenberg, Rooney Mara, Bryan Barter, Dustin Fitzsimons, Joseph Mazze  -  David Fincher         - Biography, Drama,
+Rating - 7.8 - The Curious Case of Benjamin Button  (2008)             - Cate Blanchett, Brad Pitt, Julia Ormond, Faune Chambers Watkins, Elias Kote  -  David Fincher         - Drama, Fantasy, Romance,
+Rating - 7.7 - Zodiac  (2007)                                          - Jake Gyllenhaal, Mark Ruffalo, Anthony Edwards, Robert Downey Jr., Brian Co  -  David Fincher         - Crime, Drama, Mystery, Thriller,
+Rating - 7.7 - The Game  (1997)                                        - Michael Douglas, Sean Penn, Deborah Kara Unger, James Rebhorn, Peter Donat,  -  David Fincher         - Drama, Mystery, Thriller,
+Rating - 6.8 - Panic Room  (2002)                                      - Jodie Foster, Kristen Stewart, Forest Whitaker, Dwight Yoakam, Jared Leto,   -  David Fincher         - Crime, Drama, Thriller,
+Rating - 6.8 - Mank  (2020)                                            - Gary Oldman, Amanda Seyfried, Lily Collins, Tom Pelphrey, Arliss Howard, Tu  -  David Fincher         - Biography, Comedy, Drama,
+AVG =  7.789999999999999
+-----------------------------------------------------------------
+17 - DIRECTOR - Frank Capra
+-----------------------------------------------------------------
+Rating - 8.6 - Its A Wonderful Life  (1946)                            - James Stewart, Donna Reed, Lionel Barrymore, Thomas Mitchell, Henry Travers  -  Frank Capra           - Drama, Family, Fantasy, Romance,
+Rating - 8.1 - It Happened One Night  (1934)                           - Clark Gable, Claudette Colbert, Walter Connolly, Roscoe Karns, Jameson Thom  -  Frank Capra           - Comedy, Romance,
+Rating - 8.1 - Mr Smith Goes to Washington  (1939)                     - Jean Arthur, James Stewart, Claude Rains, Edward Arnold, Guy Kibbee, Thomas  -  Frank Capra           - Comedy, Drama,
+Rating - 7.9 - Arsenic and Old Lace  (1944)                            - Cary Grant, Priscilla Lane, Raymond Massey, Jack Carson, Edward Everett Hor  -  Frank Capra           - Comedy, Crime, Thriller,
+Rating - 7.8 - Mr Deeds Goes to Town  (1936)                           - Gary Cooper, Jean Arthur, George Bancroft, Lionel Stander, Douglass Dumbril  -  Frank Capra           - Comedy, Drama, Romance,
+Rating - 7.8 - You Cant Take It With You  (1938)                       - Jean Arthur, Lionel Barrymore, James Stewart, Edward Arnold, Mischa Auer, A  -  Frank Capra           - Comedy, Drama, Romance,
+Rating - 7.6 - Meet John Doe  (1941)                                   - Gary Cooper, Barbara Stanwyck, Edward Arnold, Walter Brennan, Spring Byingt  -  Frank Capra           - Comedy, Drama, Romance,
+Rating - 7.4 - Lady for a Day  (1933)                                  - Warren William, May Robson, Guy Kibbee, Glenda Farrell, Ned Sparks, Walter   -  Frank Capra           - Comedy, Drama,
+Rating - 7.2 - State of the Union  (1948)                              - Spencer Tracy, Katharine Hepburn, Van Johnson, Angela Lansbury, Adolphe Men  -  Frank Capra           - Comedy, Drama,
+Rating - 6.8 - Platinum Blonde  (1931)                                 - Loretta Young, Robert Williams, Jean Harlow, Halliwell Hobbes, Reginald Owe  -  Frank Capra           - Comedy, Romance,
+AVG =  7.729999999999999
+-----------------------------------------------------------------
+18 - DIRECTOR - Woody Allen
+-----------------------------------------------------------------
+Rating - 8.0 - Annie Hall  (1977)                                      - Woody Allen, Diane Keaton, Tony Roberts, Carol Kane, Paul Simon, Shelley Du  -  Woody Allen           - Comedy, Romance,
+Rating - 7.9 - Manhattan  (1979)                                       - Woody Allen, Diane Keaton, Michael Murphy, Mariel Hemingway, Meryl Streep,   -  Woody Allen           - Comedy, Drama, Romance,
+Rating - 7.9 - Hannah and Her Sisters  (1986)                          - Barbara Hershey, Carrie Fisher, Michael Caine, Mia Farrow, Dianne Wiest, Ma  -  Woody Allen           - Comedy, Drama,
+Rating - 7.8 - Crimes And Misdemeanors  (1989)                         - Bill Bernstein, Martin Landau, Claire Bloom, Stephanie Roth Haberle, Gregg   -  Woody Allen           - Comedy, Drama,
+Rating - 7.7 - Love and Death  (1975)                                  - Woody Allen, Diane Keaton, Georges Adet, Frank Adu, Edmond Ardisson, Féodor  -  Woody Allen           - Comedy, War,
+Rating - 7.7 - Midnight In Paris  (2011)                               - Owen Wilson, Rachel McAdams, Kurt Fuller, Mimi Kennedy, Michael Sheen, Nina  -  Woody Allen           - Comedy, Fantasy, Romance,
+Rating - 7.7 - Zelig  (1983)                                           - Woody Allen, Mia Farrow, Patrick Horgan, John Buckwalter, Marvin Chatinover  -  Woody Allen           - Comedy,
+Rating - 7.6 - Match Point  (2005)                                     - Jonathan Rhys Meyers, Alexander Armstrong, Paul Kaye, Matthew Goode, Brian   -  Woody Allen           - Drama, Romance, Thriller,
+Rating - 7.5 - Husbands and Wives  (1992)                              - Nick Metropolis, Woody Allen, Mia Farrow, Sydney Pollack, Judy Davis, Jeffr  -  Woody Allen           - Comedy, Drama, Romance,
+Rating - 7.4 - Bullets Over Broadway  (1994)                           - John Cusack, Dianne Wiest, Jennifer Tilly, Chazz Palminteri, Mary-Louise Pa  -  Woody Allen           - Comedy, Crime,
+AVG =  7.7200000000000015
+-----------------------------------------------------------------
+19 - DIRECTOR - Alejandro G. Iñárritu
+-----------------------------------------------------------------
+Rating - 8.1 - Amores Perros  (2000)                                   - Emilio Echevarría, Gael García Bernal, Goya Toledo, Álvaro Guerrero, Vaness  -  Alejandro G. Iñárrit  - Drama, Thriller,
+Rating - 8.0 - The Revenant  (2015)                                    - Leonardo DiCaprio, Tom Hardy, Domhnall Gleeson, Will Poulter, Forrest Goodl  -  Alejandro G. Iñárrit  - Action, Adventure, Drama, History, Western,
+Rating - 7.7 - Birdman  (2014)                                         - Michael Keaton, Emma Stone, Kenny Chin, Jamahl Garrison-Lowe, Zach Galifian  -  Alejandro G. Iñárrit  - Comedy, Drama,
+Rating - 7.6 - 21 Grams  (2003)                                        - Sean Penn, Naomi Watts, Danny Huston, Carly Nahon, Claire Pakis, Benicio De  -  Alejandro G. Iñárrit  - Crime, Drama, Thriller,
+Rating - 7.5 - Babel  (2006)                                           - Brad Pitt, Cate Blanchett, Mohamed Akhzam, Peter Wight, Harriet Walter, Tre  -  Alejandro G. Iñárrit  - Drama,
+Rating - 7.4 - Biutiful  (2010)                                        - Javier Bardem, Maricel Álvarez, Hanaa Bouchaib, Guillermo Estrella, Eduard   -  Alejandro G. Iñárrit  - Drama, Romance,
+AVG =  7.716666666666666
+-----------------------------------------------------------------
+20 - DIRECTOR - Coen
+-----------------------------------------------------------------
+Rating - 8.2 - No Country for Old Men  (2007)                          - Tommy Lee Jones, Javier Bardem, Josh Brolin, Woody Harrelson, Kelly Macdona  -  Ethan Coen, Joel Coe  - Crime, Drama, Thriller,
+Rating - 8.1 - Fargo  (1996)                                           - William H. Macy, Steve Buscemi, Peter Stormare, Kristin Rudrüd, Harve Presn  -  Joel Coen, Ethan Coe  - Crime, Thriller,
+Rating - 8.1 - The Big Lebowski  (1998)                                - Jeff Bridges, John Goodman, Julianne Moore, Steve Buscemi, David Huddleston  -  Joel Coen, Ethan Coe  - Comedy, Crime,
+Rating - 7.7 - Miller's Crossing  (1990)                               - Gabriel Byrne, Marcia Gay Harden, John Turturro, Jon Polito, J.E. Freeman,   -  Joel Coen, Ethan Coe  - Crime, Drama, Thriller,
+Rating - 7.6 - Barton Fink  (1991)                                     - John Turturro, John Goodman, Judy Davis, Michael Lerner, John Mahoney, Tony  -  Joel Coen, Ethan Coe  - Comedy, Drama, Thriller,
+Rating - 7.6 - Blood Simple  (1984)                                    - John Getz, Frances McDormand, Dan Hedaya, M. Emmet Walsh, Samm-Art Williams  -  Joel Coen, Ethan Coe  - Crime, Drama, Thriller,
+Rating - 7.6 - True Grit  (2010)                                       - Jeff Bridges, Hailee Steinfeld, Matt Damon, Josh Brolin, Barry Pepper, Daki  -  Ethan Coen, Joel Coe  - Drama, Western,
+Rating - 7.5 - The Man Who Wasn't There  (2001)                        - Billy Bob Thornton, Frances McDormand, Michael Badalucco, James Gandolfini,  -  Joel Coen             - Crime, Drama,
+Rating - 7.4 - Inside Llewyn Davis  (2013)                             - Oscar Isaac, Carey Mulligan, Justin Timberlake, Ethan Phillips, Robin Bartl  -  Ethan Coen, Joel Coe  - Drama, Music,
+Rating - 7.3 - Raising Arizona  (1987)                                 - Nicolas Cage, Holly Hunter, Trey Wilson, John Goodman, William Forsythe, Sa  -  Joel Coen, Ethan Coe  - Comedy, Crime,
+AVG =  7.710000000000001
+-----------------------------------------------------------------
+21 - DIRECTOR - Francis Ford Coppola
+-----------------------------------------------------------------
+Rating - 9.2 - The Godfather  (1972)                                   - Marlon Brando, Al Pacino, James Caan, Richard S. Castellano, Robert Duvall,  -  Francis Ford Coppola  - Crime, Drama,
+Rating - 9.0 - The Godfather Part II  (1974)                           - Al Pacino, Robert Duvall, Diane Keaton, Robert De Niro, John Cazale, Talia   -  Francis Ford Coppola  - Crime, Drama,
+Rating - 8.5 - Apocalypse Now  (1979)                                  - Marlon Brando, Martin Sheen, Robert Duvall, Frederic Forrest, Sam Bottoms,   -  Francis Ford Coppola  - Drama, Mystery, War,
+Rating - 7.8 - The Conversation  (1974)                                - Gene Hackman, John Cazale, Allen Garfield, Frederic Forrest, Cindy Williams  -  Francis Ford Coppola  - Drama, Mystery, Thriller,
+Rating - 7.6 - The Godfather Part III  (1990)                          - Al Pacino, Diane Keaton, Talia Shire, Andy Garcia, Eli Wallach, Joe Mantegn  -  Francis Ford Coppola  - Crime, Drama,
+Rating - 7.4 - Bram Stokers Dracula  (1992)                            - Gary Oldman, Winona Ryder, Anthony Hopkins, Keanu Reeves, Richard E. Grant,  -  Francis Ford Coppola  - Drama, Fantasy, Horror, Romance,
+Rating - 7.2 - The Rainmaker  (1997)                                   - Matt Damon, Danny DeVito, Claire Danes, Jon Voight, Mary Kay Place, Dean St  -  Francis Ford Coppola  - Crime, Drama, Thriller,
+Rating - 7.1 - The Outsiders  (1983)                                   - C. Thomas Howell, Matt Dillon, Ralph Macchio, Patrick Swayze, Rob Lowe, Emi  -  Francis Ford Coppola  - Crime, Drama,
+Rating - 6.9 - Tucker The Man and His Dream  (1988)                    - Jeff Bridges, Joan Allen, Martin Landau, Frederic Forrest, Mako, Elias Kote  -  Francis Ford Coppola  - Biography, Comedy, Drama,
+Rating - 6.4 - Peggy Sue Got Married  (1986)                           - Kathleen Turner, Nicolas Cage, Barry Miller, Catherine Hicks, Joan Allen, K  -  Francis Ford Coppola  - Comedy, Drama, Fantasy, Romance,
+AVG =  7.710000000000001
+-----------------------------------------------------------------
+22 - DIRECTOR - Howard Hawks
+-----------------------------------------------------------------
+Rating - 8.0 - Rio Bravo  (1959)                                       - John Wayne, Dean Martin, Ricky Nelson, Angie Dickinson, Walter Brennan, War  -  Howard Hawks          - Western,
+Rating - 7.9 - The Big Sleep  (1946)                                   - Humphrey Bogart, Lauren Bacall, John Ridgely, Martha Vickers, Dorothy Malon  -  Howard Hawks          - Crime, Film-Noir, Mystery, Thriller,
+Rating - 7.8 - Red River  (1948)                                       - John Wayne, Montgomery Clift, Joanne Dru, Walter Brennan, Coleen Gray,       -  Howard Hawks, Arthur  - Drama, Western,
+Rating - 7.8 - Bringing Up Baby  (1938)                                - Katharine Hepburn, Cary Grant, Charles Ruggles, Walter Catlett, Barry Fitzg  -  Howard Hawks          - Comedy,
+Rating - 7.8 - His Girl Friday  (1940)                                 - Cary Grant, Rosalind Russell, Ralph Bellamy, Gene Lockhart, Porter Hall, Er  -  Howard Hawks          - Comedy, Drama, Romance,
+Rating - 7.8 - To Have and Have Not  (1944)                            - Humphrey Bogart, Walter Brennan, Lauren Bacall, Dolores Moran, Hoagy Carmic  -  Howard Hawks          - Adventure, Comedy, Film-Noir, Romance, Thriller, War,
+Rating - 7.7 - Ball of Fire  (1941)                                    - Gary Cooper, Barbara Stanwyck, Oskar Homolka, Henry Travers, S.Z. Sakall, T  -  Howard Hawks          - Comedy, Romance,
+Rating - 7.7 - Sergeant York  (1941)                                   - Gary Cooper, Walter Brennan, Joan Leslie, George Tobias, Stanley Ridges, Ma  -  Howard Hawks          - Biography, Drama, History, Romance, War,
+Rating - 7.5 - El Dorado  (1966)                                       - John Wayne, Robert Mitchum, James Caan, Charlene Holt, Paul Fix, Arthur Hun  -  Howard Hawks          - Drama, Romance, Western,
+Rating - 7.1 - Hatari!  (1962)                                         - John Wayne, Hardy Krüger, Elsa Martinelli, Red Buttons, Gérard Blain, Bruce  -  Howard Hawks          - Action, Adventure, Comedy, Drama, Romance,
+AVG =  7.709999999999999
+-----------------------------------------------------------------
+23 - DIRECTOR - Denis Villeneuve
+-----------------------------------------------------------------
+Rating - 8.1 - Prisoners  (2013)                                       - Hugh Jackman, Jake Gyllenhaal, Viola Davis, Maria Bello, Terrence Howard, M  -  Denis Villeneuve      - Crime, Drama, Mystery, Thriller,
+Rating - 8.0 - Blade Runner 2049  (2017)                               - Ryan Gosling, Dave Bautista, Robin Wright, Mark Arnold, Vilma Szécsi, Ana d  -  Denis Villeneuve      - Action, Drama, Mystery, Sci-Fi, Thriller,
+Rating - 8.0 - Dune  (2021)                                            - Timothée Chalamet, Rebecca Ferguson, Oscar Isaac, Jason Momoa, Stellan Skar  -  Denis Villeneuve      - Action, Adventure, Drama, Sci-Fi,
+Rating - 7.9 - Arrival  (2016)                                         - Amy Adams, Jeremy Renner, Forest Whitaker, Michael Stuhlbarg, Mark O'Brien,  -  Denis Villeneuve      - Drama, Mystery, Sci-Fi,
+Rating - 7.6 - Sicario  (2015)                                         - Emily Blunt, Benicio Del Toro, Josh Brolin, Victor Garber, Jon Bernthal, Da  -  Denis Villeneuve      - Action, Crime, Drama, Mystery, Thriller,
+Rating - 7.2 - Polytechnique  (2009)                                   - Maxim Gaudette, Sébastien Huberdeau, Karine Vanasse, Martin Watier, Evelyne  -  Denis Villeneuve      - Crime, Drama, History,
+Rating - 6.9 - Enemy  (2013)                                           - Jake Gyllenhaal, Mélanie Laurent, Sarah Gadon, Isabella Rossellini, Joshua   -  Denis Villeneuve      - Drama, Mystery, Thriller,
+AVG =  7.671428571428572
+-----------------------------------------------------------------
+24 - DIRECTOR - John Huston
+-----------------------------------------------------------------
+Rating - 8.2 - The Treasure of the Sierra Madre (1948)                 - Humphrey Bogart, Walter Huston, Tim Holt, Bruce Bennett, Barton MacLane,     -  John Huston           - Adventure, Drama, Western,
+Rating - 8.0 - The Maltese Falcon (1941)                               - Humphrey Bogart, Mary Astor, Gladys George, Peter Lorre, Barton MacLane,     -  John Huston           - Crime, Film-Noir, Mystery, Romance,
+Rating - 7.8 - The Man Who Would Be King  (1975)                       - Sean Connery, Michael Caine, Christopher Plummer, Saeed Jaffrey, Larbi Dogh  -  John Huston           - Adventure, History, War,
+Rating - 7.8 - The Asphalt Jungle  (1950)                              - Sterling Hayden, Louis Calhern, Jean Hagen, James Whitmore, Sam Jaffe, John  -  John Huston           - Crime, Drama, Film-Noir, Thriller,
+Rating - 7.7 - The African Queen (1951)                                - Humphrey Bogart, Katharine Hepburn, Robert Morley, Peter Bull, Theodore Bik  -  John Huston           - Adventure, Drama, Romance, War,
+Rating - 7.7 - Key Largo  (1948)                                       - Humphrey Bogart, Edward G. Robinson, Lauren Bacall, Lionel Barrymore, Clair  -  John Huston           - Action, Crime, Drama, Film-Noir, Thriller,
+Rating - 7.6 - The Night of the Iguana  (1964)                         - Richard Burton, Ava Gardner, Deborah Kerr, Sue Lyon, Skip Ward, Grayson Hal  -  John Huston           - Drama,
+Rating - 7.3 - Fat City  (1972)                                        - Stacy Keach, Jeff Bridges, Susan Tyrrell, Candy Clark, Nicholas Colasanto,   -  John Huston           - Drama, Sport,
+Rating - 7.3 - Heaven Knows Mr Allison  (1957)                         - Deborah Kerr, Robert Mitchum,                                                -  John Huston           - Adventure, Drama, War,
+Rating - 7.3 - Moby Dick  (1956)                                       - Gregory Peck, Richard Basehart, Leo Genn, James Robertson Justice, Harry An  -  John Huston           - Adventure, Drama,
+AVG =  7.67
+-----------------------------------------------------------------
+25 - DIRECTOR - John Ford
+-----------------------------------------------------------------
+Rating - 8.1 - The Man Who Shot Liberty Valance  (1962)                - John Wayne, James Stewart, Vera Miles, Lee Marvin, Edmond O'Brien, Andy Dev  -  John Ford             - Drama, Western,
+Rating - 8.1 - The Grapes of Wrath  (1940)                             - Henry Fonda, Jane Darwell, John Carradine, Charley Grapewin, Dorris Bowdon,  -  John Ford             - Drama,
+Rating - 7.9 - The Searchers  (1956)                                   - John Wayne, Jeffrey Hunter, Vera Miles, Ward Bond, Natalie Wood, John Quale  -  John Ford             - Adventure, Drama, Western,
+Rating - 7.8 - Stagecoach  (1939)                                      - Claire Trevor, John Wayne, Andy Devine, John Carradine, Thomas Mitchell, Lo  -  John Ford             - Adventure, Drama, Western,
+Rating - 7.7 - The Quiet Man  (1952)                                   - John Wayne, Maureen O'Hara, Barry Fitzgerald, Ward Bond, Victor McLaglen, M  -  John Ford             - Comedy, Drama, Romance,
+Rating - 7.7 - My Darling Clementine  (1946)                           - Henry Fonda, Linda Darnell, Victor Mature, Cathy Downs, Walter Brennan, Tim  -  John Ford             - Drama, Romance, Western,
+Rating - 7.6 - Mister Roberts  (1955)                                  - Henry Fonda, James Cagney, William Powell, Jack Lemmon, Betsy Palmer, Ward   -  John Ford, Mervyn Le  - Comedy, Drama, War,
+Rating - 7.5 - Young Mr Lincoln  (1939)                                - Henry Fonda, Alice Brady, Marjorie Weaver, Arleen Whelan, Eddie Collins, Pa  -  John Ford             - Biography, Drama, History,
+Rating - 7.2 - She Wore a Yellow Ribbon  (1949)                        - John Wayne, Joanne Dru, John Agar, Ben Johnson, Harry Carey Jr., Victor McL  -  John Ford             - Western,
+Rating - 7.0 - How the West Was Won  (1962)                            - Carroll Baker, Lee J. Cobb, Henry Fonda, Carolyn Jones, Karl Malden, Gregor  -  John Ford, Henry Hat  - Western,
+AVG =  7.660000000000001
+-----------------------------------------------------------------
+26 - DIRECTOR - Roman Polanski
+-----------------------------------------------------------------
+Rating - 8.5 - The Pianist  (2002)                                     - Adrien Brody, Emilia Fox, Michal Zebrowski, Ed Stoppard, Maureen Lipman, Fr  -  Roman Polanski        - Biography, Drama, Music, War,
+Rating - 8.2 - Chinatown  (1974)                                       - Jack Nicholson, Faye Dunaway, John Huston, Perry Lopez, John Hillerman, Dar  -  Roman Polanski        - Drama, Mystery, Thriller,
+Rating - 8.0 - Rosemarys Baby  (1968)                                  - Mia Farrow, John Cassavetes, Ruth Gordon, Sidney Blackmer, Maurice Evans, R  -  Roman Polanski        - Drama, Horror,
+Rating - 7.6 - Repulsion  (1965)                                       - Catherine Deneuve, Ian Hendry, John Fraser, Yvonne Furneaux, Patrick Wymark  -  Roman Polanski        - Drama, Horror, Thriller,
+Rating - 7.6 - The Tenant  (1976)                                      - Roman Polanski, Isabelle Adjani, Melvyn Douglas, Jo Van Fleet, Bernard Fres  -  Roman Polanski        - Drama, Thriller,
+Rating - 7.4 - Knife in the Water  (1962)                              - Leon Niemczyk, Jolanta Umecka, Zygmunt Malanowicz, Anna Ciepielewska, Roman  -  Roman Polanski        - Drama, Thriller,
+Rating - 7.4 - Macbeth  (1971)                                         - Jon Finch, Francesca Annis, Martin Shaw, Terence Bayler, John Stride, Nicho  -  Roman Polanski        - Drama, History,
+Rating - 7.3 - Death And The Maiden  (1994)                            - Sigourney Weaver, Ben Kingsley, Stuart Wilson, Krystia Mova, Jonathan Vega,  -  Roman Polanski        - Drama, Mystery, Thriller,
+Rating - 7.3 - Tess  (1979)                                            - John Collin, Tony Church, Nastassja Kinski, Brigid Erin Bates, Jeanne Biras  -  Roman Polanski        - Drama, Romance,
+Rating - 7.2 - Bitter Moon  (1992)                                     - Peter Coyote, Emmanuelle Seigner, Hugh Grant, Kristin Scott Thomas, Victor   -  Roman Polanski        - Drama, Romance, Thriller,
+AVG =  7.65
+-----------------------------------------------------------------
+27 - DIRECTOR - Robert Zemeckis
+-----------------------------------------------------------------
+Rating - 8.8 - Forrest Gump  (1994)                                    - Tom Hanks, Rebecca Williams, Sally Field, Michael Conner Humphreys, Harold   -  Robert Zemeckis       - Drama, Romance,
+Rating - 8.5 - Back to the Future  (1985)                              - Michael J. Fox, Christopher Lloyd, Lea Thompson, Crispin Glover, Tom Wilson  -  Robert Zemeckis       - Adventure, Comedy, Sci-Fi,
+Rating - 7.8 - Cast Away  (2000)                                       - Paul Sanchez, Lari White, Leonid Citer, David Allen Brooks, Yelena Popovic,  -  Robert Zemeckis       - Adventure, Drama, Romance,
+Rating - 7.8 - Back to the Future Part II  (1989)                      - Michael J. Fox, Christopher Lloyd, Lea Thompson, Tom Wilson, Elisabeth Shue  -  Robert Zemeckis       - Adventure, Comedy, Sci-Fi,
+Rating - 7.7 - Who Framed Roger Rabbit  (1988)                         - Bob Hoskins, Christopher Lloyd, Joanna Cassidy, Charles Fleischer, Stubby K  -  Robert Zemeckis       - Animation, Adventure, Comedy, Crime, Family, Fantasy, Mystery,
+Rating - 7.5 - Contact  (1997)                                         - Jena Malone, David Morse, Jodie Foster, Geoffrey Blake, William Fichtner, S  -  Robert Zemeckis       - Drama, Mystery, Sci-Fi, Thriller,
+Rating - 7.4 - Back to the Future Part III  (1990)                     - Michael J. Fox, Christopher Lloyd, Mary Steenburgen, Tom Wilson, Lea Thomps  -  Robert Zemeckis       - Adventure, Comedy, Sci-Fi, Western,
+Rating - 7.3 - Flight  (2012)                                          - Nadine Velazquez, Denzel Washington, Carter Cabassa, Adam C. Edwards, Tamar  -  Robert Zemeckis       - Drama, Thriller,
+Rating - 6.9 - Romancing the Stone  (1984)                             - Michael Douglas, Kathleen Turner, Danny DeVito, Zack Norman, Alfonso Arau,   -  Robert Zemeckis       - Action, Adventure, Comedy, Romance,
+Rating - 6.7 - Used Cars  (1980)                                       - Kurt Russell, Jack Warden, Gerrit Graham, Frank McRae, Deborah Harmon, Joe   -  Robert Zemeckis       - Comedy,
+AVG =  7.640000000000001
+-----------------------------------------------------------------
+28 - DIRECTOR - David Lean
+-----------------------------------------------------------------
+Rating - 8.3 - Lawrence of Arabia (1962)                               - Peter O'Toole, Alec Guinness, Anthony Quinn, Jack Hawkins, Omar Sharif,      -  David Lean            - Adventure, Biography, Drama, War,
+Rating - 8.2 - The Bridge On The River Kwai  (1957)                    - William Holden, Alec Guinness, Jack Hawkins, Sessue Hayakawa, James Donald,  -  David Lean            - Adventure, Drama, War,
+Rating - 8.0 - Brief Encounter  (1945)                                 - Celia Johnson, Trevor Howard, Stanley Holloway, Joyce Carey, Cyril Raymond,  -  David Lean            - Drama, Romance,
+Rating - 7.9 - Doctor Zhivago  (1965)                                  - Omar Sharif, Julie Christie, Geraldine Chaplin, Rod Steiger, Alec Guinness,  -  David Lean            - Drama, Romance, War,
+Rating - 7.8 - Great Expectations  (1946)                              - John Mills, Tony Wager, Valerie Hobson, Jean Simmons, Bernard Miles, Franci  -  David Lean            - Adventure, Drama, Mystery, Romance,
+Rating - 7.8 - Oliver Twist  (1948)                                    - Robert Newton, Alec Guinness, Kay Walsh, Francis L. Sullivan, Henry Stephen  -  David Lean            - Drama,
+Rating - 7.3 - A Passage to India  (1984)                              - Judy Davis, Victor Banerjee, Peggy Ashcroft, James Fox, Alec Guinness, Nige  -  David Lean            - Adventure, Drama, History,
+Rating - 7.2 - In Which We Serve  (1942)                               - Noël Coward, John Mills, Bernard Miles, Celia Johnson, Kay Walsh, Joyce Car  -  Noël Coward, David L  - Drama, War,
+Rating - 7.1 - Summertime  (1955)                                      - Katharine Hepburn, Rossano Brazzi, Isa Miranda, Darren McGavin, Mari Aldon,  -  David Lean            - Comedy, Drama, Romance,
+Rating - 6.8 - Breaking the Sound Barrier  (1952)                      - Ralph Richardson, Ann Todd, Nigel Patrick, John Justin, Dinah Sheridan, Jos  -  David Lean            - Adventure, Drama, Romance, War,
+AVG =  7.639999999999999
+-----------------------------------------------------------------
+29 - DIRECTOR - Orson Welles
+-----------------------------------------------------------------
+Rating - 8.3 - Citizen Kane (1941)                                     - Joseph Cotten, Dorothy Comingore, Agnes Moorehead, Ruth Warrick, Ray Collin  -  Orson Welles          - Drama, Mystery,
+Rating - 8.0 - Touch of Evil  (1958)                                   - Charlton Heston, Janet Leigh, Orson Welles, Joseph Calleia, Akim Tamiroff,   -  Orson Welles          - Crime, Drama, Film-Noir, Thriller,
+Rating - 7.7 - Chimes at Midnight  (1965)                              - Orson Welles, Jeanne Moreau, Margaret Rutherford, John Gielgud, Marina Vlad  -  Orson Welles          - Comedy, Drama, History, War,
+Rating - 7.7 - F For Fake  (1973)                                      - Orson Welles, Oja Kodar, François Reichenbach, Elmyr de Hory, Clifford Irvi  -  Orson Welles, Gary G  - Documentary,
+Rating - 7.6 - Othello  (1951)                                         - Micheál MacLiammóir, Suzanne Cloutier, Orson Welles, Robert Coote, Hilton E  -  Orson Welles          - Drama, Romance,
+Rating - 7.6 - The Magnificent Ambersons  (1942)                       - Joseph Cotten, Dolores Costello, Anne Baxter, Tim Holt, Agnes Moorehead, Ra  -  Orson Welles, Fred F  - Drama, Romance,
+Rating - 7.6 - The Trial  (1962)                                       - Anthony Perkins, Arnoldo Foà, Jess Hahn, Billy Kearns, Madeleine Robinson,   -  Orson Welles          - Drama, Mystery, Thriller,
+Rating - 7.5 - The Lady from Shanghai  (1947)                          - Rita Hayworth, Orson Welles, Everett Sloane, Glenn Anders, Ted de Corsia, E  -  Orson Welles          - Crime, Drama, Film-Noir, Mystery, Thriller,
+Rating - 7.4 - Macbeth  (1948)                                         - Orson Welles, Jeanette Nolan, Dan O'Herlihy, Roddy McDowall, Edgar Barrier,  -  Orson Welles          - Drama, History, War,
+Rating - 6.7 - The Other Side of the Wind  (2018)                      - John Huston, Oja Kodar, Peter Bogdanovich, Susan Strasberg, Norman Foster,   -  Orson Welles          - Drama,
+AVG =  7.610000000000001
+-----------------------------------------------------------------
+30 - DIRECTOR - Alfonso Cuarón
+-----------------------------------------------------------------
+Rating - 7.9 - Children of Men  (2006)                                 - Juan Gabriel Yacuzzi, Mishal Husain, Rob Curling, Jon Chevalier, Rita Davie  -  Alfonso Cuarón        - Action, Drama, Sci-Fi, Thriller,
+Rating - 7.9 - Harry Potter And The Prisoner Of Azkaban  (2004)        - Daniel Radcliffe, Richard Griffiths, Pam Ferris, Fiona Shaw, Harry Melling,  -  Alfonso Cuarón        - Adventure, Family, Fantasy, Mystery,
+Rating - 7.7 - Gravity  (2013)                                         - Sandra Bullock, George Clooney, Ed Harris, Orto Ignatiussen, Phaldut Sharma  -  Alfonso Cuarón        - Drama, Sci-Fi, Thriller,
+Rating - 7.7 - Roma  (2018)                                            - Yalitza Aparicio, Marina de Tavira, Diego Cortina Autrey, Carlos Peralta, M  -  Alfonso Cuarón        - Drama,
+Rating - 7.7 - Y tu mama tambien  (2001)                               - Daniel Giménez Cacho, Ana López Mercado, Diego Luna, Gael García Bernal, Na  -  Alfonso Cuarón        - Drama,
+Rating - 7.6 - A Little Princess  (1995)                               - Liesel Matthews, Eleanor Bron, Liam Cunningham, Rusty Schwimmer, Arthur Mal  -  Alfonso Cuarón        - Drama, Family, Fantasy,
+Rating - 6.9 - Solo Con Tu Pareja  (1991)                              - Daniel Giménez Cacho, Claudia Ramírez, Luis de Icaza, Astrid Hadad, Dobrina  -  Alfonso Cuarón        - Comedy, Romance,
+Rating - 6.8 - Great Expectations  (1998)                              - Ethan Hawke, Gwyneth Paltrow, Hank Azaria, Chris Cooper, Anne Bancroft, Rob  -  Alfonso Cuarón        - Drama, Romance,
+AVG =  7.5249999999999995
+-----------------------------------------------------------------
+31 - DIRECTOR - Paul Thomas Anderson
+-----------------------------------------------------------------
+Rating - 8.2 - There Will Be Blood  (2007)                             - Daniel Day-Lewis, Martin Stringer, Matthew Braden Stringer, Jacob Stringer,  -  Paul Thomas Anderson  - Drama,
+Rating - 8.0 - Magnolia  (1999)                                        - Pat Healy, Genevieve Zweig, Mark Flanagan, Neil Flynn, Rod McLachlan, Allan  -  Paul Thomas Anderson  - Drama,
+Rating - 7.9 - Boogie Nights  (1997)                                   - Luis Guzmán, Burt Reynolds, Julianne Moore, Rico Bueno, John C. Reilly, Nic  -  Paul Thomas Anderson  - Drama,
+Rating - 7.4 - Phantom Thread  (2017)                                  - Vicky Krieps, Daniel Day-Lewis, Lesley Manville, Julie Vollono, Sue Clark,   -  Paul Thomas Anderson  - Drama, Romance,
+Rating - 7.3 - Punch-Drunk Love  (2002)                                - Adam Sandler, Jason Andrews, Don McManus, Emily Watson, Luis Guzmán, David   -  Paul Thomas Anderson  - Comedy, Drama, Romance, Thriller,
+Rating - 7.2 - Hard Eight  (1996)                                      - Philip Baker Hall, John C. Reilly, Gwyneth Paltrow, Samuel L. Jackson, F. W  -  Paul Thomas Anderson  - Crime, Drama,
+Rating - 7.2 - Licorice Pizza  (2021)                                  - Will Angarola, Griff Giacchino, James Kelley, Cooper Hoffman, Alana Haim, D  -  Paul Thomas Anderson  - Comedy, Drama, Romance,
+Rating - 7.1 - The Master  (2012)                                      - Joaquin Phoenix, Price Carson, Mike Howard, Sarah Shoshana David, Bruce Goo  -  Paul Thomas Anderson  - Drama,
+Rating - 6.6 - Inherent Vice  (2014)                                   - Joanna Newsom, Katherine Waterston, Joaquin Phoenix, Jordan Christian Hearn  -  Paul Thomas Anderson  - Comedy, Crime, Drama, Mystery, Romance,
+AVG =  7.433333333333334
+-----------------------------------------------------------------
+32 - DIRECTOR - Guy Ritchie
+-----------------------------------------------------------------
+Rating - 8.2 - Lock, Stock and Two Smoking Barrels  (1998)             - Jason Flemyng, Dexter Fletcher, Nick Moran, Jason Statham, Steven Mackintos  -  Guy Ritchie           - Action, Comedy, Crime,
+Rating - 8.2 - Snatch  (2000)                                          - Brad Pitt, Jason Statham, Ade, William Beck, Andy Beckwith, Ewen Bremner, J  -  Guy Ritchie           - Comedy, Crime,
+Rating - 7.8 - The Gentlemen  (2019)                                   - Matthew McConaughey, Charlie Hunnam, Michelle Dockery, Jeremy Strong, Lyne   -  Guy Ritchie           - Action, Comedy, Crime,
+Rating - 7.6 - Sherlock Holmes  (2009)                                 - Robert Downey Jr., Jude Law, Rachel McAdams, Mark Strong, Eddie Marsan, Rob  -  Guy Ritchie           - Action, Adventure, Mystery,
+Rating - 7.4 - Sherlock Holmes A Game of Shadows  (2011)               - Robert Downey Jr., Jude Law, Noomi Rapace, Rachel McAdams, Jared Harris, St  -  Guy Ritchie           - Action, Adventure, Mystery,
+Rating - 7.2 - RocknRolla  (2008)                                      - Gerard Butler, Tom Wilkinson, Thandiwe Newton, Mark Strong, Idris Elba, Tom  -  Guy Ritchie           - Action, Crime, Thriller,
+Rating - 7.2 - The Man from U N C L E  (2015)                          - Henry Cavill, Armie Hammer, Alicia Vikander, Elizabeth Debicki, Luca Calvan  -  Guy Ritchie           - Action, Adventure, Comedy,
+Rating - 7.1 - Wrath Of Man  (2021)                                    - Jason Statham, Holt McCallany, Rocci Williams, Josh Hartnett, Jeffrey Donov  -  Guy Ritchie           - Action, Crime, Thriller,
+Rating - 6.9 - Aladdin  (2019)                                         - Will Smith, Mena Massoud, Naomi Scott, Marwan Kenzari, Navid Negahban, Nasi  -  Guy Ritchie           - Adventure, Comedy, Family, Fantasy, Musical, Romance,
+Rating - 6.7 - King Arthur Legend of the Sword  (2017)                 - Charlie Hunnam, Astrid Bergès-Frisbey, Jude Law, Djimon Hounsou, Eric Bana,  -  Guy Ritchie           - Action, Adventure, Drama, Fantasy,
+AVG =  7.4300000000000015
+-----------------------------------------------------------------
+33 - DIRECTOR - Brian De Palma
+-----------------------------------------------------------------
+Rating - 8.3 - Scarface  (1983)                                        - Al Pacino, Steven Bauer, Michelle Pfeiffer, Mary Elizabeth Mastrantonio, Ro  -  Brian De Palma        - Crime, Drama,
+Rating - 7.9 - Carlito's Way  (1993)                                   - Al Pacino, Sean Penn, Penelope Ann Miller, John Leguizamo, Ingrid Rogers, L  -  Brian De Palma        - Crime, Drama, Thriller,
+Rating - 7.9 - The Untouchables  (1987)                                - Kevin Costner, Sean Connery, Charles Martin Smith, Andy Garcia, Robert De N  -  Brian De Palma        - Crime, Drama, Thriller,
+Rating - 7.4 - Carrie  (1976)                                          - Sissy Spacek, Piper Laurie, Amy Irving, William Katt, John Travolta, Nancy   -  Brian De Palma        - Horror, Mystery,
+Rating - 7.4 - Blow Out  (1981)                                        - John Travolta, Nancy Allen, John Lithgow, Dennis Franz, Peter Boyden, Curt   -  Brian De Palma        - Crime, Drama, Mystery, Thriller,
+Rating - 7.3 - Phantom of the Paradise  (1974)                         - William Finley, Paul Williams, Jessica Harper, Gerrit Graham, George Memmol  -  Brian De Palma        - Comedy, Drama, Fantasy, Horror, Music, Romance, Thriller,
+Rating - 7.1 - Casualties of War  (1989)                               - Michael J. Fox, Sean Penn, Don Harvey, John C. Reilly, John Leguizamo, Thuy  -  Brian De Palma        - Action, Crime, Drama, War,
+Rating - 7.1 - Dressed To Kill  (1980)                                 - Michael Caine, Angie Dickinson, Nancy Allen, Keith Gordon, Dennis Franz, Da  -  Brian De Palma        - Crime, Drama, Mystery, Thriller,
+Rating - 7.1 - Mission Impossible 1  (1996)                            - Tom Cruise, Jon Voight, Emmanuelle Béart, Henry Czerny, Jean Reno, Ving Rha  -  Brian De Palma        - Action, Adventure, Thriller,
+Rating - 6.8 - Body Double  (1984)                                     - Craig Wasson, Melanie Griffith, Gregg Henry, Deborah Shelton, Guy Boyd, Den  -  Brian De Palma        - Crime, Drama, Mystery, Thriller,
+AVG =  7.43
+-----------------------------------------------------------------
+34 - DIRECTOR - David Lynch
+-----------------------------------------------------------------
+Rating - 8.2 - The Elephant Man  (1980)                                - Anthony Hopkins, John Hurt, Anne Bancroft, John Gielgud, Wendy Hiller, Fred  -  David Lynch           - Biography, Drama,
+Rating - 8.0 - The Straight Story  (1999)                              - Sissy Spacek, Jane Galloway Heitz, Joseph A. Carpenter, Donald Wiegert, Ric  -  David Lynch           - Biography, Drama,
+Rating - 7.9 - Mulholland Drive  (2001)                                - Naomi Watts, Jeanne Bates, Dan Birnbaum, Laura Harring, Randall Wulff, Robe  -  David Lynch           - Drama, Mystery, Thriller,
+Rating - 7.7 - Blue Velvet  (1986)                                     - Isabella Rossellini, Kyle MacLachlan, Dennis Hopper, Laura Dern, Hope Lange  -  David Lynch           - Crime, Drama, Mystery, Thriller,
+Rating - 7.6 - Lost Highway  (1997)                                    - Bill Pullman, Patricia Arquette, John Roselius, Louis Eppolito, Jenna Maetl  -  David Lynch           - Mystery, Thriller,
+Rating - 7.3 - Eraserhead  (1977)                                      - Jack Nance, Charlotte Stewart, Allen Joseph, Jeanne Bates, Judith Roberts,   -  David Lynch           - Fantasy, Horror,
+Rating - 7.2 - Twin Peaks Fire Walk with Me  (1992)                    - Sheryl Lee, Ray Wise, Mädchen Amick, Dana Ashbrook, Phoebe Augustine, David  -  David Lynch           - Drama, Horror, Mystery, Thriller,
+Rating - 7.2 - Wild at Heart  (1990)                                   - Nicolas Cage, Laura Dern, Willem Dafoe, J.E. Freeman, Crispin Glover, Diane  -  David Lynch           - Comedy, Crime, Drama, Thriller,
+Rating - 6.8 - Inland Empire  (2006)                                   - Karolina Gruszka, Krzysztof Majchrzak, Grace Zabriskie, Laura Dern, Jan Hen  -  David Lynch           - Drama, Fantasy, Mystery, Thriller,
+Rating - 6.3 - Dune  (1984)                                            - Francesca Annis, Leonardo Cimino, Brad Dourif, José Ferrer, Linda Hunt, Fre  -  David Lynch           - Action, Adventure, Sci-Fi,
+AVG =  7.42
+-----------------------------------------------------------------
+35 - DIRECTOR - Oliver Stone
+-----------------------------------------------------------------
+Rating - 8.1 - Platoon  (1986)                                         - Keith David, Forest Whitaker, Francesco Quinn, Kevin Dillon, John C. McGinl  -  Oliver Stone          - Drama, War,
+Rating - 8.0 - JFK  (1991)                                             - Sally Kirkland, Anthony Ramirez, Ray LePere, Steve Reed, Jodie Farber, Colu  -  Oliver Stone          - Drama, History, Thriller,
+Rating - 7.4 - Salvador  (1986)                                        - James Woods, Jim Belushi, Michael Murphy, John Savage, Elpidia Carrillo, To  -  Oliver Stone          - Drama, History, Thriller, War,
+Rating - 7.3 - Wall Street  (1987)                                     - Charlie Sheen, Tamara Tunie, Franklin Cover, Chuck Pfeiffer, John C. McGinl  -  Oliver Stone          - Crime, Drama,
+Rating - 7.3 - Snowden  (2016)                                         - Melissa Leo, Zachary Quinto, Joseph Gordon-Levitt, Jaymes Butler, Robert Fi  -  Oliver Stone          - Biography, Crime, Drama, Thriller,
+Rating - 7.2 - Born on the Fourth of July  (1989)                      - Tom Cruise, Bryan Larkin, Raymond J. Barry, Caroline Kava, Josh Evans, Seth  -  Oliver Stone          - Biography, Drama, War,
+Rating - 7.2 - Natural Born Killers  (1994)                            - Woody Harrelson, Juliette Lewis, Tom Sizemore, Rodney Dangerfield, Everett   -  Oliver Stone          - Action, Crime, Drama,
+Rating - 7.2 - Talk Radio  (1988)                                      - Eric Bogosian, Ellen Greene, Leslie Hope, John C. McGinley, Alec Baldwin, J  -  Oliver Stone          - Drama, Thriller,
+Rating - 7.2 - The Doors  (1991)                                       - Val Kilmer, Meg Ryan, Kyle MacLachlan, Frank Whaley, Kevin Dillon, Michael   -  Oliver Stone          - Biography, Drama, Music,
+Rating - 7.1 - Nixon  (1995)                                           - Anthony Hopkins, Joan Allen, Powers Boothe, Ed Harris, Bob Hoskins, E.G. Ma  -  Oliver Stone          - Biography, Drama, History,
+AVG =  7.4
+-----------------------------------------------------------------
+36 - DIRECTOR - Terrence Malick
+-----------------------------------------------------------------
+Rating - 7.8 - Days Of Heaven  (1978)                                  - Richard Gere, Brooke Adams, Sam Shepard, Linda Manz, Robert J. Wilke, Jacki  -  Terrence Malick       - Drama, Romance,
+Rating - 7.6 - The Thin Red Line  (1998)                               - Kirk Acevedo, Penelope Allen, Benjamin Green, Simon Billig, Mark Boone Juni  -  Terrence Malick       - Drama, History, War,
+Rating - 7.4 - A Hidden Life  (2019)                                   - August Diehl, Valerie Pachner, Maria Simon, Karin Neuhäuser, Tobias Moretti  -  Terrence Malick       - Biography, Drama, Romance, War,
+Rating - 6.8 - The Tree of Life  (2011)                                - Brad Pitt, Sean Penn, Jessica Chastain, Hunter McCracken, Laramie Eppler, T  -  Terrence Malick       - Drama, Fantasy,
+AVG =  7.3999999999999995
+-----------------------------------------------------------------
+37 - DIRECTOR - Spike Lee
+-----------------------------------------------------------------
+Rating - 7.9 - Do the Right Thing  (1989)                              - Danny Aiello, Ossie Davis, Ruby Dee, Richard Edson, Giancarlo Esposito, Spi  -  Spike Lee             - Comedy, Drama,
+Rating - 7.6 - Inside Man  (2006)                                      - Denzel Washington, Clive Owen, Jodie Foster, Christopher Plummer, Willem Da  -  Spike Lee             - Crime, Drama, Mystery, Thriller,
+Rating - 7.5 - BlacKkKlansman  (2018)                                  - Alec Baldwin, John David Washington, Isiah Whitlock Jr., Robert John Burke,  -  Spike Lee             - Biography, Comedy, Crime, Drama,
+Rating - 6.5 - Da 5 Bloods  (2020)                                     - Delroy Lindo, Jonathan Majors, Clarke Peters, Norm Lewis, Isiah Whitlock Jr  -  Spike Lee             - Adventure, Drama, War,
+AVG =  7.375
+-----------------------------------------------------------------
+38 - DIRECTOR - Kathryn Bigelow
+-----------------------------------------------------------------
+Rating - 7.5 - The Hurt Locker  (2008)                                 - Jeremy Renner, Anthony Mackie, Brian Geraghty, Guy Pearce, Ralph Fiennes, D  -  Kathryn Bigelow       - Drama, Thriller, War,
+Rating - 7.4 - Zero Dark Thirty  (2012)                                - Jason Clarke, Reda Kateb, Jessica Chastain, Kyle Chandler, Jennifer Ehle, H  -  Kathryn Bigelow       - Drama, History, Thriller, War,
+Rating - 7.2 - Point Break  (1991)                                     - Patrick Swayze, Keanu Reeves, Gary Busey, Lori Petty, John C. McGinley, Jam  -  Kathryn Bigelow       - Action, Crime, Thriller,
+AVG =  7.366666666666667
+-----------------------------------------------------------------
+39 - DIRECTOR - George Lucas
+-----------------------------------------------------------------
+Rating - 8.6 - Star Wars Episode IV - A New Hope  (1977)               - Mark Hamill, Harrison Ford, Carrie Fisher, Peter Cushing, Alec Guinness, An  -  George Lucas          - Action, Adventure, Fantasy, Sci-Fi,
+Rating - 7.6 - Star Wars Episode III - Revenge of the Sith  (2005)     - Ewan McGregor, Natalie Portman, Hayden Christensen, Ian McDiarmid, Samuel L  -  George Lucas          - Action, Adventure, Fantasy, Sci-Fi,
+Rating - 7.4 - American Graffiti  (1973)                               - Richard Dreyfuss, Ron Howard, Paul Le Mat, Charles Martin Smith, Cindy Will  -  George Lucas          - Comedy, Drama,
+Rating - 6.6 - Star Wars Episode II - Attack of the Clones  (2002)     - Ewan McGregor, Natalie Portman, Hayden Christensen, Christopher Lee, Samuel  -  George Lucas          - Action, Adventure, Fantasy, Sci-Fi,
+Rating - 6.5 - Star Wars Episode I - The Phantom Menace  (1999)        - Liam Neeson, Ewan McGregor, Natalie Portman, Jake Lloyd, Ian McDiarmid, Per  -  George Lucas          - Action, Adventure, Fantasy, Sci-Fi,
+AVG =  7.340000000000001
+-----------------------------------------------------------------
+40 - DIRECTOR - Darren Aronofsky
+-----------------------------------------------------------------
+Rating - 8.3 - Requiem for a Dream  (2000)                             - Ellen Burstyn, Jared Leto, Jennifer Connelly, Marlon Wayans, Christopher Mc  -  Darren Aronofsky      - Drama,
+Rating - 8.0 - Black Swan  (2010)                                      - Natalie Portman, Mila Kunis, Vincent Cassel, Barbara Hershey, Winona Ryder,  -  Darren Aronofsky      - Drama, Thriller,
+Rating - 7.9 - The Wrestler  (2008)                                    - Mickey Rourke, Marisa Tomei, Evan Rachel Wood, Mark Margolis, Todd Barry, W  -  Darren Aronofsky      - Drama, Sport,
+Rating - 7.3 - Pi  (1998)                                              - Sean Gullette, Mark Margolis, Ben Shenkman, Pamela Hart, Stephen Pearlman,   -  Darren Aronofsky      - Drama, Horror, Mystery, Sci-Fi, Thriller,
+Rating - 7.2 - The Fountain  (2006)                                    - Hugh Jackman, Rachel Weisz, Ellen Burstyn, Mark Margolis, Stephen McHattie,  -  Darren Aronofsky      - Drama, Mystery, Romance, Sci-Fi,
+Rating - 6.6 - Mother  (2017)                                          - Jennifer Lawrence, Javier Bardem, Ed Harris, Michelle Pfeiffer, Brian Glees  -  Darren Aronofsky      - Drama, Horror, Mystery,
+Rating - 5.8 - Noah  (2014)                                            - Russell Crowe, Jennifer Connelly, Ray Winstone, Anthony Hopkins, Emma Watso  -  Darren Aronofsky      - Action, Adventure, Drama,
+AVG =  7.3
+-----------------------------------------------------------------
+41 - DIRECTOR - John Woo
+-----------------------------------------------------------------
+Rating - 7.8 - The Killer  (1989)                                      - Chow Yun-Fat, Danny Lee, Sally Yeh, Kong Chu, Kenneth Tsang, Fui-On Shing,   -  John Woo              - Action, Crime, Drama, Thriller,
+Rating - 7.7 - Hard Boiled  (1992)                                     - Chow Yun-Fat, Tony Chiu-Wai Leung, Teresa Mo, Philip Chan, Phillip Chung-Fu  -  John Woo              - Action, Crime, Thriller,
+Rating - 7.4 - A Better Tomorrow  (1986)                               - Lung Ti, Chow Yun-Fat, Leslie Cheung, Emily Chu, Waise Lee, Feng Tien, John  -  John Woo              - Action, Crime, Drama, Thriller,
+Rating - 7.3 - Face Off  (1997)                                        - John Travolta, Nicolas Cage, Joan Allen, Alessandro Nivola, Gina Gershon, D  -  John Woo              - Action, Crime, Sci-Fi, Thriller,
+Rating - 6.1 - Mission Impossible 2  (2000)                            - Tom Cruise, Dougray Scott, Thandiwe Newton, Ving Rhames, Richard Roxburgh,   -  John Woo              - Action, Adventure, Thriller,
+AVG =  7.26
+-----------------------------------------------------------------
+42 - DIRECTOR - John Carpenter
+-----------------------------------------------------------------
+Rating - 8.2 - The Thing (1982)                                        - Kurt Russell, Wilford Brimley, T.K. Carter, David Clennon, Keith David,      -  John Carpenter        - Horror, Mystery, Sci-Fi,
+Rating - 7.7 - Halloween (1978)                                        - Donald Pleasence, Jamie Lee Curtis, Nancy Kyes, P.J. Soles, Charles Cyphers  -  John Carpenter        - Horror, Thriller,
+Rating - 7.3 - Assault On Precinct 13  (1976)                          - Austin Stoker, Darwin Joston, Laurie Zimmer, Martin West, Tony Burton, Char  -  John Carpenter        - Action, Crime, Thriller,
+Rating - 7.2 - They Live (1988)                                        - Roddy Piper, Keith David, Meg Foster, George 'Buck' Flower, Peter Jason,     -  John Carpenter        - Action, Horror, Sci-Fi, Thriller,
+Rating - 7.2 - Big Trouble in Little China  (1986)                     - Kurt Russell, Kim Cattrall, Dennis Dun, James Hong, Victor Wong, Kate Burto  -  John Carpenter        - Action, Adventure, Comedy, Fantasy,
+Rating - 7.1 - In the Mouth of Madness (1994)                          - Sam Neill, Julie Carmen, Jürgen Prochnow, David Warner, John Glover,         -  John Carpenter        - Drama, Fantasy, Horror, Mystery, Thriller,
+Rating - 7.1 - Escape from New York  (1981)                            - Kurt Russell, Lee Van Cleef, Ernest Borgnine, Donald Pleasence, Isaac Hayes  -  John Carpenter        - Action, Adventure, Sci-Fi,
+Rating - 7.0 - Starman  (1984)                                         - Jeff Bridges, Karen Allen, Charles Martin Smith, Richard Jaeckel, Robert Ph  -  John Carpenter        - Romance, Sci-Fi,
+Rating - 6.8 - The Fog (1980)                                          - Adrienne Barbeau, Jamie Lee Curtis, Janet Leigh, John Houseman, Tom Atkins,  -  John Carpenter        - Horror, Thriller,
+Rating - 6.7 - Christine  (1983)                                       - Keith Gordon, John Stockwell, Alexandra Paul, Robert Prosky, Harry Dean Sta  -  John Carpenter        - Horror, Thriller,
+AVG =  7.230000000000001
+-----------------------------------------------------------------
+43 - DIRECTOR - Sam Peckinpah
+-----------------------------------------------------------------
+Rating - 7.9 - The Wild Bunch  (1969)                                  - William Holden, Ernest Borgnine, Robert Ryan, Edmond O'Brien, Warren Oates,  -  Sam Peckinpah         - Action, Adventure, Western,
+Rating - 7.4 - Bring Me the Head of Alfredo Garcia  (1974)             - Warren Oates, Isela Vega, Robert Webber, Gig Young, Helmut Dantine, Emilio   -  Sam Peckinpah         - Action, Crime, Drama, Thriller, Western,
+Rating - 7.4 - Straw Dogs  (1971)                                      - Dustin Hoffman, Susan George, Peter Vaughan, T.P. McKenna, Del Henney, Jim   -  Sam Peckinpah         - Crime, Drama, Thriller,
+Rating - 7.4 - Cross Of Iron  (1977)                                   - James Coburn, Maximilian Schell, James Mason, David Warner, Klaus Löwitsch,  -  Sam Peckinpah         - Drama, War,
+Rating - 7.4 - Ride the High Country  (1962)                           - Randolph Scott, Joel McCrea, Mariette Hartley, Ron Starr, Edgar Buchanan, R  -  Sam Peckinpah         - Drama, Western,
+Rating - 7.3 - The Getaway  (1972)                                     - Steve McQueen, Ali MacGraw, Ben Johnson, Sally Struthers, Al Lettieri, Slim  -  Sam Peckinpah         - Action, Crime, Thriller,
+Rating - 7.2 - Pat Garrett and Billy the Kid  (1973)                   - James Coburn, Kris Kristofferson, Richard Jaeckel, Katy Jurado, Chill Wills  -  Sam Peckinpah         - Biography, Drama, Western,
+Rating - 7.2 - The Ballad of Cable Hogue  (1970)                       - Jason Robards, Stella Stevens, David Warner, Strother Martin, Slim Pickens,  -  Sam Peckinpah         - Comedy, Drama, Romance, Western,
+Rating - 6.7 - Junior Bonner  (1972)                                   - Steve McQueen, Robert Preston, Ida Lupino, Ben Johnson, Joe Don Baker, Barb  -  Sam Peckinpah         - Drama, Western,
+Rating - 6.3 - Convoy  (1978)                                          - Kris Kristofferson, Ali MacGraw, Ernest Borgnine, Burt Young, Madge Sinclai  -  Sam Peckinpah         - Action, Drama,
+AVG =  7.220000000000001
+-----------------------------------------------------------------
+44 - DIRECTOR - Luc Besson
+-----------------------------------------------------------------
+Rating - 8.5 - Leon The Professional  (1994)                           - Jean Reno, Gary Oldman, Natalie Portman, Danny Aiello, Peter Appel, Willi O  -  Luc Besson            - Action, Crime, Drama, Thriller,
+Rating - 7.6 - The Fifth Element  (1997)                               - Bruce Willis, Gary Oldman, Ian Holm, Milla Jovovich, Chris Tucker, Luke Per  -  Luc Besson            - Action, Adventure, Sci-Fi,
+Rating - 7.5 - The Big Blue  (1988)                                    - Rosanna Arquette, Jean-Marc Barr, Jean Reno, Paul Shenar, Sergio Castellitt  -  Luc Besson            - Adventure, Drama, Sport,
+Rating - 7.3 - La Femme Nikita  (1990)                                 - Anne Parillaud, Marc Duret, Patrick Fontana, Alain Lathière, Laura Chéron,   -  Luc Besson            - Action, Thriller,
+Rating - 6.4 - The Messenger The Story Of Joan Of Arc  (1999)          - Rab Affleck, Stéphane Algoud, Edwin Apps, David Bailie, David Barber, Chris  -  Luc Besson            - Adventure, Biography, Drama, History, War,
+Rating - 6.4 - Lucy  (2014)                                            - Scarlett Johansson, Morgan Freeman, Choi Min-sik, Amr Waked, Julian Rhind-T  -  Luc Besson            - Action, Sci-Fi, Thriller,
+Rating - 6.4 - Valerian and the City of a Thousand Planets  (2017)     - Dane DeHaan, Cara Delevingne, Clive Owen, Rihanna, Ethan Hawke, Herbie Hanc  -  Luc Besson            - Action, Adventure, Fantasy, Sci-Fi,
+AVG =  7.1571428571428575
+-----------------------------------------------------------------
+45 - DIRECTOR - Guillermo del Toro
+-----------------------------------------------------------------
+Rating - 7.0 - Hellboy II The Golden Army  (2008)                      - Ron Perlman, Selma Blair, Doug Jones, John Alexander, James Dodd, Seth MacF  -  Guillermo del Toro    - Action, Adventure, Fantasy, Horror, Sci-Fi,
+Rating - 6.9 - Pacific Rim  (2013)                                     - Charlie Hunnam, Diego Klattenhoff, Idris Elba, Rinko Kikuchi, Charlie Day,   -  Guillermo del Toro    - Action, Adventure, Sci-Fi,
+Rating - 6.8 - Hellboy  (2004)                                         - Ron Perlman, John Hurt, Selma Blair, Rupert Evans, Karel Roden, Jeffrey Tam  -  Guillermo del Toro    - Action, Adventure, Fantasy, Horror, Sci-Fi,
+Rating - 6.7 - Blade II  (2002)                                        - Wesley Snipes, Kris Kristofferson, Ron Perlman, Leonor Varela, Norman Reedu  -  Guillermo del Toro    - Action, Horror, Sci-Fi, Thriller,
+AVG =  6.85
+The thread 'MainThread' (0x1) has exited with code 0 (0x0).
+The program 'python.exe' has exited with code 0 (0x0).

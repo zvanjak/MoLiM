@@ -1,0 +1,1163 @@
+     -----------------                   NO MOVIES FOR ACTOR -  Alec Guiness
+     -----------------                   NO MOVIES FOR ACTOR -  Greta Garbo
+-----------------------------------------------------------------
+1 - ACTOR - John Cazale
+-----------------------------------------------------------------
+Rating - 9.2 - The Godfather  (1972)                                   - Marlon Brando, Al Pacino, James Caan, Richard S. C    -   Francis Ford Coppola                       - Crime, Drama,
+Rating - 9.0 - The Godfather Part II  (1974)                           - Al Pacino, Robert Duvall, Diane Keaton, Robert De     -   Francis Ford Coppola                       - Crime, Drama,
+Rating - 8.1 - The Deer Hunter (1978)                                  - Robert De Niro, John Cazale, John Savage, Christop    -   Michael Cimino                             - Drama, War,
+Rating - 8.0 - Dog Day Afternoon  (1975)                               - Penelope Allen, Sully Boyar, John Cazale, Beulah G    -   Sidney Lumet                               - Biography, Crime, Drama, Thriller,
+Rating - 7.8 - The Conversation  (1974)                                - Gene Hackman, John Cazale, Allen Garfield, Frederi    -   Francis Ford Coppola                       - Drama, Mystery, Thriller,
+AVG =  8.419999999999998
+-----------------------------------------------------------------
+2 - ACTOR - Robert De Niro
+-----------------------------------------------------------------
+Rating - 9.0 - The Godfather Part II  (1974)                           - Al Pacino, Robert Duvall, Diane Keaton, Robert De     -   Francis Ford Coppola                       - Crime, Drama,
+Rating - 8.7 - Goodfellas  (1990)                                      - Robert De Niro, Ray Liotta, Joe Pesci, Lorraine Br    -   Martin Scorsese                            - Biography, Crime, Drama,
+Rating - 8.4 - Joker  (2019)                                           - Joaquin Phoenix, Robert De Niro, Zazie Beetz, Fran    -   Todd Phillips                              - Crime, Drama, Thriller,
+Rating - 8.3 - Heat  (1995)                                            - Al Pacino, Robert De Niro, Val Kilmer, Jon Voight,    -   Michael Mann                               - Action, Crime, Drama,
+Rating - 8.3 - Once Upon A Time In America  (1984)                     - Robert De Niro, James Woods, Elizabeth McGovern, T    -   Sergio Leone                               - Crime, Drama,
+Rating - 8.2 - Casino  (1995)                                          - Robert De Niro, Sharon Stone, Joe Pesci, James Woo    -   Martin Scorsese                            - Crime, Drama,
+Rating - 8.2 - Raging Bull  (1980)                                     - Robert De Niro, Cathy Moriarty, Joe Pesci, Frank V    -   Martin Scorsese                            - Biography, Drama, Sport,
+Rating - 8.2 - Taxi Driver  (1976)                                     - Diahnne Abbott, Frank Adu, Victor Argo, Gino Ardit    -   Martin Scorsese                            - Crime, Drama,
+Rating - 8.1 - The Deer Hunter (1978)                                  - Robert De Niro, John Cazale, John Savage, Christop    -   Michael Cimino                             - Drama, War,
+Rating - 7.9 - Brazil  (1985)                                          - Jonathan Pryce, Robert De Niro, Katherine Helmond,    -   Terry Gilliam                              - Drama, Sci-Fi,
+AVG =  8.330000000000002
+-----------------------------------------------------------------
+3 - ACTOR - Morgan Freeman
+-----------------------------------------------------------------
+Rating - 9.3 - The Shawshank Redemption  (1994)                        - Tim Robbins, Morgan Freeman, Bob Gunton, William S    -   Frank Darabont                             - Drama,
+Rating - 9.0 - The Dark Knight  (2008)                                 - Christian Bale, Heath Ledger, Aaron Eckhart, Micha    -   Christopher Nolan                          - Action, Crime, Drama, Thriller,
+Rating - 8.6 - Se7en  (1995)                                           - Morgan Freeman, Andrew Kevin Walker, Daniel Zacapa    -   David Fincher                              - Crime, Drama, Mystery, Thriller,
+Rating - 8.4 - The Dark Knight Rises  (2012)                           - Christian Bale, Gary Oldman, Tom Hardy, Joseph Gor    -   Christopher Nolan                          - Action, Drama,
+Rating - 8.2 - Unforgiven  (1992)                                      - Clint Eastwood, Gene Hackman, Morgan Freeman, Rich    -   Clint Eastwood                             - Drama, Western,
+Rating - 8.2 - Batman Begins  (2005)                                   - Christian Bale, Michael Caine, Liam Neeson, Katie     -   Christopher Nolan                          - Action, Crime, Drama,
+Rating - 8.1 - Million Dollar Baby  (2004)                             - Clint Eastwood, Hilary Swank, Morgan Freeman, Jay     -   Clint Eastwood                             - Drama, Sport,
+Rating - 7.8 - Glory  (1989)                                           - Matthew Broderick, Denzel Washington, Cary Elwes,     -   Edward Zwick                               - Biography, Drama, History, War,
+Rating - 7.4 - The Bucket List  (2007)                                 - Jack Nicholson, Morgan Freeman, Sean Hayes, Beverl    -   Rob Reiner                                 - Adventure, Comedy, Drama,
+Rating - 7.3 - Invictus  (2009)                                        - Morgan Freeman, Matt Damon, Tony Kgoroge, Patrick     -   Clint Eastwood                             - Action, Biography, Drama, History, Sport,
+AVG =  8.23
+-----------------------------------------------------------------
+4 - ACTOR - Harrison Ford
+-----------------------------------------------------------------
+Rating - 8.7 - Star Wars Episode V - The Empire Strikes Back  (1980)   - Mark Hamill, Harrison Ford, Carrie Fisher, Billy D    -   Irvin Kershner                             - Action, Adventure, Fantasy, Sci-Fi,
+Rating - 8.6 - Star Wars Episode IV - A New Hope  (1977)               - Mark Hamill, Harrison Ford, Carrie Fisher, Peter C    -   George Lucas                               - Action, Adventure, Fantasy, Sci-Fi,
+Rating - 8.5 - Apocalypse Now  (1979)                                  - Marlon Brando, Martin Sheen, Robert Duvall, Freder    -   Francis Ford Coppola                       - Drama, Mystery, War,
+Rating - 8.4 - Indiana Jones And The Raiders Of The Lost Ark  (1981)   - Harrison Ford, Karen Allen, Paul Freeman, Ronald L    -   Steven Spielberg                           - Action, Adventure,
+Rating - 8.3 - Star Wars Episode VI - Return of the Jedi  (1983)       - Mark Hamill, Harrison Ford, Carrie Fisher, Billy D    -   Richard Marquand                           - Action, Adventure, Fantasy, Sci-Fi,
+Rating - 8.2 - Indiana Jones And The Last Crusade  (1989)              - Harrison Ford, Sean Connery, Denholm Elliott, Alis    -   Steven Spielberg                           - Action, Adventure,
+Rating - 8.1 - Blade Runner  (1982)                                    - Harrison Ford, Rutger Hauer, Sean Young, Edward Ja    -   Ridley Scott                               - Action, Drama, Sci-Fi, Thriller,
+Rating - 7.8 - The Fugitive  (1993)                                    - Harrison Ford, Tommy Lee Jones, Sela Ward, Juliann    -   Andrew Davis                               - Action, Crime, Drama, Mystery, Thriller,
+Rating - 7.8 - The Conversation  (1974)                                - Gene Hackman, John Cazale, Allen Garfield, Frederi    -   Francis Ford Coppola                       - Drama, Mystery, Thriller,
+Rating - 7.8 - Star Wars Episode VII - The Force Awakens  (2015)       - Harrison Ford, Mark Hamill, Carrie Fisher, Adam Dr    -   J.J. Abrams                                - Action, Adventure, Sci-Fi,
+AVG =  8.22
+-----------------------------------------------------------------
+5 - ACTOR - Bette Davis
+-----------------------------------------------------------------
+Rating - 8.2 - All About Eve  (1950)                                   - Bette Davis, Anne Baxter, George Sanders, Celeste     -   Joseph L. Mankiewicz                       - Drama,
+AVG =  8.2
+-----------------------------------------------------------------
+6 - ACTOR - Leonardo DiCaprio
+-----------------------------------------------------------------
+Rating - 8.8 - Inception  (2010)                                       - Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Pa    -   Christopher Nolan                          - Action, Adventure, Sci-Fi, Thriller,
+Rating - 8.5 - The Departed  (2006)                                    - Leonardo DiCaprio, Matt Damon, Jack Nicholson, Mar    -   Martin Scorsese                            - Crime, Drama, Thriller,
+Rating - 8.4 - Django Unchained  (2012)                                - Jamie Foxx, Christoph Waltz, Leonardo DiCaprio, Ke    -   Quentin Tarantino                          - Drama, Western,
+Rating - 8.2 - Shutter Island  (2010)                                  - Leonardo DiCaprio, Mark Ruffalo, Ben Kingsley, Max    -   Martin Scorsese                            - Mystery, Thriller,
+Rating - 8.2 - The Wolf of Wall Street  (2013)                         - Leonardo DiCaprio, Jonah Hill, Margot Robbie, Matt    -   Martin Scorsese                            - Biography, Comedy, Crime, Drama,
+Rating - 8.1 - Catch Me If You Can  (2002)                             - Leonardo DiCaprio, Tom Hanks, Christopher Walken,     -   Steven Spielberg                           - Biography, Crime, Drama,
+Rating - 8.0 - The Revenant  (2015)                                    - Leonardo DiCaprio, Tom Hardy, Domhnall Gleeson, Wi    -   Alejandro G. Iñárritu                      - Action, Adventure, Drama, History, Western,
+Rating - 8.0 - Blood Diamond  (2006)                                   - Leonardo DiCaprio, Djimon Hounsou, Jennifer Connel    -   Edward Zwick                               - Adventure, Drama, Thriller,
+Rating - 7.9 - Titanic  (1997)                                         - Leonardo DiCaprio, Kate Winslet, Billy Zane, Kathy    -   James Cameron                              - Drama, Romance,
+Rating - 7.6 - Once Upon a Time in Hollywood  (2019)                   - Leonardo DiCaprio, Brad Pitt, Margot Robbie, Emile    -   Quentin Tarantino                          - Comedy, Drama,
+AVG =  8.170000000000002
+-----------------------------------------------------------------
+7 - ACTOR - Al Pacino
+-----------------------------------------------------------------
+Rating - 9.2 - The Godfather  (1972)                                   - Marlon Brando, Al Pacino, James Caan, Richard S. C    -   Francis Ford Coppola                       - Crime, Drama,
+Rating - 9.0 - The Godfather Part II  (1974)                           - Al Pacino, Robert Duvall, Diane Keaton, Robert De     -   Francis Ford Coppola                       - Crime, Drama,
+Rating - 8.3 - Heat  (1995)                                            - Al Pacino, Robert De Niro, Val Kilmer, Jon Voight,    -   Michael Mann                               - Action, Crime, Drama,
+Rating - 8.3 - Scarface  (1983)                                        - Al Pacino, Steven Bauer, Michelle Pfeiffer, Mary E    -   Brian De Palma                             - Crime, Drama,
+Rating - 8.0 - Scent of a Woman  (1992)                                - Al Pacino, Chris O'Donnell, James Rebhorn, Gabriel    -   Martin Brest                               - Drama,
+Rating - 7.9 - Carlito's Way  (1993)                                   - Al Pacino, Sean Penn, Penelope Ann Miller, John Le    -   Brian De Palma                             - Crime, Drama, Thriller,
+Rating - 7.8 - The Insider  (1999)                                     - Al Pacino, Russell Crowe, Christopher Plummer, Dia    -   Michael Mann                               - Biography, Drama, Thriller,
+Rating - 7.8 - The Irishman  (2019)                                    - Robert De Niro, Al Pacino, Joe Pesci, Harvey Keite    -   Martin Scorsese                            - Biography, Crime, Drama,
+Rating - 7.7 - Donnie Brasco  (1997)                                   - Al Pacino, Johnny Depp, Michael Madsen, Bruno Kirb    -   Mike Newell                                - Biography, Crime, Drama,
+Rating - 7.7 - Serpico  (1973)                                         - Al Pacino, John Randolph, Jack Kehoe, Biff McGuire    -   Sidney Lumet                               - Biography, Crime, Drama, Thriller,
+AVG =  8.17
+-----------------------------------------------------------------
+8 - ACTOR - Olivia de Havilland
+-----------------------------------------------------------------
+Rating - 8.2 - Gone With The Wind (1939)                               - Thomas Mitchell, Barbara O'Neil, Vivien Leigh, Eve    -   Victor Fleming, George Cukor, Sam Wood     - Drama, Romance, War,
+Rating - 8.1 - The Heiress  (1949)                                     - Olivia de Havilland, Montgomery Clift, Ralph Richa    -   William Wyler                              - Drama, Romance,
+AVG =  8.149999999999999
+-----------------------------------------------------------------
+9 - ACTOR - Michael Caine
+-----------------------------------------------------------------
+Rating - 9.0 - The Dark Knight  (2008)                                 - Christian Bale, Heath Ledger, Aaron Eckhart, Micha    -   Christopher Nolan                          - Action, Crime, Drama, Thriller,
+Rating - 8.8 - Inception  (2010)                                       - Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Pa    -   Christopher Nolan                          - Action, Adventure, Sci-Fi, Thriller,
+Rating - 8.5 - The Prestige  (2006)                                    - Hugh Jackman, Christian Bale, Michael Caine, Piper    -   Christopher Nolan                          - Drama, Mystery, Sci-Fi, Thriller,
+Rating - 8.4 - The Dark Knight Rises  (2012)                           - Christian Bale, Gary Oldman, Tom Hardy, Joseph Gor    -   Christopher Nolan                          - Action, Drama,
+Rating - 8.2 - Batman Begins  (2005)                                   - Christian Bale, Michael Caine, Liam Neeson, Katie     -   Christopher Nolan                          - Action, Crime, Drama,
+Rating - 8.0 - Sleuth  (1972)                                          - Laurence Olivier, Michael Caine, Alec Cawthorne, J    -   Joseph L. Mankiewicz                       - Mystery, Thriller,
+Rating - 7.9 - Hannah and Her Sisters  (1986)                          - Barbara Hershey, Carrie Fisher, Michael Caine, Mia    -   Woody Allen                                - Comedy, Drama,
+Rating - 7.8 - The Man Who Would Be King  (1975)                       - Sean Connery, Michael Caine, Christopher Plummer,     -   John Huston                                - Adventure, History, War,
+Rating - 7.4 - Dirty Rotten Scoundrels  (1988)                         - Steve Martin, Michael Caine, Glenne Headly, Anton     -   Frank Oz                                   - Comedy, Crime,
+Rating - 7.4 - Get Carter  (1971)                                      - Michael Caine, Ian Hendry, Britt Ekland, John Osbo    -   Mike Hodges                                - Action, Crime, Thriller,
+AVG =  8.140000000000002
+-----------------------------------------------------------------
+10 - ACTOR - Christian Bale
+-----------------------------------------------------------------
+Rating - 9.0 - The Dark Knight  (2008)                                 - Christian Bale, Heath Ledger, Aaron Eckhart, Micha    -   Christopher Nolan                          - Action, Crime, Drama, Thriller,
+Rating - 8.5 - The Prestige  (2006)                                    - Hugh Jackman, Christian Bale, Michael Caine, Piper    -   Christopher Nolan                          - Drama, Mystery, Sci-Fi, Thriller,
+Rating - 8.4 - The Dark Knight Rises  (2012)                           - Christian Bale, Gary Oldman, Tom Hardy, Joseph Gor    -   Christopher Nolan                          - Action, Drama,
+Rating - 8.2 - Batman Begins  (2005)                                   - Christian Bale, Michael Caine, Liam Neeson, Katie     -   Christopher Nolan                          - Action, Crime, Drama,
+Rating - 8.1 - Ford V Ferrari  (2019)                                  - Matt Damon, Christian Bale, Jon Bernthal, Caitríon    -   James Mangold                              - Action, Biography, Drama, Sport,
+Rating - 7.8 - The Fighter  (2010)                                     - Mark Wahlberg, Christian Bale, Amy Adams, Melissa     -   David O. Russell                           - Action, Biography, Drama, Sport,
+Rating - 7.8 - The Big Short  (2015)                                   - Ryan Gosling, Rudy Eisenzopf, Casey Groves, Charli    -   Adam McKay                                 - Biography, Comedy, Drama, History,
+Rating - 7.7 - The Machinist  (2004)                                   - Christian Bale, Jennifer Jason Leigh, Aitana Sánch    -   Brad Anderson                              - Drama, Thriller,
+Rating - 7.7 - Empire of the Sun  (1987)                               - Christian Bale, John Malkovich, Miranda Richardson    -   Steven Spielberg                           - Drama, History, War,
+Rating - 7.6 - American Psycho  (2000)                                 - Christian Bale, Justin Theroux, Josh Lucas, Bill S    -   Mary Harron                                - Crime, Drama, Horror,
+AVG =  8.079999999999998
+-----------------------------------------------------------------
+11 - ACTOR - Robert Duvall
+-----------------------------------------------------------------
+Rating - 9.2 - The Godfather  (1972)                                   - Marlon Brando, Al Pacino, James Caan, Richard S. C    -   Francis Ford Coppola                       - Crime, Drama,
+Rating - 9.0 - The Godfather Part II  (1974)                           - Al Pacino, Robert Duvall, Diane Keaton, Robert De     -   Francis Ford Coppola                       - Crime, Drama,
+Rating - 8.5 - Apocalypse Now  (1979)                                  - Marlon Brando, Martin Sheen, Robert Duvall, Freder    -   Francis Ford Coppola                       - Drama, Mystery, War,
+Rating - 8.3 - To Kill A Mocking Bird  (1962)                          - Gregory Peck, John Megna, Frank Overton, Rosemary     -   Robert Mulligan                            - Crime, Drama,
+Rating - 8.1 - Network  (1976)                                         - Faye Dunaway, William Holden, Peter Finch, Robert     -   Sidney Lumet                               - Drama,
+Rating - 7.7 - Broken Trail  (2006)                                    - Robert Duvall, Thomas Haden Church, Greta Scacchi,    -   Problem with directors!!!                  - Action, Adventure, Drama, Western,
+Rating - 7.6 - Falling Down  (1993)                                    - Michael Douglas, Robert Duvall, Barbara Hershey, R    -   Joel Schumacher                            - Action, Crime, Drama, Thriller,
+Rating - 7.4 - Bullitt  (1968)                                         - Steve McQueen, Robert Vaughn, Jacqueline Bisset, D    -   Peter Yates                                - Action, Crime, Thriller,
+Rating - 7.4 - MASH  (1970)                                            - Donald Sutherland, Elliott Gould, Tom Skerritt, Sa    -   Robert Altman                              - Comedy, Drama, War,
+Rating - 7.4 - True Grit  (1969)                                       - John Wayne, Glen Campbell, Kim Darby, Jeremy Slate    -   Henry Hathaway                             - Adventure, Drama, Western,
+AVG =  8.060000000000002
+-----------------------------------------------------------------
+12 - ACTOR - Vivien Leigh
+-----------------------------------------------------------------
+Rating - 8.2 - Gone With The Wind (1939)                               - Thomas Mitchell, Barbara O'Neil, Vivien Leigh, Eve    -   Victor Fleming, George Cukor, Sam Wood     - Drama, Romance, War,
+Rating - 7.9 - A Streetcar Named Desire  (1951)                        - Vivien Leigh, Marlon Brando, Kim Hunter, Karl Mald    -   Elia Kazan                                 - Drama,
+AVG =  8.05
+-----------------------------------------------------------------
+13 - ACTOR - Tom Hanks
+-----------------------------------------------------------------
+Rating - 8.8 - Forrest Gump  (1994)                                    - Tom Hanks, Rebecca Williams, Sally Field, Michael     -   Robert Zemeckis                            - Drama, Romance,
+Rating - 8.6 - Saving Private Ryan  (1998)                             - Tom Hanks, Tom Sizemore, Edward Burns, Barry Peppe    -   Steven Spielberg                           - Drama, War,
+Rating - 8.6 - The Green Mile  (1999)                                  - Tom Hanks, David Morse, Bonnie Hunt, Michael Clark    -   Frank Darabont                             - Crime, Drama, Fantasy, Mystery,
+Rating - 8.1 - Catch Me If You Can  (2002)                             - Leonardo DiCaprio, Tom Hanks, Christopher Walken,     -   Steven Spielberg                           - Biography, Crime, Drama,
+Rating - 7.8 - Cast Away  (2000)                                       - Paul Sanchez, Lari White, Leonid Citer, David Alle    -   Robert Zemeckis                            - Adventure, Drama, Romance,
+Rating - 7.8 - Captain Phillips  (2013)                                - Tom Hanks, Catherine Keener, Barkhad Abdi, Barkhad    -   Paul Greengrass                            - Action, Biography, Crime, Drama, Thriller,
+Rating - 7.7 - Philadelphia  (1993)                                    - Tom Hanks, Denzel Washington, Roberta Maxwell, Buz    -   Jonathan Demme                             - Drama,
+Rating - 7.7 - Road to Perdition  (2002)                               - Tyler Hoechlin, Rob Maxey, Liam Aiken, Jennifer Ja    -   Sam Mendes                                 - Crime, Drama, Thriller,
+Rating - 7.7 - Apollo 13  (1995)                                       - Tom Hanks, Bill Paxton, Kevin Bacon, Gary Sinise,     -   Ron Howard                                 - Adventure, Drama, History,
+Rating - 7.6 - Bridge of Spies  (2015)                                 - Mark Rylance, Domenick Lombardozzi, Victor Verhaeg    -   Steven Spielberg                           - Drama, History, Thriller, War,
+AVG =  8.04
+-----------------------------------------------------------------
+14 - ACTOR - Matt Damon
+-----------------------------------------------------------------
+Rating - 8.6 - Saving Private Ryan  (1998)                             - Tom Hanks, Tom Sizemore, Edward Burns, Barry Peppe    -   Steven Spielberg                           - Drama, War,
+Rating - 8.5 - The Departed  (2006)                                    - Leonardo DiCaprio, Matt Damon, Jack Nicholson, Mar    -   Martin Scorsese                            - Crime, Drama, Thriller,
+Rating - 8.3 - Good Will Hunting  (1997)                               - Matt Damon, Ben Affleck, Stellan Skarsgård, John M    -   Gus Van Sant                               - Drama, Romance,
+Rating - 8.1 - Ford V Ferrari  (2019)                                  - Matt Damon, Christian Bale, Jon Bernthal, Caitríon    -   James Mangold                              - Action, Biography, Drama, Sport,
+Rating - 8.0 - The Martian  (2015)                                     - Matt Damon, Jessica Chastain, Kristen Wiig, Jeff D    -   Ridley Scott                               - Adventure, Drama, Sci-Fi,
+Rating - 8.0 - The Bourne Ultimatum  (2007)                            - Matt Damon, Julia Stiles, David Strathairn, Scott     -   Paul Greengrass                            - Action, Mystery, Thriller,
+Rating - 7.9 - The Bourne Identity  (2002)                             - Matt Damon, Franka Potente, Chris Cooper, Clive Ow    -   Doug Liman                                 - Action, Mystery, Thriller,
+Rating - 7.7 - The Bourne Supremacy  (2004)                            - Matt Damon, Franka Potente, Brian Cox, Julia Stile    -   Paul Greengrass                            - Action, Mystery, Thriller,
+Rating - 7.6 - True Grit  (2010)                                       - Jeff Bridges, Hailee Steinfeld, Matt Damon, Josh B    -   Ethan Coen, Joel Coen                      - Drama, Western,
+Rating - 7.4 - The Talented Mr Ripley  (1999)                          - Matt Damon, Gwyneth Paltrow, Jude Law, Cate Blanch    -   Anthony Minghella                          - Crime, Drama, Thriller,
+AVG =  8.01
+-----------------------------------------------------------------
+15 - ACTOR - Gary Cooper
+-----------------------------------------------------------------
+Rating - 8.0 - High Noon  (1952)                                       - Gary Cooper, Thomas Mitchell, Lloyd Bridges, Katy     -   Fred Zinnemann                             - Drama, Thriller, Western,
+AVG =  8.0
+-----------------------------------------------------------------
+16 - ACTOR - Clint Eastwood
+-----------------------------------------------------------------
+Rating - 8.8 - The Good, the Bad and the Ugly  (1966)                  - Eli Wallach, Clint Eastwood, Lee Van Cleef, Aldo G    -   Sergio Leone                               - Adventure, Western,
+Rating - 8.2 - For a Few Dollars More  (1965)                          - Clint Eastwood, Lee Van Cleef, Gian Maria Volontè,    -   Sergio Leone                               - Western,
+Rating - 8.2 - Unforgiven  (1992)                                      - Clint Eastwood, Gene Hackman, Morgan Freeman, Rich    -   Clint Eastwood                             - Drama, Western,
+Rating - 8.1 - Gran Torino  (2008)                                     - Clint Eastwood, Christopher Carley, Bee Vang, Ahne    -   Clint Eastwood                             - Drama,
+Rating - 8.1 - Million Dollar Baby  (2004)                             - Clint Eastwood, Hilary Swank, Morgan Freeman, Jay     -   Clint Eastwood                             - Drama, Sport,
+Rating - 7.9 - A Fistful of Dollars  (1964)                            - Clint Eastwood,Marianne Koch,Gian Maria Volontè,Wo    -   Sergio Leone                               - Action, Drama, Western,
+Rating - 7.8 - The Outlaw Josey Wales  (1976)                          - Clint Eastwood, Chief Dan George, Sondra Locke, Bi    -   Clint Eastwood                             - Western,
+Rating - 7.7 - Dirty Harry  (1971)                                     - Clint Eastwood, Harry Guardino, Reni Santoni, John    -   Don Siegel, Clint Eastwood                 - Action, Crime, Thriller,
+Rating - 7.6 - Escape from Alcatraz  (1979)                            - Clint Eastwood, Patrick McGoohan, Roberts Blossom,    -   Don Siegel                                 - Action, Biography, Crime, Drama, Thriller,
+Rating - 7.6 - Kelly's Heroes  (1970)                                  - Clint Eastwood, Telly Savalas, Don Rickles, Carrol    -   Brian G. Hutton                            - Adventure, Comedy, War,
+AVG =  7.999999999999998
+-----------------------------------------------------------------
+17 - ACTOR - Humphrey Bogart
+-----------------------------------------------------------------
+Rating - 8.5 - Casablanca (1942)                                       - Humphrey Bogart, Ingrid Bergman, Paul Henreid, Cla    -   Michael Curtiz                             - Drama, Romance, War,
+Rating - 8.2 - The Treasure of the Sierra Madre (1948)                 - Humphrey Bogart, Walter Huston, Tim Holt, Bruce Be    -   John Huston                                - Adventure, Drama, Western,
+Rating - 8.0 - The Maltese Falcon (1941)                               - Humphrey Bogart, Mary Astor, Gladys George, Peter     -   John Huston                                - Crime, Film-Noir, Mystery, Romance,
+Rating - 7.9 - Angels With Dirty Faces  (1938)                         - James Cagney, Pat O'Brien, Humphrey Bogart, Ann Sh    -   Michael Curtiz                             - Crime, Drama, Film-Noir, Thriller,
+Rating - 7.9 - In a Lonely Place  (1950)                               - Humphrey Bogart, Gloria Grahame, Frank Lovejoy, Ca    -   Nicholas Ray                               - Drama, Film-Noir, Mystery, Romance, Thriller,
+Rating - 7.9 - The Big Sleep  (1946)                                   - Humphrey Bogart, Lauren Bacall, John Ridgely, Mart    -   Howard Hawks                               - Crime, Film-Noir, Mystery, Thriller,
+Rating - 7.9 - The Roaring Twenties  (1939)                            - James Cagney, Priscilla Lane, Humphrey Bogart, Gla    -   Raoul Walsh                                - Crime, Drama, Film-Noir, Thriller,
+Rating - 7.8 - To Have and Have Not  (1944)                            - Humphrey Bogart, Walter Brennan, Lauren Bacall, Do    -   Howard Hawks                               - Adventure, Comedy, Film-Noir, Romance, Thriller, War,
+Rating - 7.7 - The African Queen (1951)                                - Humphrey Bogart, Katharine Hepburn, Robert Morley,    -   John Huston                                - Adventure, Drama, Romance, War,
+Rating - 7.7 - Key Largo  (1948)                                       - Humphrey Bogart, Edward G. Robinson, Lauren Bacall    -   John Huston                                - Action, Crime, Drama, Film-Noir, Thriller,
+AVG =  7.95
+-----------------------------------------------------------------
+18 - ACTOR - Spencer Tracy
+-----------------------------------------------------------------
+Rating - 8.3 - Judgment at Nuremberg  (1961)                           - Spencer Tracy, Burt Lancaster, Richard Widmark, Ma    -   Stanley Kramer                             - Drama, War,
+Rating - 7.8 - Guess Whos Coming to Dinner  (1967)                     - Spencer Tracy, Sidney Poitier, Katharine Hepburn,     -   Stanley Kramer                             - Comedy, Drama,
+Rating - 7.7 - Bad Day at Black Rock  (1955)                           - Spencer Tracy, Robert Ryan, Anne Francis, Dean Jag    -   John Sturges                               - Crime, Drama, Mystery, Thriller, Western,
+AVG =  7.933333333333334
+-----------------------------------------------------------------
+19 - ACTOR - Jack Nicholson
+-----------------------------------------------------------------
+Rating - 8.7 - One Flew Over the Cuckoo's Nest  (1975)                 - Jack Nicholson, Michael Berryman, Peter Brocco, De    -   Milos Forman                               - Drama,
+Rating - 8.5 - The Departed  (2006)                                    - Leonardo DiCaprio, Matt Damon, Jack Nicholson, Mar    -   Martin Scorsese                            - Crime, Drama, Thriller,
+Rating - 8.4 - The Shining  (1980)                                     - Jack Nicholson, Shelley Duvall, Danny Lloyd, Scatm    -   Stanley Kubrick                            - Drama, Horror,
+Rating - 8.2 - Chinatown  (1974)                                       - Jack Nicholson, Faye Dunaway, John Huston, Perry L    -   Roman Polanski                             - Drama, Mystery, Thriller,
+Rating - 7.7 - A Few Good Men  (1992)                                  - Tom Cruise, Jack Nicholson, Demi Moore, Kevin Baco    -   Rob Reiner                                 - Drama, Thriller,
+Rating - 7.7 - As Good as It Gets  (1997)                              - Jack Nicholson, Helen Hunt, Greg Kinnear, Cuba Goo    -   James L. Brooks                            - Comedy, Drama, Romance,
+Rating - 7.5 - The Last Detail  (1973)                                 - Jack Nicholson, Otis Young, Randy Quaid, Clifton J    -   Hal Ashby                                  - Comedy, Drama,
+Rating - 7.5 - The Passenger  (1975)                                   - Jack Nicholson, Maria Schneider, Jenny Runacre, Ia    -   Michelangelo Antonioni                     - Drama, Thriller,
+Rating - 7.5 - Batman  (1989)                                          - Michael Keaton, Jack Nicholson, Kim Basinger, Robe    -   Tim Burton                                 - Action, Adventure,
+Rating - 7.4 - Five Easy Pieces  (1970)                                - Jack Nicholson, Karen Black, Billy Green Bush, Fan    -   Bob Rafelson                               - Drama,
+AVG =  7.910000000000001
+-----------------------------------------------------------------
+20 - ACTOR - Ingrid Bergman
+-----------------------------------------------------------------
+Rating - 8.5 - Casablanca (1942)                                       - Humphrey Bogart, Ingrid Bergman, Paul Henreid, Cla    -   Michael Curtiz                             - Drama, Romance, War,
+Rating - 7.9 - Notorious  (1946)                                       - Cary Grant, Ingrid Bergman, Claude Rains, Louis Ca    -   Alfred Hitchcock                           - Drama, Film-Noir, Romance, Thriller,
+Rating - 7.3 - Murder on the Orient Express  (1974)                    - Albert Finney, Lauren Bacall, Martin Balsam, Ingri    -   Sidney Lumet                               - Crime, Drama, Mystery,
+AVG =  7.8999999999999995
+-----------------------------------------------------------------
+21 - ACTOR - James Stewart
+-----------------------------------------------------------------
+Rating - 8.5 - Rear Window  (1954)                                     - James Stewart, Grace Kelly, Wendell Corey, Thelma     -   Alfred Hitchcock                           - Mystery, Thriller,
+Rating - 8.3 - Vertigo  (1958)                                         - James Stewart, Kim Novak, Barbara Bel Geddes, Tom     -   Alfred Hitchcock                           - Mystery, Romance, Thriller,
+Rating - 8.1 - The Man Who Shot Liberty Valance  (1962)                - John Wayne, James Stewart, Vera Miles, Lee Marvin,    -   John Ford                                  - Drama, Western,
+Rating - 8.1 - Mr Smith Goes to Washington  (1939)                     - Jean Arthur, James Stewart, Claude Rains, Edward A    -   Frank Capra                                - Comedy, Drama,
+Rating - 8.0 - Anatomy of A Murder  (1959)                             - James Stewart, Lee Remick, Ben Gazzara, Arthur O'C    -   Otto Preminger                             - Drama, Mystery,
+Rating - 8.0 - The Shop Around the Corner  (1940)                      - Margaret Sullavan, James Stewart, Frank Morgan, Jo    -   Ernst Lubitsch                             - Comedy, Drama, Romance,
+Rating - 7.9 - Rope  (1948)                                            - Dick Hogan, John Dall, Farley Granger, Edith Evans    -   Alfred Hitchcock                           - Crime, Drama, Mystery, Thriller,
+Rating - 7.6 - Winchester 73  (1950)                                   - James Stewart, Shelley Winters, Dan Duryea, Stephe    -   Anthony Mann                               - Action, Drama, Western,
+Rating - 7.4 - The Man Who Knew Too Much  (1956)                       - James Stewart, Doris Day, Brenda de Banzie, Bernar    -   Alfred Hitchcock                           - Drama, Thriller,
+Rating - 7.0 - How the West Was Won  (1962)                            - Carroll Baker, Lee J. Cobb, Henry Fonda, Carolyn J    -   John Ford, Henry Hathaway, George Marshall, Richard Thorpe   - Western,
+AVG =  7.890000000000001
+-----------------------------------------------------------------
+22 - ACTOR - Brad Pitt
+-----------------------------------------------------------------
+Rating - 8.8 - Fight Club  (1999)                                      - Edward Norton, Brad Pitt, Meat Loaf, Zach Grenier,    -   David Fincher                              - Drama,
+Rating - 8.6 - Se7en  (1995)                                           - Morgan Freeman, Andrew Kevin Walker, Daniel Zacapa    -   David Fincher                              - Crime, Drama, Mystery, Thriller,
+Rating - 8.3 - Inglourious Bastards  (2009)                            - Brad Pitt, Mélanie Laurent, Christoph Waltz, Eli R    -   Quentin Tarantino                          - Adventure, Drama, War,
+Rating - 7.7 - Oceans Eleven  (2001)                                   - George Clooney, Cecelia Ann Birt, Paul L. Nolan, C    -   Steven Soderbergh                          - Crime, Thriller,
+Rating - 7.6 - Moneyball  (2011)                                       - Brad Pitt, Jonah Hill, Philip Seymour Hoffman, Rob    -   Bennett Miller                             - Biography, Drama, Sport,
+Rating - 7.6 - Once Upon a Time in Hollywood  (2019)                   - Leonardo DiCaprio, Brad Pitt, Margot Robbie, Emile    -   Quentin Tarantino                          - Comedy, Drama,
+Rating - 7.5 - Legends of the Fall  (1994)                             - Brad Pitt, Anthony Hopkins, Aidan Quinn, Julia Orm    -   Edward Zwick                               - Drama, Romance, War, Western,
+Rating - 7.5 - Sleepers  (1996)                                        - Kevin Bacon, Billy Crudup, Robert De Niro, Ron Eld    -   Barry Levinson                             - Crime, Drama, Thriller,
+Rating - 7.5 - Fury  (2014)                                            - Brad Pitt, Shia LaBeouf, Logan Lerman, Michael Peñ    -   David Ayer                                 - Action, Drama, War,
+Rating - 7.5 - Babel  (2006)                                           - Brad Pitt, Cate Blanchett, Mohamed Akhzam, Peter W    -   Alejandro G. Iñárritu                      - Drama,
+AVG =  7.859999999999999
+-----------------------------------------------------------------
+23 - ACTOR - Grace Kelly
+-----------------------------------------------------------------
+Rating - 8.5 - Rear Window  (1954)                                     - James Stewart, Grace Kelly, Wendell Corey, Thelma     -   Alfred Hitchcock                           - Mystery, Thriller,
+Rating - 8.2 - Dial M for Murder  (1954)                               - Ray Milland, Grace Kelly, Robert Cummings, John Wi    -   Alfred Hitchcock                           - Crime, Thriller,
+Rating - 8.0 - High Noon  (1952)                                       - Gary Cooper, Thomas Mitchell, Lloyd Bridges, Katy     -   Fred Zinnemann                             - Drama, Thriller, Western,
+Rating - 6.6 - Mogambo  (1953)                                         - Clark Gable, Ava Gardner, Grace Kelly, Donald Sind    -   John Ford                                  - Adventure, Drama, Romance,
+AVG =  7.824999999999999
+-----------------------------------------------------------------
+24 - ACTOR - Audrey Hepburn
+-----------------------------------------------------------------
+Rating - 8.0 - Roman Holiday  (1953)                                   - Gregory Peck, Audrey Hepburn, Eddie Albert, Hartle    -   William Wyler                              - Comedy, Romance,
+Rating - 7.6 - Sabrina  (1954)                                         - Humphrey Bogart, Audrey Hepburn, William Holden, W    -   Billy Wilder                               - Comedy, Drama, Romance,
+AVG =  7.8
+-----------------------------------------------------------------
+25 - ACTOR - Cate Blanchett
+-----------------------------------------------------------------
+Rating - 9.0 - Lord of the Rings The Return of the King  (2003)        - Noel Appleby, Ali Astin, Sean Astin, David Aston,     -   Peter Jackson                              - Action, Adventure, Drama, Fantasy,
+Rating - 8.8 - Lord of the Rings The Fellowship of the Ring  (2001)    - Alan Howard, Noel Appleby, Sean Astin, Sala Baker,    -   Peter Jackson                              - Action, Adventure, Drama, Fantasy,
+Rating - 8.8 - Lord of the Rings Two towers  (2002)                    - Bruce Allpress, Sean Astin, John Bach, Sala Baker,    -   Peter Jackson                              - Action, Adventure, Drama, Fantasy,
+Rating - 7.9 - Thor Ragnarok  (2017)                                   - Chris Hemsworth, Tom Hiddleston, Cate Blanchett, I    -   Taika Waititi                              - Action, Adventure, Comedy, Fantasy, Sci-Fi,
+Rating - 7.5 - Babel  (2006)                                           - Brad Pitt, Cate Blanchett, Mohamed Akhzam, Peter W    -   Alejandro G. Iñárritu                      - Drama,
+Rating - 7.5 - The Aviator  (2004)                                     - Leonardo DiCaprio, Cate Blanchett, Kate Beckinsale    -   Martin Scorsese                            - Biography, Drama,
+Rating - 7.4 - The Talented Mr Ripley  (1999)                          - Matt Damon, Gwyneth Paltrow, Jude Law, Cate Blanch    -   Anthony Minghella                          - Crime, Drama, Thriller,
+Rating - 7.3 - Blue Jasmine  (2013)                                    - Cate Blanchett, Joy Carlin, Richard Conti, Glen Ca    -   Woody Allen                                - Comedy, Drama,
+Rating - 7.2 - Don't Look Up  (2021)                                   - Leonardo DiCaprio, Jennifer Lawrence, Meryl Streep    -   Adam McKay                                 - Comedy, Drama, Sci-Fi,
+Rating - 6.6 - Robin Hood  (2010)                                      - Russell Crowe, Cate Blanchett, Max von Sydow, Will    -   Ridley Scott                               - Action, Adventure, Drama, History,
+AVG =  7.8
+-----------------------------------------------------------------
+26 - ACTOR - Robert Downey Jr
+-----------------------------------------------------------------
+Rating - 8.4 - Avengers Endgame  (2019)                                - Robert Downey Jr., Chris Evans, Mark Ruffalo, Chri    -   Anthony Russo, Joe Russo                   - Action, Adventure, Drama, Sci-Fi,
+Rating - 8.4 - Avengers Infinity War  (2018)                           - Robert Downey Jr., Chris Hemsworth, Mark Ruffalo,     -   Anthony Russo, Joe Russo                   - Action, Adventure, Sci-Fi,
+Rating - 8.0 - Avengers  (2012)                                        - Robert Downey Jr., Chris Evans, Mark Ruffalo, Chri    -   Joss Whedon                                - Action, Adventure, Sci-Fi,
+Rating - 7.9 - Iron Man  (2008)                                        - Robert Downey Jr., Terrence Howard, Jeff Bridges,     -   Jon Favreau                                - Action, Adventure, Sci-Fi,
+Rating - 7.8 - Captain America Civil War  (2016)                       - Chris Evans, Robert Downey Jr., Scarlett Johansson    -   Anthony Russo, Joe Russo                   - Action, Adventure, Sci-Fi,
+Rating - 7.7 - Zodiac  (2007)                                          - Jake Gyllenhaal, Mark Ruffalo, Anthony Edwards, Ro    -   David Fincher                              - Crime, Drama, Mystery, Thriller,
+Rating - 7.6 - Sherlock Holmes  (2009)                                 - Robert Downey Jr., Jude Law, Rachel McAdams, Mark     -   Guy Ritchie                                - Action, Adventure, Mystery,
+Rating - 7.4 - Sherlock Holmes A Game of Shadows  (2011)               - Robert Downey Jr., Jude Law, Noomi Rapace, Rachel     -   Guy Ritchie                                - Action, Adventure, Mystery,
+Rating - 7.4 - Spider-Man Homecoming  (2017)                           - Tom Holland, Michael Keaton, Robert Downey Jr., Ma    -   Jon Watts                                  - Action, Adventure, Sci-Fi,
+Rating - 7.3 - Avengers Age of Ultron  (2015)                          - Robert Downey Jr., Chris Hemsworth, Mark Ruffalo,     -   Joss Whedon                                - Action, Adventure, Sci-Fi,
+AVG =  7.790000000000001
+-----------------------------------------------------------------
+27 - ACTOR - Henry Fonda
+-----------------------------------------------------------------
+Rating - 9.0 - 12 Angry Men  (1957)                                    - Martin Balsam, John Fiedler, Lee J. Cobb, E.G. Mar    -   Sidney Lumet                               - Crime, Drama,
+Rating - 8.5 - Once Upon a Time in the West  (1968)                    - Claudia Cardinale, Henry Fonda, Jason Robards, Cha    -   Sergio Leone                               - Western,
+Rating - 8.1 - The Grapes of Wrath  (1940)                             - Henry Fonda, Jane Darwell, John Carradine, Charley    -   John Ford                                  - Drama,
+Rating - 8.0 - Fail Safe  (1964)                                       - Dan O'Herlihy, Walter Matthau, Frank Overton, Edwa    -   Sidney Lumet                               - Drama, Thriller,
+Rating - 7.7 - My Darling Clementine  (1946)                           - Henry Fonda, Linda Darnell, Victor Mature, Cathy D    -   John Ford                                  - Drama, Romance, Western,
+Rating - 7.6 - Mister Roberts  (1955)                                  - Henry Fonda, James Cagney, William Powell, Jack Le    -   John Ford, Mervyn LeRoy, Joshua Logan      - Comedy, Drama, War,
+Rating - 7.5 - Young Mr Lincoln  (1939)                                - Henry Fonda, Alice Brady, Marjorie Weaver, Arleen     -   John Ford                                  - Biography, Drama, History,
+Rating - 7.0 - How the West Was Won  (1962)                            - Carroll Baker, Lee J. Cobb, Henry Fonda, Carolyn J    -   John Ford, Henry Hathaway, George Marshall, Richard Thorpe   - Western,
+Rating - 6.7 - Midway  (1976)                                          - Charlton Heston, Henry Fonda, James Coburn, Glenn     -   Jack Smight                                - Action, Drama, History, War,
+AVG =  7.78888888888889
+-----------------------------------------------------------------
+28 - ACTOR - Matthew McConaughey
+-----------------------------------------------------------------
+Rating - 8.6 - Interstellar  (2014)                                    - Ellen Burstyn, Matthew McConaughey, Mackenzie Foy,    -   Christopher Nolan                          - Adventure, Drama, Sci-Fi,
+Rating - 8.2 - The Wolf of Wall Street  (2013)                         - Leonardo DiCaprio, Jonah Hill, Margot Robbie, Matt    -   Martin Scorsese                            - Biography, Comedy, Crime, Drama,
+Rating - 7.9 - Dallas Buyers Club  (2013)                              - Matthew McConaughey, Jennifer Garner, Jared Leto,     -   Jean-Marc Vallée                           - Biography, Drama,
+Rating - 7.8 - The Gentlemen  (2019)                                   - Matthew McConaughey, Charlie Hunnam, Michelle Dock    -   Guy Ritchie                                - Action, Comedy, Crime,
+Rating - 7.5 - Contact  (1997)                                         - Jena Malone, David Morse, Jodie Foster, Geoffrey B    -   Robert Zemeckis                            - Drama, Mystery, Sci-Fi, Thriller,
+Rating - 7.4 - A Time to Kill  (1996)                                  - Matthew McConaughey, Sandra Bullock, Samuel L. Jac    -   Joel Schumacher                            - Crime, Drama, Thriller,
+Rating - 7.4 - Mud  (2012)                                             - Matthew McConaughey, Reese Witherspoon, Tye Sherid    -   Jeff Nichols                               - Drama,
+Rating - 7.3 - The Lincoln Lawyer  (2011)                              - Matthew McConaughey, Marisa Tomei, Ryan Phillippe,    -   Brad Furman                                - Crime, Drama, Mystery, Thriller,
+AVG =  7.762499999999998
+-----------------------------------------------------------------
+29 - ACTOR - Tom Cruise
+-----------------------------------------------------------------
+Rating - 8.4 - Top Gun Maverick  (2022)                                - Tom Cruise, Val Kilmer, Miles Teller, Jennifer Con    -   Joseph Kosinski                            - Action, Drama,
+Rating - 8.0 - Rain Man  (1988)                                        - Dustin Hoffman, Tom Cruise, Valeria Golino, Gerald    -   Barry Levinson                             - Drama,
+Rating - 7.9 - Edge of Tomorrow  (2014)                                - Tom Cruise, Emily Blunt, Brendan Gleeson, Bill Pax    -   Doug Liman                                 - Action, Adventure, Sci-Fi,
+Rating - 7.8 - The Last Samurai  (2003)                                - Ken Watanabe, Tom Cruise, William Atherton, Chad L    -   Edward Zwick                               - Action, Drama,
+Rating - 7.7 - A Few Good Men  (1992)                                  - Tom Cruise, Jack Nicholson, Demi Moore, Kevin Baco    -   Rob Reiner                                 - Drama, Thriller,
+Rating - 7.7 - Minority Report  (2002)                                 - Tom Cruise, Max von Sydow, Steve Harris, Neal McDo    -   Steven Spielberg                           - Action, Crime, Mystery, Sci-Fi, Thriller,
+Rating - 7.7 - Mission Impossible Fallout  (2018)                      - Tom Cruise, Henry Cavill, Ving Rhames, Simon Pegg,    -   Christopher McQuarrie                      - Action, Adventure, Thriller,
+Rating - 7.5 - Collateral  (2004)                                      - Tom Cruise, Jamie Foxx, Jada Pinkett Smith, Mark R    -   Michael Mann                               - Action, Crime, Drama, Thriller,
+Rating - 7.5 - Eyes Wide Shut  (1999)                                  - Tom Cruise, Nicole Kidman, Madison Eginton, Jackie    -   Stanley Kubrick                            - Drama, Mystery, Thriller,
+Rating - 7.4 - Mission Impossible 4 Ghost Protocol  (2011)             - Tom Cruise, Paula Patton, Simon Pegg, Jeremy Renne    -   Brad Bird                                  - Action, Thriller,
+AVG =  7.760000000000001
+-----------------------------------------------------------------
+30 - ACTOR - Paul Newman
+-----------------------------------------------------------------
+Rating - 8.3 - The Sting  (1973)                                       - Paul Newman, Robert Redford, Robert Shaw, Charles     -   George Roy Hill                            - Comedy, Crime, Drama,
+Rating - 8.1 - Cool Hand Luke  (1967)                                  - Paul Newman, George Kennedy, J.D. Cannon, Lou Anto    -   Stuart Rosenberg                           - Crime, Drama,
+Rating - 8.0 - The Hustler  (1961)                                     - Paul Newman, Jackie Gleason, Piper Laurie, George     -   Robert Rossen                              - Drama, Sport,
+Rating - 8.0 - Butch Cassidy And The Sundance Kid  (1969)              - Paul Newman, Robert Redford, Katharine Ross, Strot    -   George Roy Hill                            - Biography, Crime, Drama, Western,
+Rating - 7.9 - Cat on a Hot Tin Roof  (1958)                           - Elizabeth Taylor, Paul Newman, Burl Ives, Jack Car    -   Richard Brooks                             - Drama,
+Rating - 7.7 - Road to Perdition  (2002)                               - Tyler Hoechlin, Rob Maxey, Liam Aiken, Jennifer Ja    -   Sam Mendes                                 - Crime, Drama, Thriller,
+Rating - 7.7 - The Verdict  (1982)                                     - Paul Newman, Charlotte Rampling, Jack Warden, Jame    -   Sidney Lumet                               - Drama,
+Rating - 7.3 - Nobodys Fool  (1994)                                    - Paul Newman, Jessica Tandy, Bruce Willis, Melanie     -   Robert Benton                              - Comedy, Drama,
+Rating - 7.3 - The Long Hot Summer  (1958)                             - Paul Newman, Joanne Woodward, Anthony Franciosa, O    -   Martin Ritt                                - Drama,
+Rating - 7.3 - Slap Shot  (1977)                                       - Paul Newman, Strother Martin, Michael Ontkean, Jen    -   George Roy Hill                            - Comedy, Drama, Sport,
+AVG =  7.76
+-----------------------------------------------------------------
+31 - ACTOR - Jack Lemmon
+-----------------------------------------------------------------
+Rating - 8.3 - The Apartment  (1960)                                   - Jack Lemmon, Shirley MacLaine, Fred MacMurray, Ray    -   Billy Wilder                               - Comedy, Drama, Romance,
+Rating - 8.2 - Some Like It Hot  (1959)                                - Marilyn Monroe, Tony Curtis, Jack Lemmon, George R    -   Billy Wilder                               - Comedy, Music, Romance,
+Rating - 7.7 - Glengarry Glen Ross  (1992)                             - Al Pacino, Jack Lemmon, Alec Baldwin, Alan Arkin,     -   James Foley                                - Crime, Drama, Mystery,
+Rating - 7.7 - Missing  (1982)                                         - Jack Lemmon, Sissy Spacek, Melanie Mayron, John Sh    -   Costa-Gavras                               - Biography, Drama, History, Mystery, Thriller,
+Rating - 7.6 - Mister Roberts  (1955)                                  - Henry Fonda, James Cagney, William Powell, Jack Le    -   John Ford, Mervyn LeRoy, Joshua Logan      - Comedy, Drama, War,
+Rating - 7.0 - Grumpy Old Men  (1993)                                  - Jack Lemmon, Walter Matthau, Ann-Margret, Burgess     -   Donald Petrie                              - Comedy, Drama, Romance,
+AVG =  7.75
+-----------------------------------------------------------------
+32 - ACTOR - Tom Hardy
+-----------------------------------------------------------------
+Rating - 8.8 - Inception  (2010)                                       - Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Pa    -   Christopher Nolan                          - Action, Adventure, Sci-Fi, Thriller,
+Rating - 8.4 - The Dark Knight Rises  (2012)                           - Christian Bale, Gary Oldman, Tom Hardy, Joseph Gor    -   Christopher Nolan                          - Action, Drama,
+Rating - 8.2 - Warrior  (2011)                                         - Joel Edgerton, Tom Hardy, Nick Nolte, Jennifer Mor    -   Gavin O'Connor                             - Action, Drama, Sport,
+Rating - 8.1 - Mad Max Fury Road  (2015)                               - Tom Hardy, Charlize Theron, Nicholas Hoult, Hugh K    -   George Miller                              - Action, Adventure, Sci-Fi, Thriller,
+Rating - 8.0 - The Revenant  (2015)                                    - Leonardo DiCaprio, Tom Hardy, Domhnall Gleeson, Wi    -   Alejandro G. Iñárritu                      - Action, Adventure, Drama, History, Western,
+Rating - 7.8 - Dunkirk  (2017)                                         - Fionn Whitehead, Damien Bonnard, Aneurin Barnard,     -   Christopher Nolan                          - Action, Drama, History, Thriller, War,
+Rating - 7.2 - RocknRolla  (2008)                                      - Gerard Butler, Tom Wilkinson, Thandiwe Newton, Mar    -   Guy Ritchie                                - Action, Crime, Thriller,
+Rating - 7.1 - Locke  (2013)                                           - Tom Hardy, Olivia Colman, Ruth Wilson, Andrew Scot    -   Steven Knight                              - Drama,
+Rating - 7.0 - Bronson  (2008)                                         - Tom Hardy, Kelly Adams, Luing Andrews, Katy Barker    -   Nicolas Winding Refn                       - Action, Biography, Crime, Drama,
+Rating - 6.9 - Legend  (2015)                                          - Paul Anderson, Tom Hardy, Christopher Eccleston, J    -   Brian Helgeland                            - Biography, Crime, Drama, Thriller,
+AVG =  7.75
+-----------------------------------------------------------------
+33 - ACTOR - Robin Williams
+-----------------------------------------------------------------
+Rating - 8.1 - Dead Poets Society  (1989)                              - Robin Williams, Robert Sean Leonard, Ethan Hawke,     -   Peter Weir                                 - Comedy, Drama,
+Rating - 7.8 - Awakenings  (1990)                                      - Robert De Niro, Robin Williams, Julie Kavner, Ruth    -   Penny Marshall                             - Biography, Drama,
+Rating - 7.3 - Good Morning Vietnam  (1987)                            - Robin Williams, Forest Whitaker, Tom. T. Tran, Chi    -   Barry Levinson                             - Biography, Comedy, Drama, War,
+AVG =  7.733333333333333
+-----------------------------------------------------------------
+34 - ACTOR - Cary Grant
+-----------------------------------------------------------------
+Rating - 8.3 - North by Northwest  (1959)                              - Cary Grant, Eva Marie Saint, James Mason, Jessie R    -   Alfred Hitchcock                           - Action, Adventure, Mystery, Thriller,
+Rating - 7.9 - Notorious  (1946)                                       - Cary Grant, Ingrid Bergman, Claude Rains, Louis Ca    -   Alfred Hitchcock                           - Drama, Film-Noir, Romance, Thriller,
+Rating - 7.4 - An Affair To Remember  (1957)                           - Cary Grant, Deborah Kerr, Richard Denning, Neva Pa    -   Leo McCarey                                - Drama, Romance,
+Rating - 7.3 - Suspicion  (1941)                                       - Cary Grant, Joan Fontaine, Cedric Hardwicke, Nigel    -   Alfred Hitchcock                           - Film-Noir, Mystery, Thriller,
+AVG =  7.7250000000000005
+-----------------------------------------------------------------
+35 - ACTOR - Sean Connery
+-----------------------------------------------------------------
+Rating - 8.2 - Indiana Jones And The Last Crusade  (1989)              - Harrison Ford, Sean Connery, Denholm Elliott, Alis    -   Steven Spielberg                           - Action, Adventure,
+Rating - 7.9 - The Hill  (1965)                                        - Sean Connery, Harry Andrews, Ian Bannen, Alfred Ly    -   Sidney Lumet                               - Drama, War,
+Rating - 7.9 - The Untouchables  (1987)                                - Kevin Costner, Sean Connery, Charles Martin Smith,    -   Brian De Palma                             - Crime, Drama, Thriller,
+Rating - 7.8 - The Man Who Would Be King  (1975)                       - Sean Connery, Michael Caine, Christopher Plummer,     -   John Huston                                - Adventure, History, War,
+Rating - 7.7 - The Longest Day  (1962)                                 - Eddie Albert, Paul Anka, Arletty, Jean-Louis Barra    -   Ken Annakin, Andrew Marton, Gerd Oswald, Bernhard Wicki, Darryl F. Zanuck   - Action, Drama, History, War,
+Rating - 7.7 - Goldfinger  (1964)                                      - Sean Connery, Gert Fröbe, Honor Blackman, Shirley     -   Guy Hamilton                               - Action, Adventure, Thriller,
+Rating - 7.5 - The Hunt for Red October  (1990)                        - Sean Connery, Alec Baldwin, Scott Glenn, Sam Neill    -   John McTiernan                             - Action, Adventure, Thriller,
+Rating - 7.4 - The Rock  (1996)                                        - Sean Connery, Nicolas Cage, Ed Harris, John Spence    -   Michael Bay                                - Action, Adventure, Thriller,
+Rating - 7.4 - A Bridge Too Far  (1977)                                - Siem Vroom, Marlies van Alcmaer, Erik van 't Wout,    -   Richard Attenborough                       - Drama, History, War,
+Rating - 7.4 - From Russia With Love  (1963)                           - Sean Connery, Daniela Bianchi, Pedro Armendáriz, L    -   Terence Young                              - Action, Adventure, Thriller,
+AVG =  7.69
+-----------------------------------------------------------------
+36 - ACTOR - John Wayne
+-----------------------------------------------------------------
+Rating - 8.1 - The Man Who Shot Liberty Valance  (1962)                - John Wayne, James Stewart, Vera Miles, Lee Marvin,    -   John Ford                                  - Drama, Western,
+Rating - 8.0 - Rio Bravo  (1959)                                       - John Wayne, Dean Martin, Ricky Nelson, Angie Dicki    -   Howard Hawks                               - Western,
+Rating - 7.9 - The Searchers  (1956)                                   - John Wayne, Jeffrey Hunter, Vera Miles, Ward Bond,    -   John Ford                                  - Adventure, Drama, Western,
+Rating - 7.8 - Red River  (1948)                                       - John Wayne, Montgomery Clift, Joanne Dru, Walter B    -   Howard Hawks, Arthur Rosson                - Drama, Western,
+Rating - 7.8 - Stagecoach  (1939)                                      - Claire Trevor, John Wayne, Andy Devine, John Carra    -   John Ford                                  - Adventure, Drama, Western,
+Rating - 7.7 - The Quiet Man  (1952)                                   - John Wayne, Maureen O'Hara, Barry Fitzgerald, Ward    -   John Ford                                  - Comedy, Drama, Romance,
+Rating - 7.5 - El Dorado  (1966)                                       - John Wayne, Robert Mitchum, James Caan, Charlene H    -   Howard Hawks                               - Drama, Romance, Western,
+Rating - 7.4 - The Cowboys  (1972)                                     - John Wayne, Roscoe Lee Browne, Bruce Dern, Colleen    -   Mark Rydell                                - Adventure, Drama, Western,
+Rating - 7.4 - True Grit  (1969)                                       - John Wayne, Glen Campbell, Kim Darby, Jeremy Slate    -   Henry Hathaway                             - Adventure, Drama, Western,
+Rating - 7.2 - She Wore a Yellow Ribbon  (1949)                        - John Wayne, Joanne Dru, John Agar, Ben Johnson, Ha    -   John Ford                                  - Western,
+AVG =  7.6800000000000015
+-----------------------------------------------------------------
+37 - ACTOR - Anthony Hopkins
+-----------------------------------------------------------------
+Rating - 8.6 - The Silence of the Lambs  (1991)                        - Jodie Foster, Lawrence A. Bonney, Kasi Lemmons, La    -   Jonathan Demme                             - Crime, Drama, Thriller,
+Rating - 8.2 - The Elephant Man  (1980)                                - Anthony Hopkins, John Hurt, Anne Bancroft, John Gi    -   David Lynch                                - Biography, Drama,
+Rating - 8.2 - The Father  (2020)                                      - Olivia Colman, Anthony Hopkins, Mark Gatiss, Olivi    -   Florian Zeller                             - Drama, Mystery,
+Rating - 7.9 - Thor Ragnarok  (2017)                                   - Chris Hemsworth, Tom Hiddleston, Cate Blanchett, I    -   Taika Waititi                              - Action, Adventure, Comedy, Fantasy, Sci-Fi,
+Rating - 7.6 - The Two Popes  (2019)                                   - Anthony Hopkins, Jonathan Pryce, Juan Minujín, Lui    -   Fernando Meirelles                         - Biography, Comedy, Drama,
+Rating - 7.5 - Legends of the Fall  (1994)                             - Brad Pitt, Anthony Hopkins, Aidan Quinn, Julia Orm    -   Edward Zwick                               - Drama, Romance, War, Western,
+Rating - 7.4 - Howards End  (1992)                                     - Vanessa Redgrave, Helena Bonham Carter, Joseph Ben    -   James Ivory                                - Drama, Romance,
+Rating - 7.4 - Bram Stokers Dracula  (1992)                            - Gary Oldman, Winona Ryder, Anthony Hopkins, Keanu     -   Francis Ford Coppola                       - Drama, Fantasy, Horror, Romance,
+Rating - 7.0 - The Bounty  (1984)                                      - Mel Gibson, Anthony Hopkins, Laurence Olivier, Edw    -   Roger Donaldson                            - Adventure, Drama, History, Romance,
+Rating - 7.0 - Thor  (2011)                                            - Chris Hemsworth, Natalie Portman, Tom Hiddleston,     -   Kenneth Branagh                            - Action, Adventure, Fantasy,
+AVG =  7.68
+-----------------------------------------------------------------
+38 - ACTOR - Marlon Brando
+-----------------------------------------------------------------
+Rating - 9.2 - The Godfather  (1972)                                   - Marlon Brando, Al Pacino, James Caan, Richard S. C    -   Francis Ford Coppola                       - Crime, Drama,
+Rating - 8.5 - Apocalypse Now  (1979)                                  - Marlon Brando, Martin Sheen, Robert Duvall, Freder    -   Francis Ford Coppola                       - Drama, Mystery, War,
+Rating - 8.1 - On the Waterfront  (1954)                               - Marlon Brando, Karl Malden, Lee J. Cobb, Rod Steig    -   Elia Kazan                                 - Crime, Drama, Thriller,
+Rating - 7.9 - A Streetcar Named Desire  (1951)                        - Vivien Leigh, Marlon Brando, Kim Hunter, Karl Mald    -   Elia Kazan                                 - Drama,
+Rating - 7.4 - Superman  (1978)                                        - Marlon Brando, Gene Hackman, Christopher Reeve, Ne    -   Richard Donner                             - Action, Adventure, Sci-Fi,
+Rating - 7.3 - Viva Zapata  (1952)                                     - Marlon Brando, Jean Peters, Anthony Quinn, Joseph     -   Elia Kazan                                 - Biography, Drama, History, Western,
+Rating - 7.2 - Julius Caesar  (1953)                                   - Marlon Brando, James Mason, John Gielgud, Louis Ca    -   Joseph L. Mankiewicz                       - Drama, History,
+Rating - 7.1 - The Chase  (1966)                                       - Marlon Brando, Jane Fonda, Robert Redford, E.G. Ma    -   Arthur Penn                                - Crime, Drama, Thriller,
+Rating - 7.1 - The Fugitive Kind  (1960)                               - Marlon Brando, Anna Magnani, Joanne Woodward, Maur    -   Sidney Lumet                               - Drama, Romance,
+Rating - 7.0 - Sayonara  (1957)                                        - Marlon Brando, Patricia Owens, James Garner, Marth    -   Joshua Logan                               - Drama, Romance,
+AVG =  7.68
+-----------------------------------------------------------------
+39 - ACTOR - Dustin Hoffman
+-----------------------------------------------------------------
+Rating - 8.0 - Papillon  (1973)                                        - Steve McQueen, Dustin Hoffman, Victor Jory, Don Go    -   Franklin J. Schaffner                      - Biography, Crime, Drama,
+Rating - 8.0 - The Graduate  (1967)                                    - Anne Bancroft, Dustin Hoffman, Katharine Ross, Wil    -   Mike Nichols                               - Comedy, Drama, Romance,
+Rating - 8.0 - Rain Man  (1988)                                        - Dustin Hoffman, Tom Cruise, Valeria Golino, Gerald    -   Barry Levinson                             - Drama,
+Rating - 7.9 - All The Presidents Men  (1976)                          - Dustin Hoffman, Robert Redford, Jack Warden, Marti    -   Alan J. Pakula                             - Drama, History, Thriller,
+Rating - 7.8 - Kramer Vs Kramer  (1979)                                - Dustin Hoffman, Meryl Streep, Jane Alexander, Just    -   Robert Benton                              - Drama,
+Rating - 7.5 - Sleepers  (1996)                                        - Kevin Bacon, Billy Crudup, Robert De Niro, Ron Eld    -   Barry Levinson                             - Crime, Drama, Thriller,
+Rating - 7.4 - Marathon Man  (1976)                                    - Dustin Hoffman, Laurence Olivier, Roy Scheider, Wi    -   John Schlesinger                           - Crime, Drama, Thriller,
+Rating - 7.4 - Straw Dogs  (1971)                                      - Dustin Hoffman, Susan George, Peter Vaughan, T.P.     -   Sam Peckinpah                              - Crime, Drama, Thriller,
+Rating - 7.1 - Wag The Dog  (1997)                                     - Dustin Hoffman, Robert De Niro, Anne Heche, Woody     -   Barry Levinson                             - Comedy, Drama,
+AVG =  7.677777777777777
+-----------------------------------------------------------------
+40 - ACTOR - Ethan Hawke
+-----------------------------------------------------------------
+Rating - 8.1 - Dead Poets Society  (1989)                              - Robin Williams, Robert Sean Leonard, Ethan Hawke,     -   Peter Weir                                 - Comedy, Drama,
+Rating - 8.1 - Before Sunrise  (1995)                                  - Ethan Hawke, Julie Delpy, Andrea Eckert, Hanno Pös    -   Richard Linklater                          - Drama, Romance,
+Rating - 8.1 - Before Sunset  (2004)                                   - Ethan Hawke, Julie Delpy, Vernon Dobtcheff, Louise    -   Richard Linklater                          - Drama, Romance,
+Rating - 7.9 - Boyhood  (2014)                                         - Ellar Coltrane, Patricia Arquette, Elijah Smith, L    -   Richard Linklater                          - Drama,
+Rating - 7.9 - Before Midnight  (2013)                                 - Ethan Hawke, Julie Delpy, Seamus Davey-Fitzpatrick    -   Richard Linklater                          - Drama, Romance,
+Rating - 7.8 - Gattaca  (1997)                                         - Ethan Hawke, Uma Thurman, Gore Vidal, Xander Berke    -   Andrew Niccol                              - Drama, Sci-Fi, Thriller,
+Rating - 7.7 - Training Day  (2001)                                    - Denzel Washington, Ethan Hawke, Scott Glenn, Tom B    -   Antoine Fuqua                              - Action, Crime, Drama, Thriller,
+Rating - 7.3 - Before The Devil Knows You're Dead  (2007)              - Philip Seymour Hoffman, Ethan Hawke, Albert Finney    -   Sidney Lumet                               - Crime, Drama, Thriller,
+Rating - 7.0 - The Black Phone  (2021)                                 - Mason Thames, Madeleine McGraw, Ethan Hawke, Jerem    -   Scott Derrickson                           - Horror, Thriller,
+Rating - 6.8 - The Magnificent Seven  (2016)                           - Denzel Washington, Chris Pratt, Ethan Hawke, Vince    -   Antoine Fuqua                              - Action, Adventure, Western,
+AVG =  7.669999999999999
+-----------------------------------------------------------------
+41 - ACTOR - James Dean
+-----------------------------------------------------------------
+Rating - 7.8 - East of Eden  (1955)                                    - Julie Harris, James Dean, Raymond Massey, Burl Ive    -   Elia Kazan                                 - Drama,
+Rating - 7.6 - Rebel Without a Cause  (1955)                           - James Dean, Natalie Wood, Sal Mineo, Jim Backus, A    -   Nicholas Ray                               - Drama,
+Rating - 7.6 - Giant  (1956)                                           - Elizabeth Taylor, Rock Hudson, James Dean, Carroll    -   George Stevens                             - Drama, Western,
+AVG =  7.666666666666667
+-----------------------------------------------------------------
+42 - ACTOR - Kevin Spacey
+-----------------------------------------------------------------
+Rating - 8.5 - The Usual Suspects  (1995)                              - Stephen Baldwin, Gabriel Byrne, Benicio Del Toro,     -   Bryan Singer                               - Crime, Drama, Mystery, Thriller,
+Rating - 8.2 - L A Confidential  (1997)                                - Kevin Spacey, Russell Crowe, Guy Pearce, James Cro    -   Curtis Hanson                              - Crime, Drama, Mystery, Thriller,
+Rating - 7.8 - Moon  (2009)                                            - Sam Rockwell, Kevin Spacey, Dominique McElligott,     -   Duncan Jones                               - Drama, Mystery, Sci-Fi,
+Rating - 7.7 - Glengarry Glen Ross  (1992)                             - Al Pacino, Jack Lemmon, Alec Baldwin, Alan Arkin,     -   James Foley                                - Crime, Drama, Mystery,
+Rating - 7.6 - Baby Driver  (2017)                                     - Ansel Elgort, Jon Bernthal, Jon Hamm, Eiza Gonzále    -   Edgar Wright                               - Action, Crime, Drama, Music, Thriller,
+Rating - 7.4 - A Time to Kill  (1996)                                  - Matthew McConaughey, Sandra Bullock, Samuel L. Jac    -   Joel Schumacher                            - Crime, Drama, Thriller,
+Rating - 7.3 - The Negotiator  (1998)                                  - Samuel L. Jackson, Kevin Spacey, David Morse, Ron     -   F. Gary Gray                               - Action, Crime, Drama, Mystery, Thriller,
+Rating - 6.8 - Working Girl  (1988)                                    - Harrison Ford, Sigourney Weaver, Melanie Griffith,    -   Mike Nichols                               - Comedy, Drama, Romance,
+AVG =  7.6625
+-----------------------------------------------------------------
+43 - ACTOR - Hilary Swank
+-----------------------------------------------------------------
+Rating - 8.1 - Million Dollar Baby  (2004)                             - Clint Eastwood, Hilary Swank, Morgan Freeman, Jay     -   Clint Eastwood                             - Drama, Sport,
+Rating - 7.2 - Insomnia  (2002)                                        - Al Pacino, Martin Donovan, Oliver 'Ole' Zemen, Hil    -   Christopher Nolan                          - Drama, Mystery, Thriller,
+AVG =  7.65
+-----------------------------------------------------------------
+44 - ACTOR - Kirk Douglas
+-----------------------------------------------------------------
+Rating - 8.4 - Paths Of Glory  (1957)                                  - Kirk Douglas, Ralph Meeker, Adolphe Menjou, George    -   Stanley Kubrick                            - Drama, War,
+Rating - 8.1 - Ace in the Hole  (1951)                                 - Kirk Douglas, Jan Sterling, Robert Arthur, Porter     -   Billy Wilder                               - Drama, Film-Noir,
+Rating - 8.0 - Out of the Past  (1947)                                 - Robert Mitchum, Jane Greer, Kirk Douglas, Rhonda F    -   Jacques Tourneur                           - Crime, Drama, Film-Noir, Romance, Thriller,
+Rating - 7.9 - Spartacus  (1960)                                       - Kirk Douglas, Laurence Olivier, Jean Simmons, Char    -   Stanley Kubrick                            - Adventure, Biography, Drama, History, War,
+Rating - 7.8 - The Bad and the Beautiful  (1952)                       - Lana Turner, Kirk Douglas, Walter Pidgeon, Dick Po    -   Vincente Minnelli                          - Drama, Romance,
+Rating - 7.2 - 20000 Leagues Under the Sea  (1954)                     - Kirk Douglas, James Mason, Paul Lukas, Peter Lorre    -   Richard Fleischer                          - Adventure, Drama, Family, Fantasy, Sci-Fi,
+Rating - 7.2 - In Harms Way  (1965)                                    - John Wayne, Kirk Douglas, Patricia Neal, Tom Tryon    -   Otto Preminger                             - Drama, War,
+Rating - 6.6 - The Final Countdown  (1980)                             - Kirk Douglas, Martin Sheen, Katharine Ross, James     -   Don Taylor                                 - Action, Adventure, Sci-Fi,
+AVG =  7.65
+-----------------------------------------------------------------
+45 - ACTOR - Sidney Poitier
+-----------------------------------------------------------------
+Rating - 8.0 - A Patch of Blue  (1965)                                 - Sidney Poitier, Shelley Winters, Elizabeth Hartman    -   Guy Green                                  - Drama, Romance,
+Rating - 8.0 - A Raisin in the Sun  (1961)                             - Sidney Poitier, Claudia McNeil, Ruby Dee, Diana Sa    -   Daniel Petrie                              - Drama,
+Rating - 7.9 - In the Heat of the Night  (1967)                        - Sidney Poitier, Rod Steiger, Warren Oates, Lee Gra    -   Norman Jewison                             - Drama, Mystery, Thriller,
+Rating - 7.8 - Guess Whos Coming to Dinner  (1967)                     - Spencer Tracy, Sidney Poitier, Katharine Hepburn,     -   Stanley Kramer                             - Comedy, Drama,
+Rating - 7.6 - The Defiant Ones  (1958)                                - Tony Curtis, Sidney Poitier, Theodore Bikel, Charl    -   Stanley Kramer                             - Crime, Drama,
+Rating - 7.6 - To Sir with Love  (1967)                                - Sidney Poitier, Christian Roberts, Judy Geeson, Su    -   James Clavell                              - Drama,
+Rating - 7.5 - Lilies of the Field  (1963)                             - Sidney Poitier, Lilia Skala, Lisa Mann, Isa Crino,    -   Ralph Nelson                               - Drama,
+Rating - 7.4 - Blackboard Jungle  (1955)                               - Glenn Ford, Anne Francis, Louis Calhern, Margaret     -   Richard Brooks                             - Crime, Drama,
+Rating - 7.4 - No Way Out  (1950)                                      - Richard Widmark, Linda Darnell, Stephen McNally, S    -   Joseph L. Mankiewicz                       - Crime, Drama, Film-Noir, Thriller,
+Rating - 7.2 - Edge of the City  (1957)                                - John Cassavetes, Sidney Poitier, Jack Warden, Kath    -   Martin Ritt                                - Drama,
+AVG =  7.640000000000001
+-----------------------------------------------------------------
+46 - ACTOR - Steve McQueen
+-----------------------------------------------------------------
+Rating - 8.2 - The Great Escape  (1963)                                - Steve McQueen, James Garner, Richard Attenborough,    -   John Sturges                               - Adventure, Drama, History, Thriller, War,
+Rating - 8.0 - Papillon  (1973)                                        - Steve McQueen, Dustin Hoffman, Victor Jory, Don Go    -   Franklin J. Schaffner                      - Biography, Crime, Drama,
+Rating - 7.7 - The Magnificent Seven  (1960)                           - Yul Brynner, Eli Wallach, Steve McQueen, Horst Buc    -   John Sturges                               - Action, Adventure, Western,
+Rating - 7.4 - Bullitt  (1968)                                         - Steve McQueen, Robert Vaughn, Jacqueline Bisset, D    -   Peter Yates                                - Action, Crime, Thriller,
+Rating - 6.9 - An Enemy of the People  (1978)                          - Steve McQueen, Bibi Andersson, Charles Durning, Ri    -   George Schaefer                            - Drama,
+AVG =  7.639999999999999
+-----------------------------------------------------------------
+47 - ACTOR - Bruce Willis
+-----------------------------------------------------------------
+Rating - 8.9 - Pulp Fiction  (1994)                                    - Tim Roth, Amanda Plummer, Laura Lovelace, John Tra    -   Quentin Tarantino                          - Crime, Drama,
+Rating - 8.2 - Die Hard  (1988)                                        - Bruce Willis, Bonnie Bedelia, Reginald VelJohnson,    -   John McTiernan                             - Action, Thriller,
+Rating - 8.0 - Twelve Monkeys  (1995)                                  - Joseph Melito, Bruce Willis, Jon Seda, Michael Cha    -   Terry Gilliam                              - Mystery, Sci-Fi, Thriller,
+Rating - 7.6 - The Fifth Element  (1997)                               - Bruce Willis, Gary Oldman, Ian Holm, Milla Jovovic    -   Luc Besson                                 - Action, Adventure, Sci-Fi,
+Rating - 7.6 - Die Hard 3  (1995)                                      - Bruce Willis, Jeremy Irons, Samuel L. Jackson, Gra    -   John McTiernan                             - Action, Adventure, Thriller,
+Rating - 7.4 - Looper  (2012)                                          - Joseph Gordon-Levitt, Bruce Willis, Emily Blunt, P    -   Rian Johnson                               - Action, Drama, Sci-Fi, Thriller,
+Rating - 7.3 - Nobodys Fool  (1994)                                    - Paul Newman, Jessica Tandy, Bruce Willis, Melanie     -   Robert Benton                              - Comedy, Drama,
+Rating - 7.1 - Die Hard 2  (1990)                                      - Bruce Willis, Bonnie Bedelia, William Atherton, Re    -   Renny Harlin                               - Action, Thriller,
+Rating - 7.1 - Die Hard 4  (2007)                                      - Bruce Willis, Timothy Olyphant, Justin Long, Maggi    -   Len Wiseman                                - Action, Thriller,
+Rating - 7.0 - Red  (2010)                                             - Bruce Willis, Mary-Louise Parker, Heidi von Palles    -   Robert Schwentke                           - Action, Comedy, Crime, Thriller,
+AVG =  7.62
+-----------------------------------------------------------------
+48 - ACTOR - Elizabeth Taylor
+-----------------------------------------------------------------
+Rating - 8.0 - Whos Afraid of Virginia Woolf  (1966)                   - Elizabeth Taylor, Richard Burton, George Segal, Sa    -   Mike Nichols                               - Drama,
+Rating - 7.9 - Cat on a Hot Tin Roof  (1958)                           - Elizabeth Taylor, Paul Newman, Burl Ives, Jack Car    -   Richard Brooks                             - Drama,
+Rating - 7.7 - A Place in the Sun  (1951)                              - Montgomery Clift, Elizabeth Taylor, Shelley Winter    -   George Stevens                             - Drama, Romance,
+Rating - 7.6 - Giant  (1956)                                           - Elizabeth Taylor, Rock Hudson, James Dean, Carroll    -   George Stevens                             - Drama, Western,
+Rating - 7.5 - Suddenly Last Summer  (1959)                            - Elizabeth Taylor, Katharine Hepburn, Montgomery Cl    -   Joseph L. Mankiewicz                       - Drama, Mystery, Thriller,
+Rating - 7.0 - Cleopatra  (1963)                                       - Elizabeth Taylor, Richard Burton, Rex Harrison, Pa    -   Joseph L. Mankiewicz                       - Biography, Drama, History, Romance,
+AVG =  7.616666666666667
+-----------------------------------------------------------------
+49 - ACTOR - Meryl Streep
+-----------------------------------------------------------------
+Rating - 8.1 - The Deer Hunter (1978)                                  - Robert De Niro, John Cazale, John Savage, Christop    -   Michael Cimino                             - Drama, War,
+Rating - 7.9 - Manhattan  (1979)                                       - Woody Allen, Diane Keaton, Michael Murphy, Mariel     -   Woody Allen                                - Comedy, Drama, Romance,
+Rating - 7.8 - Kramer Vs Kramer  (1979)                                - Dustin Hoffman, Meryl Streep, Jane Alexander, Just    -   Robert Benton                              - Drama,
+Rating - 7.8 - Little Women  (2019)                                    - Saoirse Ronan, Emma Watson, Florence Pugh, Eliza S    -   Greta Gerwig                               - Drama, Romance,
+Rating - 7.7 - Adaptation  (2002)                                      - Nicolas Cage, Tilda Swinton, Meryl Streep, Chris C    -   Spike Jonze                                - Comedy, Drama,
+Rating - 7.6 - The Bridges of Madison County  (1995)                   - Clint Eastwood, Meryl Streep, Annie Corley, Victor    -   Clint Eastwood                             - Drama, Romance,
+Rating - 7.5 - The Hours  (2002)                                       - Nicole Kidman, Julianne Moore, Meryl Streep, Steph    -   Stephen Daldry                             - Drama, Romance,
+Rating - 7.2 - The Post  (2017)                                        - Meryl Streep, Tom Hanks, Sarah Paulson, Bob Odenki    -   Steven Spielberg                           - Biography, Drama, History, Thriller, War,
+Rating - 7.2 - Don't Look Up  (2021)                                   - Leonardo DiCaprio, Jennifer Lawrence, Meryl Streep    -   Adam McKay                                 - Comedy, Drama, Sci-Fi,
+Rating - 7.1 - Out of Africa  (1985)                                   - Meryl Streep, Robert Redford, Klaus Maria Brandaue    -   Sydney Pollack                             - Biography, Drama, Romance,
+AVG =  7.590000000000001
+-----------------------------------------------------------------
+50 - ACTOR - Russell Crowe
+-----------------------------------------------------------------
+Rating - 8.5 - Gladiator  (2000)                                       - Russell Crowe, Joaquin Phoenix, Connie Nielsen, Ol    -   Ridley Scott                               - Action, Adventure, Drama,
+Rating - 8.2 - L A Confidential  (1997)                                - Kevin Spacey, Russell Crowe, Guy Pearce, James Cro    -   Curtis Hanson                              - Crime, Drama, Mystery, Thriller,
+Rating - 8.2 - A Beautiful Mind  (2001)                                - Russell Crowe, Ed Harris, Jennifer Connelly, Chris    -   Ron Howard                                 - Biography, Drama,
+Rating - 7.8 - The Insider  (1999)                                     - Al Pacino, Russell Crowe, Christopher Plummer, Dia    -   Michael Mann                               - Biography, Drama, Thriller,
+Rating - 7.8 - American Gangster  (2007)                               - Denzel Washington, Russell Crowe, Chiwetel Ejiofor    -   Ridley Scott                               - Biography, Crime, Drama,
+Rating - 7.4 - Master and Commander The Far Side of the World  (2003)  - Russell Crowe, Paul Bettany, James D'Arcy, Edward     -   Peter Weir                                 - Action, Adventure, Drama, War,
+Rating - 7.3 - The Nice Guys  (2016)                                   - Russell Crowe, Ryan Gosling, Angourie Rice, Matt B    -   Shane Black                                - Action, Comedy, Crime, Thriller,
+Rating - 7.1 - Man of Steel  (2013)                                    - Henry Cavill, Amy Adams, Michael Shannon, Diane La    -   Zack Snyder                                - Action, Adventure, Sci-Fi,
+Rating - 7.0 - Body Of Lies  (2008)                                    - Leonardo DiCaprio, Russell Crowe, Mark Strong, Gol    -   Ridley Scott                               - Action, Drama, Thriller,
+Rating - 6.6 - Robin Hood  (2010)                                      - Russell Crowe, Cate Blanchett, Max von Sydow, Will    -   Ridley Scott                               - Action, Adventure, Drama, History,
+AVG =  7.589999999999998
+-----------------------------------------------------------------
+51 - ACTOR - Jeff Bridges
+-----------------------------------------------------------------
+Rating - 8.1 - The Big Lebowski  (1998)                                - Jeff Bridges, John Goodman, Julianne Moore, Steve     -   Joel Coen, Ethan Coen                      - Comedy, Crime,
+Rating - 8.0 - The Last Picture Show  (1971)                           - Timothy Bottoms, Jeff Bridges, Cybill Shepherd, Be    -   Peter Bogdanovich                          - Drama, Romance,
+Rating - 7.9 - Iron Man  (2008)                                        - Robert Downey Jr., Terrence Howard, Jeff Bridges,     -   Jon Favreau                                - Action, Adventure, Sci-Fi,
+Rating - 7.6 - Hell or High Water  (2016)                              - Dale Dickey, Ben Foster, Chris Pine, William Sterc    -   David Mackenzie                            - Crime, Drama, Thriller, Western,
+Rating - 7.6 - True Grit  (2010)                                       - Jeff Bridges, Hailee Steinfeld, Matt Damon, Josh B    -   Ethan Coen, Joel Coen                      - Drama, Western,
+Rating - 7.0 - Starman  (1984)                                         - Jeff Bridges, Karen Allen, Charles Martin Smith, R    -   John Carpenter                             - Romance, Sci-Fi,
+Rating - 6.9 - Tucker The Man and His Dream  (1988)                    - Jeff Bridges, Joan Allen, Martin Landau, Frederic     -   Francis Ford Coppola                       - Biography, Comedy, Drama,
+AVG =  7.585714285714286
+-----------------------------------------------------------------
+52 - ACTOR - Richard Burton
+-----------------------------------------------------------------
+Rating - 8.0 - Whos Afraid of Virginia Woolf  (1966)                   - Elizabeth Taylor, Richard Burton, George Segal, Sa    -   Mike Nichols                               - Drama,
+Rating - 7.7 - The Longest Day  (1962)                                 - Eddie Albert, Paul Anka, Arletty, Jean-Louis Barra    -   Ken Annakin, Andrew Marton, Gerd Oswald, Bernhard Wicki, Darryl F. Zanuck   - Action, Drama, History, War,
+Rating - 7.6 - Where Eagles Dare  (1968)                               - Richard Burton, Clint Eastwood, Mary Ure, Patrick     -   Brian G. Hutton                            - Action, Adventure, War,
+Rating - 7.6 - The Spy Who Came in from the Cold  (1965)               - Richard Burton, Claire Bloom, Oskar Werner, Sam Wa    -   Martin Ritt                                - Drama, Thriller,
+Rating - 7.0 - Cleopatra  (1963)                                       - Elizabeth Taylor, Richard Burton, Rex Harrison, Pa    -   Joseph L. Mankiewicz                       - Biography, Drama, History, Romance,
+AVG =  7.58
+-----------------------------------------------------------------
+53 - ACTOR - Gregory Peck
+-----------------------------------------------------------------
+Rating - 8.3 - To Kill A Mocking Bird  (1962)                          - Gregory Peck, John Megna, Frank Overton, Rosemary     -   Robert Mulligan                            - Crime, Drama,
+Rating - 8.0 - Roman Holiday  (1953)                                   - Gregory Peck, Audrey Hepburn, Eddie Albert, Hartle    -   William Wyler                              - Comedy, Romance,
+Rating - 7.9 - The Big Country (1958)                                  - Gregory Peck, Jean Simmons, Carroll Baker, Charlto    -   William Wyler                              - Romance, Western,
+Rating - 7.5 - The Omen  (1976)                                        - Gregory Peck, Lee Remick, David Warner, Billie Whi    -   Richard Donner                             - Horror, Mystery,
+Rating - 7.5 - The Guns of Navarone  (1961)                            - Gregory Peck, David Niven, Anthony Quinn, Stanley     -   J. Lee Thompson                            - Action, Adventure, Drama, War,
+Rating - 7.3 - Cape Fear  (1991)                                       - Robert De Niro, Nick Nolte, Jessica Lange, Juliett    -   Martin Scorsese                            - Crime, Thriller,
+Rating - 7.0 - How the West Was Won  (1962)                            - Carroll Baker, Lee J. Cobb, Henry Fonda, Carolyn J    -   John Ford, Henry Hathaway, George Marshall, Richard Thorpe   - Western,
+Rating - 7.0 - The Boys From Brazil  (1978)                            - Gregory Peck, Laurence Olivier, James Mason, Lilli    -   Franklin J. Schaffner                      - Drama, Mystery, Sci-Fi, Thriller,
+AVG =  7.5625
+-----------------------------------------------------------------
+54 - ACTOR - Daniel Day-Lewis
+-----------------------------------------------------------------
+Rating - 8.2 - There Will Be Blood  (2007)                             - Daniel Day-Lewis, Martin Stringer, Matthew Braden     -   Paul Thomas Anderson                       - Drama,
+Rating - 8.1 - In the Name of the Father  (1993)                       - Alison Crosbie, Daniel Day-Lewis, Philip King, Emm    -   Jim Sheridan                               - Biography, Crime, Drama,
+Rating - 7.9 - My Left Foot  (1989)                                    - Daniel Day-Lewis, Brenda Fricker, Alison Whelan, K    -   Jim Sheridan                               - Biography, Drama,
+Rating - 7.7 - The Last of the Mohicans  (1992)                        - Daniel Day-Lewis, Madeleine Stowe, Russell Means,     -   Michael Mann                               - Action, Adventure, Drama, History, Romance, War,
+Rating - 7.5 - Gangs of New York  (2002)                               - Leonardo DiCaprio, Daniel Day-Lewis, Cameron Diaz,    -   Martin Scorsese                            - Crime, Drama,
+Rating - 7.4 - Phantom Thread  (2017)                                  - Vicky Krieps, Daniel Day-Lewis, Lesley Manville, J    -   Paul Thomas Anderson                       - Drama, Romance,
+Rating - 7.3 - Lincoln  (2012)                                         - Daniel Day-Lewis, Sally Field, David Strathairn, J    -   Steven Spielberg                           - Biography, Drama, History, War,
+Rating - 7.3 - The Unbearable Lightness of Being  (1988)               - Daniel Day-Lewis, Juliette Binoche, Lena Olin, Der    -   Philip Kaufman                             - Drama, Romance,
+Rating - 7.2 - The Age of Innocence  (1993)                            - Daniel Day-Lewis, Michelle Pfeiffer, Winona Ryder,    -   Martin Scorsese                            - Drama, Romance,
+Rating - 7.0 - The Bounty  (1984)                                      - Mel Gibson, Anthony Hopkins, Laurence Olivier, Edw    -   Roger Donaldson                            - Adventure, Drama, History, Romance,
+AVG =  7.559999999999998
+-----------------------------------------------------------------
+55 - ACTOR - Kate Winslet
+-----------------------------------------------------------------
+Rating - 8.3 - Eternal Sunshine of the Spotless Mind  (2004)           - Jim Carrey, Kate Winslet, Gerry Robert Byrne, Elij    -   Michel Gondry                              - Drama, Romance, Sci-Fi,
+Rating - 7.9 - Titanic  (1997)                                         - Leonardo DiCaprio, Kate Winslet, Billy Zane, Kathy    -   James Cameron                              - Drama, Romance,
+Rating - 7.3 - Heavenly Creatures  (1994)                              - Melanie Lynskey, Kate Winslet, Sarah Peirse, Diana    -   Peter Jackson                              - Biography, Crime, Drama, Thriller,
+Rating - 6.6 - Divergent  (2014)                                       - Shailene Woodley, Theo James, Ashley Judd, Jai Cou    -   Neil Burger                                - Action, Adventure, Mystery, Sci-Fi,
+AVG =  7.525
+-----------------------------------------------------------------
+56 - ACTOR - Natalie Portman
+-----------------------------------------------------------------
+Rating - 8.5 - Leon The Professional  (1994)                           - Jean Reno, Gary Oldman, Natalie Portman, Danny Aie    -   Luc Besson                                 - Action, Crime, Drama, Thriller,
+Rating - 8.3 - Heat  (1995)                                            - Al Pacino, Robert De Niro, Val Kilmer, Jon Voight,    -   Michael Mann                               - Action, Crime, Drama,
+Rating - 8.2 - V for Vendetta  (2005)                                  - Natalie Portman, Hugo Weaving, Stephen Rea, Stephe    -   James McTeigue                             - Action, Drama, Sci-Fi, Thriller,
+Rating - 8.0 - Black Swan  (2010)                                      - Natalie Portman, Mila Kunis, Vincent Cassel, Barba    -   Darren Aronofsky                           - Drama, Thriller,
+Rating - 7.6 - Star Wars Episode III - Revenge of the Sith  (2005)     - Ewan McGregor, Natalie Portman, Hayden Christensen    -   George Lucas                               - Action, Adventure, Fantasy, Sci-Fi,
+Rating - 7.2 - Cold Mountain  (2003)                                   - Jude Law, Nicole Kidman, Renée Zellweger, Eileen A    -   Anthony Minghella                          - Adventure, Drama, History, Romance, War,
+Rating - 7.0 - Thor  (2011)                                            - Chris Hemsworth, Natalie Portman, Tom Hiddleston,     -   Kenneth Branagh                            - Action, Adventure, Fantasy,
+Rating - 6.8 - Annihilation  (2018)                                    - Natalie Portman, Benedict Wong, Sonoya Mizuno, Dav    -   Alex Garland                               - Adventure, Drama, Horror, Mystery, Sci-Fi, Thriller,
+Rating - 6.8 - Thor The Dark World  (2013)                             - Chris Hemsworth, Natalie Portman, Tom Hiddleston,     -   Alan Taylor                                - Action, Adventure, Fantasy,
+Rating - 6.7 - Jackie  (2016)                                          - Natalie Portman, Peter Sarsgaard, Greta Gerwig, Bi    -   Pablo Larraín                              - Biography, Drama,
+AVG =  7.510000000000001
+-----------------------------------------------------------------
+57 - ACTOR - Denzel Washington
+-----------------------------------------------------------------
+Rating - 7.8 - Glory  (1989)                                           - Matthew Broderick, Denzel Washington, Cary Elwes,     -   Edward Zwick                               - Biography, Drama, History, War,
+Rating - 7.8 - American Gangster  (2007)                               - Denzel Washington, Russell Crowe, Chiwetel Ejiofor    -   Ridley Scott                               - Biography, Crime, Drama,
+Rating - 7.7 - Philadelphia  (1993)                                    - Tom Hanks, Denzel Washington, Roberta Maxwell, Buz    -   Jonathan Demme                             - Drama,
+Rating - 7.7 - Man on Fire  (2004)                                     - Denzel Washington, Dakota Fanning, Radha Mitchell,    -   Tony Scott                                 - Action, Crime, Drama, Thriller,
+Rating - 7.7 - Training Day  (2001)                                    - Denzel Washington, Ethan Hawke, Scott Glenn, Tom B    -   Antoine Fuqua                              - Action, Crime, Drama, Thriller,
+Rating - 7.6 - Inside Man  (2006)                                      - Denzel Washington, Clive Owen, Jodie Foster, Chris    -   Spike Lee                                  - Crime, Drama, Mystery, Thriller,
+Rating - 7.3 - Flight  (2012)                                          - Nadine Velazquez, Denzel Washington, Carter Cabass    -   Robert Zemeckis                            - Drama, Thriller,
+Rating - 7.2 - The Equalizer  (2014)                                   - Denzel Washington, Marton Csokas, Chloë Grace More    -   Antoine Fuqua                              - Action, Crime, Thriller,
+Rating - 7.2 - Fences  (2016)                                          - Denzel Washington, Viola Davis, Stephen McKinley H    -   Denzel Washington                          - Drama,
+Rating - 7.1 - The Tragedy of Macbeth  (2021)                          - Denzel Washington, Frances McDormand, Alex Hassell    -   Joel Coen                                  - Drama, Mystery, Thriller,
+AVG =  7.51
+-----------------------------------------------------------------
+58 - ACTOR - Kevin Costner
+-----------------------------------------------------------------
+Rating - 8.0 - Dances with Wolves  (1990)                              - Kevin Costner, Mary McDonnell, Graham Greene, Rodn    -   Kevin Costner                              - Adventure, Drama, Western,
+Rating - 7.9 - The Untouchables  (1987)                                - Kevin Costner, Sean Connery, Charles Martin Smith,    -   Brian De Palma                             - Crime, Drama, Thriller,
+Rating - 7.8 - Hidden Figures  (2016)                                  - Taraji P. Henson, Octavia Spencer, Janelle Monáe,     -   Theodore Melfi                             - Biography, Drama, History,
+Rating - 7.5 - A Perfect World  (1993)                                 - Kevin Costner, Clint Eastwood, Laura Dern, T.J. Lo    -   Clint Eastwood                             - Crime, Drama, Thriller,
+Rating - 7.5 - Field of Dreams  (1989)                                 - Kevin Costner, Amy Madigan, Gaby Hoffmann, Ray Lio    -   Phil Alden Robinson                        - Drama, Family, Fantasy, Sport,
+Rating - 7.4 - Open Range  (2003)                                      - Robert Duvall, Kevin Costner, Annette Bening, Mich    -   Kevin Costner                              - Action, Drama, Romance, Western,
+Rating - 7.4 - Molly's Game  (2017)                                    - Jessica Chastain, Idris Elba, Kevin Costner, Micha    -   Aaron Sorkin                               - Biography, Crime, Drama, Sport,
+Rating - 7.3 - Thirteen Days  (2000)                                   - Shawn Driscoll, Kevin Costner, Drake Cook, Lucinda    -   Roger Donaldson                            - Drama, History, Thriller,
+Rating - 7.2 - Silverado  (1985)                                       - Kevin Kline, Scott Glenn, Kevin Costner, Danny Glo    -   Lawrence Kasdan                            - Action, Crime, Drama, Romance, Western,
+Rating - 7.1 - No Way Out  (1987)                                      - Kevin Costner, Gene Hackman, Sean Young, Will Patt    -   Roger Donaldson                            - Action, Crime, Drama, Mystery, Romance, Thriller,
+AVG =  7.51
+-----------------------------------------------------------------
+59 - ACTOR - Liam Neeson
+-----------------------------------------------------------------
+Rating - 9.0 - Schindler's List  (1993)                                - Liam Neeson, Ben Kingsley, Ralph Fiennes, Caroline    -   Steven Spielberg                           - Biography, Drama, History,
+Rating - 8.2 - Batman Begins  (2005)                                   - Christian Bale, Michael Caine, Liam Neeson, Katie     -   Christopher Nolan                          - Action, Crime, Drama,
+Rating - 7.8 - Taken  (2008)                                           - Liam Neeson, Maggie Grace, Leland Orser, Jon Gries    -   Pierre Morel                               - Action, Crime, Thriller,
+Rating - 7.5 - Gangs of New York  (2002)                               - Leonardo DiCaprio, Daniel Day-Lewis, Cameron Diaz,    -   Martin Scorsese                            - Crime, Drama,
+Rating - 7.4 - The Mission  (1986)                                     - Robert De Niro, Jeremy Irons, Ray McAnally, Aidan     -   Roland Joffé                               - Adventure, Drama, History,
+Rating - 7.2 - Kingdom of Heaven  (2005)                               - Martin Hancock, Michael Sheen, Nathalie Cox, Eriq     -   Ridley Scott                               - Action, Adventure, Drama, History, War,
+Rating - 7.1 - Silence  (2016)                                         - Andrew Garfield, Adam Driver, Liam Neeson, Tadanob    -   Martin Scorsese                            - Drama, History,
+Rating - 7.0 - The Bounty  (1984)                                      - Mel Gibson, Anthony Hopkins, Laurence Olivier, Edw    -   Roger Donaldson                            - Adventure, Drama, History, Romance,
+Rating - 6.9 - Non-Stop  (2014)                                        - Liam Neeson, Julianne Moore, Scoot McNairy, Michel    -   Jaume Collet-Serra                         - Action, Mystery, Thriller,
+Rating - 6.8 - Widows  (2018)                                          - Viola Davis, Liam Neeson, Jon Bernthal, Manuel Gar    -   Steve McQueen                              - Crime, Drama, Thriller,
+AVG =  7.49
+-----------------------------------------------------------------
+60 - ACTOR - Keanu Reeves
+-----------------------------------------------------------------
+Rating - 8.7 - The Matrix  (1999)                                      - Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss    -   Lana Wachowski, Lilly Wachowski            - Action, Sci-Fi,
+Rating - 7.6 - Dangerous Liaisons  (1988)                              - Glenn Close, John Malkovich, Michelle Pfeiffer, Sw    -   Stephen Frears                             - Drama, Romance,
+Rating - 7.5 - The Devil's Advocate  (1997)                            - Keanu Reeves, Al Pacino, Charlize Theron, Jeffrey     -   Taylor Hackford                            - Drama, Mystery, Thriller,
+Rating - 7.4 - Bram Stokers Dracula  (1992)                            - Gary Oldman, Winona Ryder, Anthony Hopkins, Keanu     -   Francis Ford Coppola                       - Drama, Fantasy, Horror, Romance,
+Rating - 7.4 - John Wick  (2014)                                       - Keanu Reeves, Michael Nyqvist, Alfie Allen, Willem    -   Chad Stahelski, David Leitch               - Action, Crime, Thriller,
+Rating - 7.4 - John Wick Chapter 2  (2017)                             - Keanu Reeves, Riccardo Scamarcio, Ian McShane, Rub    -   Chad Stahelski                             - Action, Crime, Thriller,
+Rating - 7.4 - John Wick Chapter 3 Parabellum  (2019)                  - Keanu Reeves, Halle Berry, Ian McShane, Laurence F    -   Chad Stahelski                             - Action, Crime, Thriller,
+Rating - 7.3 - Speed  (1994)                                           - Keanu Reeves, Dennis Hopper, Sandra Bullock, Joe M    -   Jan de Bont                                - Action, Adventure, Thriller,
+Rating - 7.2 - Point Break  (1991)                                     - Patrick Swayze, Keanu Reeves, Gary Busey, Lori Pet    -   Kathryn Bigelow                            - Action, Crime, Thriller,
+Rating - 7.0 - Constantine  (2005)                                     - Keanu Reeves, Rachel Weisz, Shia LaBeouf, Djimon H    -   Francis Lawrence                           - Action, Fantasy, Horror, Mystery,
+AVG =  7.489999999999999
+-----------------------------------------------------------------
+61 - ACTOR - Laurence Olivier
+-----------------------------------------------------------------
+Rating - 8.1 - Rebecca  (1940)                                         - Laurence Olivier, Joan Fontaine, George Sanders, J    -   Alfred Hitchcock                           - Drama, Film-Noir, Mystery, Romance, Thriller,
+Rating - 8.0 - Sleuth  (1972)                                          - Laurence Olivier, Michael Caine, Alec Cawthorne, J    -   Joseph L. Mankiewicz                       - Mystery, Thriller,
+Rating - 7.9 - Spartacus  (1960)                                       - Kirk Douglas, Laurence Olivier, Jean Simmons, Char    -   Stanley Kubrick                            - Adventure, Biography, Drama, History, War,
+Rating - 7.4 - Marathon Man  (1976)                                    - Dustin Hoffman, Laurence Olivier, Roy Scheider, Wi    -   John Schlesinger                           - Crime, Drama, Thriller,
+Rating - 7.0 - The Bounty  (1984)                                      - Mel Gibson, Anthony Hopkins, Laurence Olivier, Edw    -   Roger Donaldson                            - Adventure, Drama, History, Romance,
+Rating - 7.0 - The Boys From Brazil  (1978)                            - Gregory Peck, Laurence Olivier, James Mason, Lilli    -   Franklin J. Schaffner                      - Drama, Mystery, Sci-Fi, Thriller,
+Rating - 6.9 - Battle Of Britain  (1969)                               - Harry Andrews, Michael Caine, Trevor Howard, Curd     -   Guy Hamilton                               - Action, Drama, History, War,
+AVG =  7.471428571428571
+-----------------------------------------------------------------
+62 - ACTOR - Amy Adams
+-----------------------------------------------------------------
+Rating - 8.1 - Catch Me If You Can  (2002)                             - Leonardo DiCaprio, Tom Hanks, Christopher Walken,     -   Steven Spielberg                           - Biography, Crime, Drama,
+Rating - 8.0 - Her  (2013)                                             - Joaquin Phoenix, Lynn Adrianna Freedman, Lisa Rene    -   Spike Jonze                                - Drama, Romance, Sci-Fi,
+Rating - 8.0 - Zack Snyders Justice League  (2021)                     - Ben Affleck, Henry Cavill, Amy Adams, Gal Gadot, R    -   Zack Snyder                                - Action, Adventure, Fantasy, Sci-Fi,
+Rating - 7.9 - Arrival  (2016)                                         - Amy Adams, Jeremy Renner, Forest Whitaker, Michael    -   Denis Villeneuve                           - Drama, Mystery, Sci-Fi,
+Rating - 7.8 - The Fighter  (2010)                                     - Mark Wahlberg, Christian Bale, Amy Adams, Melissa     -   David O. Russell                           - Action, Biography, Drama, Sport,
+Rating - 7.2 - Vice  (2018)                                            - Christian Bale, Amy Adams, Steve Carell, Sam Rockw    -   Adam McKay                                 - Biography, Comedy, Drama,
+Rating - 7.2 - American Hustle  (2013)                                 - Christian Bale, Bradley Cooper, Amy Adams, Jeremy     -   David O. Russell                           - Crime, Drama,
+Rating - 7.1 - Man of Steel  (2013)                                    - Henry Cavill, Amy Adams, Michael Shannon, Diane La    -   Zack Snyder                                - Action, Adventure, Sci-Fi,
+Rating - 7.0 - Charlie Wilson's War  (2007)                            - Tom Hanks, Amy Adams, Julia Roberts, Philip Seymou    -   Mike Nichols                               - Biography, Comedy, Drama, History,
+Rating - 6.4 - Batman v Superman Dawn of Justice  (2016)               - Ben Affleck, Henry Cavill, Amy Adams, Jesse Eisenb    -   Zack Snyder                                - Action, Adventure, Sci-Fi,
+AVG =  7.4700000000000015
+-----------------------------------------------------------------
+63 - ACTOR - Gene Hackman
+-----------------------------------------------------------------
+Rating - 8.2 - Unforgiven  (1992)                                      - Clint Eastwood, Gene Hackman, Morgan Freeman, Rich    -   Clint Eastwood                             - Drama, Western,
+Rating - 7.8 - Mississippi Burning  (1988)                             - Gene Hackman, Willem Dafoe, Frances McDormand, Bra    -   Alan Parker                                - Crime, Drama, History, Mystery, Thriller,
+Rating - 7.8 - The Conversation  (1974)                                - Gene Hackman, John Cazale, Allen Garfield, Frederi    -   Francis Ford Coppola                       - Drama, Mystery, Thriller,
+Rating - 7.7 - Bonnie And Clyde  (1967)                                - Warren Beatty, Faye Dunaway, Michael J. Pollard, G    -   Arthur Penn                                - Action, Biography, Crime, Drama,
+Rating - 7.7 - The French Connection  (1971)                           - Gene Hackman, Fernando Rey, Roy Scheider, Tony Lo     -   William Friedkin                           - Action, Crime, Drama, Thriller,
+Rating - 7.4 - A Bridge Too Far  (1977)                                - Siem Vroom, Marlies van Alcmaer, Erik van 't Wout,    -   Richard Attenborough                       - Drama, History, War,
+Rating - 7.4 - Superman  (1978)                                        - Marlon Brando, Gene Hackman, Christopher Reeve, Ne    -   Richard Donner                             - Action, Adventure, Sci-Fi,
+Rating - 7.1 - No Way Out  (1987)                                      - Kevin Costner, Gene Hackman, Sean Young, Will Patt    -   Roger Donaldson                            - Action, Crime, Drama, Mystery, Romance, Thriller,
+Rating - 6.8 - The Firm  (1993)                                        - Tom Cruise, Jeanne Tripplehorn, Gene Hackman, Hal     -   Sydney Pollack                             - Drama, Mystery, Thriller,
+Rating - 6.8 - Superman II  (1980)                                     - Gene Hackman, Christopher Reeve, Ned Beatty, Jacki    -   Richard Lester, Richard Donner             - Action, Adventure, Sci-Fi,
+AVG =  7.470000000000001
+-----------------------------------------------------------------
+64 - ACTOR - Katharine Hepburn
+-----------------------------------------------------------------
+Rating - 7.8 - Guess Whos Coming to Dinner  (1967)                     - Spencer Tracy, Sidney Poitier, Katharine Hepburn,     -   Stanley Kramer                             - Comedy, Drama,
+Rating - 7.7 - The African Queen (1951)                                - Humphrey Bogart, Katharine Hepburn, Robert Morley,    -   John Huston                                - Adventure, Drama, Romance, War,
+Rating - 7.5 - Suddenly Last Summer  (1959)                            - Elizabeth Taylor, Katharine Hepburn, Montgomery Cl    -   Joseph L. Mankiewicz                       - Drama, Mystery, Thriller,
+Rating - 7.5 - Long Days Journey Into Night  (1962)                    - Katharine Hepburn, Ralph Richardson, Jason Robards    -   Sidney Lumet                               - Drama,
+Rating - 6.8 - Rooster Cogburn  (1975)                                 - John Wayne, Katharine Hepburn, Anthony Zerbe, Rich    -   Stuart Millar                              - Adventure, Drama, Western,
+AVG =  7.459999999999999
+-----------------------------------------------------------------
+65 - ACTOR - Robert Redford
+-----------------------------------------------------------------
+Rating - 8.3 - The Sting  (1973)                                       - Paul Newman, Robert Redford, Robert Shaw, Charles     -   George Roy Hill                            - Comedy, Crime, Drama,
+Rating - 8.0 - Butch Cassidy And The Sundance Kid  (1969)              - Paul Newman, Robert Redford, Katharine Ross, Strot    -   George Roy Hill                            - Biography, Crime, Drama, Western,
+Rating - 7.9 - All The Presidents Men  (1976)                          - Dustin Hoffman, Robert Redford, Jack Warden, Marti    -   Alan J. Pakula                             - Drama, History, Thriller,
+Rating - 7.8 - Captain America The Winter Soldier  (2014)              - Chris Evans, Samuel L. Jackson, Scarlett Johansson    -   Anthony Russo, Joe Russo                   - Action, Adventure, Sci-Fi, Thriller,
+Rating - 7.4 - Three Days of the Condor  (1975)                        - Robert Redford, Faye Dunaway, Cliff Robertson, Max    -   Sydney Pollack                             - Crime, Mystery, Thriller,
+Rating - 7.1 - The Chase  (1966)                                       - Marlon Brando, Jane Fonda, Robert Redford, E.G. Ma    -   Arthur Penn                                - Crime, Drama, Thriller,
+Rating - 7.1 - Out of Africa  (1985)                                   - Meryl Streep, Robert Redford, Klaus Maria Brandaue    -   Sydney Pollack                             - Biography, Drama, Romance,
+Rating - 7.0 - The Way We Were  (1973)                                 - Barbra Streisand, Robert Redford, Bradford Dillman    -   Sydney Pollack                             - Drama, Romance,
+Rating - 7.0 - Spy Game  (2001)                                        - Robert Redford, Brad Pitt, Catherine McCormack, St    -   Tony Scott                                 - Action, Crime, Thriller,
+Rating - 6.9 - All Is Lost  (2013)                                     - Robert Redford, Dyapa Gnaneshwar Reddy,    -   Sean Akers, Robert Ogden Barnum, Glen Basner, Joshua Blum, Howard Cohen, Eric d'Arbeloff   - Action, Adventure, Drama,
+AVG =  7.45
+-----------------------------------------------------------------
+66 - ACTOR - Hugh Jackman
+-----------------------------------------------------------------
+Rating - 8.5 - The Prestige  (2006)                                    - Hugh Jackman, Christian Bale, Michael Caine, Piper    -   Christopher Nolan                          - Drama, Mystery, Sci-Fi, Thriller,
+Rating - 8.1 - Logan  (2017)                                           - Hugh Jackman, Patrick Stewart, Dafne Keen, Boyd Ho    -   James Mangold                              - Action, Drama, Sci-Fi, Thriller,
+Rating - 8.1 - Prisoners  (2013)                                       - Hugh Jackman, Jake Gyllenhaal, Viola Davis, Maria     -   Denis Villeneuve                           - Crime, Drama, Mystery, Thriller,
+Rating - 7.9 - X-Men Days of Future Past  (2014)                       - Hugh Jackman, James McAvoy, Michael Fassbender, Je    -   Bryan Singer                               - Action, Adventure, Sci-Fi, Thriller,
+Rating - 7.4 - X-Men X2  (2003)                                        - Patrick Stewart, Hugh Jackman, Ian McKellen, Halle    -   Bryan Singer                               - Action, Adventure, Sci-Fi, Thriller,
+Rating - 7.3 - X-Men 1  (2000)                                         - Hugh Jackman, Patrick Stewart, Ian McKellen, Famke    -   Bryan Singer                               - Action, Adventure, Sci-Fi,
+Rating - 7.1 - Bad Education  (2019)                                   - Hugh Jackman, Ray Romano, Welker White, Allison Ja    -   Cory Finley                                - Biography, Comedy, Crime, Drama,
+Rating - 6.7 - The Wolverine  (2013)                                   - Hugh Jackman, Tao Okamoto, Rila Fukushima, Hiroyuk    -   James Mangold                              - Action, Sci-Fi,
+Rating - 6.6 - X-Men 3 The Last Stand  (2006)                          - Hugh Jackman, Halle Berry, Ian McKellen, Patrick S    -   Brett Ratner                               - Action, Adventure, Sci-Fi,
+Rating - 6.5 - X-Men 4 Origins Wolverine  (2009)                       - Hugh Jackman, Liev Schreiber, Danny Huston, Will.i    -   Gavin Hood                                 - Action, Sci-Fi,
+AVG =  7.42
+-----------------------------------------------------------------
+67 - ACTOR - Sigourney Weaver
+-----------------------------------------------------------------
+Rating - 8.5 - Alien  (1979)                                           - Tom Skerritt, Sigourney Weaver, Veronica Cartwrigh    -   Ridley Scott                               - Horror, Sci-Fi,
+Rating - 8.4 - Aliens  (1986)                                          - Sigourney Weaver, Carrie Henn, Michael Biehn, Paul    -   James Cameron                              - Action, Adventure, Sci-Fi, Thriller,
+Rating - 7.8 - Ghostbusters  (1984)                                    - Bill Murray, Dan Aykroyd, Sigourney Weaver, Harold    -   Ivan Reitman                               - Action, Comedy, Fantasy, Sci-Fi,
+Rating - 7.8 - Avatar  (2009)                                          - Sam Worthington, Zoe Saldana, Sigourney Weaver, St    -   James Cameron                              - Action, Adventure, Fantasy, Sci-Fi,
+Rating - 7.4 - Galaxy Quest  (1999)                                    - Tim Allen, Sigourney Weaver, Alan Rickman, Tony Sh    -   Dean Parisot                               - Adventure, Comedy, Sci-Fi,
+Rating - 7.1 - Ghostbusters Afterlife  (2021)                          - Carrie Coon, Paul Rudd, Finn Wolfhard, Mckenna Gra    -   Jason Reitman                              - Adventure, Comedy, Fantasy, Sci-Fi,
+Rating - 7.0 - Gorillas In The Mist  (1988)                            - Sigourney Weaver, Bryan Brown, Julie Harris, John     -   Michael Apted                              - Biography, Drama,
+Rating - 6.9 - Dave  (1993)                                            - Kevin Kline, Sigourney Weaver, Frank Langella, Kev    -   Ivan Reitman                               - Comedy, Romance,
+Rating - 6.8 - Working Girl  (1988)                                    - Harrison Ford, Sigourney Weaver, Melanie Griffith,    -   Mike Nichols                               - Comedy, Drama, Romance,
+Rating - 6.4 - Alien 3  (1992)                                         - Sigourney Weaver, Charles S. Dutton, Charles Dance    -   David Fincher                              - Action, Horror, Sci-Fi,
+AVG =  7.410000000000001
+-----------------------------------------------------------------
+68 - ACTOR - Emma Thompson
+-----------------------------------------------------------------
+Rating - 8.1 - In the Name of the Father  (1993)                       - Alison Crosbie, Daniel Day-Lewis, Philip King, Emm    -   Jim Sheridan                               - Biography, Crime, Drama,
+Rating - 7.5 - Saving Mr Banks  (2013)                                 - Emma Thompson, Tom Hanks, Annie Rose Buckley, Coli    -   John Lee Hancock                           - Biography, Comedy, Drama,
+Rating - 7.4 - Howards End  (1992)                                     - Vanessa Redgrave, Helena Bonham Carter, Joseph Ben    -   James Ivory                                - Drama, Romance,
+Rating - 7.3 - Cruella  (2021)                                         - Emma Stone, Emma Thompson, Joel Fry, Paul Walter H    -   Craig Gillespie                            - Adventure, Comedy, Crime, Drama,
+Rating - 7.2 - Good Luck to You Leo Grande  (2022)                     - Emma Thompson, Daryl McCormack, Les Mabaleka, Lenn    -   Sophie Hyde                                - Comedy, Drama,
+Rating - 6.8 - Man in Black 3  (2012)                                  - Will Smith, Tommy Lee Jones, Josh Brolin, Jemaine     -   Barry Sonnenfeld                           - Action, Adventure, Comedy, Sci-Fi,
+AVG =  7.383333333333333
+-----------------------------------------------------------------
+69 - ACTOR - Forest Whitaker
+-----------------------------------------------------------------
+Rating - 8.1 - Platoon  (1986)                                         - Keith David, Forest Whitaker, Francesco Quinn, Kev    -   Oliver Stone                               - Drama, War,
+Rating - 7.9 - Arrival  (2016)                                         - Amy Adams, Jeremy Renner, Forest Whitaker, Michael    -   Denis Villeneuve                           - Drama, Mystery, Sci-Fi,
+Rating - 7.8 - Star Wars - Rogue One  (2016)                           - Felicity Jones, Diego Luna, Alan Tudyk, Donnie Yen    -   Gareth Edwards                             - Action, Adventure, Sci-Fi,
+Rating - 7.6 - The Last King of Scotland  (2006)                       - Forest Whitaker, James McAvoy, Kerry Washington, G    -   Kevin Macdonald                            - Biography, Drama, History, Thriller,
+Rating - 7.5 - Ghost Dog The Way of the Samurai  (1999)                - Forest Whitaker, John Tormey, Cliff Gorman, Dennis    -   Jim Jarmusch                               - Crime, Drama,
+Rating - 7.3 - Good Morning Vietnam  (1987)                            - Robin Williams, Forest Whitaker, Tom. T. Tran, Chi    -   Barry Levinson                             - Biography, Comedy, Drama, War,
+Rating - 7.3 - Black Panther  (2018)                                   - Chadwick Boseman, Michael B. Jordan, Lupita Nyong'    -   Ryan Coogler                               - Action, Adventure, Sci-Fi,
+Rating - 6.8 - Panic Room  (2002)                                      - Jodie Foster, Kristen Stewart, Forest Whitaker, Dw    -   David Fincher                              - Crime, Drama, Thriller,
+Rating - 6.0 - Taken 3  (2014)                                         - Liam Neeson, Forest Whitaker, Famke Janssen, Maggi    -   Olivier Megaton                            - Action, Crime, Thriller,
+AVG =  7.3666666666666645
+-----------------------------------------------------------------
+70 - ACTOR - Clark Gable
+-----------------------------------------------------------------
+Rating - 8.1 - It Happened One Night  (1934)                           - Clark Gable, Claudette Colbert, Walter Connolly, R    -   Frank Capra                                - Comedy, Romance,
+Rating - 6.6 - Mogambo  (1953)                                         - Clark Gable, Ava Gardner, Grace Kelly, Donald Sind    -   John Ford                                  - Adventure, Drama, Romance,
+AVG =  7.35
+-----------------------------------------------------------------
+71 - ACTOR - George Clooney
+-----------------------------------------------------------------
+Rating - 7.7 - Gravity  (2013)                                         - Sandra Bullock, George Clooney, Ed Harris, Orto Ig    -   Alfonso Cuarón                             - Drama, Sci-Fi, Thriller,
+Rating - 7.7 - South Park Bigger Longer And Uncut  (1999)              - Trey Parker, Matt Stone, Mary Kay Bergman, Isaac H    -   Trey Parker                                - Animation, Comedy, Fantasy, Musical,
+Rating - 7.7 - Oceans Eleven  (2001)                                   - George Clooney, Cecelia Ann Birt, Paul L. Nolan, C    -   Steven Soderbergh                          - Crime, Thriller,
+Rating - 7.6 - The Thin Red Line  (1998)                               - Kirk Acevedo, Penelope Allen, Benjamin Green, Simo    -   Terrence Malick                            - Drama, History, War,
+Rating - 7.4 - Up in the Air  (2009)                                   - George Clooney, Vera Farmiga, Anna Kendrick, Jason    -   Jason Reitman                              - Comedy, Drama, Romance,
+Rating - 7.3 - Fail Safe  (2000)                                       - Walter Cronkite, Richard Dreyfuss, Noah Wyle, Bria    -   Stephen Frears, Martin Pasetta             - Drama, Thriller,
+Rating - 7.1 - Three Kings  (1999)                                     - George Clooney, Mark Wahlberg, Ice Cube, Spike Jon    -   David O. Russell                           - Action, Adventure, Comedy, Drama, War,
+Rating - 7.0 - Burn After Reading  (2008)                              - George Clooney, Frances McDormand, Brad Pitt, John    -   Ethan Coen, Joel Coen                      - Comedy, Crime, Drama, Thriller,
+Rating - 6.9 - Syriana  (2005)                                         - Kayvan Novak, George Clooney, Amr Waked, Christoph    -   Stephen Gaghan                             - Drama, Thriller,
+Rating - 6.9 - Oceans Thirteen  (2007)                                 - George Clooney, Brad Pitt, Matt Damon, Michael Man    -   Steven Soderbergh                          - Crime, Thriller,
+AVG =  7.330000000000001
+-----------------------------------------------------------------
+72 - ACTOR - Sylvester Stallone
+-----------------------------------------------------------------
+Rating - 8.1 - Rocky  (1976)                                           - Sylvester Stallone, Talia Shire, Burt Young, Carl     -   John G. Avildsen                           - Drama, Sport,
+Rating - 7.7 - Rambo First Blood  (1982)                               - Sylvester Stallone, Richard Crenna, Brian Dennehy,    -   Ted Kotcheff                               - Action, Adventure, Thriller,
+Rating - 7.6 - Guardians of the Galaxy Vol 2  (2017)                   - Chris Pratt, Zoe Saldana, Dave Bautista, Vin Diese    -   James Gunn                                 - Action, Adventure, Comedy, Sci-Fi,
+Rating - 7.6 - Creed  (2015)                                           - Michael B. Jordan, Sylvester Stallone, Tessa Thomp    -   Ryan Coogler                               - Action, Drama, Sport,
+Rating - 7.3 - Rocky II  (1979)                                        - Sylvester Stallone, Talia Shire, Burt Young, Carl     -   Sylvester Stallone                         - Drama, Sport,
+Rating - 7.1 - Rocky Balboa  (2006)                                    - Sylvester Stallone, Burt Young, Antonio Tarver, Ge    -   Sylvester Stallone                         - Action, Drama, Sport,
+Rating - 7.1 - Creed 2  (2018)                                         - Michael B. Jordan, Sylvester Stallone, Tessa Thomp    -   Steven Caple Jr.                           - Drama, Sport,
+Rating - 7.0 - Cop Land  (1997)                                        - Sylvester Stallone, Harvey Keitel, Ray Liotta, Rob    -   James Mangold                              - Crime, Drama, Thriller,
+Rating - 7.0 - Rambo  (2008)                                           - Sylvester Stallone, Julie Benz, Matthew Marsden, G    -   Sylvester Stallone                         - Action, Adventure, Thriller,
+Rating - 6.8 - Rocky III  (1982)                                       - Sylvester Stallone, Talia Shire, Burt Young, Carl     -   Sylvester Stallone                         - Drama, Sport,
+AVG =  7.33
+-----------------------------------------------------------------
+73 - ACTOR - Woody Harrelson
+-----------------------------------------------------------------
+Rating - 8.2 - No Country for Old Men  (2007)                          - Tommy Lee Jones, Javier Bardem, Josh Brolin, Woody    -   Ethan Coen, Joel Coen                      - Crime, Drama, Thriller,
+Rating - 8.1 - Three Billboards Outside Ebbing, Missouri  (2017)       - Frances McDormand, Caleb Landry Jones, Kerry Condo    -   Martin McDonagh                            - Comedy, Crime, Drama,
+Rating - 7.6 - Zombieland  (2009)                                      - Jesse Eisenberg, Woody Harrelson, Emma Stone, Abig    -   Ruben Fleischer                            - Action, Comedy, Horror,
+Rating - 7.5 - The Hunger Games Catching Fire  (2013)                  - Jennifer Lawrence, Liam Hemsworth, Jack Quaid, Tay    -   Francis Lawrence                           - Action, Adventure, Sci-Fi, Thriller,
+Rating - 7.4 - War for the Planet of the Apes  (2017)                  - Andy Serkis, Woody Harrelson, Steve Zahn, Karin Ko    -   Matt Reeves                                - Action, Adventure, Drama, Sci-Fi, Thriller,
+Rating - 7.1 - Wag The Dog  (1997)                                     - Dustin Hoffman, Robert De Niro, Anne Heche, Woody     -   Barry Levinson                             - Comedy, Drama,
+Rating - 6.9 - The Highwaymen  (2019)                                  - Kevin Costner, Woody Harrelson, Kathy Bates, John     -   John Lee Hancock                           - Biography, Crime, Drama, Mystery, Thriller,
+Rating - 6.9 - Solo A Star Wars Story  (2018)                          - Alden Ehrenreich, Joonas Suotamo, Woody Harrelson,    -   Ron Howard                                 - Action, Adventure, Sci-Fi,
+Rating - 6.7 - Midway  (2019)                                          - Ed Skrein, Patrick Wilson, Woody Harrelson, Luke E    -   Roland Emmerich                            - Action, Drama, History, War,
+Rating - 6.7 - Out of the Furnace  (2013)                              - Woody Harrelson, Dendrie Taylor, Carl Ciarfalio, N    -   Scott Cooper                               - Action, Crime, Drama, Thriller,
+AVG =  7.31
+-----------------------------------------------------------------
+74 - ACTOR - Jodie Foster
+-----------------------------------------------------------------
+Rating - 8.6 - The Silence of the Lambs  (1991)                        - Jodie Foster, Lawrence A. Bonney, Kasi Lemmons, La    -   Jonathan Demme                             - Crime, Drama, Thriller,
+Rating - 8.2 - Taxi Driver  (1976)                                     - Diahnne Abbott, Frank Adu, Victor Argo, Gino Ardit    -   Martin Scorsese                            - Crime, Drama,
+Rating - 7.6 - Inside Man  (2006)                                      - Denzel Washington, Clive Owen, Jodie Foster, Chris    -   Spike Lee                                  - Crime, Drama, Mystery, Thriller,
+Rating - 7.5 - Contact  (1997)                                         - Jena Malone, David Morse, Jodie Foster, Geoffrey B    -   Robert Zemeckis                            - Drama, Mystery, Sci-Fi, Thriller,
+Rating - 7.1 - The Accused  (1988)                                     - Kelly McGillis, Jodie Foster, Bernie Coulson, Leo     -   Jonathan Kaplan                            - Crime, Drama,
+Rating - 7.0 - Maverick  (1994)                                        - Mel Gibson, Jodie Foster, James Garner, Graham Gre    -   Richard Donner                             - Action, Adventure, Comedy, Western,
+Rating - 6.8 - Panic Room  (2002)                                      - Jodie Foster, Kristen Stewart, Forest Whitaker, Dw    -   David Fincher                              - Crime, Drama, Thriller,
+Rating - 6.6 - Elysium  (2013)                                         - Matt Damon, Jodie Foster, Sharlto Copley, Alice Br    -   Neill Blomkamp                             - Action, Crime, Drama, Sci-Fi, Thriller,
+Rating - 6.1 - Hotel Artemis  (2018)                                   - Jodie Foster, Sterling K. Brown, Sofia Boutella, J    -   Drew Pearce                                - Action, Crime, Drama, Sci-Fi, Thriller,
+AVG =  7.277777777777778
+-----------------------------------------------------------------
+75 - ACTOR - Frances McDormand
+-----------------------------------------------------------------
+Rating - 8.1 - Three Billboards Outside Ebbing, Missouri  (2017)       - Frances McDormand, Caleb Landry Jones, Kerry Condo    -   Martin McDonagh                            - Comedy, Crime, Drama,
+Rating - 7.8 - Mississippi Burning  (1988)                             - Gene Hackman, Willem Dafoe, Frances McDormand, Bra    -   Alan Parker                                - Crime, Drama, History, Mystery, Thriller,
+Rating - 7.6 - Blood Simple  (1984)                                    - John Getz, Frances McDormand, Dan Hedaya, M. Emmet    -   Joel Coen, Ethan Coen                      - Crime, Drama, Thriller,
+Rating - 7.5 - The Man Who Wasn't There  (2001)                        - Billy Bob Thornton, Frances McDormand, Michael Bad    -   Joel Coen                                  - Crime, Drama,
+Rating - 7.3 - Nomadland  (2020)                                       - Frances McDormand, Gay DeForest, Patricia Grier, L    -   Chloé Zhao                                 - Drama,
+Rating - 7.3 - Raising Arizona  (1987)                                 - Nicolas Cage, Holly Hunter, Trey Wilson, John Good    -   Joel Coen, Ethan Coen                      - Comedy, Crime,
+Rating - 7.1 - The Tragedy of Macbeth  (2021)                          - Denzel Washington, Frances McDormand, Alex Hassell    -   Joel Coen                                  - Drama, Mystery, Thriller,
+Rating - 7.0 - Burn After Reading  (2008)                              - George Clooney, Frances McDormand, Brad Pitt, John    -   Ethan Coen, Joel Coen                      - Comedy, Crime, Drama, Thriller,
+Rating - 6.7 - Something's Gotta Give  (2003)                          - Jack Nicholson, Diane Keaton, Keanu Reeves, France    -   Nancy Meyers                               - Comedy, Drama, Romance,
+Rating - 6.3 - Hail Caesar  (2016)                                     - Josh Brolin, George Clooney, Alden Ehrenreich, Ral    -   Ethan Coen, Joel Coen                      - Comedy, Drama, Mystery,
+AVG =  7.269999999999999
+-----------------------------------------------------------------
+76 - ACTOR - Mel Gibson
+-----------------------------------------------------------------
+Rating - 7.6 - Lethal Weapon  (1987)                                   - Mel Gibson, Danny Glover, Gary Busey, Mitchell Rya    -   Richard Donner                             - Action, Crime, Thriller,
+Rating - 7.6 - Mad Max 2  (1981)                                       - Mel Gibson, Bruce Spence, Michael Preston, Max Phi    -   George Miller                              - Action, Adventure, Sci-Fi, Thriller,
+Rating - 7.4 - Gallipoli  (1981)                                       - Mark Lee, Bill Kerr, Harold Hopkins, Charles Latha    -   Peter Weir                                 - Adventure, Drama, History, War,
+Rating - 7.2 - The Patriot  (2000)                                     - Mel Gibson, Heath Ledger, Joely Richardson, Jason     -   Roland Emmerich                            - Action, Drama, History, War,
+Rating - 7.2 - The Professor and the Madman (2019)                     - Mel Gibson, Sean Penn, Eddie Marsan, Natalie Dorme    -   Farhad Safinia                             - Biography, Drama, History,
+Rating - 7.2 - Lethal Weapon 2  (1989)                                 - Mel Gibson, Danny Glover, Joe Pesci, Joss Ackland,    -   Richard Donner                             - Action, Crime, Thriller,
+Rating - 7.1 - Year of Living Dangerously  (1982)                      - Linda Hunt, Mel Gibson, Bembol Roco, Domingo Landi    -   Peter Weir                                 - Drama, Romance, War,
+Rating - 7.1 - We Were Soldiers  (2002)                                - Mel Gibson, Madeleine Stowe, Greg Kinnear, Sam Ell    -   Randall Wallace                            - Action, Drama, History, War,
+Rating - 7.1 - The Year Of Living Dangerously  (1982)                  - Linda Hunt, Mel Gibson, Bembol Roco, Domingo Landi    -   Peter Weir                                 - Drama, Romance, War,
+Rating - 7.1 - Payback  (1999)                                         - Mel Gibson, Gregg Henry, Maria Bello, David Paymer    -   Brian Helgeland                            - Action, Crime, Drama, Thriller,
+AVG =  7.26
+-----------------------------------------------------------------
+77 - ACTOR - Jennifer Lawrence
+-----------------------------------------------------------------
+Rating - 7.9 - X-Men Days of Future Past  (2014)                       - Hugh Jackman, James McAvoy, Michael Fassbender, Je    -   Bryan Singer                               - Action, Adventure, Sci-Fi, Thriller,
+Rating - 7.7 - X-Men First Class  (2011)                               - James McAvoy, Laurence Belcher, Michael Fassbender    -   Matthew Vaughn                             - Action, Adventure, Sci-Fi,
+Rating - 7.5 - The Hunger Games Catching Fire  (2013)                  - Jennifer Lawrence, Liam Hemsworth, Jack Quaid, Tay    -   Francis Lawrence                           - Action, Adventure, Sci-Fi, Thriller,
+Rating - 7.2 - American Hustle  (2013)                                 - Christian Bale, Bradley Cooper, Amy Adams, Jeremy     -   David O. Russell                           - Crime, Drama,
+Rating - 7.2 - Don't Look Up  (2021)                                   - Leonardo DiCaprio, Jennifer Lawrence, Meryl Streep    -   Adam McKay                                 - Comedy, Drama, Sci-Fi,
+Rating - 7.2 - The Hunger Games  (2012)                                - Stanley Tucci, Wes Bentley, Jennifer Lawrence, Wil    -   Gary Ross                                  - Action, Adventure, Sci-Fi, Thriller,
+Rating - 7.1 - Winter's Bone  (2010)                                   - Jennifer Lawrence, Isaiah Stone, Ashlee Thompson,     -   Debra Granik                               - Drama, Mystery,
+Rating - 7.0 - Passengers  (2016)                                      - Jennifer Lawrence, Chris Pratt, Michael Sheen, Lau    -   Morten Tyldum                              - Drama, Romance, Sci-Fi, Thriller,
+Rating - 6.9 - X-Men Apocalypse  (2016)                                - James McAvoy, Michael Fassbender, Jennifer Lawrenc    -   Bryan Singer                               - Action, Adventure, Sci-Fi,
+Rating - 6.6 - The Hunger Games Mockingjay Part 1  (2014)              - Jennifer Lawrence, Josh Hutcherson, Liam Hemsworth    -   Francis Lawrence                           - Action, Adventure, Sci-Fi, Thriller,
+AVG =  7.2299999999999995
+-----------------------------------------------------------------
+78 - ACTOR - Bruce Lee
+-----------------------------------------------------------------
+Rating - 7.6 - Enter The Dragon  (1973)                                - Bruce Lee, John Saxon, Jim Kelly, Ahna Capri, Kien    -   Robert Clouse                              - Action, Crime, Drama, Thriller,
+Rating - 7.2 - Fist of Fury  (1972)                                    - Bruce Lee, Nora Miao, James Tien, Maria Yi, Robert    -   Wei Lo                                     - Action, Drama, Romance, Thriller,
+Rating - 7.2 - The Way of the Dragon  (1972)                           - Bruce Lee, Nora Miao, Chuck Norris, Ping-Ou Wei, C    -   Bruce Lee                                  - Action, Adventure, Comedy, Crime, Drama, Thriller,
+Rating - 6.9 - The Big Boss  (1971)                                    - Bruce Lee, Maria Yi, James Tien, Marilyn Bautista,    -   Wei Lo, Chia-Hsiang Wu                     - Action, Crime, Drama, Thriller,
+AVG =  7.225
+-----------------------------------------------------------------
+79 - ACTOR - Nicolas Cage
+-----------------------------------------------------------------
+Rating - 7.7 - Adaptation  (2002)                                      - Nicolas Cage, Tilda Swinton, Meryl Streep, Chris C    -   Spike Jonze                                - Comedy, Drama,
+Rating - 7.4 - The Rock  (1996)                                        - Sean Connery, Nicolas Cage, Ed Harris, John Spence    -   Michael Bay                                - Action, Adventure, Thriller,
+Rating - 7.3 - Face Off  (1997)                                        - John Travolta, Nicolas Cage, Joan Allen, Alessandr    -   John Woo                                   - Action, Crime, Sci-Fi, Thriller,
+Rating - 7.3 - Raising Arizona  (1987)                                 - Nicolas Cage, Holly Hunter, Trey Wilson, John Good    -   Joel Coen, Ethan Coen                      - Comedy, Crime,
+Rating - 7.3 - Matchstick Men  (2003)                                  - Nicolas Cage, Sam Rockwell, Alison Lohman, Bruce A    -   Ridley Scott                               - Comedy, Crime, Drama, Thriller,
+Rating - 7.2 - Wild at Heart  (1990)                                   - Nicolas Cage, Laura Dern, Willem Dafoe, J.E. Freem    -   David Lynch                                - Comedy, Crime, Drama, Thriller,
+Rating - 7.1 - Moonstruck  (1987)                                      - Cher, Nicolas Cage, Vincent Gardenia, Olympia Duka    -   Norman Jewison                             - Comedy, Drama, Romance,
+Rating - 7.0 - The Unbearable Weight of Massive Talent  (2022)         - Nicolas Cage, Pedro Pascal, Tiffany Haddish, Sharo    -   Tom Gormican                               - Action, Comedy, Crime, Thriller,
+Rating - 7.0 - Pig  (2021)                                             - Nicolas Cage, Alex Wolff, Cassandra Violet, Julia     -   Michael Sarnoski                           - Drama, Mystery,
+Rating - 6.9 - National Treasure  (2004)                               - Nicolas Cage, Diane Kruger, Justin Bartha, Sean Be    -   Jon Turteltaub                             - Action, Adventure, Mystery, Thriller,
+AVG =  7.2200000000000015
+-----------------------------------------------------------------
+80 - ACTOR - Arnold Schwarzenegger
+-----------------------------------------------------------------
+Rating - 8.6 - Terminator 2 Judgment Day  (1991)                       - Arnold Schwarzenegger, Linda Hamilton, Edward Furl    -   James Cameron                              - Action, Sci-Fi,
+Rating - 8.1 - The Terminator  (1984)                                  - Arnold Schwarzenegger, Michael Biehn, Linda Hamilt    -   James Cameron                              - Action, Sci-Fi,
+Rating - 7.8 - Predator  (1987)                                        - Arnold Schwarzenegger, Carl Weathers, Elpidia Carr    -   John McTiernan                             - Action, Adventure, Horror, Sci-Fi,
+Rating - 7.3 - True Lies  (1994)                                       - Arnold Schwarzenegger, Jamie Lee Curtis, Tom Arnol    -   James Cameron                              - Action, Comedy, Thriller,
+Rating - 6.9 - Conan the Barbarian  (1982)                             - Arnold Schwarzenegger, James Earl Jones, Max von S    -   John Milius                                - Action, Adventure, Fantasy,
+Rating - 6.7 - Commando  (1985)                                        - Arnold Schwarzenegger, Rae Dawn Chong, Dan Hedaya,    -   Mark L. Lester                             - Action, Adventure, Thriller,
+Rating - 6.7 - Escape Plan  (2013)                                     - Sylvester Stallone, Arnold Schwarzenegger, Jim Cav    -   Mikael Håfström                            - Action, Thriller,
+Rating - 6.6 - The Expendables 2  (2012)                               - Sylvester Stallone, Jason Statham, Jet Li, Dolph L    -   Simon West                                 - Action, Adventure, Thriller,
+Rating - 6.3 - The Last Stand  (2013)                                  - Arron Shiver, Arnold Schwarzenegger, Titos Menchac    -   Jee-woon Kim                               - Action, Thriller, Western,
+Rating - 6.3 - Terminator 3 - Rise of the Machine  (2003)              - Arnold Schwarzenegger, Nick Stahl, Claire Danes, K    -   Jonathan Mostow                            - Action, Sci-Fi,
+AVG =  7.130000000000001
+-----------------------------------------------------------------
+81 - ACTOR - Tommy Lee Jones
+-----------------------------------------------------------------
+Rating - 8.2 - No Country for Old Men  (2007)                          - Tommy Lee Jones, Javier Bardem, Josh Brolin, Woody    -   Ethan Coen, Joel Coen                      - Crime, Drama, Thriller,
+Rating - 7.8 - The Fugitive  (1993)                                    - Harrison Ford, Tommy Lee Jones, Sela Ward, Juliann    -   Andrew Davis                               - Action, Crime, Drama, Mystery, Thriller,
+Rating - 7.3 - Lincoln  (2012)                                         - Daniel Day-Lewis, Sally Field, David Strathairn, J    -   Steven Spielberg                           - Biography, Drama, History, War,
+Rating - 7.3 - The Three Burials of Melquiades Estrada  (2005)         - Tommy Lee Jones, Barry Pepper, Julio Cesar Cedillo    -   Tommy Lee Jones                            - Adventure, Crime, Drama, Mystery, Western,
+Rating - 7.3 - Man in Black  (1997)                                    - Tommy Lee Jones, Will Smith, Linda Fiorentino, Vin    -   Barry Sonnenfeld                           - Action, Adventure, Comedy, Sci-Fi,
+Rating - 6.9 - Captain America The First Avenger  (2011)               - Chris Evans, Hayley Atwell, Sebastian Stan, Tommy     -   Joe Johnston                               - Action, Adventure, Sci-Fi,
+Rating - 6.8 - Man in Black 3  (2012)                                  - Will Smith, Tommy Lee Jones, Josh Brolin, Jemaine     -   Barry Sonnenfeld                           - Action, Adventure, Comedy, Sci-Fi,
+Rating - 6.6 - Jason Bourne  (2016)                                    - Matt Damon, Tommy Lee Jones, Alicia Vikander, Vinc    -   Paul Greengrass                            - Action, Thriller,
+Rating - 6.5 - Space Cowboys  (2000)                                   - Clint Eastwood, Tommy Lee Jones, Donald Sutherland    -   Clint Eastwood                             - Action, Adventure, Thriller,
+Rating - 6.5 - Double Jeopardy  (1999)                                 - Tommy Lee Jones, Ashley Judd, Benjamin Weir, Jay B    -   Bruce Beresford                            - Crime, Drama, Mystery, Thriller,
+AVG =  7.119999999999999
+-----------------------------------------------------------------
+82 - ACTOR - Johnny Depp
+-----------------------------------------------------------------
+Rating - 8.1 - Platoon  (1986)                                         - Keith David, Forest Whitaker, Francesco Quinn, Kev    -   Oliver Stone                               - Drama, War,
+Rating - 8.1 - Pirates of the Caribbean The Curse of the Black Pearl  (2003)  - Johnny Depp, Geoffrey Rush, Orlando Bloom, Keira K    -   Gore Verbinski                             - Action, Adventure, Fantasy,
+Rating - 7.7 - Donnie Brasco  (1997)                                   - Al Pacino, Johnny Depp, Michael Madsen, Bruno Kirb    -   Mike Newell                                - Biography, Crime, Drama,
+Rating - 7.4 - A Nightmare On Elm Street  (1984)                       - John Saxon, Ronee Blakley, Heather Langenkamp, Ama    -   Wes Craven                                 - Horror,
+Rating - 7.3 - Pirates of the Caribbean Dead Man Chest  (2006)         - Johnny Depp, Orlando Bloom, Keira Knightley, Jack     -   Gore Verbinski                             - Action, Adventure, Fantasy,
+Rating - 7.1 - Pirates of the Caribbean At World End  (2007)           - Johnny Depp, Geoffrey Rush, Orlando Bloom, Keira K    -   Gore Verbinski                             - Action, Adventure, Fantasy,
+Rating - 6.6 - Pirates of the Caribbean On Stranger Tides  (2011)      - Johnny Depp, Penélope Cruz, Geoffrey Rush, Ian McS    -   Rob Marshall                               - Action, Adventure, Fantasy,
+Rating - 6.5 - Pirates of the Caribbean Dead Men Tell No Tales  (2017)  - Johnny Depp, Javier Bardem, Geoffrey Rush, Brenton    -   Joachim Rønning, Espen Sandberg            - Action, Adventure, Fantasy,
+Rating - 6.4 - The Lone Ranger  (2013)                                 - Johnny Depp, Armie Hammer, William Fichtner, Tom W    -   Gore Verbinski                             - Action, Adventure, Western,
+Rating - 5.9 - Waiting for the Barbarians  (2019)                      - Mark Rylance, Johnny Depp, Robert Pattinson, Gana     -   Ciro Guerra                                - Drama,
+AVG =  7.110000000000001
+-----------------------------------------------------------------
+83 - ACTOR - Jeremy Irons
+-----------------------------------------------------------------
+Rating - 8.0 - Zack Snyders Justice League  (2021)                     - Ben Affleck, Henry Cavill, Amy Adams, Gal Gadot, R    -   Zack Snyder                                - Action, Adventure, Fantasy, Sci-Fi,
+Rating - 7.6 - Die Hard 3  (1995)                                      - Bruce Willis, Jeremy Irons, Samuel L. Jackson, Gra    -   John McTiernan                             - Action, Adventure, Thriller,
+Rating - 7.4 - The Mission  (1986)                                     - Robert De Niro, Jeremy Irons, Ray McAnally, Aidan     -   Roland Joffé                               - Adventure, Drama, History,
+Rating - 7.0 - The Merchant of Venice  (2004)                          - Al Pacino, Jeremy Irons, Joseph Fiennes, Lynn Coll    -   Michael Radford                            - Drama, Romance,
+Rating - 6.8 - Inland Empire  (2006)                                   - Karolina Gruszka, Krzysztof Majchrzak, Grace Zabri    -   David Lynch                                - Drama, Fantasy, Mystery, Thriller,
+Rating - 6.5 - The Man in the Iron Mask  (1998)                        - Leonardo DiCaprio, Jeremy Irons, John Malkovich, G    -   Randall Wallace                            - Action, Adventure, Drama,
+Rating - 6.4 - Batman v Superman Dawn of Justice  (2016)               - Ben Affleck, Henry Cavill, Amy Adams, Jesse Eisenb    -   Zack Snyder                                - Action, Adventure, Sci-Fi,
+AVG =  7.1
+-----------------------------------------------------------------
+84 - ACTOR - Susan Sarandon
+-----------------------------------------------------------------
+Rating - 7.5 - Thelma & Louise  (1991)                                 - Susan Sarandon, Geena Davis, Harvey Keitel, Michae    -   Ridley Scott                               - Adventure, Crime, Drama,
+Rating - 7.4 - Cloud Atlas  (2012)                                     - Tom Hanks, Halle Berry, Jim Broadbent, Hugo Weavin    -   Tom Tykwer, Lana Wachowski, Lilly Wachowski   - Drama, Mystery, Sci-Fi,
+Rating - 7.0 - Bull Durham  (1988)                                     - Kevin Costner, Susan Sarandon, Tim Robbins, Trey W    -   Ron Shelton                                - Comedy, Romance, Sport,
+Rating - 6.5 - The Witches of Eastwick  (1987)                         - Jack Nicholson, Cher, Susan Sarandon, Michelle Pfe    -   George Miller                              - Comedy, Fantasy, Horror,
+AVG =  7.1
+-----------------------------------------------------------------
+85 - ACTOR - Tilda Swinton
+-----------------------------------------------------------------
+Rating - 7.7 - Adaptation  (2002)                                      - Nicolas Cage, Tilda Swinton, Meryl Streep, Chris C    -   Spike Jonze                                - Comedy, Drama,
+Rating - 7.5 - Doctor Strange  (2016)                                  - Benedict Cumberbatch, Chiwetel Ejiofor, Rachel McA    -   Scott Derrickson                           - Action, Adventure, Fantasy, Sci-Fi,
+Rating - 7.1 - Snowpiercer  (2013)                                     - Chris Evans, Song Kang-ho, Ed Harris, John Hurt, T    -   Bong Joon Ho                               - Action, Sci-Fi, Thriller,
+Rating - 7.0 - Constantine  (2005)                                     - Keanu Reeves, Rachel Weisz, Shia LaBeouf, Djimon H    -   Francis Lawrence                           - Action, Fantasy, Horror, Mystery,
+Rating - 7.0 - Burn After Reading  (2008)                              - George Clooney, Frances McDormand, Brad Pitt, John    -   Ethan Coen, Joel Coen                      - Comedy, Crime, Drama, Thriller,
+Rating - 6.3 - Hail Caesar  (2016)                                     - Josh Brolin, George Clooney, Alden Ehrenreich, Ral    -   Ethan Coen, Joel Coen                      - Comedy, Drama, Mystery,
+AVG =  7.099999999999999
+-----------------------------------------------------------------
+86 - ACTOR - Charlize Theron
+-----------------------------------------------------------------
+Rating - 8.1 - Mad Max Fury Road  (2015)                               - Tom Hardy, Charlize Theron, Nicholas Hoult, Hugh K    -   George Miller                              - Action, Adventure, Sci-Fi, Thriller,
+Rating - 7.5 - The Devil's Advocate  (1997)                            - Keanu Reeves, Al Pacino, Charlize Theron, Jeffrey     -   Taylor Hackford                            - Drama, Mystery, Thriller,
+Rating - 7.2 - Men Of Honor  (2000)                                    - Robert De Niro, Cuba Gooding Jr., Charlize Theron,    -   George Tillman Jr.                         - Biography, Drama,
+Rating - 7.0 - The Italian Job  (2003)                                 - Mark Wahlberg, Charlize Theron, Donald Sutherland,    -   F. Gary Gray                               - Action, Crime, Thriller,
+Rating - 7.0 - Prometheus  (2012)                                      - Noomi Rapace, Michael Fassbender, Charlize Theron,    -   Ridley Scott                               - Adventure, Mystery, Sci-Fi,
+Rating - 6.8 - Bombshell  (2019)                                       - Charlize Theron, Nicole Kidman, Margot Robbie, Joh    -   Jay Roach                                  - Biography, Drama,
+Rating - 6.7 - Atomic Blonde  (2017)                                   - Charlize Theron, James McAvoy, Eddie Marsan, John     -   David Leitch                               - Action, Thriller,
+Rating - 6.6 - The Old Guard  (2020)                                   - Charlize Theron, KiKi Layne, Matthias Schoenaerts,    -   Gina Prince-Bythewood                      - Action, Thriller,
+Rating - 6.4 - Hancock  (2008)                                         - Will Smith, Charlize Theron, Jason Bateman, Jae He    -   Peter Berg                                 - Action, Drama, Fantasy,
+AVG =  7.033333333333333
+-----------------------------------------------------------------
+87 - ACTOR - Javier Bardem
+-----------------------------------------------------------------
+Rating - 8.2 - No Country for Old Men  (2007)                          - Tommy Lee Jones, Javier Bardem, Josh Brolin, Woody    -   Ethan Coen, Joel Coen                      - Crime, Drama, Thriller,
+Rating - 8.0 - Dune  (2021)                                            - Timothée Chalamet, Rebecca Ferguson, Oscar Isaac,     -   Denis Villeneuve                           - Action, Adventure, Drama, Sci-Fi,
+Rating - 7.8 - Skyfall  (2012)                                         - Daniel Craig, Judi Dench, Javier Bardem, Ralph Fie    -   Sam Mendes                                 - Action, Adventure, Thriller,
+Rating - 7.5 - Collateral  (2004)                                      - Tom Cruise, Jamie Foxx, Jada Pinkett Smith, Mark R    -   Michael Mann                               - Action, Crime, Drama, Thriller,
+Rating - 6.5 - Being the Ricardos  (2021)                              - Nicole Kidman, Javier Bardem, J.K. Simmons, Nina A    -   Aaron Sorkin                               - Biography, Drama,
+Rating - 6.5 - Pirates of the Caribbean Dead Men Tell No Tales  (2017)  - Johnny Depp, Javier Bardem, Geoffrey Rush, Brenton    -   Joachim Rønning, Espen Sandberg            - Action, Adventure, Fantasy,
+Rating - 5.8 - The Gunman  (2015)                                      - Sean Penn, Jasmine Trinca, Javier Bardem, Ray Wins    -   Pierre Morel                               - Action, Adventure, Crime, Thriller,
+Rating - 5.4 - The Counselor  (2013)                                   - Michael Fassbender, Penélope Cruz, Cameron Diaz, J    -   Ridley Scott                               - Crime, Drama, Thriller,
+AVG =  6.9624999999999995
+-----------------------------------------------------------------
+88 - ACTOR - Michelle Pfeiffer
+-----------------------------------------------------------------
+Rating - 8.3 - Scarface  (1983)                                        - Al Pacino, Steven Bauer, Michelle Pfeiffer, Mary E    -   Brian De Palma                             - Crime, Drama,
+Rating - 7.6 - Dangerous Liaisons  (1988)                              - Glenn Close, John Malkovich, Michelle Pfeiffer, Sw    -   Stephen Frears                             - Drama, Romance,
+Rating - 7.2 - The Age of Innocence  (1993)                            - Daniel Day-Lewis, Michelle Pfeiffer, Winona Ryder,    -   Martin Scorsese                            - Drama, Romance,
+Rating - 7.1 - Batman Returns  (1992)                                  - Michael Keaton, Danny DeVito, Michelle Pfeiffer, C    -   Tim Burton                                 - Action, Crime, Fantasy,
+Rating - 7.0 - Ant Man and the Wasp  (2018)                            - Paul Rudd, Evangeline Lilly, Michael Peña, Walton     -   Peyton Reed                                - Action, Adventure, Comedy, Sci-Fi,
+Rating - 6.9 - Ladyhawke  (1985)                                       - Matthew Broderick, Rutger Hauer, Michelle Pfeiffer    -   Richard Donner                             - Adventure, Comedy, Drama, Fantasy,
+Rating - 6.5 - The Witches of Eastwick  (1987)                         - Jack Nicholson, Cher, Susan Sarandon, Michelle Pfe    -   George Miller                              - Comedy, Fantasy, Horror,
+Rating - 6.5 - Dangerous Minds  (1995)                                 - Michelle Pfeiffer, George Dzundza, Courtney B. Van    -   John N. Smith                              - Biography, Drama,
+Rating - 6.2 - Wolf  (1994)                                            - Jack Nicholson, Michelle Pfeiffer, James Spader, K    -   Mike Nichols                               - Drama, Horror, Romance, Thriller,
+Rating - 6.2 - Married to the Mob  (1988)                              - Paul Lazar, Alec Baldwin, Captain Haggerty, Marlen    -   Jonathan Demme                             - Comedy, Crime, Romance,
+AVG =  6.95
+-----------------------------------------------------------------
+89 - ACTOR - Jim Carrey
+-----------------------------------------------------------------
+Rating - 8.3 - Eternal Sunshine of the Spotless Mind  (2004)           - Jim Carrey, Kate Winslet, Gerry Robert Byrne, Elij    -   Michel Gondry                              - Drama, Romance, Sci-Fi,
+Rating - 8.2 - The Truman Show  (1998)                                 - Jim Carrey, Laura Linney, Noah Emmerich, Natascha     -   Peter Weir                                 - Comedy, Drama,
+Rating - 6.9 - Liar Liar  (1997)                                       - Jim Carrey, Maura Tierney, Justin Cooper, Cary Elw    -   Tom Shadyac                                - Comedy, Fantasy,
+Rating - 6.5 - Sonic the Hedgehog  (2020)                              - Ben Schwartz, James Marsden, Jim Carrey, Tika Sump    -   Jeff Fowler                                - Action, Adventure, Comedy, Family, Fantasy, Sci-Fi,
+Rating - 6.4 - Peggy Sue Got Married  (1986)                           - Kathleen Turner, Nicolas Cage, Barry Miller, Cathe    -   Francis Ford Coppola                       - Comedy, Drama, Fantasy, Romance,
+Rating - 5.4 - Batman Forever  (1995)                                  - Val Kilmer, Tommy Lee Jones, Jim Carrey, Nicole Ki    -   Joel Schumacher                            - Action, Adventure,
+AVG =  6.949999999999999
+-----------------------------------------------------------------
+90 - ACTOR - Julia Roberts
+-----------------------------------------------------------------
+Rating - 7.4 - Erin Brockovich  (2000)                                 - Julia Roberts, David Brisbin, Dawn Didawick, Alber    -   Steven Soderbergh                          - Biography, Drama,
+Rating - 7.2 - Notting Hill  (1999)                                    - Julia Roberts, Hugh Grant, Richard McCabe, Rhys If    -   Roger Michell                              - Comedy, Drama, Romance,
+Rating - 7.1 - Pretty Woman  (1990)                                    - Richard Gere, Julia Roberts, Ralph Bellamy, Jason     -   Garry Marshall                             - Comedy, Romance,
+Rating - 7.0 - Charlie Wilson's War  (2007)                            - Tom Hanks, Amy Adams, Julia Roberts, Philip Seymou    -   Mike Nichols                               - Biography, Comedy, Drama, History,
+Rating - 6.7 - Conspiracy Theory  (1997)                               - Mel Gibson, Julia Roberts, Patrick Stewart, Cylk C    -   Richard Donner                             - Action, Mystery, Thriller,
+Rating - 6.7 - Ben Is Back  (2018)                                     - Julia Roberts, Lucas Hedges, Courtney B. Vance, Ka    -   Peter Hedges                               - Drama,
+Rating - 6.5 - Oceans Twelve  (2004)                                   - Brad Pitt, Catherine Zeta-Jones, George Clooney, E    -   Steven Soderbergh                          - Crime, Thriller,
+AVG =  6.942857142857144
+-----------------------------------------------------------------
+91 - ACTOR - Sean Penn
+-----------------------------------------------------------------
+Rating - 7.9 - Carlito's Way  (1993)                                   - Al Pacino, Sean Penn, Penelope Ann Miller, John Le    -   Brian De Palma                             - Crime, Drama, Thriller,
+Rating - 7.9 - Mystic River  (2003)                                    - Sean Penn, Tim Robbins, Kevin Bacon, Laurence Fish    -   Clint Eastwood                             - Crime, Drama, Mystery, Thriller,
+Rating - 7.2 - The Professor and the Madman (2019)                     - Mel Gibson, Sean Penn, Eddie Marsan, Natalie Dorme    -   Farhad Safinia                             - Biography, Drama, History,
+Rating - 7.1 - Casualties of War  (1989)                               - Michael J. Fox, Sean Penn, Don Harvey, John C. Rei    -   Brian De Palma                             - Action, Crime, Drama, War,
+Rating - 6.8 - The Tree of Life  (2011)                                - Brad Pitt, Sean Penn, Jessica Chastain, Hunter McC    -   Terrence Malick                            - Drama, Fantasy,
+Rating - 6.7 - Gangster Squad  (2013)                                  - Sean Penn, Holt McCallany, Wade Williams, James La    -   Ruben Fleischer                            - Action, Crime, Drama, Thriller,
+Rating - 6.1 - We're No Angels  (1989)                                 - Robert De Niro, Sean Penn, Demi Moore, Hoyt Axton,    -   Neil Jordan                                - Comedy, Crime,
+Rating - 5.8 - The Gunman  (2015)                                      - Sean Penn, Jasmine Trinca, Javier Bardem, Ray Wins    -   Pierre Morel                               - Action, Adventure, Crime, Thriller,
+AVG =  6.9375
+-----------------------------------------------------------------
+92 - ACTOR - Nicole Kidman
+-----------------------------------------------------------------
+Rating - 7.6 - The Others  (2001)                                      - Nicole Kidman, Fionnula Flanagan, Christopher Eccl    -   Alejandro Amenábar                         - Horror, Mystery, Thriller,
+Rating - 7.5 - The Hours  (2002)                                       - Nicole Kidman, Julianne Moore, Meryl Streep, Steph    -   Stephen Daldry                             - Drama, Romance,
+Rating - 7.5 - Eyes Wide Shut  (1999)                                  - Tom Cruise, Nicole Kidman, Madison Eginton, Jackie    -   Stanley Kubrick                            - Drama, Mystery, Thriller,
+Rating - 7.2 - Cold Mountain  (2003)                                   - Jude Law, Nicole Kidman, Renée Zellweger, Eileen A    -   Anthony Minghella                          - Adventure, Drama, History, Romance, War,
+Rating - 6.8 - To Die For  (1995)                                      - Nicole Kidman, Matt Dillon, Joaquin Phoenix, Casey    -   Gus Van Sant                               - Comedy, Crime, Drama, Thriller,
+Rating - 6.8 - Aquaman  (2018)                                         - Jason Momoa, Amber Heard, Willem Dafoe, Patrick Wi    -   James Wan                                  - Action, Adventure, Fantasy, Sci-Fi,
+Rating - 6.8 - Bombshell  (2019)                                       - Charlize Theron, Nicole Kidman, Margot Robbie, Joh    -   Jay Roach                                  - Biography, Drama,
+Rating - 6.8 - Stoker  (2013)                                          - Mia Wasikowska, Nicole Kidman, David Alford, Matth    -   Park Chan-wook                             - Drama, Thriller,
+Rating - 6.5 - Being the Ricardos  (2021)                              - Nicole Kidman, Javier Bardem, J.K. Simmons, Nina A    -   Aaron Sorkin                               - Biography, Drama,
+Rating - 5.4 - Batman Forever  (1995)                                  - Val Kilmer, Tommy Lee Jones, Jim Carrey, Nicole Ki    -   Joel Schumacher                            - Action, Adventure,
+AVG =  6.889999999999999
+-----------------------------------------------------------------
+93 - ACTOR - Nick Nolte
+-----------------------------------------------------------------
+Rating - 8.2 - Warrior  (2011)                                         - Joel Edgerton, Tom Hardy, Nick Nolte, Jennifer Mor    -   Gavin O'Connor                             - Action, Drama, Sport,
+Rating - 8.1 - Hotel Rwanda  (2004)                                    - Xolani Mali, Don Cheadle, Desmond Dube, Hakeem Kae    -   Terry George                               - Biography, Drama, History, War,
+Rating - 7.3 - Cape Fear  (1991)                                       - Robert De Niro, Nick Nolte, Jessica Lange, Juliett    -   Martin Scorsese                            - Crime, Thriller,
+Rating - 7.2 - Peaceful Warrior  (2006)                                - Scott Mechlowicz, Nick Nolte, Amy Smart, Tim DeKay    -   Victor Salva                               - Drama, Romance, Sport,
+Rating - 6.9 - 48 Hrs  (1982)                                          - Nick Nolte, Eddie Murphy, Annette O'Toole, Frank M    -   Walter Hill                                - Action, Comedy, Crime, Drama, Thriller,
+Rating - 6.5 - Q and A  (1990)                                         - Nick Nolte, Timothy Hutton, Armand Assante, Patric    -   Sidney Lumet                               - Crime, Drama, Thriller,
+Rating - 6.2 - Parker  (2013)                                          - Jason Statham, Jennifer Lopez, Michael Chiklis, We    -   Taylor Hackford                            - Action, Crime, Thriller,
+Rating - 5.8 - Noah  (2014)                                            - Russell Crowe, Jennifer Connelly, Ray Winstone, An    -   Darren Aronofsky                           - Action, Adventure, Drama,
+Rating - 5.6 - Hulk  (2003)                                            - Eric Bana, Jennifer Connelly, Sam Elliott, Josh Lu    -   Ang Lee                                    - Action, Sci-Fi,
+AVG =  6.866666666666666
+-----------------------------------------------------------------
+94 - ACTOR - Jessica Chastain
+-----------------------------------------------------------------
+Rating - 8.0 - The Martian  (2015)                                     - Matt Damon, Jessica Chastain, Kristen Wiig, Jeff D    -   Ridley Scott                               - Adventure, Drama, Sci-Fi,
+Rating - 7.4 - Molly's Game  (2017)                                    - Jessica Chastain, Idris Elba, Kevin Costner, Micha    -   Aaron Sorkin                               - Biography, Crime, Drama, Sport,
+Rating - 7.4 - Zero Dark Thirty  (2012)                                - Jason Clarke, Reda Kateb, Jessica Chastain, Kyle C    -   Kathryn Bigelow                            - Drama, History, Thriller, War,
+Rating - 7.0 - A Most Violent Year  (2014)                             - Oscar Isaac, Elyes Gabel, Jessica Chastain, Lorna     -   J.C. Chandor                               - Action, Crime, Drama, Thriller,
+Rating - 6.8 - The Tree of Life  (2011)                                - Brad Pitt, Sean Penn, Jessica Chastain, Hunter McC    -   Terrence Malick                            - Drama, Fantasy,
+Rating - 5.7 - Dark Phoenix  (2019)                                    - James McAvoy, Michael Fassbender, Jennifer Lawrenc    -   Simon Kinberg                              - Action, Adventure, Sci-Fi,
+Rating - 5.4 - Ava  (2020)                                             - Jessica Chastain, John Malkovich, Common, Geena Da    -   Tate Taylor                                - Action, Drama, Thriller,
+AVG =  6.814285714285715
+-----------------------------------------------------------------
+95 - ACTOR - Ryan Reynolds
+-----------------------------------------------------------------
+Rating - 8.0 - Deadpool  (2016)                                        - Ryan Reynolds, Karan Soni, Ed Skrein, Michael Beny    -   Tim Miller                                 - Action, Adventure, Comedy, Sci-Fi,
+Rating - 7.7 - Deadpool 2  (2018)                                      - Ryan Reynolds, Josh Brolin, Morena Baccarin, Julia    -   David Leitch                               - Action, Adventure, Comedy, Sci-Fi,
+Rating - 7.1 - Free Guy  (2021)                                        - Ryan Reynolds, Jodie Comer, Lil Rel Howery, Joe Ke    -   Shawn Levy                                 - Action, Adventure, Comedy, Fantasy, Sci-Fi,
+Rating - 6.7 - The Adam Project  (2022)                                - Ryan Reynolds, Walker Scobell, Mark Ruffalo, Jenni    -   Shawn Levy                                 - Action, Adventure, Comedy, Sci-Fi,
+Rating - 6.6 - Life  (2017)                                            - Jake Gyllenhaal, Ryan Reynolds, Rebecca Ferguson,     -   Daniel Espinosa                            - Horror, Sci-Fi, Thriller,
+Rating - 6.5 - X-Men 4 Origins Wolverine  (2009)                       - Hugh Jackman, Liev Schreiber, Danny Huston, Will.i    -   Gavin Hood                                 - Action, Sci-Fi,
+Rating - 6.3 - The Change-Up  (2011)                                   - Ryan Reynolds, Jason Bateman, Leslie Mann, Olivia     -   David Dobkin                               - Comedy, Fantasy,
+Rating - 6.3 - Red Notice  (2021)                                      - Dwayne Johnson, Ryan Reynolds, Gal Gadot, Ritu Ary    -   Rawson Marshall Thurber                    - Action, Comedy, Thriller,
+Rating - 6.1 - 6 Underground  (2019)                                   - Ryan Reynolds, Mélanie Laurent, Manuel Garcia-Rulf    -   Michael Bay                                - Action, Thriller,
+Rating - 6.1 - The Hitmans Wifes Bodyguard  (2021)                     - Ryan Reynolds, Stewart Alexander, Samuel L. Jackso    -   Patrick Hughes                             - Action, Comedy, Crime, Thriller,
+AVG =  6.739999999999999
+-----------------------------------------------------------------
+96 - ACTOR - Helen Mirren
+-----------------------------------------------------------------
+Rating - 6.9 - The Duke  (2020)                                        - Jim Broadbent, Heather Craney, Stephen Rashbrook,     -   Roger Michell                              - Biography, Comedy, Drama,
+Rating - 6.7 - The Good Liar  (2019)                                   - Helen Mirren, Ian McKellen, Russell Tovey, Jim Car    -   Bill Condon                                - Crime, Drama, Mystery, Thriller,
+Rating - 6.6 - Red 2  (2013)                                           - Bruce Willis, John Malkovich, Mary-Louise Parker,     -   Dean Parisot                               - Action, Comedy, Crime, Thriller,
+AVG =  6.733333333333334
+-----------------------------------------------------------------
+97 - ACTOR - Vince Vaughn
+-----------------------------------------------------------------
+Rating - 7.1 - Brawl in Cell Block 99  (2017)                          - Vince Vaughn, Jennifer Carpenter, Don Johnson, Udo    -   S. Craig Zahler                            - Action, Crime, Drama, Thriller,
+Rating - 6.9 - Dragged Across Concrete  (2018)                         - Mel Gibson, Vince Vaughn, Tory Kittles, Michael Ja    -   S. Craig Zahler                            - Action, Thriller,
+Rating - 6.5 - Jurassic Park II The Lost World  (1997)                 - Jeff Goldblum, Julianne Moore, Pete Postlethwaite,    -   Steven Spielberg                           - Action, Adventure, Sci-Fi,
+Rating - 6.0 - Arkansas  (2020)                                        - Liam Hemsworth, Jacob Zachar, Patrick Muldoon, Cla    -   Clark Duke                                 - Crime, Thriller,
+AVG =  6.625
+-----------------------------------------------------------------
+98 - ACTOR - Ava Gardner
+-----------------------------------------------------------------
+Rating - 6.6 - Mogambo  (1953)                                         - Clark Gable, Ava Gardner, Grace Kelly, Donald Sind    -   John Ford                                  - Adventure, Drama, Romance,
+AVG =  6.6

@@ -1266,8 +1266,8 @@ def reprocessFolderIMDBData(folderName):
 
 #copyDirectors(genresFolders)
 
-#printActorsStatistics()
-printDirectorsStatistics()
+printActorsStatistics()
+#printDirectorsStatistics()
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
 #folderStatistics("Z:\Movies\FILMOVI\_1970's")
