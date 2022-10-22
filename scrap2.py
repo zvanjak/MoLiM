@@ -1165,7 +1165,7 @@ def printDirectorsStatistics():
     director = tup[0]
     ordNum += 1
     print("-----------------------------------------------------------------")
-    print("{0} - DIRECTOR - {1}".format(ordNum+1, director) )
+    print("{0} - DIRECTOR - {1}".format(ordNum, director) )
     print("-----------------------------------------------------------------")
 
     listMovies = root.getMoviesWithRatingHigherThanWithGivenDirector(5.0, director)
