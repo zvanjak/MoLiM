@@ -29,7 +29,7 @@ directorsFolders = [ "Z:\Movies\FILMOVI\__Akira Kurosawa",       \
 directorsList = [ "Akira Kurosawa",     \
                   "Alfred Hitchcock",   \
                   "Christopher Nolan",  \
-                  "Coen brothers",      \
+                  "Coen",      \
                   "John Ford",          \
                   "Martin Scorsese",    \
                   "Quentin Tarantino",  \
@@ -1267,7 +1267,7 @@ def reprocessFolderIMDBData(folderName):
 #copyDirectors(genresFolders)
 
 #printActorsStatistics()
-#printDirectorsStatistics()
+printDirectorsStatistics()
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
 #folderStatistics("Z:\Movies\FILMOVI\_1970's")
@@ -1277,7 +1277,8 @@ def reprocessFolderIMDBData(folderName):
 
 #printBigFiles()
 
-processFolder("E:\DONE")
+#processFolder("E:\DONE")
+#processFolder("Z:\Movies\FILMOVI\_____GOOD DONE")
 
 #processListOfFolders( ("Z:\Movies\FILMOVI\_____GOOD DONE\Denis Vilenueve",          \
 #                       "Z:\Movies\FILMOVI\_____GOOD DONE\Humphrey Bogart",      \
