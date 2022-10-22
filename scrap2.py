@@ -1178,7 +1178,7 @@ def printActorsStatistics():
   seriesFolders = getSeriesFolderNames()
   listActors = getMiscActorsList() + actorsList
   listActors.sort()
-  root.loadDataFromListOfFolders(actorsFolders + genresFolders + decadesFolders + directorsFolders + ["E:\DONE", "Z:\Movies\FILMOVI\_____GOOD DONE"]) # + seriesFolders) 
+  root.loadDataFromListOfFolders(actorsFolders + genresFolders + decadesFolders + directorsFolders + ["E:\DONE", "Z:\Movies\FILMOVI\_____GOOD DONE"] + seriesFolders) 
 
   tuplesList = []
 
