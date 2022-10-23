@@ -18,7 +18,7 @@ class FolderWithMovies(object):
       if movieFolderName.find("IMDB") != -1:
         (imdb_name, year_str) = fileOperations.getNameYearFromNameWithIMDB(movieFolderName)
       
-        if doesFilmDataHasMovieID(self.name, movieFolderName, imdb_name, int(year_str)) == True :
+        if fileOperations.doesFilmDataHasMovieID(self.name, movieFolderName, imdb_name, int(year_str)) == True :
           movie_data = fileOperations.loadIMDBMovieDataFromFilmData(self.name, movieFolderName, imdb_name, int(year_str))
 
           self.movies.append(movie_data)

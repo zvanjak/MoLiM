@@ -1,19 +1,8 @@
-﻿from re import search
-from shutil import move
-from sys import orig_argv
-from typing import Tuple
-from xmlrpc.client import Boolean
-from imdb import Cinemagoer
-
-from datetime import date
-
-import time
+﻿import time
 import random
 import os
-import tkinter
 
 import fileOperations 
-import IMDBMovieData 
 import imdbAccess
 import FolderWithMovies
 import RootFolder 
@@ -24,12 +13,11 @@ import reports
 
 
 def printDirectorsStatistics():
-  root = RootFolder("Directors")
-  seriesFolders = getSeriesFolderNames()
-  listDirectors = getMiscDirectorsList() + directorsList
+  root = RootFolder.RootFolder("Directors")
+  seriesFolders = myFolders.getSeriesFolderNames()
+  listDirectors = myFolders.getMiscDirectorsList() + myFolders.directorsList
   listDirectors.sort()
-#  root.loadDataFromListOfFolders(directorsFolders + actorsFolders + genresFolders + decadesFolders +  seriesFolders) 
-  root.loadDataFromListOfFolders(actorsFolders + genresFolders + decadesFolders + directorsFolders + ["E:\DONE", "Z:\Movies\FILMOVI\_____GOOD DONE"] + seriesFolders) 
+  root.loadDataFromListOfFolders(myFolders.actorsFolders + myFolders.genresFolders + myFolders.decadesFolders + myFolders.directorsFolders + ["E:\DONE", "Z:\Movies\FILMOVI\_____GOOD DONE"] + seriesFolders) 
 
   tuplesList = []
 
@@ -57,15 +45,15 @@ def printDirectorsStatistics():
 
     listMovies = root.getMoviesWithRatingHigherThanWithGivenDirector(5.0, director)
     listMovies.sort(key=lambda x: x.rating, reverse=True)
-    printMoviesList(listMovies[0:10])
+    IMDBMovieData.printMoviesList(listMovies[0:10])
     print("AVG = ", tup[1])
 
 def printActorsStatistics():
-  root = RootFolder("Other actors")
-  seriesFolders = getSeriesFolderNames()
-  listActors = getMiscActorsList() + actorsList
+  root = RootFolder.RootFolder("Other actors")
+  seriesFolders = myFolders.getSeriesFolderNames()
+  listActors = myFolders.getMiscActorsList() + myFolders.actorsList
   listActors.sort()
-  root.loadDataFromListOfFolders(actorsFolders + genresFolders + decadesFolders + directorsFolders + ["E:\DONE", "Z:\Movies\FILMOVI\_____GOOD DONE"] + seriesFolders) 
+  root.loadDataFromListOfFolders(myFolders.actorsFolders + myFolders.genresFolders + myFolders.decadesFolders + myFolders.directorsFolders + ["E:\DONE", "Z:\Movies\FILMOVI\_____GOOD DONE"] + seriesFolders) 
 
   tuplesList = []
 
@@ -93,13 +81,13 @@ def printActorsStatistics():
 
     listMovies = root.getMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
     listMovies.sort(key=lambda x: x.rating, reverse=True)
-    printMoviesList(listMovies[0:10])
+    IMDBMovieData.printMoviesList(listMovies[0:10])
     print("AVG = ", tup[1])
 
 
 #statistics.printRootDecadesStatistics("Z:\Movies\FILMOVI")
 
-statistics.rootFolderStatistics("Z:\Movies\FILMOVI")
+#statistics.rootFolderStatistics("Z:\Movies\FILMOVI")
 #statistics.folderStatistics("Z:\Movies\FILMOVI\_1970's")
 #statistics.printBigFiles()
 
@@ -109,17 +97,15 @@ statistics.rootFolderStatistics("Z:\Movies\FILMOVI")
 #reports.rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
 #reports.rootFolderReportNotDone("Z:\Movies\FILMOVI")
 
-
-
-#reprocessFolderIMDBData("Z:\Movies\FILMOVI\_Batman")
-#copyDirectors(genresFolders)
-
-#movie = fetchMovieDataByMovieID("Good Will Hunting", "0119217")
-
+#movie = imdbAccess.fetchMovieDataByMovieID("Good Will Hunting", "0119217")
 
 #printActorsStatistics()
 #printDirectorsStatistics()
 
+
+
+#reprocessFolderIMDBData("Z:\Movies\FILMOVI\_Batman")
+#copyDirectors(genresFolders)
 
 
 #processListOfFolders( ("Z:\Movies\FILMOVI\_____GOOD DONE\Denis Vilenueve",          \
