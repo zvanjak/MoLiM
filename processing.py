@@ -120,3 +120,53 @@ def rootFolderRecheckDataWithIMDB(rootFolderName):
 
   for folderName in rootSubFolders:
     folderRecheckDataWithIMDB(folderName)
+
+
+
+def copyDirectors(foldersList):
+  root = RootFolder("Copy")
+  listDirectors = getMiscDirectorsList() + directorsList
+  listDirectors.sort()
+  
+  for folder in foldersList:
+    print("--------------------------------------------")
+    print(folder)
+    print("--------------------------------------------")
+
+    folderObj = FolderWithMovies(folder)
+    folderObj.loadData()
+
+    for director in listDirectors:
+      listMovies = folderObj.getMoviesWithRatingHigherThanWithGivenDirector(5.0, director)
+      if len(listMovies) > 0:
+        print(director)
+        printMoviesList(listMovies)
+      #for movie in listMovies:
+        # treba mi lista foldera za svakog directora
+        #print("FROM - ")
+
+
+def reprocessFolderIMDBData(folderName):
+  print("------------------------------------------")
+  print("------", folderName, "------")
+  print("------------------------------------------")
+
+  movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
+
+  for movieFolderName in movieSubFolders:
+    if movieFolderName.find("IMDB") != -1:
+      print(movieFolderName)
+
+      (searchMovieName, year) = getNameYearFromNameWithIMDB(movieFolderName)
+
+      movieID = getMovieIDFromFilmData(folderName, movieFolderName, searchMovieName, year)
+
+      if movieID != None :
+        print("Processing: " + searchMovieName, "  (", year, ")")
+        
+        movie_data = imdbAccess.fetchMovieDataByMovieID(searchMovieName, movieID)
+
+        if movie_data.name != "":
+          saveTXTWithMovieData(movie_data, folderName, movieFolderName)
+
+        time.sleep(2 + random.randrange(0,2))
