@@ -12,6 +12,11 @@ import random
 
 import IMDBMovieData
 
+
+# create an instance of the Cinemagoer class
+ia = Cinemagoer()
+
+
 # fetchMovieData(searchMovieName, releaseYear)
 def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
   movie_data = IMDBMovieData.IMDBMovieData(searchMovieName)

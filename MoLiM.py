@@ -17,115 +17,9 @@ import IMDBMovieData
 import imdbAccess
 import FolderWithMovies
 import RootFolder 
+import myFolders 
+import processing 
 
-# create an instance of the Cinemagoer class
-ia = Cinemagoer()
-
-
-def processFolder(folderName):
-  print("------------------------------------------")
-  print("------", folderName, "------")
-  print("------------------------------------------")
-
-  movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
-
-  for movieFolderName in movieSubFolders:
-    if movieFolderName.find("IMDB") == -1:
-      print(movieFolderName)
-
-      (searchMovieName, year) = getMovieNameFromFolder(movieFolderName)
-
-      movie_data = imdbAccess.fetchMovieData(searchMovieName, year)
-    
-      if movie_data.name != "":
-        saveMovieDataAndRenameFolder(movie_data,folderName,movieFolderName)
-
-def processListOfFolders(foldersList):
-  for folderName in foldersList:
-    print("------------------------------------------")
-    print("------", folderName, "------")
-    print("------------------------------------------")
-
-    movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
-
-    for movieFolderName in movieSubFolders:
-      if movieFolderName.find("IMDB") == -1:
-        print(movieFolderName)
-
-        (searchMovieName, year) = getMovieNameFromFolder(movieFolderName)
-
-        movie_data = imdbAccess.fetchMovieData(searchMovieName, year)
-    
-        if movie_data.name != "":
-          saveMovieDataAndRenameFolder(movie_data,folderName,movieFolderName)
-
-# Rechecking IMDB data
-def folderRecheckDataWithIMDB(folderName):
-  print("------", folderName, "------")
-  print("------------------------------------------")
-
-  movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
-
-  for movieFolderName in movieSubFolders:
-    if movieFolderName.find("IMDB") != -1:
-      ind1 = movieFolderName.find("(")
-      ind2 = movieFolderName.find(")")
-      imdb_name_raw = movieFolderName[0:ind1-1]
-      if imdb_name_raw.startswith("zzz"):
-        imdb_name1 = movieFolderName[4:ind1-1]
-      else:
-        imdb_name1 = imdb_name_raw
-      imdb_name = imdb_name1.strip("_")
-      year_str  = movieFolderName[ind1+1:ind2]
-      
-      # TODO - provjeriti ima li movieID,ako ima, onda nista
-      if doesFilmDataHasMovieID(folderName, movieFolderName, imdb_name, int(year_str)) :
-        continue
-
-      print("-----------------------------------------------------")
-      print("\nReal movie name: " + imdb_name)
-      print("Year           : " + year_str)
-      movie_data = imdbAccess.fetchMovieData(imdb_name, int(year_str))
-
-      if movie_data.name == "":
-        print("SLEEPING 5-10 seconds :(((((")
-        time.sleep(5 + random.randrange(0,5))
-      else:
-        # produce novi naziv direktorija
-        newDirName = getMovieFolderNameFromMovieData(movie_data)
-
-        # usporedi s movieFileName
-        if newDirName != movieFolderName:
-          print("AHAAAA")
-          print(newDirName)
-          print(movieFolderName)
-
-          # formirati TXT datoteku s podacima
-          saveTXTWithMovieData(movie_data, folderName, movieFolderName)
-
-          # i sad idemo preimenovati direktorij
-          origDir = folderName + "\\" + movieFolderName
-          destDir = folderName + "\\" + newDirName
-
-          # provjeriti da li već postoji dest dir
-          if os.path.isdir(destDir):
-            print("\n\nDESTINATION DIR ALREADY EXISTS!!!!!!\n\n")
-          else:
-            print("RENAMING - ", origDir, destDir)
-            os.rename(origDir, destDir)
-        else:
-          saveTXTWithMovieData(movie_data, folderName, movieFolderName)
-
-
-        time.sleep(5 + random.randrange(0,5))
-
-def rootFolderRecheckDataWithIMDB(rootFolderName):
-  print("------", rootFolderName, "------")
-  
-  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
-
-  for folderName in rootSubFolders:
-    folderRecheckDataWithIMDB(folderName)
 
 # Folder statistics
 #region  
@@ -460,8 +354,6 @@ printRootDecadesStatistics("Z:\Movies\FILMOVI")
 
 #movie = fetchMovieDataByMovieID("Good Will Hunting", "0119217")
 
-#print(movie)
-
 #copyDirectors(genresFolders)
 
 #printActorsStatistics()
@@ -501,43 +393,3 @@ printRootDecadesStatistics("Z:\Movies\FILMOVI")
 
 #for director in directorsList:
 #  root.printMoviesWithRatingHigherThanWithGivenDirector(5.0, director)
-
-
-# TODO
-# getAllMoviesByActor
-# getAllMoviesByDirector
-# getAllMoviesInGenre
-
-# vidjeti za dodati MetaCritic i Tomatoes rating
-# dodati konstante na pocetku
-
-# copy empty folder names - 
-#   proći kroz sve Genre direktorije
-#     uzeti movieFolder
-#     ucitati filmData
-#     proci kroz directors list
-#       ako je rezirao
-#     proci kroz actors list
-#     
-#   Directors -> Actors, po godinama
-
-# doesContainMovie za folder
-
-# statistike po budžetu - najskuplji, najveći cumulative gross
-
-# statistike imdb top 250 - koji mi fale
-
-# pocistiti file errors, RARBG.txt, i not mirror
-
-# DONE -------------------------------------------------------
-# statistika - koji se sve ne slažu underscore s ocjenom
-# provjeriti da li postoji movieID
-# dodati podatke o budgetu i zaradi
-# dodati awards - Best Picture Osar
-# writer, producer
-# dodati person id
-# proći kroz sve IMDB, i provjeriti da li se naziv direktorija slaže, s onim kako bi sada bilo
-# ucitavanje podataka o filmu iz Film data
-# analiza velicine direktorija (a mozda ima i vise verzija!)
-#   ispis manjih od 2 Gb
-

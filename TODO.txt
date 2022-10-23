@@ -1,0 +1,40 @@
+﻿
+
+# TODO
+# getAllMoviesByActor
+# getAllMoviesByDirector
+# getAllMoviesInGenre
+
+# vidjeti za dodati MetaCritic i Tomatoes rating
+# dodati konstante na pocetku
+
+# copy empty folder names - 
+#   proći kroz sve Genre direktorije
+#     uzeti movieFolder
+#     ucitati filmData
+#     proci kroz directors list
+#       ako je rezirao
+#     proci kroz actors list
+#     
+#   Directors -> Actors, po godinama
+
+# doesContainMovie za folder
+
+# statistike po budžetu - najskuplji, najveći cumulative gross
+
+# statistike imdb top 250 - koji mi fale
+
+# pocistiti file errors, RARBG.txt, i not mirror
+
+# DONE -------------------------------------------------------
+# statistika - koji se sve ne slažu underscore s ocjenom
+# provjeriti da li postoji movieID
+# dodati podatke o budgetu i zaradi
+# dodati awards - Best Picture Osar
+# writer, producer
+# dodati person id
+# proći kroz sve IMDB, i provjeriti da li se naziv direktorija slaže, s onim kako bi sada bilo
+# ucitavanje podataka o filmu iz Film data
+# analiza velicine direktorija (a mozda ima i vise verzija!)
+#   ispis manjih od 2 Gb
+
