@@ -1,4 +1,5 @@
 ﻿from re import search
+from shutil import move
 from sys import orig_argv
 from typing import Tuple
 from xmlrpc.client import Boolean
@@ -9,8 +10,9 @@ from datetime import date
 import time
 import random
 import os
-
+import tkinter
  
+
 otherActorsFolder = "Z:\Movies\FILMOVI\___00_Actors_others"
 otherDirectorsFolder = "Z:\Movies\FILMOVI\__00_Directors_others"
 
@@ -1172,7 +1174,7 @@ def printDirectorsStatistics():
     listMovies.sort(key=lambda x: x.rating, reverse=True)
     printMoviesList(listMovies[0:10])
     print("AVG = ", tup[1])
- 
+
 def printActorsStatistics():
   root = RootFolder("Other actors")
   seriesFolders = getSeriesFolderNames()
@@ -1208,7 +1210,29 @@ def printActorsStatistics():
     listMovies.sort(key=lambda x: x.rating, reverse=True)
     printMoviesList(listMovies[0:10])
     print("AVG = ", tup[1])
- 
+
+
+def printDecadesStatistics(folderName):
+  print("------------------------------------------")
+  print("------", folderName, "------")
+  print("------------------------------------------")
+
+  movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
+
+  decadeCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  
+  for movieFolderName in movieSubFolders:
+    if movieFolderName.find("IMDB") != -1:
+      (searchMovieName, year) = getNameYearFromNameWithIMDB(movieFolderName)
+
+      decade = int(int(year) / 10) - 192
+      decadeCount[decade] += 1
+
+  decadeStart = 1920
+  for dec in decadeCount:
+    print("Decade {0} - {1} : {2}".format(decadeStart, decadeStart + 10, dec))
+    decadeStart += 10
+
 def copyDirectors(foldersList):
   root = RootFolder("Copy")
   listDirectors = getMiscDirectorsList() + directorsList
@@ -1258,6 +1282,7 @@ def reprocessFolderIMDBData(folderName):
         time.sleep(2 + random.randrange(0,2))
 
 
+printDecadesStatistics("Z:\Movies\FILMOVI\_1960's")
 #reprocessFolderIMDBData("Z:\Movies\FILMOVI\_Batman")
 
 #movie = fetchMovieDataByMovieID("Good Will Hunting", "0119217")
@@ -1266,7 +1291,7 @@ def reprocessFolderIMDBData(folderName):
 
 #copyDirectors(genresFolders)
 
-printActorsStatistics()
+#printActorsStatistics()
 #printDirectorsStatistics()
 
 #rootFolderStatistics("Z:\Movies\FILMOVI")
