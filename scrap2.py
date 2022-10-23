@@ -1233,6 +1233,30 @@ def printDecadesStatistics(folderName):
     print("Decade {0} - {1} : {2}".format(decadeStart, decadeStart + 10, dec))
     decadeStart += 10
 
+
+def printRootDecadesStatistics(rootFolderName):
+  print("------", rootFolderName, "------")
+  
+  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
+
+  decadeCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  
+  for folderName in rootSubFolders:
+    print(folderName)
+    movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
+
+    for movieFolderName in movieSubFolders:
+      if movieFolderName.find("IMDB") != -1:
+        (searchMovieName, year) = getNameYearFromNameWithIMDB(movieFolderName)
+
+        decade = int(int(year) / 10) - 192
+        decadeCount[decade] += 1
+
+  decadeStart = 1920
+  for dec in decadeCount:
+    print("Decade {0} - {1} : {2}".format(decadeStart, decadeStart + 10, dec))
+    decadeStart += 10
+
 def copyDirectors(foldersList):
   root = RootFolder("Copy")
   listDirectors = getMiscDirectorsList() + directorsList
@@ -1282,7 +1306,7 @@ def reprocessFolderIMDBData(folderName):
         time.sleep(2 + random.randrange(0,2))
 
 
-printDecadesStatistics("Z:\Movies\FILMOVI\____Action, Crime & Thriller")
+printRootDecadesStatistics("Z:\Movies\FILMOVI")
 #reprocessFolderIMDBData("Z:\Movies\FILMOVI\_Batman")
 
 #movie = fetchMovieDataByMovieID("Good Will Hunting", "0119217")
