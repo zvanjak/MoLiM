@@ -1219,7 +1219,7 @@ def printDecadesStatistics(folderName):
 
   movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
 
-  decadeCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  decadeCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   
   for movieFolderName in movieSubFolders:
     if movieFolderName.find("IMDB") != -1:
@@ -1282,7 +1282,7 @@ def reprocessFolderIMDBData(folderName):
         time.sleep(2 + random.randrange(0,2))
 
 
-printDecadesStatistics("Z:\Movies\FILMOVI\_1960's")
+printDecadesStatistics("Z:\Movies\FILMOVI\____Action, Crime & Thriller")
 #reprocessFolderIMDBData("Z:\Movies\FILMOVI\_Batman")
 
 #movie = fetchMovieDataByMovieID("Good Will Hunting", "0119217")
