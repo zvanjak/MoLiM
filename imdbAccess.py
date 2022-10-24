@@ -83,30 +83,30 @@ def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovi
 
     rating = movie.data.get('rating', None)
     movie_data.rating = rating
-    print("IMDB rating {0}".format(rating))
+    print("IMDB rating:    {0}".format(rating))
 
     votes = movie.data.get('votes', 0)
     movie_data.votes = votes
-    print("Num. votes {0}".format(votes))
+    print("Num. votes:     {0}".format(votes))
 
     box_office_data = movie.data.get('box office', None)
     if box_office_data != None:
       movie_data.box_office = str(box_office_data)
-      print("Box office {0}".format(box_office_data))
+      print("Box office:   {0}".format(box_office_data))
 
     release_date = movie.data.get('original air date', None)
     if release_date != None:
       movie_data.releaseDate = release_date
-      print("Release date {0}".format(release_date))
+      print("Release date: {0}".format(release_date))
 
     year = movie.data.get('year', None)
     movie_data.year = year
-    print("Year: {0}".format(year))
+    print("Year:         {0}".format(year))
 
     if 'runtimes' in movie.data:
       runtime = int(movie.data['runtimes'][0])
       movie_data.runtime = runtime
-      print("Runtime: ", runtime, " min")
+      print("Runtime:      ", runtime, " min")
     else:
       print("-------------------------------------------")
       print("NO RUNTIME!!!!")
@@ -134,7 +134,7 @@ def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovi
     else:
       directors = " Problem with directors!!! "
     movie_data.directors = directors
-    print("Directors: " + directors)
+    print("Directors:    " + directors)
 
     producers = ""
     cntProd = 0
@@ -153,7 +153,7 @@ def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovi
     else:
       producers = " Problem with producers!!! "
     movie_data.producers = producers
-    print("Producers: " + producers)
+    print("Producers:    " + producers)
 
     writers = ""
     cntWrit = 0
@@ -169,7 +169,7 @@ def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovi
     else:
       writers = " Problem with writers!!! "
     movie_data.writers = writers
-    print("Writers: " + writers)
+    print("Writers:      " + writers)
 
     genres = ""
     shortGenres = ""
@@ -183,7 +183,7 @@ def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovi
 
       cntGen += 1
     movie_data.genres = genres
-    print('Genres: ' + genres)
+    print('Genres:       ' + genres)
 
     cast = ""
     shortCast = ""
@@ -198,7 +198,7 @@ def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovi
           shortCast += ", "
         i = i + 1
               
-      print('Cast: ' + shortCast)
+      print('Cast:         ' + shortCast)
       movie_data.cast_complete = cast
       movie_data.cast_leads = shortCast
     else:

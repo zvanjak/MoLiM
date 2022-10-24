@@ -92,7 +92,7 @@ def printActorsStatistics():
 #statistics.printBigFiles()
 
 #processing.processFolder("E:\DONE")
-processing.processFolder("Z:\Movies\FILMOVI\_Halloween")
+#processing.processFolder("Z:\Movies\FILMOVI\_Halloween")
 
 #reports.rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
 #reports.rootFolderReportNotDone("Z:\Movies\FILMOVI")
@@ -104,7 +104,8 @@ processing.processFolder("Z:\Movies\FILMOVI\_Halloween")
 
 
 
-#reprocessFolderIMDBData("Z:\Movies\FILMOVI\_Batman")
+processing.reprocessFolderIMDBData("Z:\Movies\FILMOVI\_Halloween")
+
 #copyDirectors(genresFolders)
 
 

@@ -159,7 +159,7 @@ def reprocessFolderIMDBData(folderName):
 
       (searchMovieName, year) = fileOperations.getNameYearFromNameWithIMDB(movieFolderName)
 
-      movieID = getMovieIDFromFilmData(folderName, movieFolderName, searchMovieName, year)
+      movieID = fileOperations.getMovieIDFromFilmData(folderName, movieFolderName, searchMovieName, year)
 
       if movieID != None :
         print("Processing: " + searchMovieName, "  (", year, ")")
@@ -169,4 +169,4 @@ def reprocessFolderIMDBData(folderName):
         if movie_data.name != "":
           fileOperations.saveTXTWithMovieData(movie_data, folderName, movieFolderName)
 
-        time.sleep(2 + random.randrange(0,2))
+        time.sleep(2 + random.randrange(0,3))
