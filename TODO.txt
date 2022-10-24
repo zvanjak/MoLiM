@@ -5,6 +5,12 @@
 # getAllMoviesByDirector
 # getAllMoviesInGenre
 
+dodati Release date
+
+statistike po numVotes
+
+ISKOPIRATI SVE FILMOVE GLAVNIH DIRECTORA I ACTORA U NJIHOVE FOLDERE - iz foldera dekada
+
 # vidjeti za dodati MetaCritic i Tomatoes rating
 # dodati konstante na pocetku
 

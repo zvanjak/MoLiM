@@ -92,7 +92,7 @@ def printActorsStatistics():
 #statistics.printBigFiles()
 
 #processing.processFolder("E:\DONE")
-#processing.processFolder("Z:\Movies\FILMOVI\_____GOOD DONE")
+processing.processFolder("Z:\Movies\FILMOVI\_Halloween")
 
 #reports.rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
 #reports.rootFolderReportNotDone("Z:\Movies\FILMOVI")

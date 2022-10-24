@@ -21,6 +21,7 @@ class IMDBMovieData(object):
     
     self.box_office = ""
     self.top250rank = 0
+    self.releaseDate = ""
     
     self.directors_list = []
     self.genres_list = []

@@ -94,6 +94,11 @@ def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovi
       movie_data.box_office = str(box_office_data)
       print("Box office {0}".format(box_office_data))
 
+    release_date = movie.data.get('original air date', None)
+    if release_date != None:
+      movie_data.releaseDate = release_date
+      print("Release date {0}".format(release_date))
+
     year = movie.data.get('year', None)
     movie_data.year = year
     print("Year: {0}".format(year))
