@@ -149,7 +149,6 @@ def saveMovieDataAndRenameFolder(movie_data : IMDBMovieData, folderWhereItIs, mo
     origDir = folderWhereItIs + "\\" + movieFolderName
     destDir = folderWhereItIs + "\\" + newDirName
 
-    #print("RENAMING - ", origDir, "   -   ", destDir)
     if os.path.isdir(destDir):
       print("\n\nDESTINATION DIR ALREADY EXISTS!!!!!!\n\n")
     else:
@@ -167,6 +166,7 @@ def saveTXTWithMovieData(movie_data : IMDBMovieData, folderWhereItIs, movieFolde
   fileFilmData.write("MovieID:   " + str(movie_data.movieID) + "\n")
   fileFilmData.write("Title:     " + movie_data.imdb_name + "\n")
   fileFilmData.write("Year:      " + str(movie_data.year) + "\n")
+  fileFilmData.write("Released:  " + movie_data.releaseDate + "\n")
   fileFilmData.write("Runtime:   " + str(movie_data.runtime) + " min\n")
   fileFilmData.write("Rating:    " + str(movie_data.rating) + "\n")
   if movie_data.top250rank != 0 :
@@ -208,10 +208,16 @@ def loadIMDBMovieDataFromFilmData(folderWhereItIs, movieFolderName, movieName, m
     elif line.startswith("MovieID:"):
       movieID = line[10:].strip()
       movie_data.movieID = movieID
+    elif line.startswith("Year:"):
+      year_str = line[10:].strip()
+      movie_data.year = int(year_str)
     elif line.startswith("Runtime:"):
       ind = line.find("min")
       runtime = line[10:ind-1].strip()
       movie_data.runtime = runtime
+    elif line.startswith("Released:"):
+      release_date = line[10:].strip()
+      movie_data.releaseDate = release_date
     elif line.startswith("Rating:"):
       rating = line[10:].strip()
       movie_data.rating = float(rating)
