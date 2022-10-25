@@ -104,7 +104,7 @@ def printActorsStatistics():
 
 
 
-processing.reprocessFolderIMDBData("Z:\Movies\FILMOVI\_Halloween")
+processing.reprocessFolderIMDBData("Z:\Movies\FILMOVI\_____GOOD DONE")
 
 #copyDirectors(genresFolders)
 
