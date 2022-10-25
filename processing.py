@@ -162,7 +162,7 @@ def reprocessFolderIMDBData(folderName):
       movieID = fileOperations.getMovieIDFromFilmData(folderName, movieFolderName, searchMovieName, year)
 
       if movieID != None :
-        print("Processing: " + searchMovieName, "  (", year, ")")
+        print("Processing:   " + searchMovieName, "  (", year, ")")
         
         movie_data = imdbAccess.fetchMovieDataByMovieID(searchMovieName, movieID)
 

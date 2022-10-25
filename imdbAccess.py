@@ -83,11 +83,11 @@ def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovi
 
     rating = movie.data.get('rating', None)
     movie_data.rating = rating
-    print("IMDB rating:   {0}".format(rating))
+    print("IMDB rating:  {0}".format(rating))
 
     votes = movie.data.get('votes', 0)
     movie_data.votes = votes
-    print("Num. votes:    {0}".format(votes))
+    print("Num. votes:   {0}".format(votes))
 
     box_office_data = movie.data.get('box office', None)
     if box_office_data != None:
