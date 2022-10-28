@@ -43,7 +43,9 @@ class IMDBMovieData(object):
   
 
 def printMoviesList(listMovies):
+  count = 0
   for movie in listMovies:
     short_cast = movie.cast_complete[0:75]
     short_dir = movie.directors[0:20]
-    print("Rating - {0} - {1:55} - {2:75}  -  {3:20}  - {4}".format( movie.rating, movie.name + " (" + str(movie.year) + ") ", short_cast, short_dir, movie.genres ) )
+    print("{0}. Rating - {1} - {2:55} - {3:75}  -  {4:20}  - {5}".format( count, movie.rating, movie.name + " (" + str(movie.year) + ") ", short_cast, short_dir, movie.genres ) )
+    count += 1

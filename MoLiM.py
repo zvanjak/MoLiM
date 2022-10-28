@@ -86,6 +86,43 @@ def printActorsStatistics():
     print("AVG = ", tup[1])
 
 
+
+def printAllActorsMovies():
+  root = RootFolder.RootFolder("Other actors")
+  seriesFolders = myFolders.getSeriesFolderNames()
+  listActors = myFolders.actorsList #+ myFolders.getMiscActorsList()
+  listActors.sort()
+  root.loadDataFromListOfFolders(myFolders.actorsFolders + myFolders.genresFolders) # + myFolders.decadesFolders + myFolders.directorsFolders + ["E:\DONE", "Z:\Movies\FILMOVI\_____GOOD DONE"] + seriesFolders) 
+
+  tuplesList = []
+
+  for actor in listActors:
+    listMovies = root.getMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
+    listMovies.sort(key=lambda x: x.rating, reverse=True)
+    if len(listMovies) > 0:
+      sum = 0.0
+      for movie in listMovies:
+        sum += movie.rating
+      newTuple = (actor, sum / len(listMovies) )
+      tuplesList.append(newTuple)
+    else:
+      print("     -----------------                   NO MOVIES FOR ACTOR - ", actor)
+
+  tuplesList.sort(key=lambda x: x[1], reverse=True)
+
+  ordNum = 0
+  for tup in tuplesList:
+    actor = tup[0]
+    ordNum += 1
+    print("-----------------------------------------------------------------")
+    print("{0} - ACTOR - {1}".format(ordNum, actor) )
+    print("-----------------------------------------------------------------")
+
+    listMovies = root.getMoviesWithRatingHigherThanWithGivenActor(5.0, actor)
+    listMovies.sort(key=lambda x: x.rating, reverse=True)
+    IMDBMovieData.printMoviesList(listMovies)
+    print("AVG = ", tup[1])
+
 #statistics.printRootDecadesStatistics("Z:\Movies\FILMOVI")
 
 #statistics.rootFolderStatistics("Z:\Movies\FILMOVI")
@@ -93,16 +130,17 @@ def printActorsStatistics():
 #statistics.printBigFiles()
 
 #processing.processFolder("E:\DONE")
-#processing.processFolder("Z:\Movies\FILMOVI\_Halloween")
+#processing.processFolder("Z:\Movies\FILMOVI\___Tom Cruise")
 
 #reports.rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
 #reports.rootFolderReportNotDone("Z:\Movies\FILMOVI")
 
 #movie = imdbAccess.fetchMovieDataByMovieID("Good Will Hunting", "0119217")
 
-printActorsStatistics()
+#printActorsStatistics()
 #printDirectorsStatistics()
 
+printAllActorsMovies()
 
 
 #processing.reprocessFolderIMDBData("Z:\Movies\FILMOVI\____Romance")
