@@ -2,6 +2,7 @@
 import random
 import os
 
+import IMDBMovieData
 import fileOperations 
 import imdbAccess
 import FolderWithMovies
@@ -99,15 +100,15 @@ def printActorsStatistics():
 
 #movie = imdbAccess.fetchMovieDataByMovieID("Good Will Hunting", "0119217")
 
-#printActorsStatistics()
+printActorsStatistics()
 #printDirectorsStatistics()
 
 
 
-processing.reprocessFolderIMDBData("Z:\Movies\FILMOVI\____Romance")
-processing.reprocessFolderIMDBData("Z:\Movies\FILMOVI\____Science Fiction & Fantasy")
-processing.reprocessFolderIMDBData("Z:\Movies\FILMOVI\____War movies")
-processing.reprocessFolderIMDBData("Z:\Movies\FILMOVI\____Westerns")
+#processing.reprocessFolderIMDBData("Z:\Movies\FILMOVI\____Romance")
+#processing.reprocessFolderIMDBData("Z:\Movies\FILMOVI\____Science Fiction & Fantasy")
+#processing.reprocessFolderIMDBData("Z:\Movies\FILMOVI\____War movies")
+#processing.reprocessFolderIMDBData("Z:\Movies\FILMOVI\____Westerns")
 
 #copyDirectors(genresFolders)
 
