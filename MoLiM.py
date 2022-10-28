@@ -92,7 +92,7 @@ def printAllActorsMovies():
   seriesFolders = myFolders.getSeriesFolderNames()
   listActors = myFolders.actorsList #+ myFolders.getMiscActorsList()
   listActors.sort()
-  root.loadDataFromListOfFolders(myFolders.actorsFolders + myFolders.genresFolders) # + myFolders.decadesFolders + myFolders.directorsFolders + ["E:\DONE", "Z:\Movies\FILMOVI\_____GOOD DONE"] + seriesFolders) 
+  root.loadDataFromListOfFolders(myFolders.actorsFolders + myFolders.genresFolders + myFolders.decadesFolders + myFolders.directorsFolders + ["E:\DONE", "Z:\Movies\FILMOVI\_____GOOD DONE"] + seriesFolders) 
 
   tuplesList = []
 

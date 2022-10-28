@@ -54,6 +54,7 @@ actorsList = [ "Al Pacino",      \
   "Leonardo DiCaprio",           \
   "Mel Gibson",                  \
   "Robert De Niro",              \
+  "Spencer Tracy",               \
   "Tom Cruise",                  \
   "Tom Hanks",
 ] 

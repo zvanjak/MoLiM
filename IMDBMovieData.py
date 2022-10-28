@@ -47,5 +47,5 @@ def printMoviesList(listMovies):
   for movie in listMovies:
     short_cast = movie.cast_complete[0:75]
     short_dir = movie.directors[0:20]
-    print("{0}. Rating - {1} - {2:55} - {3:75}  -  {4:20}  - {5}".format( count, movie.rating, movie.name + " (" + str(movie.year) + ") ", short_cast, short_dir, movie.genres ) )
+    print("{0:2}. Rating - {1} - {2:55} - {3:75}  -  {4:20}  - {5}".format( count, movie.rating, movie.name + " (" + str(movie.year) + ") ", short_cast, short_dir, movie.genres ) )
     count += 1
