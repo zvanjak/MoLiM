@@ -129,7 +129,7 @@ def printAllActorsMovies():
 #statistics.folderStatistics("Z:\Movies\FILMOVI\_1970's")
 #statistics.printBigFiles()
 
-#processing.processFolder("E:\DONE")
+processing.processFolder("E:\DONE")
 #processing.processFolder("Z:\Movies\FILMOVI\___Tom Cruise")
 
 #reports.rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
@@ -140,7 +140,7 @@ def printAllActorsMovies():
 #printActorsStatistics()
 #printDirectorsStatistics()
 
-printAllActorsMovies()
+#printAllActorsMovies()
 
 
 #processing.reprocessFolderIMDBData("Z:\Movies\FILMOVI\____Romance")
