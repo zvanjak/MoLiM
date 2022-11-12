@@ -57,7 +57,7 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
     #movie_data.name = ""
     #return movie_data
 
-  movie_data = fetchMovieDataByMovieID(searchMovieName, movieID)
+   movie_data = fetchMovieDataByMovieID(searchMovieName, movieID)
 
   time.sleep(5+random.randrange(0,5))
 
