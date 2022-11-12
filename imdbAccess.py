@@ -43,7 +43,8 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
     try:
       t = m.data.get('title')
       y = m.data.get('year')
-      if t == searchMovieName and y == releaseYear:
+      k = m.data.get('kind')
+      if t == searchMovieName and y == releaseYear and k == 'movie':
         movieID = m.movieID
         movieFound = True
         break
