@@ -93,7 +93,7 @@ def rootFolderStatistics(rootFolderName):
 
 def printBigFiles():
   # The min size of the file in Bytes
-  mySize = '1000000000'
+  mySize = '9000000000'
 
   startFolder = "Z:\Movies\FILMOVI"
   subFolders= [ f.name for f in os.scandir(startFolder) if f.is_dir() ]
@@ -110,8 +110,10 @@ def printBigFiles():
         if int(fileSize) >= int(mySize):
             count += 1
             countTotal += 1
+            print (path[0:100])
     
-    print("{0:75} - {1:3}".format(myPath , count))
+    #if count > 0:
+    #  print("{0:75} - {1:3}".format(myPath , count))
 
   print("TOTAL = " + str(countTotal))
 
