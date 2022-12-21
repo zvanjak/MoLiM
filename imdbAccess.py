@@ -35,6 +35,7 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
   if len(foundMoviesList) == 0 :
     movie_data.name = ""
     print ("\n   ----   SEARCH RETURNED NOTHING!!!   ----\n")
+    time.sleep(20)
     return movie_data
 
   movieID = foundMoviesList[0].movieID
