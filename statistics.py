@@ -69,6 +69,14 @@ def folderStatistics(folderName):
   #  for movie in listWithoutMovieID:
   #    print ("  ", movie)
 
+def rootFolderStatistics(rootFolderName):
+  print("------", rootFolderName, "------")
+  
+  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
+
+  for folderName in rootSubFolders:
+    folderStatistics(folderName)
+
 def folderSizeStatistic(folderName):
   print("------------------------------------------")
   print("------", folderName, "------")
@@ -79,17 +87,8 @@ def folderSizeStatistic(folderName):
   for movieFolderName in movieSubFolders:
     if movieFolderName.find("IMDB") != -1:
       size = fileOperations.getFolderSize(folderName + "\\" + movieFolderName)
-      printName = movieFolderName[0:60]
+      printName = movieFolderName[0:80]
       print("{0:80} - {1:5} Gb".format(printName, size / 1000000000))
-
-def rootFolderStatistics(rootFolderName):
-  print("------", rootFolderName, "------")
-  
-  rootSubFolders = [ f.path for f in os.scandir(rootFolderName) if f.is_dir() ]
-
-  for folderName in rootSubFolders:
-    folderStatistics(folderName)
-
 
 def printBigFiles():
   # The min size of the file in Bytes

@@ -130,14 +130,18 @@ def printAllActorsMovies():
 
 
 #statistics.folderStatistics("Z:\Movies\FILMOVI\_1970's")
-statistics.folderSizeStatistic("Z:\Movies\FILMOVI\_1970's")
 #statistics.rootFolderStatistics("Z:\Movies\FILMOVI")
+
+#statistics.folderSizeStatistic("Z:\Movies\FILMOVI\_1970's")
 #statistics.printBigFiles()
+
+#statistics.printDecadesStatistics("Z:\Movies\FILMOVI\_1970's")
 #statistics.printRootDecadesStatistics("Z:\Movies\FILMOVI")
 
 #printActorsStatistics()
 #printDirectorsStatistics()
 #printAllActorsMovies()
+
 
 #processing.processFolder("E:\DONE")
 #processing.processFolder("Z:\Movies\FILMOVI\___Tom Cruise")
