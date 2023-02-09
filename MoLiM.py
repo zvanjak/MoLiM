@@ -129,16 +129,17 @@ def printAllActorsMovies():
 #statistics.folderStatistics("Z:\Movies\FILMOVI\_1970's")
 #statistics.printBigFiles()
 
-processing.processFolder("E:\DONE")
+#processing.processFolder("E:\DONE")
 #processing.processFolder("Z:\Movies\FILMOVI\___Tom Cruise")
 
-#reports.rootFolderReportNoIMDBData("Z:\Movies\FILMOVI")
+#reports.rootFolderReportNoIMDBData("E:\\NEW MOVIES")
+
 #reports.rootFolderReportNotDone("Z:\Movies\FILMOVI")
 
 #movie = imdbAccess.fetchMovieDataByMovieID("Good Will Hunting", "0119217")
 
 #printActorsStatistics()
-#printDirectorsStatistics()
+printDirectorsStatistics()
 
 #printAllActorsMovies()
 
