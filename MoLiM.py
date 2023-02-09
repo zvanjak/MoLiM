@@ -92,7 +92,6 @@ def printActorsStatistics():
     print("AVG = ", tup[1])
 
 
-
 def printAllActorsMovies():
   root = RootFolder.RootFolder("Other actors")
   seriesFolders = myFolders.getSeriesFolderNames()
@@ -129,25 +128,24 @@ def printAllActorsMovies():
     IMDBMovieData.printMoviesList(listMovies)
     print("AVG = ", tup[1])
 
+
+#statistics.folderStatistics("Z:\Movies\FILMOVI\_1970's")
+#statistics.rootFolderStatistics("Z:\Movies\FILMOVI")
+#statistics.printBigFiles()
 #statistics.printRootDecadesStatistics("Z:\Movies\FILMOVI")
 
-#statistics.rootFolderStatistics("Z:\Movies\FILMOVI")
-#statistics.folderStatistics("Z:\Movies\FILMOVI\_1970's")
-#statistics.printBigFiles()
+#printActorsStatistics()
+#printDirectorsStatistics()
+#printAllActorsMovies()
 
 #processing.processFolder("E:\DONE")
 #processing.processFolder("Z:\Movies\FILMOVI\___Tom Cruise")
 
 #reports.rootFolderReportNoIMDBData("E:\\NEW MOVIES")
-
 #reports.rootFolderReportNotDone("Z:\Movies\FILMOVI")
 
 #movie = imdbAccess.fetchMovieDataByMovieID("Good Will Hunting", "0119217")
 
-#printActorsStatistics()
-printDirectorsStatistics()
-
-#printAllActorsMovies()
 
 
 #processing.reprocessFolderIMDBData("Z:\Movies\FILMOVI\____Romance")
