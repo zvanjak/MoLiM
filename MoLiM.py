@@ -130,6 +130,7 @@ def printAllActorsMovies():
 
 
 #statistics.folderStatistics("Z:\Movies\FILMOVI\_1970's")
+statistics.folderSizeStatistic("Z:\Movies\FILMOVI\_1970's")
 #statistics.rootFolderStatistics("Z:\Movies\FILMOVI")
 #statistics.printBigFiles()
 #statistics.printRootDecadesStatistics("Z:\Movies\FILMOVI")

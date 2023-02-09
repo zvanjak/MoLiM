@@ -80,7 +80,7 @@ def folderSizeStatistic(folderName):
     if movieFolderName.find("IMDB") != -1:
       size = fileOperations.getFolderSize(folderName + "\\" + movieFolderName)
       printName = movieFolderName[0:60]
-      print("{0:60} - {1}".format(printName, size / 1000000000))
+      print("{0:80} - {1:5} Gb".format(printName, size / 1000000000))
 
 def rootFolderStatistics(rootFolderName):
   print("------", rootFolderName, "------")
