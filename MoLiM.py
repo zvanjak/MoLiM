@@ -33,7 +33,7 @@ def printDirectorsStatistics():
     listMovies.sort(key=lambda x: x.rating, reverse=True)
     if len(listMovies) > 0:
       sum = 0.0
-      for movie in listMovies[0:10]:
+      for movie in listMovies[0:10]:      # 10 best movies
         sum += movie.rating
       newTuple = (director, sum / len(listMovies[0:10]) )
       tuplesList.append(newTuple)
