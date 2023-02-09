@@ -15,13 +15,19 @@ import reports
 
 def printDirectorsStatistics():
   root = RootFolder.RootFolder("Directors")
-  seriesFolders = myFolders.getSeriesFolderNames()
-  listDirectors = myFolders.getMiscDirectorsList() + myFolders.directorsList
-  listDirectors.sort()
-  root.loadDataFromListOfFolders(myFolders.actorsFolders + myFolders.genresFolders + myFolders.decadesFolders + myFolders.directorsFolders + ["E:\DONE", "Z:\Movies\FILMOVI\_____GOOD DONE"] + seriesFolders) 
+
+  root.loadDataFromListOfFolders( myFolders.actorsFolders + \
+                                  myFolders.genresFolders + \
+                                  myFolders.decadesFolders + \
+                                  myFolders.directorsFolders + \
+                                  myFolders.getSeriesFolderNames() + \
+                                  ["E:\DONE", "Z:\Movies\FILMOVI\_____GOOD DONE"])
 
   tuplesList = []
 
+  listDirectors = myFolders.getMiscDirectorsList() + myFolders.directorsList
+  listDirectors.sort()
+  
   for director in listDirectors:
     listMovies = root.getMoviesWithRatingHigherThanWithGivenDirector(5.0, director)
     listMovies.sort(key=lambda x: x.rating, reverse=True)
