@@ -144,38 +144,24 @@ def printAllActorsMovies():
 
 
 #processing.processFolder("E:\DONE")
-#processing.processListOfFolders( ("Z:\Movies\FILMOVI\_____GOOD DONE\Denis Vilenueve",          \
+#processing.processListOfFolders( ( "Z:\Movies\FILMOVI\_____GOOD DONE\Denis Vilenueve",      \
 #                                   "Z:\Movies\FILMOVI\_____GOOD DONE\Humphrey Bogart",      \
-#                                  "Z:\Movies\FILMOVI\_____GOOD DONE\Jodie Foster",    \
-#                                  "E:\Downloads\Marlon Brando",    \
-#                                   "E:\Downloads\\Nicole Kidman",   \
-#                        "E:\Downloads\Sergio Leone",     \
-#                       "E:\Downloads\Sigourney Weaver", \
-#                       "E:\Downloads\Michelle Pfeiffer",  \
-#                       "E:\Downloads\Paul Newman",      \
-#                       "E:\Downloads\Sidney Lumet",     \
-#                       "Z:\Movies\FILMOVI\_____GOOD DONE\Jodie Foster") )
+#                                   "Z:\Movies\FILMOVI\_____GOOD DONE\Jodie Foster",         \
+#                                   "Z:\Movies\FILMOVI\_____GOOD DONE\Jodie Foster") )
 
-#processing.reprocessFolderIMDBData("Z:\Movies\FILMOVI\____Romance")
 
 #processing.folderRecheckDataWithIMDB("Z:\Movies\FILMOVI\_1970's")
 #processing.rootFolderRecheckDataWithIMDB("Z:\Movies\FILMOVI")
+#processing.reprocessFolderIMDBData("Z:\Movies\FILMOVI\____Romance")
+
+#processing.copyDirectors(genresFolders)
+
 
 #reports.rootFolderReportNoIMDBData("E:\\NEW MOVIES")
 #reports.rootFolderReportNotDone("Z:\Movies\FILMOVI")
 
+
 #movie = imdbAccess.fetchMovieDataByMovieID("Good Will Hunting", "0119217")
-
-
-
-#processing.reprocessFolderIMDBData("Z:\Movies\FILMOVI\____Science Fiction & Fantasy")
-#processing.reprocessFolderIMDBData("Z:\Movies\FILMOVI\____War movies")
-#processing.reprocessFolderIMDBData("Z:\Movies\FILMOVI\____Westerns")
-
-#copyDirectors(genresFolders)
-
-
-
 
 
 #seriesFolders = getSeriesFolderNames()
