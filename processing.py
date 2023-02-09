@@ -53,7 +53,7 @@ def processListOfFolders(foldersList):
         if movie_data.name != "":
           fileOperations.saveMovieDataAndRenameFolder(movie_data,folderName,movieFolderName)
 
-# Rechecking IMDB data
+# Rechecking folder IMDB data
 def folderRecheckDataWithIMDB(folderName):
   print("------", folderName, "------")
   print("------------------------------------------")
@@ -113,6 +113,7 @@ def folderRecheckDataWithIMDB(folderName):
 
         time.sleep(5 + random.randrange(0,5))
 
+# Rechecking root folder IMDB data
 def rootFolderRecheckDataWithIMDB(rootFolderName):
   print("------", rootFolderName, "------")
   
@@ -120,7 +121,6 @@ def rootFolderRecheckDataWithIMDB(rootFolderName):
 
   for folderName in rootSubFolders:
     folderRecheckDataWithIMDB(folderName)
-
 
 
 def copyDirectors(foldersList):
