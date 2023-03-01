@@ -157,6 +157,30 @@ def saveMovieDataAndRenameFolder(movie_data : IMDBMovieData, folderWhereItIs, mo
 
     print()
 
+
+def saveSeriesDataAndRenameFolder(movie_data : IMDBMovieData, folderWhereItIs, movieFolderName):
+
+    # ime novog direktorija
+    # Naziv (2022) IMDB-7.5 Adventure,Comedy,Thriller Cast-Mel Gibson, Jim Belushi, Joan Crawford
+    newDirName = getMovieFolderNameFromMovieData(movie_data)   # movie_data.name + "(" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " CAST - " + movie_data.cast
+
+    print("NEWDIR = ", newDirName)
+
+    # formirati TXT datoteku s podacima
+    saveTXTWithMovieData(movie_data, folderWhereItIs, movieFolderName)
+
+    # i sad idemo preimenovati direktorij
+    origDir = folderWhereItIs + "\\" + movieFolderName
+    destDir = folderWhereItIs + "\\" + newDirName
+
+    if os.path.isdir(destDir):
+      print("\n\nDESTINATION DIR ALREADY EXISTS!!!!!!\n\n")
+    else:
+      print("RENAMING - ", origDir, destDir)
+      os.rename(origDir, destDir)
+
+    print()
+
 def saveTXTWithMovieData(movie_data : IMDBMovieData, folderWhereItIs, movieFolderName):
   # formirati TXT datoteku s podacima
   fileName = getFilmDataFilePath(folderWhereItIs, movieFolderName, movie_data.name, movie_data.year)

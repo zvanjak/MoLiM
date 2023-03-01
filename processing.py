@@ -31,7 +31,7 @@ def processSeriesFolder(folderName):
     
       if series_data.name != "":
         print("Found series")
-        #fileOperations.saveMovieDataAndRenameFolder(movie_data,folderName,seriesFolderName)
+        fileOperations.saveMovieDataAndRenameFolder(movie_data,folderName,seriesFolderName)
 
 
 def processFolder(folderName):
