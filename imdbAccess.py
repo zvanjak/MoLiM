@@ -276,7 +276,14 @@ def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMov
      series = ia.get_movie(movieID)
 
      ia.update(series, 'episodes')
-     print(sorted(series['episodes'].keys()))
+     season_keys = sorted(series['episodes'].keys())
+
+     print("Seasons num = {0}".format(len(series['episodes'].keys())))
+
+     for season_id in season_keys:
+       print("Season {0}".format(season_id))
+       season_data = series['episodes'][season_id]
+       print("Episode num = {0}".format(len(season_data)))
 
   except:
     print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
