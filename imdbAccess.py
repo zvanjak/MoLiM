@@ -218,3 +218,54 @@ def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovi
     movie_data.name = ""
   
   return movie_data
+
+
+
+# fetchSeriesData(searchMovieName)
+def fetchSeriesData(searchMovieName) -> IMDBMovieData:
+  movie_data = IMDBMovieData.IMDBMovieData(searchMovieName)
+
+  searchMovieName = searchMovieName.rstrip()
+
+  # TODO kad internet zakaže
+  try:
+    foundMoviesList = ia.search_movie(searchMovieName)
+  except:
+    print("\n--------   EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET --------\n")
+    time.sleep(30)
+    movie_data.name = ""
+    return movie_data
+
+  if len(foundMoviesList) == 0 :
+    movie_data.name = ""
+    print ("\n   ----   SEARCH RETURNED NOTHING!!!   ----\n")
+    time.sleep(20)
+    return movie_data
+
+  movieID = foundMoviesList[0].movieID
+  movieFound = False
+  for m in foundMoviesList:
+    try:
+      t = m.data.get('title')
+      y = m.data.get('year')
+      k = m.data.get('kind')
+      if t == searchMovieName and y == releaseYear and k == 'movie':
+        movieID = m.movieID
+        movieFound = True
+        break
+    except:
+      print("OUCH")
+  
+  if movieFound == False:
+    print ("COULD NOT FIND EXACT MOVIE WITH NAME AND YEAR") 
+    for movie in foundMoviesList:
+      print("-- {0:15} -- {1:30}, {2}".format(movie.movieID, movie.data.get('title'), movie.data.get('year')))
+    #movie_data.name = ""
+    #return movie_data
+
+  movie_data = fetchMovieDataByMovieID(searchMovieName, movieID)
+
+  time.sleep(5+random.randrange(0,5))
+
+  return movie_data
+    
