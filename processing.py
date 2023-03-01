@@ -27,9 +27,9 @@ def processSeriesFolder(folderName):
     if seriesFolderName.find("IMDB") == -1:
       print(seriesFolderName)
 
-      movie_data = imdbAccess.fetchSeriesData(seriesFolderName)
+      series_data = imdbAccess.fetchSeriesData(seriesFolderName)
     
-      if movie_data.name != "":
+      if series_data.name != "":
         print("Found series")
         #fileOperations.saveMovieDataAndRenameFolder(movie_data,folderName,seriesFolderName)
 
