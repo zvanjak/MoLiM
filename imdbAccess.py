@@ -289,9 +289,15 @@ def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMov
        episode_num = len(season_data)
        print("Episode num = {0}".format(episode_num))
        
-       for i in range(1,episode_num):
+       for i in range(0,episode_num):
          episode = series['episodes'][season_id][i]
          print(episode['title'])
+         print(episode.data['rating'])
+         print(episode.data['votes'])
+         print(episode.data['original air date'])
+         print(episode.data['year'])
+         print(episode.data['plot'])
+
 
   except:
     print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
