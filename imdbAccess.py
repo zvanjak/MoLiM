@@ -274,6 +274,10 @@ def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMov
 
   try:
      series = ia.get_movie(movieID)
+
+     ia.update(series, 'episodes')
+     print(sorted(series['episodes'].keys()))
+
   except:
     print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
     print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
@@ -295,16 +299,6 @@ def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMov
     series_data.votes = votes
     print("Num. votes:   {0}".format(votes))
 
-    box_office_data = series.data.get('box office', None)
-    if box_office_data != None:
-      series_data.box_office = str(box_office_data)
-      print("Box office:   {0}".format(box_office_data))
-
-    release_date = series.data.get('original air date', None)
-    if release_date != None:
-      series_data.releaseDate = release_date
-      print("Release date: {0}".format(release_date))
-
     year = series.data.get('year', None)
     series_data.year = year
     print("Year:         {0}".format(year))
@@ -319,48 +313,12 @@ def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMov
       print("-------------------------------------------")
       series_data.runtime = 0
 
-    if 'top 250 rank' in series.data:
-      series_data.top250rank = int(series.data['top 250 rank'])
-
     if 'countries' in series.data:
       series_data.countries = str(series.data['countries'])
 
     if 'languages' in series.data:
       series_data.languages = str(series.data['languages'])
-
-    directors = ""
-    cntDir = 0
-    if 'director' in series.data:
-      movieDirectors = series.data.get('director')
-      for director in movieDirectors:
-          if cntDir > 0 :
-            directors += ", "
-          directors += director['name']
-          cntDir += 1
-    else:
-      directors = " Problem with directors!!! "
-    series_data.directors = directors
-    print("Directors:    " + directors)
-
-    producers = ""
-    cntProd = 0
-    if 'producer' in series.data:
-      movieProducers = series.data.get('producer')
-      for producer in movieProducers:
-          if cntProd > 0 :
-            producers += ", "
-
-          if 'name' in producer:
-            producers += producer['name']
-          cntProd += 1
-
-          if cntProd > 5:
-            break
-    else:
-      producers = " Problem with producers!!! "
-    series_data.producers = producers
-    print("Producers:    " + producers)
-
+      
     writers = ""
     cntWrit = 0
     if 'writer' in series.data:
