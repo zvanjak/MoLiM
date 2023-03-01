@@ -64,7 +64,7 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
   time.sleep(5+random.randrange(0,5))
 
   return movie_data
-    
+
 def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovieData:
   movie_data = IMDBMovieData.IMDBMovieData(name)
 
@@ -262,9 +262,164 @@ def fetchSeriesData(searchMovieName):
     #movie_data.name = ""
     #return movie_data
 
-  movie_data = fetchMovieDataByMovieID(searchMovieName, movieID)
+  movie_data = fetchSeriesDataByMovieID(searchMovieName, movieID)
 
   time.sleep(5+random.randrange(0,5))
 
   return movie_data
-    
+
+
+def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovieData:
+  series_data = IMDBMovieData.IMDBMovieData(name)
+
+  try:
+     series = ia.get_movie(movieID)
+  except:
+    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
+    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
+    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
+    time.sleep(30)
+    series_data.name = ""
+    return series_data
+
+  series_data.movieID = movieID
+
+  try:
+    series_data.imdb_name = series.data.get('title')
+
+    rating = series.data.get('rating', None)
+    series_data.rating = rating
+    print("IMDB rating:  {0}".format(rating))
+
+    votes = series.data.get('votes', 0)
+    series_data.votes = votes
+    print("Num. votes:   {0}".format(votes))
+
+    box_office_data = series.data.get('box office', None)
+    if box_office_data != None:
+      series_data.box_office = str(box_office_data)
+      print("Box office:   {0}".format(box_office_data))
+
+    release_date = series.data.get('original air date', None)
+    if release_date != None:
+      series_data.releaseDate = release_date
+      print("Release date: {0}".format(release_date))
+
+    year = series.data.get('year', None)
+    series_data.year = year
+    print("Year:         {0}".format(year))
+
+    if 'runtimes' in series.data:
+      runtime = int(series.data['runtimes'][0])
+      series_data.runtime = runtime
+      print("Runtime:     ", runtime, " min")
+    else:
+      print("-------------------------------------------")
+      print("NO RUNTIME!!!!")
+      print("-------------------------------------------")
+      series_data.runtime = 0
+
+    if 'top 250 rank' in series.data:
+      series_data.top250rank = int(series.data['top 250 rank'])
+
+    if 'countries' in series.data:
+      series_data.countries = str(series.data['countries'])
+
+    if 'languages' in series.data:
+      series_data.languages = str(series.data['languages'])
+
+    directors = ""
+    cntDir = 0
+    if 'director' in series.data:
+      movieDirectors = series.data.get('director')
+      for director in movieDirectors:
+          if cntDir > 0 :
+            directors += ", "
+          directors += director['name']
+          cntDir += 1
+    else:
+      directors = " Problem with directors!!! "
+    series_data.directors = directors
+    print("Directors:    " + directors)
+
+    producers = ""
+    cntProd = 0
+    if 'producer' in series.data:
+      movieProducers = series.data.get('producer')
+      for producer in movieProducers:
+          if cntProd > 0 :
+            producers += ", "
+
+          if 'name' in producer:
+            producers += producer['name']
+          cntProd += 1
+
+          if cntProd > 5:
+            break
+    else:
+      producers = " Problem with producers!!! "
+    series_data.producers = producers
+    print("Producers:    " + producers)
+
+    writers = ""
+    cntWrit = 0
+    if 'writer' in series.data:
+      movieWriters = series.data.get('writer')
+      for writer in movieWriters:
+          if cntWrit > 0 :
+            writers += ", "
+
+          if 'name' in writer:
+            writers += writer['name']
+          cntWrit += 1
+    else:
+      writers = " Problem with writers!!! "
+    series_data.writers = writers
+    print("Writers:      " + writers)
+
+    genres = ""
+    shortGenres = ""
+    cntGen = 0
+    for gen in series.data['genres']:
+      genres += gen + ", "
+      if cntGen > 0 and cntGen <3 :
+        shortGenres += ","
+      if cntGen < 3:
+        shortGenres += gen
+
+      cntGen += 1
+    series_data.genres = genres
+    print('Genres:       ' + genres)
+
+    cast = ""
+    shortCast = ""
+    if 'cast' in series.data:
+      i = 0
+      for actor in series.data['cast']:
+        cast += actor['name']
+        cast += ", "
+        if i < 5 :
+          shortCast += actor['name']
+        if i >= 0 and i < 4 :
+          shortCast += ", "
+        i = i + 1
+              
+      print('Cast:         ' + shortCast)
+      series_data.cast_complete = cast
+      series_data.cast_leads = shortCast
+    else:
+      print("-------------------------------------------")
+      print("NO CAST!!!")
+      print("-------------------------------------------")
+        
+    print ()
+    plot = series.data.get('plot outline', None)
+    series_data.plot = plot
+    #print("Plot outline: " + str(plot))
+
+  except:
+    print("\nERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
+    series_data.name = ""
+  
+  return series_data
+
