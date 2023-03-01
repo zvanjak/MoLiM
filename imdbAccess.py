@@ -222,7 +222,7 @@ def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovi
 
 
 # fetchSeriesData(searchMovieName)
-def fetchSeriesData(searchMovieName) -> IMDBMovieData:
+def fetchSeriesData(searchMovieName):
   movie_data = IMDBMovieData.IMDBMovieData(searchMovieName)
 
   searchMovieName = searchMovieName.rstrip()
@@ -247,9 +247,8 @@ def fetchSeriesData(searchMovieName) -> IMDBMovieData:
   for m in foundMoviesList:
     try:
       t = m.data.get('title')
-      y = m.data.get('year')
       k = m.data.get('kind')
-      if t == searchMovieName and y == releaseYear and k == 'movie':
+      if t == searchMovieName and k == 'tv series':
         movieID = m.movieID
         movieFound = True
         break

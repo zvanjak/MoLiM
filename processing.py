@@ -16,6 +16,24 @@ import IMDBMovieData
 import imdbAccess
 
 
+def processSeriesFolder(folderName):
+  print("------------------------------------------")
+  print("------", folderName, "------")
+  print("------------------------------------------")
+
+  seriesSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
+
+  for seriesFolderName in seriesSubFolders:
+    if seriesFolderName.find("IMDB") == -1:
+      print(seriesFolderName)
+
+      movie_data = imdbAccess.fetchSeriesData(seriesFolderName)
+    
+      if movie_data.name != "":
+        print("Found series")
+        #fileOperations.saveMovieDataAndRenameFolder(movie_data,folderName,seriesFolderName)
+
+
 def processFolder(folderName):
   print("------------------------------------------")
   print("------", folderName, "------")
