@@ -249,7 +249,17 @@ def saveTXTWithSeriesData(series_data : IMDBSeriesData, folderWhereItIs, movieFo
     fileFilmData = open(fileName, 'w')
     fileFilmData.write("SeasonID:    " + str(season.seasonID) + "\n")
     fileFilmData.write("Num episodes:" + str(season.num_episodes) + "\n")
+
+    for episode in season.episodes_list:
+      fileFilmData.write("\nEpisode   : " + str(episode.title) + "\n")
+      fileFilmData.write("Rating    : " + str(episode.rating) + "\n")
+      fileFilmData.write("Votes     : " + str(episode.votes) + "\n")
+      fileFilmData.write("Air date  : " + str(episode.original_air_date) + "\n")
+      fileFilmData.write("Year      : " + str(episode.year) + "\n")
+      fileFilmData.write("Plot      : " + episode.plot + "\n")
+
     fileFilmData.close()
+
  
 def loadIMDBMovieDataFromFilmData(folderWhereItIs, movieFolderName, movieName, movieYear) -> IMDBMovieData.IMDBMovieData:
   movie_data = IMDBMovieData.IMDBMovieData(movieName)
