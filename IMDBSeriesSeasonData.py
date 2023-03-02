@@ -1,11 +1,8 @@
-
-class IMDBSeriesData(object):
-  def __init__(self,name):        # poziva se kod inicijalizacije
-    self.name = name
-    self.imdb_name = ""
+class IMDBSeriesSeasonData(object):
+  def __init__(self,seasonID):        # poziva se kod inicijalizacije
+    self.seasonID = seasonID
     self.movieID = 0
     self.year = 0
-    self.num_seasons = 0
     self.runtime = 0
     self.rating = 0.0
     self.votes = 0
@@ -18,19 +15,9 @@ class IMDBSeriesData(object):
     self.cast_complete = ""
     self.plot = ""
     
-    self.releaseDate = ""
-    
-    self.seasons_list = []
-
     self.directors_list = []
     self.genres_list = []
     self.cast_list = []
     self.producers_list = []
     self.writers_list = []
 
-  def hasGenre(self, genre: str) -> bool:
-    return genre in self.genres
-
-  def hasActor(self, actor: str) -> bool:
-    return actor in self.cast_complete[0:300]
-  

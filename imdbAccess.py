@@ -12,6 +12,7 @@ import random
 
 import IMDBMovieData
 import IMDBSeriesData
+import IMDBSeriesSeasonData
 
 
 # create an instance of the Cinemagoer class
