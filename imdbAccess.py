@@ -13,6 +13,7 @@ import random
 import IMDBMovieData
 import IMDBSeriesData
 import IMDBSeriesSeasonData
+import IMDBEpisodeData
 
 
 # create an instance of the Cinemagoer class
@@ -384,25 +385,27 @@ def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBSeriesData.IMDBSe
 
     for season_id in season_keys:
       new_season = IMDBSeriesSeasonData.IMDBSeriesSeasonData(season_id)
+      
       series_data.seasons_list.append(new_season)
-
-      print("Season {0}".format(season_id))
       season_data = series['episodes'][season_id]
-       
       episode_num = len(season_data)
-      print("Episode num = {0}".format(episode_num))
       new_season.num_episodes = episode_num
+
+      print("Season {0}".format(season_id))    
+      print("Episode num = {0}".format(episode_num))
 
       season_episodes_keys = series['episodes'][season_id].keys()
       for season_episode_key_id in season_episodes_keys:
         episode = series['episodes'][season_id][season_episode_key_id]
-        #episode = series['episodes'][season_id][i]
-        print(episode['title'])
-        print(episode.data['rating'])
-        print(episode.data['votes'])
-        print(episode.data['original air date'])
-        print(episode.data['year'])
-        print(episode.data['plot'])
+
+        new_episode = IMDBEpisodeData.IMDBEpisodeData(season_episode_key_id)
+
+        new_episode.title = episode['title']
+        new_episode.rating = episode['rating']
+        new_episode.votes = episode['votes']
+        new_episode.original_air_date = episode['original air date']
+        new_episode.year = episode['year']
+        new_episode.plot = episode['plot']
   except:
     print("\nERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
     series_data.name = ""

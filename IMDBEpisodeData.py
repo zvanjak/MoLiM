@@ -1,8 +1,7 @@
-class IMDBSeriesSeasonData(object):
-  def __init__(self,seasonID):        # poziva se kod inicijalizacije
-    self.seasonID = seasonID
+class IMDBEpisodeData(object):
+  def __init__(self,episodeId):        # poziva se kod inicijalizacije
+    self.episodeId = episodeId
     self.title = ""
-    self.num_episodes = 0
     self.movieID = 0
     self.year = 0
     self.runtime = 0
