@@ -278,30 +278,6 @@ def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBSeriesData.IMDBSe
 
      ia.update(series, 'episodes')
 
-     season_keys = sorted(series['episodes'].keys())
-
-     num_seasons = len(series['episodes'].keys())
-     print("Seasons num = {0}".format(num_seasons))
-
-     for season_id in season_keys:
-       print("Season {0}".format(season_id))
-       season_data = series['episodes'][season_id]
-       
-       episode_num = len(season_data)
-       print("Episode num = {0}".format(episode_num))
-       
-       season_episodes_keys = series['episodes'][season_id].keys()
-       for season_episode_key_id in season_episodes_keys:
-         episode = series['episodes'][season_id][season_episode_key_id]
-         #episode = series['episodes'][season_id][i]
-         print(episode['title'])
-         print(episode.data['rating'])
-         print(episode.data['votes'])
-         print(episode.data['original air date'])
-         print(episode.data['year'])
-         print(episode.data['plot'])
-
-
   except:
     print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
     print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
@@ -397,8 +373,32 @@ def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBSeriesData.IMDBSe
     print ()
     plot = series.data.get('plot outline', None)
     series_data.plot = plot
-    #print("Plot outline: " + str(plot))
+    print("Plot outline: " + str(plot))
 
+    season_keys = sorted(series['episodes'].keys())
+
+    num_seasons = len(series['episodes'].keys())
+    print("Seasons num = {0}".format(num_seasons))
+    series.num_seasons = num_seasons
+
+    for season_id in season_keys:
+
+      print("Season {0}".format(season_id))
+      season_data = series['episodes'][season_id]
+       
+      episode_num = len(season_data)
+      print("Episode num = {0}".format(episode_num))
+       
+      season_episodes_keys = series['episodes'][season_id].keys()
+      for season_episode_key_id in season_episodes_keys:
+        episode = series['episodes'][season_id][season_episode_key_id]
+        #episode = series['episodes'][season_id][i]
+        print(episode['title'])
+        print(episode.data['rating'])
+        print(episode.data['votes'])
+        print(episode.data['original air date'])
+        print(episode.data['year'])
+        print(episode.data['plot'])
   except:
     print("\nERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
     series_data.name = ""

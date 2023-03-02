@@ -5,6 +5,7 @@ class IMDBSeriesData(object):
     self.imdb_name = ""
     self.movieID = 0
     self.year = 0
+    self.num_seasons = 0
     self.runtime = 0
     self.rating = 0.0
     self.votes = 0
