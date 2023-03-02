@@ -382,6 +382,8 @@ def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBSeriesData.IMDBSe
     series.num_seasons = num_seasons
 
     for season_id in season_keys:
+      new_season = IMDBSeriesSeasonData.IMDBSeriesSeasonData(season_id)
+      series.seasons_list.append(new_season)
 
       print("Season {0}".format(season_id))
       season_data = series['episodes'][season_id]
