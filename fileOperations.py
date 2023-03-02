@@ -37,6 +37,11 @@ def getFilmDataFilePath(folderWhereItIs : str, movieFolderName : str, movieName 
   filePath = folderWhereItIs + "\\" + movieFolderName + "\\" + "Film data - " + movieName.strip() + " (" + str(movieYear) + ")" + ".txt"
   return filePath
 
+def getSeriesDataFilePath(folderWhereItIs : str, movieFolderName : str, movieName : str, movieYear : int) -> str:
+  beba = movieName.strip()
+  filePath = folderWhereItIs + "\\" + movieFolderName + "\\" + "Series data - " + movieName.strip() + " (" + str(movieYear) + ")" + ".txt"
+  return filePath
+
 def getMovieNameFromFolder(movieFolderName): # TODO  -> tuple(str,str):
   earchMovieName = ""
   # provjeriti ima li točaka u nazivu
@@ -216,7 +221,7 @@ def saveTXTWithMovieData(movie_data : IMDBMovieData, folderWhereItIs, movieFolde
 
 def saveTXTWithSeriesData(series_data : IMDBSeriesData, folderWhereItIs, movieFolderName):
   # formirati TXT datoteku s podacima
-  fileName = getFilmDataFilePath(folderWhereItIs, movieFolderName, series_data.name, series_data.year)
+  fileName = getSeriesDataFilePath(folderWhereItIs, movieFolderName, series_data.name, series_data.year)
 
   fileFilmData = open(fileName, 'w')
   fileFilmData.write(series_data.name + " (" + str(series_data.year) + ")\n")
@@ -240,7 +245,7 @@ def saveTXTWithSeriesData(series_data : IMDBSeriesData, folderWhereItIs, movieFo
   fileFilmData.close()
 
   for season in series_data.seasons_list:
-    fileName = folderWhereItIs + "\\" + movieFolderName + "\\Season " + str(season.seasonID)
+    fileName = folderWhereItIs + "\\" + movieFolderName + "\\Season " + str(season.seasonID) + ".txt"
     fileFilmData = open(fileName, 'w')
     fileFilmData.write("SeasonID:    " + str(season.seasonID) + "\n")
     fileFilmData.write("Num episodes:" + str(season.num_episodes) + "\n")
