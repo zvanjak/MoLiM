@@ -11,6 +11,7 @@ import time
 import random
 
 import IMDBMovieData
+import IMDBSeriesData
 
 
 # create an instance of the Cinemagoer class
@@ -223,7 +224,7 @@ def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovi
 
 # fetchSeriesData(searchMovieName)
 def fetchSeriesData(searchMovieName):
-  movie_data = IMDBMovieData.IMDBMovieData(searchMovieName)
+  series_data = IMDBMovieData.IMDBMovieData(searchMovieName)
 
   searchMovieName = searchMovieName.rstrip()
 
@@ -233,14 +234,14 @@ def fetchSeriesData(searchMovieName):
   except:
     print("\n--------   EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET --------\n")
     time.sleep(30)
-    movie_data.name = ""
-    return movie_data
+    series_data.name = ""
+    return series_data
 
   if len(foundMoviesList) == 0 :
-    movie_data.name = ""
+    series_data.name = ""
     print ("\n   ----   SEARCH RETURNED NOTHING!!!   ----\n")
     time.sleep(20)
-    return movie_data
+    return series_data
 
   movieID = foundMoviesList[0].movieID
   movieFound = False
@@ -262,15 +263,15 @@ def fetchSeriesData(searchMovieName):
     #movie_data.name = ""
     #return movie_data
 
-  movie_data = fetchSeriesDataByMovieID(searchMovieName, movieID)
+  series_data = fetchSeriesDataByMovieID(searchMovieName, movieID)
 
   time.sleep(5+random.randrange(0,5))
 
-  return movie_data
+  return series_data
 
 
-def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovieData:
-  series_data = IMDBMovieData.IMDBMovieData(name)
+def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBSeriesData.IMDBSeriesData:
+  series_data = IMDBSeriesData.IMDBSeriesData(name)
 
   try:
      series = ia.get_movie(movieID)

@@ -3,6 +3,7 @@ from datetime import date
 
 import os
 import IMDBMovieData
+import IMDBSeriesData
 
 def getFolderSize(start_path : str):
     total_size = 0
@@ -158,16 +159,16 @@ def saveMovieDataAndRenameFolder(movie_data : IMDBMovieData, folderWhereItIs, mo
     print()
 
 
-def saveSeriesDataAndRenameFolder(movie_data : IMDBMovieData, folderWhereItIs, movieFolderName):
+def saveSeriesDataAndRenameFolder(series_data : IMDBSeriesData, folderWhereItIs, movieFolderName):
 
     # ime novog direktorija
     # Naziv (2022) IMDB-7.5 Adventure,Comedy,Thriller Cast-Mel Gibson, Jim Belushi, Joan Crawford
-    newDirName = getMovieFolderNameFromMovieData(movie_data)   # movie_data.name + "(" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " CAST - " + movie_data.cast
+    newDirName = getMovieFolderNameFromMovieData(series_data)   # movie_data.name + "(" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " CAST - " + movie_data.cast
 
     print("NEWDIR = ", newDirName)
 
     # formirati TXT datoteku s podacima
-    saveTXTWithMovieData(movie_data, folderWhereItIs, movieFolderName)
+    saveTXTWithSeriesData(series_data, folderWhereItIs, movieFolderName)
 
     # i sad idemo preimenovati direktorij
     origDir = folderWhereItIs + "\\" + movieFolderName
@@ -177,7 +178,7 @@ def saveSeriesDataAndRenameFolder(movie_data : IMDBMovieData, folderWhereItIs, m
       print("\n\nDESTINATION DIR ALREADY EXISTS!!!!!!\n\n")
     else:
       print("RENAMING - ", origDir, destDir)
-      os.rename(origDir, destDir)
+      #os.rename(origDir, destDir)
 
     print()
 
@@ -205,6 +206,32 @@ def saveTXTWithMovieData(movie_data : IMDBMovieData, folderWhereItIs, movieFolde
   fileFilmData.write("Box office:" + movie_data.box_office + "\n")
   fileFilmData.write("Cast:      " + movie_data.cast_complete + "\n")
   fileFilmData.write("Plot:      " + str(movie_data.plot) + "\n")
+
+  today = date.today()
+  dateToSave = today.strftime("%Y-%m-%d")
+  fileFilmData.write("Saved on:  " + dateToSave)
+
+  fileFilmData.close()
+ 
+
+def saveTXTWithSeriesData(series_data : IMDBSeriesData, folderWhereItIs, movieFolderName):
+  # formirati TXT datoteku s podacima
+  fileName = getFilmDataFilePath(folderWhereItIs, movieFolderName, series_data.name, series_data.year)
+
+  fileFilmData = open(fileName, 'w')
+  fileFilmData.write(series_data.name + " (" + str(series_data.year) + ")\n")
+  fileFilmData.write("MovieID:   " + str(series_data.movieID) + "\n")
+  fileFilmData.write("Title:     " + series_data.imdb_name + "\n")
+  fileFilmData.write("Year:      " + str(series_data.year) + "\n")
+  fileFilmData.write("Runtime:   " + str(series_data.runtime) + " min\n")
+  fileFilmData.write("Rating:    " + str(series_data.rating) + "\n")
+  fileFilmData.write("Votes:     " + str(series_data.votes) + "\n")
+  fileFilmData.write("Genres:    " + series_data.genres + "\n")
+  fileFilmData.write("Countries: " + series_data.countries + "\n")
+  fileFilmData.write("Languages: " + series_data.languages + "\n")
+  fileFilmData.write("Writers:   " + series_data.writers + "\n")
+  fileFilmData.write("Cast:      " + series_data.cast_complete + "\n")
+  fileFilmData.write("Plot:      " + str(series_data.plot) + "\n")
 
   today = date.today()
   dateToSave = today.strftime("%Y-%m-%d")
