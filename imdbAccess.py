@@ -276,9 +276,9 @@ def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBSeriesData.IMDBSe
   series_data = IMDBSeriesData.IMDBSeriesData(name)
 
   try:
-     series = ia.get_movie(movieID)
+     imdb_series_data = ia.get_movie(movieID)
 
-     ia.update(series, 'episodes')
+     ia.update(imdb_series_data, 'episodes')
 
   except:
     print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
@@ -291,22 +291,22 @@ def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBSeriesData.IMDBSe
   series_data.movieID = movieID
 
   try:
-    series_data.imdb_name = series.data.get('title')
+    series_data.imdb_name = imdb_series_data.data.get('title')
 
-    rating = series.data.get('rating', None)
+    rating = imdb_series_data.data.get('rating', None)
     series_data.rating = rating
     print("IMDB rating:  {0}".format(rating))
 
-    votes = series.data.get('votes', 0)
+    votes = imdb_series_data.data.get('votes', 0)
     series_data.votes = votes
     print("Num. votes:   {0}".format(votes))
 
-    year = series.data.get('year', None)
+    year = imdb_series_data.data.get('year', None)
     series_data.year = year
     print("Year:         {0}".format(year))
 
-    if 'runtimes' in series.data:
-      runtime = int(series.data['runtimes'][0])
+    if 'runtimes' in imdb_series_data.data:
+      runtime = int(imdb_series_data.data['runtimes'][0])
       series_data.runtime = runtime
       print("Runtime:     ", runtime, " min")
     else:
@@ -315,16 +315,16 @@ def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBSeriesData.IMDBSe
       print("-------------------------------------------")
       series_data.runtime = 0
 
-    if 'countries' in series.data:
-      series_data.countries = str(series.data['countries'])
+    if 'countries' in imdb_series_data.data:
+      series_data.countries = str(imdb_series_data.data['countries'])
 
-    if 'languages' in series.data:
-      series_data.languages = str(series.data['languages'])
+    if 'languages' in imdb_series_data.data:
+      series_data.languages = str(imdb_series_data.data['languages'])
       
     writers = ""
     cntWrit = 0
-    if 'writer' in series.data:
-      movieWriters = series.data.get('writer')
+    if 'writer' in imdb_series_data.data:
+      movieWriters = imdb_series_data.data.get('writer')
       for writer in movieWriters:
           if cntWrit > 0 :
             writers += ", "
@@ -340,7 +340,7 @@ def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBSeriesData.IMDBSe
     genres = ""
     shortGenres = ""
     cntGen = 0
-    for gen in series.data['genres']:
+    for gen in imdb_series_data.data['genres']:
       genres += gen + ", "
       if cntGen > 0 and cntGen <3 :
         shortGenres += ","
@@ -353,9 +353,9 @@ def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBSeriesData.IMDBSe
 
     cast = ""
     shortCast = ""
-    if 'cast' in series.data:
+    if 'cast' in imdb_series_data.data:
       i = 0
-      for actor in series.data['cast']:
+      for actor in imdb_series_data.data['cast']:
         cast += actor['name']
         cast += ", "
         if i < 5 :
@@ -373,32 +373,33 @@ def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBSeriesData.IMDBSe
       print("-------------------------------------------")
         
     print ()
-    plot = series.data.get('plot outline', None)
+    plot = imdb_series_data.data.get('plot outline', None)
     series_data.plot = plot
     print("Plot outline: " + str(plot))
 
-    season_keys = sorted(series['episodes'].keys())
+    season_keys = sorted(imdb_series_data['episodes'].keys())
 
-    num_seasons = len(series['episodes'].keys())
+    num_seasons = len(imdb_series_data['episodes'].keys())
     print("Seasons num = {0}".format(num_seasons))
-    series.num_seasons = num_seasons
+    series_data.num_seasons = num_seasons
 
     for season_id in season_keys:
       new_season = IMDBSeriesSeasonData.IMDBSeriesSeasonData(season_id)
       
       series_data.seasons_list.append(new_season)
-      season_data = series['episodes'][season_id]
+      season_data = imdb_series_data['episodes'][season_id]
       episode_num = len(season_data)
       new_season.num_episodes = episode_num
 
       print("Season {0}".format(season_id))    
       print("Episode num = {0}".format(episode_num))
 
-      season_episodes_keys = series['episodes'][season_id].keys()
+      season_episodes_keys = imdb_series_data['episodes'][season_id].keys()
       for season_episode_key_id in season_episodes_keys:
-        episode = series['episodes'][season_id][season_episode_key_id]
+        episode = imdb_series_data['episodes'][season_id][season_episode_key_id]
 
         new_episode = IMDBEpisodeData.IMDBEpisodeData(season_episode_key_id)
+        new_season.episodes_list.append(new_episode)
 
         new_episode.title = episode['title']
         new_episode.rating = episode['rating']
