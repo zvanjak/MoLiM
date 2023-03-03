@@ -198,7 +198,7 @@ def saveSeriesDataAndRenameFolder(series_data : IMDBSeriesData, folderWhereItIs,
       print("\n\nDESTINATION DIR ALREADY EXISTS!!!!!!\n\n")
     else:
       print("RENAMING - ", origDir, destDir)
-      #os.rename(origDir, destDir)
+      os.rename(origDir, destDir)
 
     print()
 

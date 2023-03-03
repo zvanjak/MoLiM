@@ -407,7 +407,7 @@ def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBSeriesData.IMDBSe
         new_episode.rating = rating
 
         votes = episode.data.get('votes', None)
-        new_episode.votes = rating
+        new_episode.votes = votes
 
         original_air_date = episode.data.get('originalair date', None)
         new_episode.original_air_date = original_air_date
