@@ -105,6 +105,21 @@ def getMovieFolderNameFromMovieData(movie_data : IMDBMovieData) -> str:
   
   return newDirName
 
+def getSeriesFolderNameFromMovieData(series_data : IMDBSeriesData) -> str:
+  prefix = ""
+  if series_data.rating >= 9.0:
+    prefix = "___"
+  elif series_data.rating >= 8.0:
+    prefix = "__"
+  elif series_data.rating >= 7.0:
+    prefix = "_"
+  elif series_data.rating < 6.0:
+    prefix = "zzz_"
+  
+  newDirName = prefix + str(series_data.name).rstrip() + "  (" + str(series_data.year) + ", " + str(series_data.num_seasons) + " seasons)" + " IMDB-" + str(series_data.rating) + " " + series_data.genres + " CAST - " + series_data.cast_leads
+  
+  return newDirName
+
 def doesFilmDataHasMovieID(folderWhereItIs, movieFolderName, movieName, movieYear) -> bool:
   filePath = getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear)
 
@@ -168,7 +183,7 @@ def saveSeriesDataAndRenameFolder(series_data : IMDBSeriesData, folderWhereItIs,
 
     # ime novog direktorija
     # Naziv (2022) IMDB-7.5 Adventure,Comedy,Thriller Cast-Mel Gibson, Jim Belushi, Joan Crawford
-    newDirName = getMovieFolderNameFromMovieData(series_data)   # movie_data.name + "(" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " CAST - " + movie_data.cast
+    newDirName = getSeriesFolderNameFromMovieData(series_data)   # movie_data.name + "(" + str(movie_data.year) + ")" + " IMDB-" + str(movie_data.rating) + " " + movie_data.genres + " CAST - " + movie_data.cast
 
     print("NEWDIR = ", newDirName)
 

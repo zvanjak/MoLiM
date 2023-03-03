@@ -416,7 +416,7 @@ def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBSeriesData.IMDBSe
         new_episode.year = year
 
         plot = episode.data.get('plot', None)
-        new_episode.votes = plot
+        new_episode.plot = plot
 
   except:
     print("\nERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
