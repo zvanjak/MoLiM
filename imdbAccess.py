@@ -402,11 +402,22 @@ def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBSeriesData.IMDBSe
         new_season.episodes_list.append(new_episode)
 
         new_episode.title = episode['title']
-        new_episode.rating = episode['rating']
-        new_episode.votes = episode['votes']
-        new_episode.original_air_date = episode['original air date']
-        new_episode.year = episode['year']
-        new_episode.plot = episode['plot']
+
+        rating = episode.data.get('rating', None)
+        new_episode.rating = rating
+
+        votes = episode.data.get('votes', None)
+        new_episode.votes = rating
+
+        original_air_date = episode.data.get('originalair date', None)
+        new_episode.original_air_date = original_air_date
+
+        year = episode.data.get('year', None)
+        new_episode.year = year
+
+        plot = episode.data.get('plot', None)
+        new_episode.votes = plot
+
   except:
     print("\nERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
     series_data.name = ""

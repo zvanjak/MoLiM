@@ -143,7 +143,7 @@ def printAllActorsMovies():
 #printAllActorsMovies()
 
 
-processing.processSeriesFolder("E:\Serije")
+processing.processSeriesFolder("F:\_DONE")
 
 #processing.processFolder("Z:\Movies\CRTICI")
 #processing.processListOfFolders( ( "Z:\Movies\FILMOVI\_____GOOD DONE\Denis Vilenueve",      \
