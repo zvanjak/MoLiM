@@ -59,7 +59,7 @@ def getMovieNameFromFolder(movieFolderName): # TODO  -> tuple(str,str):
     
     if( part.isnumeric() ):
       year = int(part)
-      if year > 1930 and year < 2023 :
+      if year > 1930 and year < 2025 :
         #nasli smo ga
         diskMovieName = ""
         searchMovieName = ""
