@@ -9,8 +9,9 @@ import FolderWithMovies
 import RootFolder 
 import myFolders 
 import processing 
-import statistics 
+import movieStatistics 
 import reports
+
 
 
 def printDirectorsStatistics():
@@ -21,7 +22,7 @@ def printDirectorsStatistics():
                                   myFolders.decadesFolders + \
                                   myFolders.directorsFolders + \
                                   myFolders.getSeriesFolderNames() + \
-                                  ["E:\DONE", "Z:\Movies\FILMOVI\_____GOOD DONE"])
+                                  ["E:\\DONE", "Z:\Movies\FILMOVI\_____GOOD DONE"])
 
   tuplesList = []
 
@@ -145,7 +146,7 @@ def printAllActorsMovies():
 
 #processing.processSeriesFolder("F:\_OBRADITI")
 
-processing.processFolder(r"D:\NEW MOVIES")
+processing.processFolder(r"C:\\MoLiM\\Movies")
 
 #processing.processListOfFolders( ( "Z:\Movies\FILMOVI\_____GOOD DONE\Denis Vilenueve",      \
 #                                   "Z:\Movies\FILMOVI\_____GOOD DONE\Humphrey Bogart",      \
