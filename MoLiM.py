@@ -9,8 +9,9 @@ import FolderWithMovies
 import RootFolder 
 import myFolders 
 import processing 
-import statistics 
+import movieStatistics 
 import reports
+
 
 
 def printDirectorsStatistics():
@@ -21,7 +22,7 @@ def printDirectorsStatistics():
                                   myFolders.decadesFolders + \
                                   myFolders.directorsFolders + \
                                   myFolders.getSeriesFolderNames() + \
-                                  ["E:\DONE", "Z:\Movies\FILMOVI\_____GOOD DONE"])
+                                  ["E:\\DONE", "Z:\Movies\FILMOVI\_____GOOD DONE"])
 
   tuplesList = []
 
