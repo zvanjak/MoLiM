@@ -57,8 +57,8 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
   
   if movieFound == False:
     print ("COULD NOT FIND EXACT MOVIE WITH NAME AND YEAR") 
-    for movie in foundMoviesList:
-      print("-- {0:15} -- {1:30}, {2}".format(movie.movieID, movie.data.get('title'), movie.data.get('year')))
+  for movie in foundMoviesList:
+    print("-- {0:15} -- {1:30}, {2}".format(movie.movieID, movie.data.get('title'), movie.data.get('year')))
     #movie_data.name = ""
     #return movie_data
 
@@ -242,7 +242,7 @@ def fetchSeriesData(searchMovieName):
   if len(foundMoviesList) == 0 :
     series_data.name = ""
     print ("\n   ----   SEARCH RETURNED NOTHING!!!   ----\n")
-    time.sleep(20)
+    time.sleep(10)
     return series_data
 
   movieID = foundMoviesList[0].movieID
@@ -377,46 +377,47 @@ def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBSeriesData.IMDBSe
     series_data.plot = plot
     print("Plot outline: " + str(plot))
 
-    season_keys = sorted(imdb_series_data['episodes'].keys())
+    if series_data.num_seasons > 0:
+      season_keys = sorted(imdb_series_data['episodes'].keys())
 
-    num_seasons = len(imdb_series_data['episodes'].keys())
-    print("Seasons num = {0}".format(num_seasons))
-    series_data.num_seasons = num_seasons
+      num_seasons = len(imdb_series_data['episodes'].keys())
+      print("Seasons num = {0}".format(num_seasons))
+      series_data.num_seasons = num_seasons
 
-    for season_id in season_keys:
-      new_season = IMDBSeriesSeasonData.IMDBSeriesSeasonData(season_id)
+      for season_id in season_keys:
+        new_season = IMDBSeriesSeasonData.IMDBSeriesSeasonData(season_id)
       
-      series_data.seasons_list.append(new_season)
-      season_data = imdb_series_data['episodes'][season_id]
-      episode_num = len(season_data)
-      new_season.num_episodes = episode_num
+        series_data.seasons_list.append(new_season)
+        season_data = imdb_series_data['episodes'][season_id]
+        episode_num = len(season_data)
+        new_season.num_episodes = episode_num
 
-      print("Season {0}".format(season_id))    
-      print("Episode num = {0}".format(episode_num))
+        print("Season {0}".format(season_id))    
+        print("Episode num = {0}".format(episode_num))
 
-      season_episodes_keys = imdb_series_data['episodes'][season_id].keys()
-      for season_episode_key_id in season_episodes_keys:
-        episode = imdb_series_data['episodes'][season_id][season_episode_key_id]
+        season_episodes_keys = imdb_series_data['episodes'][season_id].keys()
+        for season_episode_key_id in season_episodes_keys:
+          episode = imdb_series_data['episodes'][season_id][season_episode_key_id]
 
-        new_episode = IMDBEpisodeData.IMDBEpisodeData(season_episode_key_id)
-        new_season.episodes_list.append(new_episode)
+          new_episode = IMDBEpisodeData.IMDBEpisodeData(season_episode_key_id)
+          new_season.episodes_list.append(new_episode)
 
-        new_episode.title = episode['title']
+          new_episode.title = episode['title']
 
-        rating = episode.data.get('rating', None)
-        new_episode.rating = rating
+          rating = episode.data.get('rating', None)
+          new_episode.rating = rating
 
-        votes = episode.data.get('votes', None)
-        new_episode.votes = votes
+          votes = episode.data.get('votes', None)
+          new_episode.votes = votes
 
-        original_air_date = episode.data.get('originalair date', None)
-        new_episode.original_air_date = original_air_date
+          original_air_date = episode.data.get('originalair date', None)
+          new_episode.original_air_date = original_air_date
 
-        year = episode.data.get('year', None)
-        new_episode.year = year
+          year = episode.data.get('year', None)
+          new_episode.year = year
 
-        plot = episode.data.get('plot', None)
-        new_episode.plot = plot
+          plot = episode.data.get('plot', None)
+          new_episode.plot = plot
 
   except:
     print("\nERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")

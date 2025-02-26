@@ -43,7 +43,7 @@ def getSeriesDataFilePath(folderWhereItIs : str, movieFolderName : str, movieNam
   return filePath
 
 def getMovieNameFromFolder(movieFolderName): # TODO  -> tuple(str,str):
-  earchMovieName = ""
+  searchMovieName = ""
   # provjeriti ima li točaka u nazivu
   parts = movieFolderName.split('.')
 
@@ -59,7 +59,7 @@ def getMovieNameFromFolder(movieFolderName): # TODO  -> tuple(str,str):
     
     if( part.isnumeric() ):
       year = int(part)
-      if year > 1930 and year < 2025 :
+      if year > 1930 and year <= 2025 :
         #nasli smo ga
         diskMovieName = ""
         searchMovieName = ""

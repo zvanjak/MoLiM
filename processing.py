@@ -27,7 +27,9 @@ def processSeriesFolder(folderName):
     if seriesFolderName.find("IMDB") == -1:
       print(seriesFolderName)
 
-      series_data = imdbAccess.fetchSeriesData(seriesFolderName)
+      (searchSeriesName, year) = fileOperations.getMovieNameFromFolder(seriesFolderName)
+
+      series_data = imdbAccess.fetchSeriesData(searchSeriesName)
     
       if series_data.name != "":
         print("Found series")

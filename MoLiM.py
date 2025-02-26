@@ -143,9 +143,9 @@ def printAllActorsMovies():
 #printAllActorsMovies()
 
 
-#processing.processSeriesFolder("F:\_OBRADITI")
+#processing.processSeriesFolder("E:\\NOVE SERIJE")
 
-processing.processFolder(r"D:\NEW MOVIES")
+processing.processFolder(r"E:\\NOVI FILMOVI")
 
 #processing.processListOfFolders( ( "Z:\Movies\FILMOVI\_____GOOD DONE\Denis Vilenueve",      \
 #                                   "Z:\Movies\FILMOVI\_____GOOD DONE\Humphrey Bogart",      \
