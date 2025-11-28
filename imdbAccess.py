@@ -26,7 +26,7 @@ def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
 
   searchMovieName = searchMovieName.rstrip()
 
-  # TODO kad internet zakaže
+  # TODO kad internet zakaï¿½e
   try:
     foundMoviesList = ia.search_movie(searchMovieName)
   except:
@@ -72,7 +72,10 @@ def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovi
   movie_data = IMDBMovieData.IMDBMovieData(name)
 
   try:
+     # Fetch movie - start with basic data, then update with comprehensive info
      movie = ia.get_movie(movieID)
+     # Update with all standard movie info sets (votes, cast, technical details, etc.)
+     ia.update(movie, info=['vote details', 'technical', 'main'])
   except:
     print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
     print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
@@ -91,8 +94,16 @@ def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovi
     print("IMDB rating:  {0}".format(rating))
 
     votes = movie.data.get('votes', 0)
+    # NOTE: cinemagoer 2025.5.19 (development) has a bug that inflates vote counts by 10x
+    # e.g., The Matrix shows 22M instead of 2.2M, Shawshank shows 31M instead of 3.1M
+    # Workaround: divide by 10 if using development version
+    if votes > 0 and votes >= 10000000:  # Likely inflated if > 10M votes
+        votes = votes // 10
     movie_data.votes = votes
-    print("Num. votes:   {0}".format(votes))
+    if votes == 0:
+        print("Num. votes:   UNAVAILABLE (cinemagoer parser issue)")
+    else:
+        print("Num. votes:   {0}".format(votes))
 
     box_office_data = movie.data.get('box office', None)
     if box_office_data != None:
@@ -108,14 +119,12 @@ def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovi
     movie_data.year = year
     print("Year:         {0}".format(year))
 
-    if 'runtimes' in movie.data:
+    if 'runtimes' in movie.data and movie.data['runtimes']:
       runtime = int(movie.data['runtimes'][0])
       movie_data.runtime = runtime
       print("Runtime:     ", runtime, " min")
     else:
-      print("-------------------------------------------")
-      print("NO RUNTIME!!!!")
-      print("-------------------------------------------")
+      print("Runtime:      UNAVAILABLE (cinemagoer parser issue)")
       movie_data.runtime = 0
 
     if 'top 250 rank' in movie.data:
@@ -143,7 +152,7 @@ def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovi
 
     producers = ""
     cntProd = 0
-    if 'producer' in movie.data:
+    if 'producer' in movie.data and movie.data['producer']:
       movieProducers = movie.data.get('producer')
       for producer in movieProducers:
           if cntProd > 0 :
@@ -156,13 +165,16 @@ def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovi
           if cntProd > 5:
             break
     else:
-      producers = " Problem with producers!!! "
+      producers = "UNAVAILABLE"
     movie_data.producers = producers
-    print("Producers:    " + producers)
+    if producers == "UNAVAILABLE":
+        print("Producers:    UNAVAILABLE (cinemagoer parser issue)")
+    else:
+        print("Producers:    " + producers)
 
     writers = ""
     cntWrit = 0
-    if 'writer' in movie.data:
+    if 'writer' in movie.data and movie.data['writer']:
       movieWriters = movie.data.get('writer')
       for writer in movieWriters:
           if cntWrit > 0 :
@@ -172,9 +184,12 @@ def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovi
             writers += writer['name']
           cntWrit += 1
     else:
-      writers = " Problem with writers!!! "
+      writers = "UNAVAILABLE"
     movie_data.writers = writers
-    print("Writers:      " + writers)
+    if writers == "UNAVAILABLE":
+        print("Writers:      UNAVAILABLE (cinemagoer parser issue)")
+    else:
+        print("Writers:      " + writers)
 
     genres = ""
     shortGenres = ""
@@ -192,7 +207,7 @@ def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovi
 
     cast = ""
     shortCast = ""
-    if 'cast' in movie.data:
+    if 'cast' in movie.data and movie.data['cast']:
       i = 0
       for actor in movie.data['cast']:
         cast += actor['name']
@@ -207,9 +222,9 @@ def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovi
       movie_data.cast_complete = cast
       movie_data.cast_leads = shortCast
     else:
-      print("-------------------------------------------")
-      print("NO CAST!!!")
-      print("-------------------------------------------")
+      print("Cast:         UNAVAILABLE (cinemagoer parser issue)")
+      movie_data.cast_complete = "UNAVAILABLE"
+      movie_data.cast_leads = "UNAVAILABLE"
         
     print ()
     plot = movie.data.get('plot outline', None)
@@ -230,7 +245,7 @@ def fetchSeriesData(searchMovieName):
 
   searchMovieName = searchMovieName.rstrip()
 
-  # TODO kad internet zakaže
+  # TODO kad internet zakaï¿½e
   try:
     foundMoviesList = ia.search_movie(searchMovieName)
   except:

@@ -242,7 +242,7 @@ class TestProcessingIntegration:
         assert len(movie_data.genres) > 0  # Should have genres
         assert len(movie_data.directors) > 0  # Should have directors
         
-        print(f"\n✓ Successfully fetched real data from cinemagoer:")
+        print(f"\n[SUCCESS] Real data fetched from cinemagoer:")
         print(f"  Title: {movie_data.name} ({movie_data.year})")
         print(f"  Rating: {movie_data.rating}")
         print(f"  IMDb ID: {movie_data.movieID}")
