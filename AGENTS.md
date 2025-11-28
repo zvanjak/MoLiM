@@ -59,18 +59,56 @@ Before ending any work session:
 
 1. **File remaining work**: Create issues for any TODOs, bugs discovered, or follow-up tasks
 2. **Update status**: Close completed issues, update in-progress work
-3. **Sync database**: 
+3. **Create session summary**: 
+   ```bash
+   # Create a markdown file in .beads/history/ documenting the session
+   # Filename format: YYYY-MM-DD-session-summary.md
+   # Include: what was accomplished, issues closed, issues created, next steps
+   ```
+4. **Sync database**: 
    ```bash
    bd sync              # Manual sync (usually automatic via hooks)
-   git add .beads/      # Stage beads changes
-   git commit -m "Update issue tracking"
+   git add .beads/      # Stage beads changes (including history/)
+   git commit -m "Update issue tracking and session summary"
    git push
    ```
-4. **Verify clean state**: 
+5. **Verify clean state**: 
    ```bash
    bd info              # Check for uncommitted issues
    git status           # Verify all changes committed
    ```
+
+### Session Summary Guidelines
+
+Create a summary in `.beads/history/YYYY-MM-DD-session-summary.md` with:
+
+```markdown
+# Session Summary - YYYY-MM-DD
+
+## Session Overview
+- **Duration**: [start time] - [end time]
+- **Focus Area**: [e.g., Phase 1, Bug fixes, GUI implementation]
+
+## Completed Work
+- [x] Issue MoLiM-xxx: Brief description
+- [x] Issue MoLiM-yyy: Brief description
+
+### Details
+[More detailed description of what was implemented/fixed]
+
+## Issues Created
+- [ ] Issue MoLiM-zzz: Description (Priority, Labels)
+
+## Next Steps
+1. Next immediate task
+2. Blockers or dependencies to resolve
+3. Areas needing attention
+
+## Notes
+- Any important decisions made
+- Technical debt identified
+- Questions for next session
+```
 
 ### Querying Issues
 
