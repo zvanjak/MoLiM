@@ -1,0 +1,7 @@
+# IMDb data access library (formerly known as IMDbPY)
+# Using the latest version from GitHub for Python 3.14+ compatibility
+git+https://github.com/cinemagoer/cinemagoer.git
+
+# Dependencies (installed automatically with cinemagoer)
+# lxml~=6.0.2
+# sqlalchemy~=2.0.41
