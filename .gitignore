@@ -105,3 +105,13 @@ venv.bak/
 *.vsidx
 
 /.vs
+.vs/slnx.sqlite
+
+# Beads issue tracker - local database files
+.beads/beads.db
+.beads/beads.db-*
+.beads/bd.sock
+.beads/bd.pipe
+.beads/.exclusive-lock
+.beads/daemon.*
+.beads/*.left.*
