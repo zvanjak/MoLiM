@@ -200,6 +200,54 @@ class TestProcessingIntegration:
         # Should attempt to process the real folders in TestData/Movies
         # (exact count depends on test data, but should be > 0)
         assert mock_save.call_count > 0
+    
+    @pytest.mark.slow
+    def test_real_cinemagoer_fetch_and_process(self, tmp_path, mocker):
+        """REAL integration test: Actually fetch data from IMDb using cinemagoer.
+        
+        This test makes a real API call to verify cinemagoer integration works.
+        Marked as 'slow' because it requires internet and real API call.
+        
+        Uses a well-known movie (The Matrix, 1999) to ensure stable test data.
+        """
+        import time
+        
+        # Create a test folder structure
+        test_folder = tmp_path / "test_movies"
+        test_folder.mkdir()
+        movie_folder = test_folder / "The.Matrix.1999"
+        movie_folder.mkdir()
+        
+        # Mock only the save operation to avoid actually writing files
+        mock_save = mocker.patch('fileOperations.saveMovieDataAndRenameFolder')
+        
+        # Add small delay to be respectful to IMDb servers
+        time.sleep(1)
+        
+        # Process folder - this will make REAL cinemagoer API call
+        processing.processFolder(str(test_folder))
+        
+        # Verify the save was called (meaning fetch succeeded)
+        assert mock_save.call_count == 1
+        
+        # Verify we got real movie data from cinemagoer
+        call_args = mock_save.call_args[0]
+        movie_data = call_args[0]  # First argument is the IMDBMovieData object
+        
+        # Verify essential fields from real IMDb data
+        assert movie_data.name == "The Matrix"
+        assert movie_data.year == 1999
+        assert movie_data.rating > 8.0  # The Matrix has high rating
+        assert movie_data.movieID != 0 and movie_data.movieID != ""  # Should have real IMDb ID
+        assert len(movie_data.genres) > 0  # Should have genres
+        assert len(movie_data.directors) > 0  # Should have directors
+        
+        print(f"\n✓ Successfully fetched real data from cinemagoer:")
+        print(f"  Title: {movie_data.name} ({movie_data.year})")
+        print(f"  Rating: {movie_data.rating}")
+        print(f"  IMDb ID: {movie_data.movieID}")
+        print(f"  Genres: {', '.join(movie_data.genres)}")
+        print(f"  Directors: {', '.join(movie_data.directors)}")
 
 
 @pytest.mark.unit
