@@ -1,21 +1,22 @@
-# MoLiM
-Movie Library Manager
+﻿# MoLiM - Movie Library Manager
 
-## Setup
+A Python application for managing and organizing a movie library with IMDb metadata integration.
 
-### Prerequisites
-- Python 3.12 or higher (tested with Python 3.14)
-- Git (for installing cinemagoer from GitHub)
+## ⚠️ Important: Python Version Requirement
 
-### Automated Setup
+**This project requires Python 3.11**
 
-#### Windows
+❌ **Python 3.14 is NOT compatible** - The `cinemagoer` library uses `pkgutil.find_loader` which was removed in Python 3.14.
+
+## Quick Setup
+
+### Windows
 Run the setup script in PowerShell:
 ```powershell
 .\setup.ps1
 ```
 
-#### Linux/Mac
+### Linux/Mac
 Run the setup script in your terminal:
 ```bash
 chmod +x setup.sh
