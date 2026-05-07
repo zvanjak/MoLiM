@@ -2,6 +2,7 @@
 Tests for fileOperations.py - folder name parsing and file operations.
 """
 import pytest
+from datetime import date
 from pathlib import Path
 import fileOperations
 
@@ -34,6 +35,45 @@ class TestFolderNameParsing:
         # Function should handle dots
         assert "Sinners" in name
         assert year == 2025
+
+    def test_get_movie_name_from_folder_with_spaces_only(self):
+        """Real-world: release name with spaces, no dots (the NOVI FILMOVI case)."""
+        name, year = fileOperations.getMovieNameFromFolder("F1 2025 1080p WEB-DL")
+        assert name == "F1"
+        assert year == 2025
+
+    def test_get_movie_name_from_folder_with_dashes(self):
+        """Real-world: release name with dashes."""
+        name, year = fileOperations.getMovieNameFromFolder("Sinners-2025-1080p-BluRay")
+        assert name == "Sinners"
+        assert year == 2025
+
+    def test_get_movie_name_from_folder_mixed_separators(self):
+        name, year = fileOperations.getMovieNameFromFolder("The Accountant 2.2025 1080p_WEB-DL")
+        assert name == "The Accountant 2"
+        assert year == 2025
+
+    def test_get_movie_name_year_ceiling_lifted(self):
+        """Year ceiling now follows the wall clock (was hardcoded to 2025)."""
+        target = date.today().year
+        name, year = fileOperations.getMovieNameFromFolder(f"Future.Movie.{target}.1080p")
+        assert name == "Future Movie"
+        assert year == target
+
+    def test_get_movie_name_first_token_is_numeric_title(self):
+        """Titles that ARE numbers ('300', '1917', '2012') still parse correctly."""
+        name, year = fileOperations.getMovieNameFromFolder("300.2006.BluRay")
+        assert name == "300"
+        assert year == 2006
+
+        name, year = fileOperations.getMovieNameFromFolder("1917.2019.1080p")
+        assert name == "1917"
+        assert year == 2019
+
+    def test_get_movie_name_returns_empty_when_no_year(self):
+        name, year = fileOperations.getMovieNameFromFolder("House of the Dragon")
+        assert name == ""
+        assert year == 0
 
 
 @pytest.mark.unit

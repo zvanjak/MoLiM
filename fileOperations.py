@@ -1,7 +1,7 @@
-﻿
-from datetime import date
+﻿from datetime import date
 
 import os
+import re
 import shutil
 import IMDBMovieData
 import IMDBSeriesData
@@ -104,39 +104,41 @@ def getSeriesDataFilePath(folderWhereItIs : str, movieFolderName : str, movieNam
   return filePath
 
 def getMovieNameFromFolder(movieFolderName): # TODO  -> tuple(str,str):
-  searchMovieName = ""
-  # provjeriti ima li točaka u nazivu
-  parts = movieFolderName.split('.')
+  """Extract (title, year) from a release-style folder name.
 
-  # naći prvi string koji je kredibilna godina proizvodnje (1930 - 2022)
-  cntParts=0
+  Recognises any of '.', '-', '_' or whitespace as a separator. The first
+  4-digit token in 1931..(currentYear+1), at any position other than the
+  very first (so titles like '300', '1917', '2012' aren't mis-detected as
+  years), is treated as the production year. The title is everything
+  before that token, joined with single spaces and stripped of leading
+  underscores.
+
+  Returns ('', 0) when no plausible year is found.
+  """
+  parts = re.split(r'[.\-_\s]+', movieFolderName)
+  parts = [p for p in parts if p]
+
+  max_year = date.today().year + 1
+
+  title_pieces = []
   year = 0
-  searchMovieName = ""
-  for part in parts:
-    cntParts += 1
-    # prvoga bi trebalo preskočiti (za filmove koji imaju broj u nazivu: 300, 1917, 2012)
-    if cntParts == 1:
-      continue
-    
-    if( part.isnumeric() ):
-      year = int(part)
-      if year > 1930 and year <= 2025 :
-        #nasli smo ga
-        diskMovieName = ""
-        searchMovieName = ""
-        for piece in parts:
-          if piece != part:
-            diskMovieName += piece + " "
-          else :
-            # riješiti ukoliko ima _ na početku, da search name bude cist
-            searchMovieName = diskMovieName.strip('_')
+  for idx, part in enumerate(parts):
+    # Skip the very first token so that titles like '300', '1917', '2012'
+    # aren't mistaken for years.
+    if idx > 0 and part.isdigit() and len(part) == 4:
+      candidate = int(part)
+      if 1930 < candidate <= max_year:
+        year = candidate
+        break
+    title_pieces.append(part)
 
-            # na diskMovieName cemo dodati i godinu
-            diskMovieName += "(" + piece + ")"
-            break
-        
-        print (diskMovieName, " - ", searchMovieName, " - ", movieFolderName)
-  
+  if year == 0:
+    return ("", 0)
+
+  searchMovieName = " ".join(title_pieces).strip().lstrip("_").strip()
+  diskMovieName = searchMovieName + " (" + str(year) + ")"
+  print(diskMovieName, " - ", searchMovieName, " - ", movieFolderName)
+
   return (searchMovieName, year)
 
 def getYearFromIMDBFolderName(movieFolderName : str) -> int :
