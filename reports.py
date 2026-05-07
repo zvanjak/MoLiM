@@ -1,18 +1,8 @@
-from re import search
-from shutil import move
-from sys import orig_argv
-from typing import Tuple
-from xmlrpc.client import Boolean
-from imdb import Cinemagoer
-
 from datetime import date
 
-import time
-import random
 import os
-import tkinter
 
-import fileOperations 
+import fileOperations
 
 
 

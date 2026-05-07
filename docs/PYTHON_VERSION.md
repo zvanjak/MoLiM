@@ -1,11 +1,33 @@
-# Python Version Requirements
+# Python Version
 
-## Why Python 3.11?
+MoLiM requires **Python 3.11 or newer**. CI runs on 3.11 and 3.12;
+3.13 and 3.14 are also supported.
 
-This project uses the `cinemagoer` library for IMDb data fetching. This library has a known incompatibility with Python 3.14:
-
-- **Issue**: Uses `pkgutil.find_loader` which was removed in Python 3.14
-- **Error**: `ImportError: cannot import name 'find_loader' from 'pkgutil'`
-- **Solution**: Use Python 3.11
+The historical 3.11 ceiling existed because the legacy `cinemagoer`
+dependency used `pkgutil.find_loader`, removed in Python 3.14. After
+the MoLiM-02x migration the IMDb data layer is a pure-`requests` OMDb +
+TMDb hybrid and that constraint is gone.
 
 ## Checking Your Python Version
+
+```powershell
+py --list           # Windows: list installed Pythons
+py -3.12 --version  # check a specific one
+```
+
+```bash
+python3 --version   # Linux/macOS
+```
+
+## Using a Specific Version
+
+The setup script picks the newest `>= 3.11` automatically:
+
+```powershell
+.\setup.ps1                # auto-pick
+.\setup.ps1 -PythonVersion 3.12   # force 3.12
+```
+
+```bash
+./setup.sh
+```

@@ -1,73 +1,75 @@
-﻿# MoLiM Project Setup Script
-# Sets up Python 3.11 virtual environment and installs dependencies
+﻿# MoLiM Project Setup Script (Windows / PowerShell)
+#
+# Creates a .venv using the best available Python (>= 3.11) and
+# installs requirements. As of MoLiM-dyy cinemagoer is gone, so the
+# Python 3.11 ceiling is lifted - 3.11, 3.12, 3.13, 3.14 all work.
+
+param(
+    [string]$PythonVersion = ""
+)
 
 Write-Host "=== MoLiM Project Setup ===" -ForegroundColor Cyan
 Write-Host ""
 
-# Check if Python 3.11 is available
-Write-Host "Checking for Python 3.11..." -ForegroundColor Yellow
-$python311 = py -3.11 --version 2>$null
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "✗ Python 3.11 not found!" -ForegroundColor Red
-    Write-Host ""
-    Write-Host "Please install Python 3.11 from:" -ForegroundColor Yellow
-    Write-Host "  https://www.python.org/downloads/" -ForegroundColor White
-    Write-Host ""
-    Write-Host "Note: Python 3.14 is NOT compatible with cinemagoer library" -ForegroundColor Yellow
-    exit 1
+# Pick a Python interpreter
+function Resolve-Python {
+    param([string]$Pref)
+    if ($Pref) {
+        $v = & py "-$Pref" --version 2>$null
+        if ($LASTEXITCODE -eq 0) { return @{ Cmd = "py"; Arg = "-$Pref"; Version = $v } }
+        Write-Host "✗ Requested Python $Pref not found via 'py' launcher" -ForegroundColor Red
+        exit 1
+    }
+    foreach ($cand in @("3.13", "3.12", "3.11")) {
+        $v = & py "-$cand" --version 2>$null
+        if ($LASTEXITCODE -eq 0) { return @{ Cmd = "py"; Arg = "-$cand"; Version = $v } }
+    }
+    $v = & python --version 2>$null
+    if ($LASTEXITCODE -eq 0) { return @{ Cmd = "python"; Arg = $null; Version = $v } }
+    return $null
 }
 
-Write-Host "✓ Found: $python311" -ForegroundColor Green
+$py = Resolve-Python -Pref $PythonVersion
+if (-not $py) {
+    Write-Host "✗ No suitable Python (>= 3.11) found" -ForegroundColor Red
+    Write-Host "  Install from https://www.python.org/downloads/" -ForegroundColor Yellow
+    exit 1
+}
+Write-Host "✓ Found: $($py.Version)" -ForegroundColor Green
 Write-Host ""
 
-# Remove old virtual environment if it exists
 if (Test-Path ".venv") {
-    Write-Host "Removing old virtual environment..." -ForegroundColor Yellow
+    Write-Host "Removing old .venv..." -ForegroundColor Yellow
     Remove-Item -Recurse -Force .venv
-    Write-Host "✓ Old .venv removed" -ForegroundColor Green
+    Write-Host "✓ Removed" -ForegroundColor Green
     Write-Host ""
 }
 
-# Create new virtual environment with Python 3.11
-Write-Host "Creating Python 3.11 virtual environment..." -ForegroundColor Yellow
-py -3.11 -m venv .venv
-
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "✗ Failed to create virtual environment" -ForegroundColor Red
-    exit 1
+Write-Host "Creating virtual environment..." -ForegroundColor Yellow
+if ($py.Arg) {
+    & $py.Cmd $py.Arg -m venv .venv
+} else {
+    & $py.Cmd -m venv .venv
 }
-
-Write-Host "✓ Virtual environment created" -ForegroundColor Green
+if ($LASTEXITCODE -ne 0) { Write-Host "✗ venv creation failed" -ForegroundColor Red; exit 1 }
+Write-Host "✓ .venv created" -ForegroundColor Green
 Write-Host ""
 
-# Activate virtual environment
-Write-Host "Activating virtual environment..." -ForegroundColor Yellow
 & .\.venv\Scripts\Activate.ps1
-
-# Verify Python version
-$venvPython = python --version
-Write-Host "✓ Active Python: $venvPython" -ForegroundColor Green
+Write-Host "✓ Active Python: $(python --version)" -ForegroundColor Green
 Write-Host ""
 
-# Upgrade pip
 Write-Host "Upgrading pip..." -ForegroundColor Yellow
 python -m pip install --upgrade pip --quiet
 Write-Host "✓ pip upgraded" -ForegroundColor Green
 Write-Host ""
 
-# Install dependencies
-Write-Host "Installing dependencies from requirements.txt..." -ForegroundColor Yellow
+Write-Host "Installing dependencies..." -ForegroundColor Yellow
 pip install -r requirements.txt
-
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "✗ Failed to install dependencies" -ForegroundColor Red
-    exit 1
-}
-
+if ($LASTEXITCODE -ne 0) { Write-Host "✗ install failed" -ForegroundColor Red; exit 1 }
 Write-Host "✓ Dependencies installed" -ForegroundColor Green
 Write-Host ""
 
-# Set up .env for API keys (MoLiM-02x: OMDb + TMDb hybrid data layer)
 Write-Host "Configuring API keys..." -ForegroundColor Yellow
 if (-not (Test-Path ".env")) {
     if (Test-Path ".env.example") {
@@ -79,7 +81,7 @@ if (-not (Test-Path ".env")) {
 } else {
     Write-Host "✓ .env already present" -ForegroundColor Green
 }
-Write-Host "  Edit .env and add your keys:" -ForegroundColor Gray
+Write-Host "  Edit .env and add:" -ForegroundColor Gray
 Write-Host "    OMDB_API_KEY  - http://www.omdbapi.com/apikey.aspx" -ForegroundColor Gray
 Write-Host "    TMDB_API_KEY  - https://www.themoviedb.org/settings/api" -ForegroundColor Gray
 Write-Host ""
@@ -87,33 +89,6 @@ Write-Host ""
 python -c "import config; s = config.get_settings(); print('OMDb:', 'set' if s.omdb_api_key else 'MISSING'); print('TMDb:', 'set' if s.tmdb_api_key else 'MISSING')"
 Write-Host ""
 
-# Verify cinemagoer installation (legacy - removal scheduled in MoLiM-dyy)
-Write-Host "Verifying cinemagoer installation..." -ForegroundColor Yellow
-python -c "from imdb import Cinemagoer; print('✓ cinemagoer imported successfully!')"
-
-if ($LASTEXITCODE -ne 0) {
-    Write-Host "✗ cinemagoer import failed" -ForegroundColor Red
-    exit 1
-}
-
-Write-Host ""
-
-# Show installed packages
-Write-Host "=== Installed Packages ===" -ForegroundColor Cyan
-pip list | Select-String -Pattern "cinemagoer|requests|dotenv|pytest"
-Write-Host ""
-
-# Final summary
 Write-Host "=== Setup Complete! ===" -ForegroundColor Green
-Write-Host ""
-Write-Host "Python version:" -ForegroundColor White
-python --version
-Write-Host ""
-Write-Host "Virtual environment: .venv (Python 3.11)" -ForegroundColor White
-Write-Host "To activate: .\.venv\Scripts\Activate.ps1" -ForegroundColor Gray
-Write-Host ""
-Write-Host "Ready to run tests:" -ForegroundColor White
-Write-Host "  pytest tests/test_imdb_fetching.py -v" -ForegroundColor Gray
-Write-Host ""
-Write-Host "Note: Python 3.11 is currently required (cinemagoer constraint)." -ForegroundColor Yellow
-Write-Host "      The 3.11 lock will be lifted after MoLiM-dyy completes." -ForegroundColor Yellow
+Write-Host "Activate later with: .\.venv\Scripts\Activate.ps1" -ForegroundColor Gray
+Write-Host "Run tests with:      pytest" -ForegroundColor Gray

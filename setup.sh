@@ -1,89 +1,65 @@
 ﻿#!/bin/bash
 # MoLiM Project Setup Script
-# Sets up Python 3.11 virtual environment and installs dependencies
+#
+# Creates a .venv using the best available Python (>= 3.11) and
+# installs requirements. As of MoLiM-dyy cinemagoer is gone, so the
+# Python 3.11 ceiling is lifted - 3.11, 3.12, 3.13, 3.14 all work.
+
+set -e
 
 echo "=== MoLiM Project Setup ==="
 echo ""
 
-# Check if Python 3.11 is available
-echo "Checking for Python 3.11..."
-if command -v python3.11 &> /dev/null; then
-    PYTHON_CMD="python3.11"
-    echo "✓ Found: $(python3.11 --version)"
-elif command -v python3 &> /dev/null && [[ $(python3 --version) == *"3.11"* ]]; then
-    PYTHON_CMD="python3"
-    echo "✓ Found: $(python3 --version)"
-else
-    echo "✗ Python 3.11 not found!"
-    echo ""
-    echo "Please install Python 3.11:"
-    echo "  Ubuntu/Debian: sudo apt install python3.11 python3.11-venv"
-    echo "  macOS: brew install python@3.11"
-    echo ""
-    echo "Note: Python 3.14 is NOT compatible with cinemagoer library"
+# Pick a Python interpreter (3.13 -> 3.12 -> 3.11 -> python3 -> python)
+PYTHON_CMD=""
+for cand in python3.13 python3.12 python3.11 python3 python; do
+    if command -v "$cand" &> /dev/null; then
+        ver=$("$cand" -c 'import sys;print("%d.%d"%sys.version_info[:2])')
+        major=${ver%%.*}
+        minor=${ver#*.}
+        if [ "$major" -ge 3 ] && [ "$minor" -ge 11 ]; then
+            PYTHON_CMD="$cand"
+            echo "✓ Found: $($cand --version)"
+            break
+        fi
+    fi
+done
+
+if [ -z "$PYTHON_CMD" ]; then
+    echo "✗ No suitable Python (>= 3.11) found"
+    echo "  Ubuntu/Debian: sudo apt install python3.12 python3.12-venv"
+    echo "  macOS:         brew install python@3.12"
     exit 1
 fi
 echo ""
 
-# Remove old virtual environment if it exists
 if [ -d ".venv" ]; then
-    echo "Removing old virtual environment..."
+    echo "Removing old .venv..."
     rm -rf .venv
-    echo "✓ Old .venv removed"
+    echo "✓ Removed"
     echo ""
 fi
 
-# Create new virtual environment with Python 3.11
-echo "Creating Python 3.11 virtual environment..."
-$PYTHON_CMD -m venv .venv
-
-if [ $? -ne 0 ]; then
-    echo "✗ Failed to create virtual environment"
-    exit 1
-fi
-
-echo "✓ Virtual environment created"
+echo "Creating virtual environment..."
+"$PYTHON_CMD" -m venv .venv
+echo "✓ .venv created"
 echo ""
 
-# Activate virtual environment
-echo "Activating virtual environment..."
+# shellcheck disable=SC1091
 source .venv/bin/activate
-
-# Verify Python version
-VENV_PYTHON=$(python --version)
-echo "✓ Active Python: $VENV_PYTHON"
+echo "✓ Active Python: $(python --version)"
 echo ""
 
-# Upgrade pip
 echo "Upgrading pip..."
 python -m pip install --upgrade pip --quiet
 echo "✓ pip upgraded"
 echo ""
 
-# Install dependencies
-echo "Installing dependencies from requirements.txt..."
+echo "Installing dependencies..."
 pip install -r requirements.txt
-
-if [ $? -ne 0 ]; then
-    echo "✗ Failed to install dependencies"
-    exit 1
-fi
-
 echo "✓ Dependencies installed"
 echo ""
 
-# Verify cinemagoer installation
-echo "Verifying cinemagoer installation..."
-python -c "from imdb import Cinemagoer; print('✓ cinemagoer imported successfully!')"
-
-if [ $? -ne 0 ]; then
-    echo "✗ cinemagoer import failed"
-    exit 1
-fi
-
-echo ""
-
-# Set up .env for API keys (MoLiM-02x: OMDb + TMDb hybrid data layer)
 echo "Configuring API keys..."
 if [ ! -f ".env" ]; then
     if [ -f ".env.example" ]; then
@@ -95,7 +71,7 @@ if [ ! -f ".env" ]; then
 else
     echo "✓ .env already present"
 fi
-echo "  Edit .env and add your keys:"
+echo "  Edit .env and add:"
 echo "    OMDB_API_KEY  - http://www.omdbapi.com/apikey.aspx"
 echo "    TMDB_API_KEY  - https://www.themoviedb.org/settings/api"
 echo ""
@@ -103,22 +79,6 @@ echo ""
 python -c "import config; s = config.get_settings(); print('OMDb:', 'set' if s.omdb_api_key else 'MISSING'); print('TMDb:', 'set' if s.tmdb_api_key else 'MISSING')"
 echo ""
 
-# Show installed packages
-echo "=== Installed Packages ==="
-pip list | grep -E "cinemagoer|requests|dotenv|pytest"
-echo ""
-
-# Final summary
 echo "=== Setup Complete! ==="
-echo ""
-echo "Python version:"
-python --version
-echo ""
-echo "Virtual environment: .venv (Python 3.11)"
-echo "To activate: source .venv/bin/activate"
-echo ""
-echo "Ready to run tests:"
-echo "  pytest tests/test_imdb_fetching.py -v"
-echo ""
-echo "Note: Python 3.11 is currently required (cinemagoer constraint)."
-echo "      The 3.11 lock will be lifted after MoLiM-dyy completes."
+echo "Activate later with: source .venv/bin/activate"
+echo "Run tests with:      pytest"

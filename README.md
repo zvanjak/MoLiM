@@ -1,60 +1,46 @@
 ﻿# MoLiM - Movie Library Manager
 
-A Python application for managing and organizing a movie library with IMDb metadata integration.
+A Python application for managing and organizing a movie library with
+IMDb metadata integration.
 
-## ⚠️ Important: Python Version Requirement
+## Requirements
 
-**This project requires Python 3.11**
-
-❌ **Python 3.14 is NOT compatible** - The `cinemagoer` library uses `pkgutil.find_loader` which was removed in Python 3.14.
+- **Python 3.11 or newer** (3.11, 3.12, 3.13, 3.14 all supported)
+- An OMDb API key and a TMDb API key (both free)
 
 ## Quick Setup
 
 ### Windows
-Run the setup script in PowerShell:
 ```powershell
 .\setup.ps1
 ```
 
 ### Linux/Mac
-Run the setup script in your terminal:
 ```bash
 chmod +x setup.sh
 ./setup.sh
 ```
 
 ### Manual Setup
-If you prefer to set up manually:
 
-1. Create a virtual environment:
 ```bash
 python -m venv .venv
-```
-
-2. Activate the virtual environment:
-   - **Windows PowerShell**: `.\.venv\Scripts\Activate.ps1`
-   - **Windows CMD**: `.venv\Scripts\activate.bat`
-   - **Linux/Mac**: `source .venv/bin/activate`
-
-3. Install dependencies:
-```bash
+# Activate:
+#   Windows PowerShell: .\.venv\Scripts\Activate.ps1
+#   Windows CMD:        .venv\Scripts\activate.bat
+#   Linux/Mac:          source .venv/bin/activate
 pip install -r requirements.txt
-```
-
-4. Copy the env template and fill in API keys (see below):
-```bash
-cp .env.example .env
+cp .env.example .env   # then edit .env with your API keys
 ```
 
 ## API Keys
 
-MoLiM is migrating from `cinemagoer` (broken by IMDb's anti-bot WAF) to a
-hybrid OMDb + TMDb data layer (tracked in epic `MoLiM-02x`). Both APIs are
-free and require accounts:
+The IMDb data layer is a hybrid OMDb + TMDb client (epic `MoLiM-02x`).
+Both APIs are free; both require accounts:
 
 | Service | Used for | Sign up |
 |---|---|---|
-| **OMDb** | IMDb rating, votes, box office | http://www.omdbapi.com/apikey.aspx (free, 1,000 calls/day) |
+| **OMDb** | IMDb rating, votes, box office, country, language | http://www.omdbapi.com/apikey.aspx (free, 1,000 calls/day) |
 | **TMDb** | Cast, crew, runtime, genres, posters | https://www.themoviedb.org/settings/api (free, requires attribution) |
 
 Place your keys in a `.env` file at the project root (gitignored):
@@ -70,13 +56,24 @@ These are loaded automatically via `config.py` (`from config import get_settings
 
 ## Running the Project
 
-After setup, activate the virtual environment (if not already activated) and run:
+After setup, activate the virtual environment and run:
+
 ```bash
 python MoLiM.py
 ```
 
+The `MoLiM.py` entry point currently runs `processing.processFolder(<path>)`
+on a hard-coded folder; edit it to point at your own backlog.
+
+## Caching
+
+OMDb + TMDb responses are cached as JSON files under `./cache/` keyed
+by IMDb tt-ID, with a 30-day TTL. Re-running the pipeline on the same
+titles is fast and saves API quota. The `cache/` directory is gitignored;
+delete it any time to force a refresh.
+
 ## Dependencies
-- **cinemagoer** *(deprecated, scheduled for removal in MoLiM-dyy)* - Legacy IMDb access
+
 - **requests** - HTTP client for OMDb / TMDb APIs
 - **python-dotenv** - Loads API keys from `.env`
-- **lxml**, **sqlalchemy** - Pulled in by cinemagoer (will go away with it)
+- **pytest**, **pytest-cov**, **pytest-mock** - Test stack
