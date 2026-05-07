@@ -1,18 +1,11 @@
-﻿from re import search
-from shutil import move
-from sys import orig_argv
-from typing import Tuple
-from xmlrpc.client import Boolean
-from imdb import Cinemagoer
-
-from datetime import date
+﻿from datetime import date
 
 import time
 import random
 import os
 
-import fileOperations 
-import IMDBMovieData 
+import fileOperations
+import IMDBMovieData
 import imdbAccess
 
 
@@ -28,6 +21,10 @@ def processSeriesFolder(folderName):
       print(seriesFolderName)
 
       (searchSeriesName, year) = fileOperations.getMovieNameFromFolder(seriesFolderName)
+      # Series folders frequently have no year in the name; fall back
+      # to the folder name itself when the parser yields an empty title.
+      if not searchSeriesName:
+        searchSeriesName = seriesFolderName
 
       series_data = imdbAccess.fetchSeriesData(searchSeriesName)
     

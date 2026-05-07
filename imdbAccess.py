@@ -1,442 +1,150 @@
-from re import search
-from shutil import move
-from sys import orig_argv
-from typing import Tuple
-from xmlrpc.client import Boolean
-from imdb import Cinemagoer
+"""imdbAccess: thin compatibility shim over MovieDataService.
 
-from datetime import date
+Historically this module wrapped cinemagoer. The cinemagoer scraper
+became unreliable (rating/votes drift, missing fields), so as of the
+MoLiM-02x migration it now delegates to MovieDataService - a hybrid
+OMDb (rating/votes/box_office) + TMDb (cast/crew/genres/poster)
+orchestrator with on-disk caching.
 
-import time
-import random
+Public function signatures are preserved verbatim so the existing
+call sites in processing.py / FolderWithMovies.py / etc. don't change.
+
+Failure contract is preserved: on any unrecoverable error the returned
+object's `.name` is set to "" - callers already check for this.
+
+Beads: MoLiM-cqh, MoLiM-bjo.
+"""
+
+from __future__ import annotations
+
+import logging
+from typing import Optional
 
 import IMDBMovieData
 import IMDBSeriesData
-import IMDBSeriesSeasonData
-import IMDBEpisodeData
+
+from molim_data import MovieDataService
+
+log = logging.getLogger(__name__)
 
 
-# create an instance of the Cinemagoer class
-ia = Cinemagoer()
+# Module-level singleton. Created lazily so imports stay cheap and
+# tests can monkeypatch _service or _get_service() before the first
+# call.
+_service: Optional[MovieDataService] = None
 
 
-# fetchMovieData(searchMovieName, releaseYear)
-def fetchMovieData(searchMovieName, releaseYear) -> IMDBMovieData:
-  movie_data = IMDBMovieData.IMDBMovieData(searchMovieName)
+def _get_service() -> MovieDataService:
+    global _service
+    if _service is None:
+        _service = MovieDataService()
+    return _service
 
-  searchMovieName = searchMovieName.rstrip()
 
-  # TODO kad internet zaka�e
-  try:
-    foundMoviesList = ia.search_movie(searchMovieName)
-  except:
-    print("\n--------   EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET --------\n")
-    time.sleep(30)
-    movie_data.name = ""
-    return movie_data
+def _normalize_imdb_id(movie_id) -> str:
+    """Accepts cinemagoer-style bare digits ('0133093'), the legacy
+    integer 0 placeholder, or full 'tt'-prefixed IDs ('tt0133093').
+    Returns a canonical 'ttNNNNNNN' string. Raises ValueError on garbage.
+    """
+    if movie_id is None:
+        raise ValueError("movieID is None")
+    s = str(movie_id).strip()
+    if not s or s == "0":
+        raise ValueError(f"invalid movieID: {movie_id!r}")
+    if s.lower().startswith("tt"):
+        return "tt" + s[2:].lstrip("0").zfill(7)
+    if s.isdigit():
+        return "tt" + s.lstrip("0").zfill(7)
+    raise ValueError(f"unrecognized movieID format: {movie_id!r}")
 
-  if len(foundMoviesList) == 0 :
-    movie_data.name = ""
-    print ("\n   ----   SEARCH RETURNED NOTHING!!!   ----\n")
-    time.sleep(20)
-    return movie_data
 
-  movieID = foundMoviesList[0].movieID
-  movieFound = False
-  for m in foundMoviesList:
+def _print_movie_summary(md: IMDBMovieData.IMDBMovieData) -> None:
+    if md.name == "":
+        print("   ----   LOOKUP FAILED   ----")
+        return
+    print("IMDB rating:  {0}".format(md.rating))
+    print("Num. votes:   {0}".format(md.votes))
+    if md.box_office:
+        print("Box office:   {0}".format(md.box_office))
+    if md.releaseDate:
+        print("Release date: {0}".format(md.releaseDate))
+    print("Year:         {0}".format(md.year))
+    print("Runtime:      {0} min".format(md.runtime))
+    print("Directors:    " + md.directors)
+    prods = md.producers
+    if len(prods) > 120:
+        prods = prods[:120] + "..."
+    print("Producers:    " + prods)
+    print("Writers:      " + md.writers)
+    print("Genres:       " + md.genres)
+    print("Cast:         " + md.cast_leads)
+    print()
+
+
+def _print_series_summary(sd: IMDBSeriesData.IMDBSeriesData) -> None:
+    if sd.name == "":
+        print("   ----   LOOKUP FAILED   ----")
+        return
+    print("IMDB rating:  {0}".format(sd.rating))
+    print("Num. votes:   {0}".format(sd.votes))
+    print("Year:         {0}".format(sd.year))
+    print("Seasons:      {0}".format(getattr(sd, "num_seasons", 0)))
+    print("Genres:       " + sd.genres)
+    print("Cast:         " + sd.cast_leads)
+    print()
+
+
+# --------------------------------------------------------------------------- #
+# Public API (preserved from the cinemagoer-era module)
+# --------------------------------------------------------------------------- #
+
+
+def fetchMovieData(searchMovieName: str, releaseYear) -> IMDBMovieData.IMDBMovieData:
+    """Search OMDb (with TMDb fallback) for a movie by title + year.
+
+    `releaseYear` may be an int or 0/None when the year is unknown.
+    """
+    name = (searchMovieName or "").rstrip()
+    year = int(releaseYear) if releaseYear else None
+    print(f"Fetching movie: {name!r} ({year})")
+    md = _get_service().get_movie(name, year)
+    _print_movie_summary(md)
+    return md
+
+
+def fetchMovieDataByMovieID(name: str, movieID) -> IMDBMovieData.IMDBMovieData:
+    """Fetch a movie directly by its IMDb ID. Accepts cinemagoer-style
+    digits or 'tt'-prefixed IDs."""
     try:
-      t = m.data.get('title')
-      y = m.data.get('year')
-      k = m.data.get('kind')
-      if t == searchMovieName and y == releaseYear and k == 'movie':
-        movieID = m.movieID
-        movieFound = True
-        break
-    except:
-      print("OUCH")
-  
-  if movieFound == False:
-    print ("COULD NOT FIND EXACT MOVIE WITH NAME AND YEAR") 
-  for movie in foundMoviesList:
-    print("-- {0:15} -- {1:30}, {2}".format(movie.movieID, movie.data.get('title'), movie.data.get('year')))
-    #movie_data.name = ""
-    #return movie_data
-
-  movie_data = fetchMovieDataByMovieID(searchMovieName, movieID)
-
-  time.sleep(5+random.randrange(0,5))
-
-  return movie_data
-
-def fetchMovieDataByMovieID(name : str, movieID : str) -> IMDBMovieData.IMDBMovieData:
-  movie_data = IMDBMovieData.IMDBMovieData(name)
-
-  try:
-     # Fetch movie - start with basic data, then update with comprehensive info
-     movie = ia.get_movie(movieID)
-     # Update with all standard movie info sets (votes, cast, technical details, etc.)
-     ia.update(movie, info=['vote details', 'technical', 'main'])
-  except:
-    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
-    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
-    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
-    time.sleep(30)
-    movie_data.name = ""
-    return movie_data
-
-  movie_data.movieID = movieID
-
-  try:
-    movie_data.imdb_name = movie.data.get('title')
-
-    rating = movie.data.get('rating', None)
-    movie_data.rating = rating
-    print("IMDB rating:  {0}".format(rating))
-
-    votes = movie.data.get('votes', 0)
-    # NOTE: cinemagoer 2025.5.19 (development) has a bug that inflates vote counts by 10x
-    # e.g., The Matrix shows 22M instead of 2.2M, Shawshank shows 31M instead of 3.1M
-    # Workaround: divide by 10 if using development version
-    if votes > 0 and votes >= 10000000:  # Likely inflated if > 10M votes
-        votes = votes // 10
-    movie_data.votes = votes
-    if votes == 0:
-        print("Num. votes:   UNAVAILABLE (cinemagoer parser issue)")
-    else:
-        print("Num. votes:   {0}".format(votes))
-
-    box_office_data = movie.data.get('box office', None)
-    if box_office_data != None:
-      movie_data.box_office = str(box_office_data)
-      print("Box office:   {0}".format(box_office_data))
-
-    release_date = movie.data.get('original air date', None)
-    if release_date != None:
-      movie_data.releaseDate = release_date
-      print("Release date: {0}".format(release_date))
-
-    year = movie.data.get('year', None)
-    movie_data.year = year
-    print("Year:         {0}".format(year))
-
-    if 'runtimes' in movie.data and movie.data['runtimes']:
-      runtime = int(movie.data['runtimes'][0])
-      movie_data.runtime = runtime
-      print("Runtime:     ", runtime, " min")
-    else:
-      print("Runtime:      UNAVAILABLE (cinemagoer parser issue)")
-      movie_data.runtime = 0
-
-    if 'top 250 rank' in movie.data:
-      movie_data.top250rank = int(movie.data['top 250 rank'])
-
-    if 'countries' in movie.data:
-      movie_data.countries = str(movie.data['countries'])
-
-    if 'languages' in movie.data:
-      movie_data.languages = str(movie.data['languages'])
-
-    directors = ""
-    cntDir = 0
-    if 'director' in movie.data:
-      movieDirectors = movie.data.get('director')
-      for director in movieDirectors:
-          if cntDir > 0 :
-            directors += ", "
-          directors += director['name']
-          cntDir += 1
-    else:
-      directors = " Problem with directors!!! "
-    movie_data.directors = directors
-    print("Directors:    " + directors)
-
-    producers = ""
-    cntProd = 0
-    if 'producer' in movie.data and movie.data['producer']:
-      movieProducers = movie.data.get('producer')
-      for producer in movieProducers:
-          if cntProd > 0 :
-            producers += ", "
-
-          if 'name' in producer:
-            producers += producer['name']
-          cntProd += 1
-
-          if cntProd > 5:
-            break
-    else:
-      producers = "UNAVAILABLE"
-    movie_data.producers = producers
-    if producers == "UNAVAILABLE":
-        print("Producers:    UNAVAILABLE (cinemagoer parser issue)")
-    else:
-        print("Producers:    " + producers)
-
-    writers = ""
-    cntWrit = 0
-    if 'writer' in movie.data and movie.data['writer']:
-      movieWriters = movie.data.get('writer')
-      for writer in movieWriters:
-          if cntWrit > 0 :
-            writers += ", "
-
-          if 'name' in writer:
-            writers += writer['name']
-          cntWrit += 1
-    else:
-      writers = "UNAVAILABLE"
-    movie_data.writers = writers
-    if writers == "UNAVAILABLE":
-        print("Writers:      UNAVAILABLE (cinemagoer parser issue)")
-    else:
-        print("Writers:      " + writers)
-
-    genres = ""
-    shortGenres = ""
-    cntGen = 0
-    for gen in movie.data['genres']:
-      genres += gen + ", "
-      if cntGen > 0 and cntGen <3 :
-        shortGenres += ","
-      if cntGen < 3:
-        shortGenres += gen
-
-      cntGen += 1
-    movie_data.genres = genres
-    print('Genres:       ' + genres)
-
-    cast = ""
-    shortCast = ""
-    if 'cast' in movie.data and movie.data['cast']:
-      i = 0
-      for actor in movie.data['cast']:
-        cast += actor['name']
-        cast += ", "
-        if i < 5 :
-          shortCast += actor['name']
-        if i >= 0 and i < 4 :
-          shortCast += ", "
-        i = i + 1
-              
-      print('Cast:         ' + shortCast)
-      movie_data.cast_complete = cast
-      movie_data.cast_leads = shortCast
-    else:
-      print("Cast:         UNAVAILABLE (cinemagoer parser issue)")
-      movie_data.cast_complete = "UNAVAILABLE"
-      movie_data.cast_leads = "UNAVAILABLE"
-        
-    print ()
-    plot = movie.data.get('plot outline', None)
-    movie_data.plot = plot
-    #print("Plot outline: " + str(plot))
-
-  except:
-    print("\nERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
-    movie_data.name = ""
-  
-  return movie_data
+        imdb_id = _normalize_imdb_id(movieID)
+    except ValueError as exc:
+        log.error("fetchMovieDataByMovieID: %s", exc)
+        out = IMDBMovieData.IMDBMovieData(name)
+        out.name = ""
+        return out
+    print(f"Fetching movie by ID: {imdb_id} ({name!r})")
+    md = _get_service().get_movie_by_imdb_id(imdb_id, name=name)
+    _print_movie_summary(md)
+    return md
 
 
+def fetchSeriesData(searchSeriesName: str) -> IMDBSeriesData.IMDBSeriesData:
+    name = (searchSeriesName or "").rstrip()
+    print(f"Fetching series: {name!r}")
+    sd = _get_service().get_series(name)
+    _print_series_summary(sd)
+    return sd
 
-# fetchSeriesData(searchMovieName)
-def fetchSeriesData(searchMovieName):
-  series_data = IMDBMovieData.IMDBMovieData(searchMovieName)
 
-  searchMovieName = searchMovieName.rstrip()
-
-  # TODO kad internet zaka�e
-  try:
-    foundMoviesList = ia.search_movie(searchMovieName)
-  except:
-    print("\n--------   EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET --------\n")
-    time.sleep(30)
-    series_data.name = ""
-    return series_data
-
-  if len(foundMoviesList) == 0 :
-    series_data.name = ""
-    print ("\n   ----   SEARCH RETURNED NOTHING!!!   ----\n")
-    time.sleep(10)
-    return series_data
-
-  movieID = foundMoviesList[0].movieID
-  movieFound = False
-  for m in foundMoviesList:
+def fetchSeriesDataByMovieID(name: str, movieID) -> IMDBSeriesData.IMDBSeriesData:
     try:
-      t = m.data.get('title')
-      k = m.data.get('kind')
-      if t == searchMovieName and k == 'tv series':
-        movieID = m.movieID
-        movieFound = True
-        break
-    except:
-      print("OUCH")
-  
-  if movieFound == False:
-    print ("COULD NOT FIND EXACT MOVIE WITH NAME AND YEAR") 
-    for movie in foundMoviesList:
-      print("-- {0:15} -- {1:30}, {2}".format(movie.movieID, movie.data.get('title'), movie.data.get('year')))
-    #movie_data.name = ""
-    #return movie_data
-
-  series_data = fetchSeriesDataByMovieID(searchMovieName, movieID)
-
-  time.sleep(5+random.randrange(0,5))
-
-  return series_data
-
-
-def fetchSeriesDataByMovieID(name : str, movieID : str) -> IMDBSeriesData.IMDBSeriesData:
-  series_data = IMDBSeriesData.IMDBSeriesData(name)
-
-  try:
-     imdb_series_data = ia.get_movie(movieID)
-
-     ia.update(imdb_series_data, 'episodes')
-
-  except:
-    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
-    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
-    print("EEEE, JEEEBIII GAAAA!!!! OSSSOO INTERNET")
-    time.sleep(30)
-    series_data.name = ""
-    return series_data
-
-  series_data.movieID = movieID
-
-  try:
-    series_data.imdb_name = imdb_series_data.data.get('title')
-
-    rating = imdb_series_data.data.get('rating', None)
-    series_data.rating = rating
-    print("IMDB rating:  {0}".format(rating))
-
-    votes = imdb_series_data.data.get('votes', 0)
-    series_data.votes = votes
-    print("Num. votes:   {0}".format(votes))
-
-    year = imdb_series_data.data.get('year', None)
-    series_data.year = year
-    print("Year:         {0}".format(year))
-
-    if 'runtimes' in imdb_series_data.data:
-      runtime = int(imdb_series_data.data['runtimes'][0])
-      series_data.runtime = runtime
-      print("Runtime:     ", runtime, " min")
-    else:
-      print("-------------------------------------------")
-      print("NO RUNTIME!!!!")
-      print("-------------------------------------------")
-      series_data.runtime = 0
-
-    if 'countries' in imdb_series_data.data:
-      series_data.countries = str(imdb_series_data.data['countries'])
-
-    if 'languages' in imdb_series_data.data:
-      series_data.languages = str(imdb_series_data.data['languages'])
-      
-    writers = ""
-    cntWrit = 0
-    if 'writer' in imdb_series_data.data:
-      movieWriters = imdb_series_data.data.get('writer')
-      for writer in movieWriters:
-          if cntWrit > 0 :
-            writers += ", "
-
-          if 'name' in writer:
-            writers += writer['name']
-          cntWrit += 1
-    else:
-      writers = " Problem with writers!!! "
-    series_data.writers = writers
-    print("Writers:      " + writers)
-
-    genres = ""
-    shortGenres = ""
-    cntGen = 0
-    for gen in imdb_series_data.data['genres']:
-      genres += gen + ", "
-      if cntGen > 0 and cntGen <3 :
-        shortGenres += ","
-      if cntGen < 3:
-        shortGenres += gen
-
-      cntGen += 1
-    series_data.genres = genres
-    print('Genres:       ' + genres)
-
-    cast = ""
-    shortCast = ""
-    if 'cast' in imdb_series_data.data:
-      i = 0
-      for actor in imdb_series_data.data['cast']:
-        cast += actor['name']
-        cast += ", "
-        if i < 5 :
-          shortCast += actor['name']
-        if i >= 0 and i < 4 :
-          shortCast += ", "
-        i = i + 1
-              
-      print('Cast:         ' + shortCast)
-      series_data.cast_complete = cast
-      series_data.cast_leads = shortCast
-    else:
-      print("-------------------------------------------")
-      print("NO CAST!!!")
-      print("-------------------------------------------")
-        
-    print ()
-    plot = imdb_series_data.data.get('plot outline', None)
-    series_data.plot = plot
-    print("Plot outline: " + str(plot))
-
-    if series_data.num_seasons > 0:
-      season_keys = sorted(imdb_series_data['episodes'].keys())
-
-      num_seasons = len(imdb_series_data['episodes'].keys())
-      print("Seasons num = {0}".format(num_seasons))
-      series_data.num_seasons = num_seasons
-
-      for season_id in season_keys:
-        new_season = IMDBSeriesSeasonData.IMDBSeriesSeasonData(season_id)
-      
-        series_data.seasons_list.append(new_season)
-        season_data = imdb_series_data['episodes'][season_id]
-        episode_num = len(season_data)
-        new_season.num_episodes = episode_num
-
-        print("Season {0}".format(season_id))    
-        print("Episode num = {0}".format(episode_num))
-
-        season_episodes_keys = imdb_series_data['episodes'][season_id].keys()
-        for season_episode_key_id in season_episodes_keys:
-          episode = imdb_series_data['episodes'][season_id][season_episode_key_id]
-
-          new_episode = IMDBEpisodeData.IMDBEpisodeData(season_episode_key_id)
-          new_season.episodes_list.append(new_episode)
-
-          new_episode.title = episode['title']
-
-          rating = episode.data.get('rating', None)
-          new_episode.rating = rating
-
-          votes = episode.data.get('votes', None)
-          new_episode.votes = votes
-
-          original_air_date = episode.data.get('originalair date', None)
-          new_episode.original_air_date = original_air_date
-
-          year = episode.data.get('year', None)
-          new_episode.year = year
-
-          plot = episode.data.get('plot', None)
-          new_episode.plot = plot
-
-  except:
-    print("\nERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!ERROR!!!!\n")
-    series_data.name = ""
-  
-  return series_data
-
+        imdb_id = _normalize_imdb_id(movieID)
+    except ValueError as exc:
+        log.error("fetchSeriesDataByMovieID: %s", exc)
+        out = IMDBSeriesData.IMDBSeriesData(name)
+        out.name = ""
+        return out
+    print(f"Fetching series by ID: {imdb_id} ({name!r})")
+    sd = _get_service().get_series_by_imdb_id(imdb_id, name=name)
+    _print_series_summary(sd)
+    return sd
