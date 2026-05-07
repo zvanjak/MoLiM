@@ -1,0 +1,76 @@
+WARNING molim_data.movie_data_service: OMDb: no movie match for 'zzzzz-this-will-not-exist-2099' (2099)
+WARNING molim_data.movie_data_service: TMDb fallback failed for 'zzzzz-this-will-not-exist-2099' (2099): TMDb /search/movie: no results for 'zzzzz-this-will-not-exist-2099'
+Using temp cache dir: C:\Users\Zvone\AppData\Local\Temp\molim-cache-upqclk7b
+
+--- F1 (2025) - first lookup (0.99s) ---
+  name        : F1
+  imdb_name   : F1: The Movie
+  movieID     : tt16311594
+  year        : 2025
+  runtime     : 155 min
+  rating/votes: 7.6 / 353753
+  box_office  : $189,642,436
+  releaseDate : 27 Jun 2025
+  directors   : Joseph Kosinski
+  writers     : Ehren Kruger, Joseph Kosinski
+  producers   : Lewis Hamilton, Joseph Kosinski, Chad Oman, Jerry Bruckheimer, Jeremy Kleiner, Brad Pitt, Daniel Lupi, Dede Gardner, Tob...
+  genres      : Action, Drama, 
+  countries   : United States
+  languages   : English, Spanish, German, Italian
+  cast_leads  : Brad Pitt, Damson Idris, Javier Bardem, Kerry Condon, Tobias Menzies, 
+  cover_url   : https://image.tmdb.org/t/p/w500/vqBmyAj0Xm9LnS1xe1MSlMAJyHq.jpg
+  plot[:80]   : A Formula One driver comes out of retirement to mentor and team up with a younge
+
+Cache hit timing: 367.1ms (was 986ms cold)
+
+--- Sinners (2025) ---
+  name        : Sinners
+  imdb_name   : Sinners
+  movieID     : tt31193180
+  year        : 2025
+  runtime     : 137 min
+  rating/votes: 7.5 / 472042
+  box_office  : $279,989,632
+  releaseDate : 18 Apr 2025
+  directors   : Ryan Coogler
+  writers     : Ryan Coogler
+  producers   : Ryan Coogler, Zinzi Coogler, Sev Ohanian, Ludwig G├╢ransson, Rebecca Cho, Will Greenfield, Pete Chiappetta, Andrew Lary, ...
+  genres      : Horror, Action, Thriller, 
+  countries   : United States, Australia, Canada
+  languages   : English, Chinese
+  cast_leads  : Michael B. Jordan, Hailee Steinfeld, Miles Caton, Jack O'Connell, Wunmi Mosaku, 
+  cover_url   : https://image.tmdb.org/t/p/w500/fWPgbnt2LSqkQ6cdQc0SZN9CpLm.jpg
+  plot[:80]   : Trying to leave their troubled lives behind, twin brothers return to their homet
+
+--- The Accountant 2 (2025) ---
+  name        : The Accountant 2
+  imdb_name   : The Accountant 2
+  movieID     : tt7068946
+  year        : 2025
+  runtime     : 132 min
+  rating/votes: 6.6 / 128394
+  box_office  : $65,523,366
+  releaseDate : 25 Apr 2025
+  directors   : Gavin O'Connor
+  writers     : Bill Dubuque
+  producers   : Ben Affleck, Lynette Howell Taylor, Mark Williams, Dani Bernfeld, Kevin Halloran, Michael Joe, Alison Winter, Scott LaSt...
+  genres      : Mystery, Crime, Thriller, 
+  countries   : United States
+  languages   : English, Spanish, Korean, German, Russian
+  cast_leads  : Ben Affleck, Jon Bernthal, Cynthia Addai-Robinson, J.K. Simmons, Allison Robertson, 
+  cover_url   : https://image.tmdb.org/t/p/w500/lUvfTcOZiK0sdcX0WNLPbMyKjGm.jpg
+  plot[:80]   : Christian Wolff applies his brilliant mind and illegal methods to reconstruct th
+
+--- House of the Dragon ---
+  name        : House of the Dragon
+  imdb_name   : House of the Dragon
+  movieID     : tt11198330
+  year        : 2022
+  num_seasons : 3
+  rating/votes: 8.3 / 523146
+  genres      : Sci-Fi & Fantasy, Drama, Action & Adventure, 
+  cast_leads  : Matt Smith, Emma D'Arcy, Olivia Cooke, Steve Toussaint, Rhys Ifans, 
+
+Bogus lookup -> name='' (should be empty string)
+
+OK - all assertions passed.

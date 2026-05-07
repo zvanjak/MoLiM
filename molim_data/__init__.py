@@ -23,6 +23,7 @@ from molim_data.tmdb_client import (
     TmdbMovie,
     TmdbTv,
 )
+from molim_data.movie_data_service import MovieDataService
 
 __all__ = [
     "OMDbClient",
@@ -37,4 +38,5 @@ __all__ = [
     "TmdbCredits",
     "TmdbMovie",
     "TmdbTv",
+    "MovieDataService",
 ]
