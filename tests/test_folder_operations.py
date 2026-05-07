@@ -75,6 +75,41 @@ class TestFolderNameParsing:
         assert name == ""
         assert year == 0
 
+    def test_series_release_with_season_marker_no_year(self):
+        """Scene-style series releases without a year still yield a usable title.
+
+        ``S01`` (and similar) acts as an end-of-title sentinel; the year is
+        returned as 0 because the folder name doesn't carry one.
+        """
+        name, year = fileOperations.getMovieNameFromFolder(
+            "Copenhagen.Cowboy.S01.COMPLETE.720p.NF.WEBRip.x264-GalaxyTV[TGx]"
+        )
+        assert name == "Copenhagen Cowboy"
+        assert year == 0
+
+    def test_series_release_with_episode_marker(self):
+        name, year = fileOperations.getMovieNameFromFolder(
+            "The.Last.Of.Us.S01E01.1080p.WEB.H264-CAKES"
+        )
+        assert name == "The Last Of Us"
+        assert year == 0
+
+    def test_series_release_with_short_season_token(self):
+        name, year = fileOperations.getMovieNameFromFolder("Severance.S2.2160p.ATVP.WEB-DL")
+        assert name == "Severance"
+        assert year == 0
+
+    def test_series_release_with_literal_season_word(self):
+        name, year = fileOperations.getMovieNameFromFolder("Andor Season 2 1080p")
+        assert name == "Andor"
+        assert year == 0
+
+    def test_year_wins_over_season_marker_when_both_present(self):
+        """If a year appears before the season marker, it still parses as year."""
+        name, year = fileOperations.getMovieNameFromFolder("Some.Show.2018.S01.1080p")
+        assert name == "Some Show"
+        assert year == 2018
+
 
 @pytest.mark.unit
 class TestYearExtraction:

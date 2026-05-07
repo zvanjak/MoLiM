@@ -113,31 +113,51 @@ def getMovieNameFromFolder(movieFolderName): # TODO  -> tuple(str,str):
   before that token, joined with single spaces and stripped of leading
   underscores.
 
-  Returns ('', 0) when no plausible year is found.
+  When no year is present, also looks for a season marker token
+  (``S01``, ``S1E02``, ``Season 1`` ...) anywhere after the first token
+  and treats it as an end-of-title marker. In that case ``year`` is
+  returned as ``0`` (unknown) but the title is still extracted, so
+  one-season scene releases like
+  ``Copenhagen.Cowboy.S01.COMPLETE.720p.NF.WEBRip.x264-GalaxyTV[TGx]``
+  resolve to ``("Copenhagen Cowboy", 0)``.
+
+  Returns ('', 0) when neither a plausible year nor a season marker is
+  found.
   """
   parts = re.split(r'[.\-_\s\(\)\[\]\{\}]+', movieFolderName)
   parts = [p.strip("()[]{}") for p in parts if p]
 
   max_year = date.today().year + 1
+  season_re = re.compile(r'^[Ss]\d{1,2}([Ee]\d{1,2})?$')
 
   title_pieces = []
   year = 0
+  stop_on_season = False
   for idx, part in enumerate(parts):
     # Skip the very first token so that titles like '300', '1917', '2012'
-    # aren't mistaken for years.
-    if idx > 0 and len(part) == 4 and part.isdigit():
-      candidate = int(part)
-      if 1930 < candidate <= max_year:
-        year = candidate
+    # aren't mistaken for years, and a leading 'S01' doesn't kill the title.
+    if idx > 0:
+      if len(part) == 4 and part.isdigit():
+        candidate = int(part)
+        if 1930 < candidate <= max_year:
+          year = candidate
+          break
+      # Season markers: S01, S1, S01E02, or the literal word 'Season'
+      # (optionally followed by a number token).
+      if season_re.match(part) or part.lower() == "season":
+        stop_on_season = True
         break
     title_pieces.append(part)
 
-  if year == 0:
+  if year == 0 and not stop_on_season:
     return ("", 0)
 
   searchMovieName = " ".join(p for p in title_pieces if p).strip().lstrip("_").strip()
-  diskMovieName = searchMovieName + " (" + str(year) + ")"
-  print(diskMovieName, " - ", searchMovieName, " - ", movieFolderName)
+  if year:
+    diskMovieName = searchMovieName + " (" + str(year) + ")"
+    print(diskMovieName, " - ", searchMovieName, " - ", movieFolderName)
+  else:
+    print(searchMovieName, " - (no year, season marker)", " - ", movieFolderName)
 
   return (searchMovieName, year)
 
