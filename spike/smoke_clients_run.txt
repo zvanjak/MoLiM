@@ -1,0 +1,32 @@
+
+=== MOVIE: F1 (2025) via OMDb ===
+  imdb_id     : tt16311594
+  title/year  : F1: The Movie (2025)
+  rating/votes: 7.6 / 353753
+  box_office  : $189,642,436
+  runtime     : 155 min
+  released    : 27 Jun 2025
+
+=== MOVIE: F1 via TMDb (joined by tt-ID) ===
+  tmdb /find  : {'movie_id': 911430}
+  title       : F1 (2025)
+  runtime     : 156 min
+  genres      : Action, Drama
+  directors   : Joseph Kosinski
+  writers     : Ehren Kruger, Joseph Kosinski
+  producers   : Lewis Hamilton, Joseph Kosinski, Chad Oman, Jerry Bruckheimer, Jeremy Kleiner, Brad Pitt, Daniel Lupi, Dede Gardner, Toby Hefferman
+  cast leads  : Brad Pitt, Damson Idris, Javier Bardem, Kerry Condon, Tobias Menzies
+  poster      : https://image.tmdb.org/t/p/w500/vqBmyAj0Xm9LnS1xe1MSlMAJyHq.jpg
+
+=== SERIES: House of the Dragon via OMDb ===
+  imdb_id     : tt11198330
+  title/year  : House of the Dragon (2022)
+  rating/votes: 8.3 / 523146
+
+=== SERIES: HotD via TMDb ===
+  tmdb /find  : {'tv_id': 94997}
+  name        : House of the Dragon (2022)
+  seasons/eps : 3 / 26
+  ep runtime  : []
+  genres      : Sci-Fi & Fantasy, Drama, Action & Adventure
+  cast leads  : Matt Smith, Emma D'Arcy, Olivia Cooke, Steve Toussaint, Rhys Ifans
