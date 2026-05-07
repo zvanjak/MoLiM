@@ -187,7 +187,7 @@ def doesFilmDataHasMovieID(folderWhereItIs, movieFolderName, movieName, movieYea
   filePath = getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear)
 
   try:
-    fileFilmData = open(filePath, 'r')
+    fileFilmData = open(filePath, 'r', encoding='utf-8')
   except:
     return False
 
@@ -204,7 +204,7 @@ def getMovieIDFromFilmData(folderWhereItIs, movieFolderName, movieName, movieYea
   filePath = getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear)
 
   try:
-    fileFilmData = open(filePath, 'r')
+    fileFilmData = open(filePath, 'r', encoding='utf-8')
   except:
     return None
 
@@ -269,7 +269,7 @@ def saveTXTWithMovieData(movie_data : IMDBMovieData, folderWhereItIs, movieFolde
   # formirati TXT datoteku s podacima
   fileName = getFilmDataFilePath(folderWhereItIs, movieFolderName, movie_data.name, movie_data.year)
 
-  fileFilmData = open(fileName, 'w')
+  fileFilmData = open(fileName, 'w', encoding='utf-8')
   fileFilmData.write(movie_data.name + " (" + str(movie_data.year) + ")\n")
   fileFilmData.write("MovieID:   " + str(movie_data.movieID) + "\n")
   fileFilmData.write("Title:     " + movie_data.imdb_name + "\n")
@@ -301,7 +301,7 @@ def saveTXTWithSeriesData(series_data : IMDBSeriesData, folderWhereItIs, movieFo
   # formirati TXT datoteku s podacima
   fileName = getSeriesDataFilePath(folderWhereItIs, movieFolderName, series_data.name, series_data.year)
 
-  fileFilmData = open(fileName, 'w')
+  fileFilmData = open(fileName, 'w', encoding='utf-8')
   fileFilmData.write(series_data.name + " (" + str(series_data.year) + ")\n")
   fileFilmData.write("MovieID:   " + str(series_data.movieID) + "\n")
   fileFilmData.write("Title:     " + series_data.imdb_name + "\n")
@@ -324,7 +324,7 @@ def saveTXTWithSeriesData(series_data : IMDBSeriesData, folderWhereItIs, movieFo
 
   for season in series_data.seasons_list:
     fileName = folderWhereItIs + "\\" + movieFolderName + "\\Season " + str(season.seasonID) + ".txt"
-    fileFilmData = open(fileName, 'w')
+    fileFilmData = open(fileName, 'w', encoding='utf-8')
     fileFilmData.write("SeasonID:    " + str(season.seasonID) + "\n")
     fileFilmData.write("Num episodes:" + str(season.num_episodes) + "\n")
 
@@ -345,7 +345,7 @@ def loadIMDBMovieDataFromFilmData(folderWhereItIs, movieFolderName, movieName, m
   filePath = getFilmDataFilePath(folderWhereItIs, movieFolderName, movieName, movieYear)
 
   try:
-    fileFilmData = open(filePath, 'r')
+    fileFilmData = open(filePath, 'r', encoding='utf-8')
   except:
     movie_data.name = ""
     return movie_data
