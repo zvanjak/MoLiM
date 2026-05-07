@@ -14,7 +14,8 @@ class IMDBEpisodeData(object):
     self.cast_leads = ""
     self.cast_complete = ""
     self.plot = ""
-    
+    self.original_air_date = ""
+
     self.episodes_list = []
 
     self.directors_list = []

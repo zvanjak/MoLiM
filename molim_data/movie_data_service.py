@@ -34,8 +34,10 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import Any, Optional
 
+import IMDBEpisodeData
 import IMDBMovieData
 import IMDBSeriesData
+import IMDBSeriesSeasonData
 
 from molim_data.omdb_client import (
     OMDbClient,
@@ -50,6 +52,7 @@ from molim_data.tmdb_client import (
     TmdbError,
     TmdbMovie,
     TmdbNotFound,
+    TmdbSeason,
     TmdbTv,
 )
 
@@ -373,8 +376,27 @@ class MovieDataService:
             out.cast_complete = ", ".join(tv.credits.cast_complete) + ", "
         if tv.credits.cast_leads:
             out.cast_leads = ", ".join(tv.credits.cast_leads) + ", "
-        # Note: seasons_list is left empty here; episode-level data is a
-        # separate concern (will be wired in alongside MoLiM-cqh if needed).
+        # Episode-level data: fetch each season via TMDb (MoLiM-ywz).
+        if tv.tmdb_id and tv.number_of_seasons:
+            out.seasons_list = self._fetch_seasons(
+                tv.tmdb_id, tv.number_of_seasons
+            )
+
+    def _fetch_seasons(
+        self, tmdb_tv_id: int, num_seasons: int
+    ) -> list["IMDBSeriesSeasonData.IMDBSeriesSeasonData"]:
+        seasons: list[IMDBSeriesSeasonData.IMDBSeriesSeasonData] = []
+        # Some shows have a "Specials" season 0; we fetch 1..N inclusive.
+        for n in range(1, num_seasons + 1):
+            try:
+                ts = self._tmdb.get_tv_season(tmdb_tv_id, n)
+            except (TmdbAuthError, TmdbNotFound, TmdbError) as exc:
+                log.warning(
+                    "TMDb get_tv_season(%s, %s) failed: %s", tmdb_tv_id, n, exc
+                )
+                continue
+            seasons.append(_build_season(ts))
+        return seasons
 
     # ----- cache ---------------------------------------------------------- #
 
@@ -434,6 +456,15 @@ _SERIES_FIELDS = (
     "cast_leads", "cast_complete", "plot", "releaseDate",
 )
 
+_EPISODE_FIELDS = (
+    "episodeId", "title", "movieID", "year", "runtime", "rating", "votes",
+    "plot", "original_air_date",
+)
+
+_SEASON_FIELDS = (
+    "seasonID", "title", "num_episodes", "year", "plot",
+)
+
 
 def _movie_to_cache(out: IMDBMovieData.IMDBMovieData, omdb: OmdbResult, tmdb: Optional[TmdbMovie]) -> dict[str, Any]:
     return {"kind": "movie", "fields": {k: getattr(out, k) for k in _MOVIE_FIELDS}}
@@ -448,15 +479,46 @@ def _movie_from_cache(name: str, payload: dict[str, Any]) -> IMDBMovieData.IMDBM
 
 
 def _series_to_cache(out: IMDBSeriesData.IMDBSeriesData, omdb: OmdbResult, tmdb: Optional[TmdbTv]) -> dict[str, Any]:
-    return {"kind": "series", "fields": {k: getattr(out, k) for k in _SERIES_FIELDS}}
+    fields = {k: getattr(out, k) for k in _SERIES_FIELDS}
+    fields["seasons"] = [_season_to_cache(s) for s in (out.seasons_list or [])]
+    return {"kind": "series", "fields": fields}
+
+
+def _season_to_cache(s: "IMDBSeriesSeasonData.IMDBSeriesSeasonData") -> dict[str, Any]:
+    return {
+        **{k: getattr(s, k) for k in _SEASON_FIELDS},
+        "episodes": [
+            {k: getattr(ep, k) for k in _EPISODE_FIELDS}
+            for ep in (s.episodes_list or [])
+        ],
+    }
 
 
 def _series_from_cache(name: str, payload: dict[str, Any]) -> IMDBSeriesData.IMDBSeriesData:
     out = IMDBSeriesData.IMDBSeriesData(name)
-    for k, v in (payload.get("fields") or {}).items():
+    fields = payload.get("fields") or {}
+    seasons = fields.pop("seasons", None)
+    for k, v in fields.items():
         if hasattr(out, k):
             setattr(out, k, v)
+    if seasons:
+        out.seasons_list = [_season_from_cache(s) for s in seasons]
     return out
+
+
+def _season_from_cache(d: dict[str, Any]) -> "IMDBSeriesSeasonData.IMDBSeriesSeasonData":
+    season = IMDBSeriesSeasonData.IMDBSeriesSeasonData(d.get("seasonID", 0))
+    for k in _SEASON_FIELDS:
+        if k in d and hasattr(season, k):
+            setattr(season, k, d[k])
+    season.episodes_list = []
+    for ep_d in d.get("episodes") or []:
+        ep = IMDBEpisodeData.IMDBEpisodeData(ep_d.get("episodeId", 0))
+        for k in _EPISODE_FIELDS:
+            if k in ep_d and hasattr(ep, k):
+                setattr(ep, k, ep_d[k])
+        season.episodes_list.append(ep)
+    return season
 
 
 def _json_default(obj: Any) -> Any:
@@ -465,3 +527,27 @@ def _json_default(obj: Any) -> Any:
         return asdict(obj)
     except TypeError:
         return str(obj)
+
+
+def _build_season(ts: TmdbSeason) -> "IMDBSeriesSeasonData.IMDBSeriesSeasonData":
+    """Convert a parsed TmdbSeason into the legacy IMDBSeriesSeasonData
+    shape consumed by fileOperations.saveTXTWithSeriesData.
+    """
+    season = IMDBSeriesSeasonData.IMDBSeriesSeasonData(ts.season_number)
+    season.title = ts.name or ""
+    season.num_episodes = len(ts.episodes)
+    if ts.air_date and ts.air_date[:4].isdigit():
+        season.year = int(ts.air_date[:4])
+    if ts.overview:
+        season.plot = ts.overview
+    for ep in ts.episodes:
+        ied = IMDBEpisodeData.IMDBEpisodeData(ep.episode_number)
+        ied.title = ep.name or ""
+        ied.year = ep.year or 0
+        ied.runtime = ep.runtime_min or 0
+        ied.rating = round(ep.vote_average, 1) if ep.vote_average else 0.0
+        ied.votes = ep.vote_count or 0
+        ied.plot = ep.overview or ""
+        ied.original_air_date = ep.air_date or ""
+        season.episodes_list.append(ied)
+    return season

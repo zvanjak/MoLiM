@@ -20,6 +20,7 @@ from tests.fixtures import (
     tmdb_search_empty,
     tmdb_search_movie_results,
     tmdb_search_tv_results,
+    tmdb_season_payload,
     tmdb_tv_breaking_bad,
 )
 
@@ -113,6 +114,30 @@ class TestTmdbGetTv:
         assert "Drama" in tv.genres
         assert tv.credits.cast_leads[0] == "Bryan Cranston"
         assert "Vince Gilligan" in tv.credits.writers
+
+
+class TestTmdbGetTvSeason:
+    def test_parses_season_with_episodes(self):
+        session = FakeSession().route(
+            "/tv/4242/season/1", FakeResponse(200, tmdb_season_payload(1, episodes=3))
+        )
+        season = make_client(session).get_tv_season(4242, 1)
+
+        assert season.season_number == 1
+        assert season.name == "Season 1"
+        assert season.air_date == "2020-01-01"
+        assert len(season.episodes) == 3
+
+        ep1 = season.episodes[0]
+        assert ep1.season_number == 1
+        assert ep1.episode_number == 1
+        assert ep1.name == "S1E1"
+        assert ep1.year == 2020
+        assert ep1.runtime_min == 30
+        assert ep1.vote_count == 51
+        # vote_average preserved as-is from payload (parser doesn't round)
+        assert ep1.vote_average == pytest.approx(7.6)
+        assert ep1.air_date == "2020-01-15"
 
 
 class TestTmdbSearch:

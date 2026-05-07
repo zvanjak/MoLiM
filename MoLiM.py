@@ -148,7 +148,8 @@ def printAllActorsMovies():
 
 # Entry point - currently processing new movies
 if __name__ == "__main__":
-    processing.processFolder(r"E:\NOVI FILMOVI")
+    processing.processSeriesFolder(r"E:\NOVE SERIJE")
+#    processing.processFolder(r"Z:\_Movies")
 
 # Commented out examples - kept for reference
 # movieStatistics.folderStatistics(r"Z:\Movies\FILMOVI\_1970's")
@@ -160,6 +161,6 @@ if __name__ == "__main__":
 # printActorsStatistics()
 # printDirectorsStatistics()
 # printAllActorsMovies()
-# processing.processSeriesFolder(r"E:\NOVE SERIJE")
+
 # reports.rootFolderReportNoIMDBData(r"E:\NEW MOVIES")
 # reports.rootFolderReportNotDone(r"Z:\Movies\FILMOVI")

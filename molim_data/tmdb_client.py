@@ -8,7 +8,7 @@ Public surface:
     TMDbClient.find_by_imdb_id(tt_id) -> {"movie_id": int} | {"tv_id": int}
     TMDbClient.get_movie(tmdb_id)     -> TmdbMovie
     TMDbClient.get_tv(tmdb_id)        -> TmdbTv
-    TMDbClient.get_tv_season(tv_id, season_number) -> dict (raw)
+    TMDbClient.get_tv_season(tv_id, season_number) -> TmdbSeason
     TMDbClient.search_movie(title, year=None)      -> TmdbMovie
     TMDbClient.search_tv(title)                    -> TmdbTv
 
@@ -127,6 +127,31 @@ class TmdbTv:
     raw: dict[str, Any] = field(default_factory=dict)
 
 
+@dataclass(frozen=True)
+class TmdbEpisode:
+    tmdb_id: int
+    season_number: int
+    episode_number: int
+    name: str
+    overview: Optional[str]
+    air_date: Optional[str]    # ISO "YYYY-MM-DD"
+    year: Optional[int]
+    runtime_min: Optional[int]
+    vote_average: Optional[float]
+    vote_count: Optional[int]
+
+
+@dataclass(frozen=True)
+class TmdbSeason:
+    tmdb_id: int
+    season_number: int
+    name: str
+    overview: Optional[str]
+    air_date: Optional[str]
+    poster_url: Optional[str]
+    episodes: list[TmdbEpisode]
+
+
 # --------------------------------------------------------------------------- #
 # Helpers
 # --------------------------------------------------------------------------- #
@@ -238,8 +263,9 @@ class TMDbClient:
         )
         return self._parse_tv(data)
 
-    def get_tv_season(self, tmdb_id: int, season_number: int) -> dict[str, Any]:
-        return self._get(f"/tv/{tmdb_id}/season/{season_number}", {})
+    def get_tv_season(self, tmdb_id: int, season_number: int) -> TmdbSeason:
+        data = self._get(f"/tv/{tmdb_id}/season/{season_number}", {})
+        return self._parse_tv_season(data)
 
     def search_movie(self, title: str, year: Optional[int] = None) -> TmdbMovie:
         if not title:
@@ -341,6 +367,36 @@ class TMDbClient:
             vote_count=_safe_int(data.get("vote_count")),
             credits=credits,
             raw=data,
+        )
+
+    def _parse_tv_season(self, data: dict[str, Any]) -> TmdbSeason:
+        season_number = _safe_int(data.get("season_number")) or 0
+        episodes_raw = data.get("episodes") or []
+        episodes: list[TmdbEpisode] = []
+        for ep in episodes_raw:
+            air = ep.get("air_date") or None
+            episodes.append(
+                TmdbEpisode(
+                    tmdb_id=int(ep.get("id") or 0),
+                    season_number=_safe_int(ep.get("season_number")) or season_number,
+                    episode_number=_safe_int(ep.get("episode_number")) or 0,
+                    name=str(ep.get("name") or ""),
+                    overview=(ep.get("overview") or None),
+                    air_date=air,
+                    year=_year_from(air),
+                    runtime_min=_safe_int(ep.get("runtime")),
+                    vote_average=_safe_float(ep.get("vote_average")),
+                    vote_count=_safe_int(ep.get("vote_count")),
+                )
+            )
+        return TmdbSeason(
+            tmdb_id=int(data.get("id") or 0),
+            season_number=season_number,
+            name=str(data.get("name") or ""),
+            overview=(data.get("overview") or None),
+            air_date=(data.get("air_date") or None),
+            poster_url=_poster_url(data.get("poster_path")),
+            episodes=episodes,
         )
 
     def _parse_credits(self, credits: dict[str, Any]) -> TmdbCredits:

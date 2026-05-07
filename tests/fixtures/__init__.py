@@ -294,3 +294,52 @@ def tmdb_search_tv_results() -> dict[str, Any]:
 
 def tmdb_search_empty() -> dict[str, Any]:
     return {"page": 1, "results": [], "total_results": 0}
+
+
+def tmdb_tv_two_seasons() -> dict[str, Any]:
+    """Compact TV fixture (num_seasons=2) for season-wiring tests."""
+    return {
+        "id": 4242,
+        "name": "Mini Show",
+        "original_name": "Mini Show",
+        "overview": "A small two-season test show.",
+        "first_air_date": "2020-01-01",
+        "last_air_date": "2021-12-31",
+        "number_of_seasons": 2,
+        "number_of_episodes": 4,
+        "episode_run_time": [30],
+        "genres": [{"id": 18, "name": "Drama"}],
+        "production_countries": [{"iso_3166_1": "US", "name": "United States of America"}],
+        "spoken_languages": [{"iso_639_1": "en", "english_name": "English", "name": "English"}],
+        "poster_path": "/mini.jpg",
+        "vote_average": 8.0,
+        "vote_count": 100,
+        "external_ids": {"imdb_id": "tt42424242"},
+        "credits": {"cast": [], "crew": []},
+    }
+
+
+def tmdb_season_payload(season_number: int, *, episodes: int = 2) -> dict[str, Any]:
+    return {
+        "_id": f"season-{season_number}",
+        "id": 1000 + season_number,
+        "season_number": season_number,
+        "name": f"Season {season_number}",
+        "overview": f"Overview for season {season_number}.",
+        "air_date": f"202{season_number - 1}-01-01",
+        "poster_path": f"/s{season_number}.jpg",
+        "episodes": [
+            {
+                "id": 9000 + season_number * 100 + ep,
+                "name": f"S{season_number}E{ep}",
+                "overview": f"Plot for S{season_number}E{ep}.",
+                "air_date": f"202{season_number - 1}-0{ep}-15",
+                "season_number": season_number,
+                "episode_number": ep,
+                "vote_average": 7.5 + ep * 0.1,
+                "vote_count": 50 + ep,
+                "runtime": 30,
+            }
+            for ep in range(1, episodes + 1)
+        ],
+    }

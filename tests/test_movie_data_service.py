@@ -23,7 +23,9 @@ from tests.fixtures import (
     tmdb_find_tv,
     tmdb_movie_matrix,
     tmdb_movie_unrated,
+    tmdb_season_payload,
     tmdb_tv_breaking_bad,
+    tmdb_tv_two_seasons,
 )
 
 
@@ -205,6 +207,8 @@ class TestGetSeriesHappyPath:
         tmdb = MagicMock(spec=TMDbClient)
         tmdb.find_by_imdb_id.return_value = {"tv_id": 1396}
         tmdb.get_tv.return_value = _build_tmdb_clientside_tv(tmdb_tv_breaking_bad())
+        # Skip per-season fetches in this base test (covered by TestSeasonWiring)
+        tmdb.get_tv_season.side_effect = TmdbNotFound("skip")
 
         svc = _make_service(omdb=omdb, tmdb=tmdb, tmp_cache=cache_dir)
         sd = svc.get_series("Breaking Bad")
@@ -224,6 +228,7 @@ class TestGetSeriesFallbackPath:
 
         tmdb = MagicMock(spec=TMDbClient)
         tmdb.search_tv.return_value = _build_tmdb_clientside_tv(tmdb_tv_breaking_bad())
+        tmdb.get_tv_season.side_effect = TmdbNotFound("skip")
 
         svc = _make_service(omdb=omdb, tmdb=tmdb, tmp_cache=cache_dir)
         sd = svc.get_series("Breaking Bad")
@@ -276,3 +281,98 @@ class TestCache:
         assert payload["_v"] == 2  # CACHE_VERSION
         assert payload["kind"] == "movie"
         assert payload["fields"]["movieID"] == "tt0133093"
+
+
+# --------------------------------------------------------------------------- #
+# Episode/Season wiring (MoLiM-ywz)
+# --------------------------------------------------------------------------- #
+
+
+def _build_tmdb_clientside_season(payload):
+    client = TMDbClient(api_key="x", session=MagicMock(), throttle_seconds=0, retries=0)
+    return client._parse_tv_season(payload)
+
+
+class TestSeasonWiring:
+    def _build_service(self, cache_dir):
+        omdb = MagicMock(spec=OMDbClient)
+        omdb.search_series.return_value = _omdb_result_from(omdb_series_breaking_bad())
+
+        tmdb = MagicMock(spec=TMDbClient)
+        tmdb.find_by_imdb_id.return_value = {"tv_id": 4242}
+        tmdb.get_tv.return_value = _build_tmdb_clientside_tv(tmdb_tv_two_seasons())
+        tmdb.get_tv_season.side_effect = lambda tv_id, n: _build_tmdb_clientside_season(
+            tmdb_season_payload(n, episodes=2)
+        )
+        return omdb, tmdb, _make_service(omdb=omdb, tmdb=tmdb, tmp_cache=cache_dir)
+
+    def test_seasons_and_episodes_populated(self, cache_dir):
+        omdb, tmdb, svc = self._build_service(cache_dir)
+        sd = svc.get_series("Mini Show")
+
+        assert sd.num_seasons == 2
+        assert len(sd.seasons_list) == 2
+
+        s1 = sd.seasons_list[0]
+        assert s1.seasonID == 1
+        assert s1.title == "Season 1"
+        assert s1.num_episodes == 2
+        assert len(s1.episodes_list) == 2
+
+        ep = s1.episodes_list[0]
+        assert ep.episodeId == 1
+        assert ep.title == "S1E1"
+        assert ep.year == 2020
+        assert ep.runtime == 30
+        assert ep.rating == 7.6           # rounded from vote_average 7.6
+        assert ep.votes == 51
+        assert ep.original_air_date == "2020-01-15"
+        assert ep.plot.startswith("Plot for S1E1")
+
+    def test_get_tv_season_called_for_each_season(self, cache_dir):
+        omdb, tmdb, svc = self._build_service(cache_dir)
+        svc.get_series("Mini Show")
+
+        assert tmdb.get_tv_season.call_count == 2
+        called = {c.args for c in tmdb.get_tv_season.call_args_list}
+        assert called == {(4242, 1), (4242, 2)}
+
+    def test_season_fetch_failure_is_skipped(self, cache_dir):
+        """A single-season fetch error must not fail the whole series."""
+        omdb = MagicMock(spec=OMDbClient)
+        omdb.search_series.return_value = _omdb_result_from(omdb_series_breaking_bad())
+
+        tmdb = MagicMock(spec=TMDbClient)
+        tmdb.find_by_imdb_id.return_value = {"tv_id": 4242}
+        tmdb.get_tv.return_value = _build_tmdb_clientside_tv(tmdb_tv_two_seasons())
+
+        def season_side_effect(tv_id, n):
+            if n == 1:
+                raise TmdbNotFound("oops")
+            return _build_tmdb_clientside_season(tmdb_season_payload(n, episodes=2))
+
+        tmdb.get_tv_season.side_effect = season_side_effect
+
+        sd = _make_service(omdb=omdb, tmdb=tmdb, tmp_cache=cache_dir).get_series("Mini Show")
+
+        # season 1 dropped, season 2 retained
+        assert len(sd.seasons_list) == 1
+        assert sd.seasons_list[0].seasonID == 2
+
+    def test_seasons_round_trip_through_cache(self, cache_dir):
+        omdb, tmdb, svc = self._build_service(cache_dir)
+        first = svc.get_series("Mini Show")
+
+        # Second call: cache hit, no further TMDb calls.
+        tmdb.reset_mock()
+        second = svc.get_series("Mini Show")
+
+        tmdb.find_by_imdb_id.assert_not_called()
+        tmdb.get_tv.assert_not_called()
+        tmdb.get_tv_season.assert_not_called()
+
+        assert len(second.seasons_list) == len(first.seasons_list) == 2
+        s1 = second.seasons_list[0]
+        assert s1.num_episodes == 2
+        assert s1.episodes_list[0].original_air_date == "2020-01-15"
+        assert s1.episodes_list[1].title == "S1E2"
