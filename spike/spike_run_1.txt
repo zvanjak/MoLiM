@@ -1,0 +1,69 @@
+WARN: OMDB_API_KEY not set - rating/votes/box-office will be missing.
+
+=== F1.2025. (1080p AMZN WEB-DL x265 10bit EAC3 5.1 Silence) -> F1 (2025) ===
+  sources: omdb=False  tmdb=True
+  imdb_name            F1
+  plot                 Racing legend Sonny Hayes is coaxed out of retirement to lead a struggling Formula 1 teamùand mentor a youn...
+  runtime              156
+  releaseDate          2025-06-25
+  genres               Action, Drama
+  countries            United States of America
+  languages            Danish, English, German, Spanish
+  cover_url            https://image.tmdb.org/t/p/w500/vqBmyAj0Xm9LnS1xe1MSlMAJyHq.jpg
+  cast_complete        Brad Pitt, Damson Idris, Javier Bardem, Kerry Condon, Tobias Menzies, Kim Bodnia, Sarah Niles, Will Merrick...
+  cast_leads           Brad Pitt, Damson Idris, Javier Bardem, Kerry Condon, Tobias Menzies
+  directors            Joseph Kosinski
+  writers              Ehren Kruger, Joseph Kosinski, Ehren Kruger
+  producers            Lewis Hamilton, Joseph Kosinski, Chad Oman, Jerry Bruckheimer, Jeremy Kleiner, Brad Pitt
+  movieID              tt16311594
+  [GAPS] year, rating, votes, box_office, top250rank
+
+=== Sinners.2025.kkk -> Sinners (2025) ===
+  sources: omdb=False  tmdb=True
+  imdb_name            Sinners
+  plot                 Trying to leave their troubled lives behind, twin brothers return to their hometown to start again, only to...
+  runtime              138
+  releaseDate          2025-04-16
+  genres               Horror, Action, Thriller
+  countries            United States of America
+  languages            English, Mandarin, Yoruba
+  cover_url            https://image.tmdb.org/t/p/w500/fWPgbnt2LSqkQ6cdQc0SZN9CpLm.jpg
+  cast_complete        Michael B. Jordan, Hailee Steinfeld, Miles Caton, Jack O'Connell, Wunmi Mosaku, Jayme Lawson, Omar Benson M...
+  cast_leads           Michael B. Jordan, Hailee Steinfeld, Miles Caton, Jack O'Connell, Wunmi Mosaku
+  directors            Ryan Coogler
+  writers              Ryan Coogler
+  producers            Ryan Coogler, Zinzi Coogler, Sev Ohanian, Ludwig G÷ransson, Rebecca Cho, Will Greenfield
+  movieID              tt31193180
+  [GAPS] year, rating, votes, box_office, top250rank
+
+=== The Accountant 2.2025 -> The Accountant 2 (2025) ===
+  sources: omdb=False  tmdb=True
+  imdb_name            The Accountant▓
+  plot                 When an old acquaintance is murdered, Wolff is compelled to solve the case. Realizing more extreme measures...
+  runtime              133
+  releaseDate          2025-04-23
+  genres               Mystery, Crime, Thriller
+  countries            United States of America
+  languages            German, English, Spanish
+  cover_url            https://image.tmdb.org/t/p/w500/lUvfTcOZiK0sdcX0WNLPbMyKjGm.jpg
+  cast_complete        Ben Affleck, Jon Bernthal, Cynthia Addai-Robinson, J.K. Simmons, Allison Robertson, Alison Wright, Daniella...
+  cast_leads           Ben Affleck, Jon Bernthal, Cynthia Addai-Robinson, J.K. Simmons, Allison Robertson
+  directors            Gavin O'Connor
+  writers              Bill Dubuque, Bill Dubuque
+  producers            Ben Affleck, Lynette Howell Taylor, Mark Williams, Dani Bernfeld, Kevin Halloran, Michael Joe
+  movieID              tt7068946
+  [GAPS] year, rating, votes, box_office, top250rank
+
+=== series: House of the Dragon ===
+  sources: omdb=False  tmdb=True
+  imdb_name            House of the Dragon
+  genres               Sci-Fi & Fantasy, Drama, Action & Adventure
+  releaseDate          2022-08-21
+  countries            United States of America
+  languages            English
+  number_of_seasons    3
+  number_of_episodes   26
+  cast_leads           Matt Smith, Emma D'Arcy, Olivia Cooke, Steve Toussaint, Rhys Ifans, Fabien Frankel, Ewan Mitchell, Tom Glyn...
+  cast_complete        Matt Smith, Emma D'Arcy, Olivia Cooke, Steve Toussaint, Rhys Ifans, Fabien Frankel, Ewan Mitchell, Tom Glyn...
+  directors            George R.R. Martin, Ryan Condal
+  writers              George R.R. Martin

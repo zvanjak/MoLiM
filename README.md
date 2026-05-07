@@ -41,6 +41,33 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
+4. Copy the env template and fill in API keys (see below):
+```bash
+cp .env.example .env
+```
+
+## API Keys
+
+MoLiM is migrating from `cinemagoer` (broken by IMDb's anti-bot WAF) to a
+hybrid OMDb + TMDb data layer (tracked in epic `MoLiM-02x`). Both APIs are
+free and require accounts:
+
+| Service | Used for | Sign up |
+|---|---|---|
+| **OMDb** | IMDb rating, votes, box office | http://www.omdbapi.com/apikey.aspx (free, 1,000 calls/day) |
+| **TMDb** | Cast, crew, runtime, genres, posters | https://www.themoviedb.org/settings/api (free, requires attribution) |
+
+Place your keys in a `.env` file at the project root (gitignored):
+
+```
+OMDB_API_KEY=your_omdb_key_here
+TMDB_API_KEY=your_tmdb_key_here
+```
+
+These are loaded automatically via `config.py` (`from config import get_settings`).
+
+> This product uses the TMDb API but is not endorsed or certified by TMDb.
+
 ## Running the Project
 
 After setup, activate the virtual environment (if not already activated) and run:
@@ -49,6 +76,7 @@ python MoLiM.py
 ```
 
 ## Dependencies
-- **cinemagoer** (formerly IMDbPY) - For accessing IMDb data
-- **lxml** - XML/HTML parser
-- **sqlalchemy** - Database toolkit
+- **cinemagoer** *(deprecated, scheduled for removal in MoLiM-dyy)* - Legacy IMDb access
+- **requests** - HTTP client for OMDb / TMDb APIs
+- **python-dotenv** - Loads API keys from `.env`
+- **lxml**, **sqlalchemy** - Pulled in by cinemagoer (will go away with it)

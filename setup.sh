@@ -83,9 +83,29 @@ fi
 
 echo ""
 
+# Set up .env for API keys (MoLiM-02x: OMDb + TMDb hybrid data layer)
+echo "Configuring API keys..."
+if [ ! -f ".env" ]; then
+    if [ -f ".env.example" ]; then
+        cp .env.example .env
+        echo "✓ .env created from template"
+    else
+        echo "⚠ .env.example not found - skipping"
+    fi
+else
+    echo "✓ .env already present"
+fi
+echo "  Edit .env and add your keys:"
+echo "    OMDB_API_KEY  - http://www.omdbapi.com/apikey.aspx"
+echo "    TMDB_API_KEY  - https://www.themoviedb.org/settings/api"
+echo ""
+
+python -c "import config; s = config.get_settings(); print('OMDb:', 'set' if s.omdb_api_key else 'MISSING'); print('TMDb:', 'set' if s.tmdb_api_key else 'MISSING')"
+echo ""
+
 # Show installed packages
 echo "=== Installed Packages ==="
-pip list | grep -E "cinemagoer|pytest"
+pip list | grep -E "cinemagoer|requests|dotenv|pytest"
 echo ""
 
 # Final summary
@@ -100,5 +120,5 @@ echo ""
 echo "Ready to run tests:"
 echo "  pytest tests/test_imdb_fetching.py -v"
 echo ""
-echo "Note: Always use Python 3.11 for this project!"
-echo "      Python 3.14 is incompatible with cinemagoer"
+echo "Note: Python 3.11 is currently required (cinemagoer constraint)."
+echo "      The 3.11 lock will be lifted after MoLiM-dyy completes."

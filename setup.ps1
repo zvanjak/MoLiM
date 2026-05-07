@@ -67,7 +67,27 @@ if ($LASTEXITCODE -ne 0) {
 Write-Host "✓ Dependencies installed" -ForegroundColor Green
 Write-Host ""
 
-# Verify cinemagoer installation
+# Set up .env for API keys (MoLiM-02x: OMDb + TMDb hybrid data layer)
+Write-Host "Configuring API keys..." -ForegroundColor Yellow
+if (-not (Test-Path ".env")) {
+    if (Test-Path ".env.example") {
+        Copy-Item ".env.example" ".env"
+        Write-Host "✓ .env created from template" -ForegroundColor Green
+    } else {
+        Write-Host "⚠ .env.example not found - skipping" -ForegroundColor Yellow
+    }
+} else {
+    Write-Host "✓ .env already present" -ForegroundColor Green
+}
+Write-Host "  Edit .env and add your keys:" -ForegroundColor Gray
+Write-Host "    OMDB_API_KEY  - http://www.omdbapi.com/apikey.aspx" -ForegroundColor Gray
+Write-Host "    TMDB_API_KEY  - https://www.themoviedb.org/settings/api" -ForegroundColor Gray
+Write-Host ""
+
+python -c "import config; s = config.get_settings(); print('OMDb:', 'set' if s.omdb_api_key else 'MISSING'); print('TMDb:', 'set' if s.tmdb_api_key else 'MISSING')"
+Write-Host ""
+
+# Verify cinemagoer installation (legacy - removal scheduled in MoLiM-dyy)
 Write-Host "Verifying cinemagoer installation..." -ForegroundColor Yellow
 python -c "from imdb import Cinemagoer; print('✓ cinemagoer imported successfully!')"
 
@@ -80,7 +100,7 @@ Write-Host ""
 
 # Show installed packages
 Write-Host "=== Installed Packages ===" -ForegroundColor Cyan
-pip list | Select-String -Pattern "cinemagoer|pytest"
+pip list | Select-String -Pattern "cinemagoer|requests|dotenv|pytest"
 Write-Host ""
 
 # Final summary
@@ -95,5 +115,5 @@ Write-Host ""
 Write-Host "Ready to run tests:" -ForegroundColor White
 Write-Host "  pytest tests/test_imdb_fetching.py -v" -ForegroundColor Gray
 Write-Host ""
-Write-Host "Note: Always use Python 3.11 for this project!" -ForegroundColor Yellow
-Write-Host "      Python 3.14 is incompatible with cinemagoer" -ForegroundColor Yellow
+Write-Host "Note: Python 3.11 is currently required (cinemagoer constraint)." -ForegroundColor Yellow
+Write-Host "      The 3.11 lock will be lifted after MoLiM-dyy completes." -ForegroundColor Yellow

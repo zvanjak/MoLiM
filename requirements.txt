@@ -1,10 +1,16 @@
 # IMDb data access library (formerly known as IMDbPY)
 # Using the latest version from GitHub for Python 3.14+ compatibility
+# DEPRECATED: scheduled for removal in MoLiM-dyy after migration to
+# OMDb + TMDb hybrid (MoLiM-02x). Kept pinned until call sites are swapped.
 git+https://github.com/cinemagoer/cinemagoer.git
 
 # Dependencies (installed automatically with cinemagoer)
 # lxml~=6.0.2
 # sqlalchemy~=2.0.41
+
+# OMDb + TMDb hybrid data layer (MoLiM-02x)
+requests>=2.32,<3
+python-dotenv>=1.0,<2
 
 pytest>=8.0.0
 pytest-cov>=4.1.0
