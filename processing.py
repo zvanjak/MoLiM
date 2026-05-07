@@ -14,6 +14,10 @@ def processSeriesFolder(folderName):
   print("------", folderName, "------")
   print("------------------------------------------")
 
+  promoted = fileOperations.promoteLooseVideoFilesToFolders(folderName)
+  if promoted:
+    print(f"Promoted {promoted} loose video file(s) into folders.")
+
   seriesSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
 
   for seriesFolderName in seriesSubFolders:
@@ -38,6 +42,10 @@ def processFolder(folderName):
   print("------", folderName, "------")
   print("------------------------------------------")
 
+  promoted = fileOperations.promoteLooseVideoFilesToFolders(folderName)
+  if promoted:
+    print(f"Promoted {promoted} loose video file(s) into folders.")
+
   movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
 
   for movieFolderName in movieSubFolders:
@@ -56,6 +64,10 @@ def processListOfFolders(foldersList):
     print("------------------------------------------")
     print("------", folderName, "------")
     print("------------------------------------------")
+
+    promoted = fileOperations.promoteLooseVideoFilesToFolders(folderName)
+    if promoted:
+      print(f"Promoted {promoted} loose video file(s) into folders.")
 
     movieSubFolders = [ f.name for f in os.scandir(folderName) if f.is_dir() ]
 

@@ -2,8 +2,69 @@
 from datetime import date
 
 import os
+import shutil
 import IMDBMovieData
 import IMDBSeriesData
+
+# Video file extensions recognised when promoting loose files into folders.
+# Lowercase, leading dot. Compared case-insensitively.
+VIDEO_EXTENSIONS = {
+    ".mkv", ".mp4", ".avi", ".mov", ".wmv", ".m4v",
+    ".ts", ".m2ts", ".webm", ".mpg", ".mpeg", ".flv",
+}
+
+
+def promoteLooseVideoFilesToFolders(folderName: str) -> int:
+  """Move loose video files at the top of *folderName* into per-movie folders.
+
+  For every video file directly under *folderName*, create a sibling folder
+  named after the file's stem and move the file (plus any same-stem sidecar
+  files such as .srt subtitles) into it. Files already inside a subfolder
+  are not touched. Returns the number of files promoted.
+
+  Idempotent: running it again on the same folder is a no-op because the
+  files are no longer loose.
+  """
+  if not os.path.isdir(folderName):
+    return 0
+
+  promoted = 0
+  for entry in list(os.scandir(folderName)):
+    if not entry.is_file():
+      continue
+    stem, ext = os.path.splitext(entry.name)
+    if ext.lower() not in VIDEO_EXTENSIONS:
+      continue
+    if not stem.strip():
+      continue
+
+    targetDir = os.path.join(folderName, stem)
+    # If a folder with the exact stem already exists, reuse it; otherwise
+    # create it. os.makedirs(exist_ok=True) covers the rare race.
+    os.makedirs(targetDir, exist_ok=True)
+
+    # Move the video file.
+    destVideo = os.path.join(targetDir, entry.name)
+    if os.path.exists(destVideo):
+      print(f"  SKIP: {destVideo} already exists")
+      continue
+    print(f"  PROMOTING: {entry.name} -> {stem}/")
+    shutil.move(entry.path, destVideo)
+    promoted += 1
+
+    # Sweep along sidecar files that share the stem (subtitles, nfo, etc.).
+    for sidecar in list(os.scandir(folderName)):
+      if not sidecar.is_file():
+        continue
+      side_stem, _ = os.path.splitext(sidecar.name)
+      if side_stem == stem:
+        destSide = os.path.join(targetDir, sidecar.name)
+        if not os.path.exists(destSide):
+          print(f"    + sidecar: {sidecar.name}")
+          shutil.move(sidecar.path, destSide)
+
+  return promoted
+
 
 def getFolderSize(start_path : str):
     total_size = 0

@@ -324,18 +324,63 @@ class TestProcessingSmokeTests:
         test_folder = tmp_path / "TestFolder"
         test_folder.mkdir()
         (test_folder / "somefile.txt").write_text("test")
-        
+
         mock_entries = [
             Mock(name="somefile.txt", is_dir=lambda: False),
             Mock(name="Movie.2020", is_dir=lambda: True),
         ]
         mocker.patch('os.scandir', return_value=mock_entries)
-        
+        # Loose-file promotion is exercised in its own tests; stub it here so
+        # the mocked os.scandir isn't consumed by the sweep.
+        mocker.patch('fileOperations.promoteLooseVideoFilesToFolders', return_value=0)
+
         mocker.patch('fileOperations.getMovieNameFromFolder', return_value=("Movie", 2020))
         empty_data = IMDBMovieData("Movie")
         empty_data.name = ""
         mocker.patch('imdbAccess.fetchMovieData', return_value=empty_data)
-        
+
         # Should only process directory, not file
         processing.processFolder(str(test_folder))
         # If it completes, test passes
+
+
+class TestPromoteLooseVideoFiles:
+    """Tests for fileOperations.promoteLooseVideoFilesToFolders."""
+
+    def test_promotes_loose_mkv_with_sidecar(self, tmp_path):
+        import fileOperations
+        (tmp_path / "F1.2025.1080p.mkv").write_bytes(b"v")
+        (tmp_path / "F1.2025.1080p.srt").write_bytes(b"s")
+        (tmp_path / "README.txt").write_text("readme")
+        (tmp_path / "Already.A.Folder.2025").mkdir()
+
+        n = fileOperations.promoteLooseVideoFilesToFolders(str(tmp_path))
+        assert n == 1
+        promoted = tmp_path / "F1.2025.1080p"
+        assert promoted.is_dir()
+        assert (promoted / "F1.2025.1080p.mkv").is_file()
+        assert (promoted / "F1.2025.1080p.srt").is_file()
+        # Unrelated file untouched.
+        assert (tmp_path / "README.txt").is_file()
+        # Existing folder untouched.
+        assert (tmp_path / "Already.A.Folder.2025").is_dir()
+
+    def test_idempotent_second_run_is_noop(self, tmp_path):
+        import fileOperations
+        (tmp_path / "Sinners.2025.kkk.mp4").write_bytes(b"v")
+        assert fileOperations.promoteLooseVideoFilesToFolders(str(tmp_path)) == 1
+        assert fileOperations.promoteLooseVideoFilesToFolders(str(tmp_path)) == 0
+
+    def test_skips_unknown_extensions(self, tmp_path):
+        import fileOperations
+        (tmp_path / "notes.txt").write_text("x")
+        (tmp_path / "art.jpg").write_bytes(b"x")
+        assert fileOperations.promoteLooseVideoFilesToFolders(str(tmp_path)) == 0
+        # Files still loose at root.
+        assert (tmp_path / "notes.txt").is_file()
+        assert (tmp_path / "art.jpg").is_file()
+
+    def test_handles_missing_folder(self, tmp_path):
+        import fileOperations
+        bogus = tmp_path / "does-not-exist"
+        assert fileOperations.promoteLooseVideoFilesToFolders(str(bogus)) == 0
