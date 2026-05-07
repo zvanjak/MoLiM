@@ -115,8 +115,8 @@ def getMovieNameFromFolder(movieFolderName): # TODO  -> tuple(str,str):
 
   Returns ('', 0) when no plausible year is found.
   """
-  parts = re.split(r'[.\-_\s]+', movieFolderName)
-  parts = [p for p in parts if p]
+  parts = re.split(r'[.\-_\s\(\)\[\]\{\}]+', movieFolderName)
+  parts = [p.strip("()[]{}") for p in parts if p]
 
   max_year = date.today().year + 1
 
@@ -125,7 +125,7 @@ def getMovieNameFromFolder(movieFolderName): # TODO  -> tuple(str,str):
   for idx, part in enumerate(parts):
     # Skip the very first token so that titles like '300', '1917', '2012'
     # aren't mistaken for years.
-    if idx > 0 and part.isdigit() and len(part) == 4:
+    if idx > 0 and len(part) == 4 and part.isdigit():
       candidate = int(part)
       if 1930 < candidate <= max_year:
         year = candidate
@@ -135,7 +135,7 @@ def getMovieNameFromFolder(movieFolderName): # TODO  -> tuple(str,str):
   if year == 0:
     return ("", 0)
 
-  searchMovieName = " ".join(title_pieces).strip().lstrip("_").strip()
+  searchMovieName = " ".join(p for p in title_pieces if p).strip().lstrip("_").strip()
   diskMovieName = searchMovieName + " (" + str(year) + ")"
   print(diskMovieName, " - ", searchMovieName, " - ", movieFolderName)
 

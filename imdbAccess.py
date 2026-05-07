@@ -107,6 +107,11 @@ def fetchMovieData(searchMovieName: str, releaseYear) -> IMDBMovieData.IMDBMovie
     name = (searchMovieName or "").rstrip()
     year = int(releaseYear) if releaseYear else None
     print(f"Fetching movie: {name!r} ({year})")
+    if not name:
+        print("   ----   SKIPPED: could not parse a title from folder name")
+        out = IMDBMovieData.IMDBMovieData("")
+        out.name = ""
+        return out
     md = _get_service().get_movie(name, year)
     _print_movie_summary(md)
     return md

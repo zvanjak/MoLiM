@@ -58,7 +58,7 @@ log = logging.getLogger(__name__)
 
 DEFAULT_CACHE_DIR = Path("cache")
 DEFAULT_TTL_SECONDS = 30 * 24 * 60 * 60  # 30 days
-CACHE_VERSION = 1
+CACHE_VERSION = 2  # bumped: TMDb vote_average rating fallback (MoLiM-rfb)
 
 
 # --------------------------------------------------------------------------- #
@@ -174,6 +174,13 @@ class MovieDataService:
         tmdb_movie = self._lookup_tmdb_movie(omdb.imdb_id, fallback_title=name, fallback_year=omdb.year)
         if tmdb_movie is not None:
             self._apply_tmdb_movie(out, tmdb_movie)
+            # If OMDb had no IMDb rating yet (common for very recent
+            # releases), fall back to TMDb's vote_average so the folder
+            # name doesn't get a meaningless "IMDB-0.0".
+            if (out.rating in (0, 0.0)) and tmdb_movie.vote_average:
+                out.rating = round(tmdb_movie.vote_average, 1)
+                if not out.votes and tmdb_movie.vote_count:
+                    out.votes = tmdb_movie.vote_count
 
         self._cache_store(omdb.imdb_id, _movie_to_cache(out, omdb, tmdb_movie))
         return out
@@ -193,6 +200,10 @@ class MovieDataService:
         self._apply_tmdb_movie(out, tmdb_movie)
         if tmdb_movie.imdb_id:
             out.movieID = tmdb_movie.imdb_id
+        if (out.rating in (0, 0.0)) and tmdb_movie.vote_average:
+            out.rating = round(tmdb_movie.vote_average, 1)
+            if not out.votes and tmdb_movie.vote_count:
+                out.votes = tmdb_movie.vote_count
         return out
 
     def _lookup_tmdb_movie(
@@ -280,6 +291,10 @@ class MovieDataService:
         tmdb_tv = self._lookup_tmdb_tv(omdb.imdb_id, fallback_title=name)
         if tmdb_tv is not None:
             self._apply_tmdb_tv(out, tmdb_tv)
+            if (out.rating in (0, 0.0)) and tmdb_tv.vote_average:
+                out.rating = round(tmdb_tv.vote_average, 1)
+                if not out.votes and tmdb_tv.vote_count:
+                    out.votes = tmdb_tv.vote_count
 
         self._cache_store(omdb.imdb_id, _series_to_cache(out, omdb, tmdb_tv))
         return out
@@ -298,6 +313,10 @@ class MovieDataService:
         self._apply_tmdb_tv(out, tv)
         if tv.imdb_id:
             out.movieID = tv.imdb_id
+        if (out.rating in (0, 0.0)) and tv.vote_average:
+            out.rating = round(tv.vote_average, 1)
+            if not out.votes and tv.vote_count:
+                out.votes = tv.vote_count
         return out
 
     def _lookup_tmdb_tv(

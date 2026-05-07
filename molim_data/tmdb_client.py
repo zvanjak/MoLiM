@@ -98,6 +98,8 @@ class TmdbMovie:
     countries: list[str]
     languages: list[str]
     poster_url: Optional[str]
+    vote_average: Optional[float]
+    vote_count: Optional[int]
     credits: TmdbCredits
     raw: dict[str, Any] = field(default_factory=dict)
 
@@ -119,6 +121,8 @@ class TmdbTv:
     countries: list[str]
     languages: list[str]
     poster_url: Optional[str]
+    vote_average: Optional[float]
+    vote_count: Optional[int]
     credits: TmdbCredits
     raw: dict[str, Any] = field(default_factory=dict)
 
@@ -133,6 +137,15 @@ def _safe_int(s: Any) -> Optional[int]:
         return None
     try:
         return int(s)
+    except (TypeError, ValueError):
+        return None
+
+
+def _safe_float(s: Any) -> Optional[float]:
+    if s in (None, "", "N/A", 0, 0.0):
+        return None
+    try:
+        return float(s)
     except (TypeError, ValueError):
         return None
 
@@ -293,6 +306,8 @@ class TMDbClient:
             languages=_names(data.get("spoken_languages") or [], key="english_name")
                        or _names(data.get("spoken_languages") or []),
             poster_url=_poster_url(data.get("poster_path")),
+            vote_average=_safe_float(data.get("vote_average")),
+            vote_count=_safe_int(data.get("vote_count")),
             credits=credits,
             raw=data,
         )
@@ -322,6 +337,8 @@ class TMDbClient:
             languages=_names(data.get("spoken_languages") or [], key="english_name")
                        or _names(data.get("spoken_languages") or []),
             poster_url=_poster_url(data.get("poster_path")),
+            vote_average=_safe_float(data.get("vote_average")),
+            vote_count=_safe_int(data.get("vote_count")),
             credits=credits,
             raw=data,
         )
