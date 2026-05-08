@@ -115,6 +115,21 @@ class TestTmdbGetTv:
         assert tv.credits.cast_leads[0] == "Bryan Cranston"
         assert "Vince Gilligan" in tv.credits.writers
 
+    def test_parses_tv_with_origin_country_as_string_list(self):
+        """Regression: TMDb's /tv endpoint returns ``origin_country`` as
+        a plain ``list[str]`` (e.g. ``["US"]``), not a list of dicts.
+        Don't crash trying to ``.get()`` on the strings."""
+        payload = tmdb_tv_breaking_bad()
+        # Replicate the real Mr-and-Mrs-Smith-style shape: no
+        # production_countries, plain string origin_country.
+        payload.pop("production_countries", None)
+        payload["origin_country"] = ["US"]
+
+        session = FakeSession().route("/tv/1396", FakeResponse(200, payload))
+        tv = make_client(session).get_tv(1396)
+
+        assert tv.countries == ["US"]
+
 
 class TestTmdbGetTvSeason:
     def test_parses_season_with_episodes(self):

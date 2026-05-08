@@ -148,7 +148,7 @@ def printAllActorsMovies():
 
 # Entry point - currently processing new movies
 if __name__ == "__main__":
-    processing.processSeriesFolder(r"E:\NOVE SERIJE")
+    processing.processSeriesFolder(r"Z:\\")
 #    processing.processFolder(r"Z:\_Movies")
 
 # Commented out examples - kept for reference

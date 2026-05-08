@@ -175,8 +175,19 @@ def _safe_float(s: Any) -> Optional[float]:
         return None
 
 
-def _names(items: Iterable[dict[str, Any]], key: str = "name") -> list[str]:
-    return [str(i.get(key)) for i in items if i.get(key)]
+def _names(items: Iterable[Any], key: str = "name") -> list[str]:
+    """Extract the ``key`` field from each dict in ``items``.
+
+    Tolerates non-dict elements (e.g. TMDb's ``origin_country`` is a
+    plain ``list[str]``) by silently skipping them.
+    """
+    out: list[str] = []
+    for i in items:
+        if isinstance(i, dict):
+            v = i.get(key)
+            if v:
+                out.append(str(v))
+    return out
 
 
 def _dedupe(seq: Iterable[str]) -> list[str]:
